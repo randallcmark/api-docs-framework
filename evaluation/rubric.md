@@ -54,3 +54,5 @@ Route product-intent questions to product owners, implementation questions to en
 Choose short practice cases covering a wrong claim, missing completion conditions, a sound concise guide and an intentionally inapplicable criterion. Have evaluators assess the same evidence and task separately. Compare criterion interpretation, severity, evidence selection, review time and false positives. Adjudicate disagreements, record anchors and revise the rubric before using scores for acceptance.
 
 The worked payroll example is a constructed demonstration, not a second independent evaluation or a calibration result. Freeze rubric and pattern revisions before the user's holdout evaluation.
+
+The [fictional practice pack](calibration/README.md) supplies short MDX cases, scoped evidence, an isolated input exporter and proposed author anchors. These are preparation, not completed calibration. Compare separate results and adjudicate before claiming shared interpretations.

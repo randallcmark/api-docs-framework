@@ -53,11 +53,11 @@
         {
           "kind": "recovery",
           "source_ids": [
-            "gusto-quickstart",
-            "gusto-errors"
+            "gusto-errors",
+            "gusto-error-categories"
           ],
           "inspection": "partial",
-          "note": "Symptoms and error shapes are inspected; linked category-specific recovery remains untraced."
+          "note": "Category-specific messages and selected actions are inspected; complete onboarding recovery, retry safety and blocker resolution remain partial."
         },
         {
           "kind": "change",
@@ -72,9 +72,9 @@
       "lesson": "A status reference needs its workflow context; accepted setup, completed steps and business approval must remain distinct.",
       "remaining_gaps": [
         "No API calls, approval simulation or reader tests.",
-        "Full prerequisite tax/bank/form references and error-category recovery were not all followed."
+        "Full prerequisite tax/bank/form references, blocker resolution and ambiguous-write recovery were not all followed."
       ],
-      "recorded_at": "2026-10-20T20:21:14.124208+00:00",
+      "recorded_at": "2026-10-20T20:41:40.087455+00:00",
       "status": "documentation-trace-with-explicit-gaps",
       "connections": [
         {
@@ -132,12 +132,20 @@
           "method": "visible_link",
           "matched_url": "https://docs.gusto.com/embedded-payroll/docs/version-upgrade-guide",
           "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        },
+        {
+          "from_source_id": "gusto-errors",
+          "to_source_id": "gusto-error-categories",
+          "method": "visible_link",
+          "matched_url": "https://docs.gusto.com/embedded-payroll/docs/error-categories",
+          "note": "Link in captured representation; placement and usability untested."
         }
       ],
       "capture_hashes": {
         "gusto-auth": "e4d795490c0381ac93d1e215b0473f633b919494ee36108dc6e9ec940babb625",
         "gusto-changelog": "2fb48adc5ff4301b4c14007f404e80394400c53db7321a8437260b5aa4332698",
         "gusto-company-events": "1e185f62e525bd0c822da8f804a138a1d73172c563c2bfd846c79e868269bd6a",
+        "gusto-error-categories": "052c1b480624c8a0f0c25e64edb01ac8374884170999a88db6fa4cd20ba3f3a7",
         "gusto-errors": "08c3aeb326456d1decfb1b4f50d6f1be4eafcf7cc8f50a2e555fe2f25b300511",
         "gusto-onboarding": "3b77013add5ab16e2b33b9309513228fbc05f595639e1cb574230d8b24cc2a6d",
         "gusto-quickstart": "874aac8c9ff431d8829ddc3785c0145137f58c2d54a386bcecd8e4b6d4565f34",
@@ -166,10 +174,11 @@
           "kind": "access",
           "source_ids": [
             "wise-enterprise",
-            "wise-embedded"
+            "wise-embedded",
+            "wise-oauth-setup"
           ],
           "inspection": "partial",
-          "note": "Ownership and profile contexts are inspected; complete OAuth/certificate setup is not."
+          "note": "Integration-model token choice, invalidation, rotation and support diagnostics are inspected; certificates and complete onboarding are not."
         },
         {
           "kind": "workflow",
@@ -194,33 +203,39 @@
           "kind": "verification",
           "source_ids": [
             "wise-statuses",
-            "wise-simulation"
+            "wise-simulation",
+            "wise-payout-failures"
           ],
           "inspection": "inspected",
-          "note": "Valid simulated transitions and prerequisites are inspected; no simulation was run."
+          "note": "State and payout-failure simulation steps plus expected webhook are inspected, not executed."
         },
         {
           "kind": "recovery",
           "source_ids": [
             "wise-tracking",
-            "wise-statuses"
+            "wise-statuses",
+            "wise-payout-failures",
+            "wise-oauth-setup"
           ],
           "inspection": "partial",
-          "note": "Ordering, payout failure/refund and exceptional state guidance is inspected; linked reconciliation procedures are not all followed."
+          "note": "Failure-event semantics, provider-retry code, fallback and support diagnostics inspected; full reconciliation and all caller recovery paths remain untraced."
         },
         {
           "kind": "change",
-          "source_ids": [],
-          "inspection": "untraced",
-          "note": "A version picker is not a migration path; change guidance is not traced for this workflow."
+          "source_ids": [
+            "wise-changelog",
+            "wise-global-versioning"
+          ],
+          "inspection": "partial",
+          "note": "Named replacement and token-model changes connect to policy; global versioning excludes webhooks. Full integration migration is not traced."
         }
       ],
       "lesson": "Common workflow structure can coexist with materially different sender, funding and customer-profile responsibilities.",
       "remaining_gaps": [
-        "Recipient/quote/funding endpoint details, complete access setup and change guidance remain untraced.",
-        "No bank, transfer, webhook or simulation action was performed."
+        "No live/sandbox API calls, token flow or reader tests.",
+        "Full certificate setup, reconciliation and selected-version/event migration are not traced."
       ],
-      "recorded_at": "2026-10-20T20:21:14.124208+00:00",
+      "recorded_at": "2026-10-20T20:41:40.087455+00:00",
       "status": "documentation-trace-with-explicit-gaps",
       "connections": [
         {
@@ -271,12 +286,44 @@
           "method": "visible_link",
           "matched_url": "https://docs.wise.com/api-reference/simulation/simulationtransferstatechange",
           "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        },
+        {
+          "from_source_id": "wise-tracking",
+          "to_source_id": "wise-payout-failures",
+          "method": "visible_link",
+          "matched_url": "https://docs.wise.com/guides/product/send-money/tracking/payout-failures",
+          "note": "Link in captured representation; placement and usability untested."
+        },
+        {
+          "from_source_id": "screen-wise",
+          "to_source_id": "wise-changelog",
+          "method": "visible_link",
+          "matched_url": "https://docs.wise.com/changelog",
+          "note": "Link in captured representation; placement and usability untested."
+        },
+        {
+          "from_source_id": "wise-changelog",
+          "to_source_id": "wise-global-versioning",
+          "method": "visible_link",
+          "matched_url": "https://docs.wise.com/guides/developer/global-versioning",
+          "note": "Link in captured representation; placement and usability untested."
+        },
+        {
+          "from_source_id": "wise-changelog",
+          "to_source_id": "wise-oauth-setup",
+          "method": "visible_link",
+          "matched_url": "https://docs.wise.com/guides/developer/auth-and-security/oauth-2-setup",
+          "note": "Link in captured representation; placement and usability untested."
         }
       ],
       "capture_hashes": {
         "screen-wise": "dec897545a34c3e5ef1103d2dfd8a53edc7fa521f1a72ea945decca98e2bb46b",
+        "wise-changelog": "813c7957e41abf8f5667b5e6fdea6369252b602ff4605546409fc4059d68f428",
         "wise-embedded": "3de6cb1fbe1e96352d05e0f495f25035c6b7156154621a5d55c96443f61d2f10",
         "wise-enterprise": "5b9ce6049608ff43ebc9b6410751a0cbe5b188b7f3672cdb8e72f9bd5a8e3989",
+        "wise-global-versioning": "a329214331f03bc9e679487773c740caaaea75710e4d8f9cdbd71f6b424ddb3e",
+        "wise-oauth-setup": "d11794170a0d5ef695bfc5c517a32167b5162dc2bf2843e47bae0ea76eb650ac",
+        "wise-payout-failures": "9c68aa442488e38b7be000adcb683db041104db5b65e5e5ebd7a7499c81a6122",
         "wise-send": "4fdb9aa64eae76f79384d9b830486a7dfc698325485be7326bf38e1cd2484560",
         "wise-simulation": "c0c9532966f3896f1f608969f6dd3e986f1783473fe954346c13d4d2ab9e659f",
         "wise-statuses": "8d3019f8e27a52894a156df518866c381975d248f1f6f470982af4f24764ec33",
@@ -336,10 +383,11 @@
           "kind": "recovery",
           "source_ids": [
             "personio-events",
-            "personio-handling"
+            "personio-handling",
+            "personio-handling-v2"
           ],
           "inspection": "partial",
-          "note": "Lifecycle scenarios are named; detailed image flowcharts and delivery-recovery logic remain uninspected."
+          "note": "Three linked diagrams visually inspected (M01\u2013M03); captured versioned and unversioned Markdown bodies are identical. Branch details and an offboarding end-label ambiguity remain; no complete handler/recovery validation."
         },
         {
           "kind": "change",
@@ -352,11 +400,11 @@
       ],
       "lesson": "An integration guide can expose product decisions about roles, eligibility, custom fields and termination behavior that schemas leave unexplained.",
       "remaining_gaps": [
-        "Detailed diagrams were not visually inspected.",
-        "Some guide links target versioned routes; their equivalence to unversioned pages is not assumed.",
-        "No employee data, synchronization or authentication was exercised."
+        "No event handler, sandbox workflow or reader test.",
+        "Authentication destination and all exact event contracts remain partially traced.",
+        "Diagram end-label ambiguity is recorded, not corrected by inference; equality of two handling-guide captures does not establish all versioned-route equivalence."
       ],
-      "recorded_at": "2026-10-20T20:21:14.124208+00:00",
+      "recorded_at": "2026-10-20T20:41:40.087455+00:00",
       "status": "documentation-trace-with-explicit-gaps",
       "connections": [
         {
@@ -407,12 +455,20 @@
           "method": "visible_link",
           "matched_url": "https://developer.personio.de/changelog/deprecation-of-attendances-and-projects-v1-endpoints",
           "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        },
+        {
+          "from_source_id": "personio-events",
+          "to_source_id": "personio-handling-v2",
+          "method": "visible_link",
+          "matched_url": "https://developer.personio.de/v2.0/docs/handling-logic",
+          "note": "Link in captured representation; placement and usability untested."
         }
       ],
       "capture_hashes": {
         "personio-change": "5596977c421bcf9ac47ae44dcc008d0f4c81a9f1b4d8e9509487a6311ed4471e",
         "personio-events": "c33432581141c0e0dee28622dc0b8a085a3208e0ed13eb1bcab4f6aa2503e0a4",
         "personio-handling": "9b83059adcdb7f0bf53b7281b5e15cf180122b6e6698db643665da78d1d75368",
+        "personio-handling-v2": "9b83059adcdb7f0bf53b7281b5e15cf180122b6e6698db643665da78d1d75368",
         "personio-initial-sync": "280a7f6c25b4aa2be3c5e1af25f4679b0d1ce794d7e110c017378aa265e281f8",
         "personio-person-reference": "6c099224f502db88c0e83adf28b0c8a01dfcf96ade10aa2e9cbd86b68460bd74",
         "personio-prerequisites": "a6c56643b3d5b0ce9b2c7b92c6cae7b808a77cbe00ad92460528dd94351e4c9e",
@@ -460,9 +516,11 @@
         },
         {
           "kind": "verification",
-          "source_ids": [],
-          "inspection": "untraced",
-          "note": "A dedicated developer-account/test scenario is not traced."
+          "source_ids": [
+            "hubspot-test-account-walkthrough"
+          ],
+          "inspection": "partial",
+          "note": "Official walkthrough covers test-account setup, seeded data and single-record results, but is an AI/workflow example; a REST record/association test procedure remains untraced."
         },
         {
           "kind": "recovery",
@@ -475,19 +533,20 @@
         {
           "kind": "change",
           "source_ids": [
-            "hubspot-objects"
+            "hubspot-objects",
+            "hubspot-validation-change"
           ],
           "inspection": "partial",
-          "note": "The guide identifies version-dependent validation and links an announcement; the announcement itself is not inspected."
+          "note": "Linked validation notice names account conditions, affected version, input/permission actions and corrected retries. Full date-based version migration is not inspected."
         }
       ],
       "lesson": "Reference usability depends on semantic identifiers, relationship direction and distribution-aware access, not field descriptions alone.",
       "remaining_gaps": [
-        "The general entry does not directly link the selected concept page in the captured representation; the initial route is a research jump.",
-        "A previous-version association link appears self-referential and needs investigation.",
-        "No CRM requests, test-account setup or migration execution."
+        "No account setup, API calls or reader test.",
+        "REST record/association verification and complete date-based migration remain untraced.",
+        "Current association navigation behavior has not been interactively verified."
       ],
-      "recorded_at": "2026-10-20T20:21:14.124208+00:00",
+      "recorded_at": "2026-10-20T20:41:40.087455+00:00",
       "status": "documentation-trace-with-explicit-gaps",
       "connections": [
         {
@@ -531,6 +590,20 @@
           "method": "visible_link",
           "matched_url": "https://developers.hubspot.com/docs/api-reference/latest/crm/understanding-the-crm",
           "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        },
+        {
+          "from_source_id": "hubspot-objects",
+          "to_source_id": "hubspot-validation-change",
+          "method": "visible_link",
+          "matched_url": "https://developers.hubspot.com/changelog/crm-api-write-validation-enforcement",
+          "note": "Link in captured representation; placement and usability untested."
+        },
+        {
+          "from_source_id": "hubspot-auth",
+          "to_source_id": "hubspot-test-account-walkthrough",
+          "method": "research_jump",
+          "matched_url": null,
+          "note": "Research-selected destination from official search/index or broader source study; not a demonstrated direct reader route."
         }
       ],
       "capture_hashes": {
@@ -539,6 +612,8 @@
         "hubspot-crm-model": "0abc034d1c9d41729ce49bf9ad3fa005835dcf269a899a17383c567c32e2a98c",
         "hubspot-errors": "afb9fa1518d6cc85a799e70bc0dc5ba071b74e5efec2f3bad43c51871b1a902c",
         "hubspot-objects": "284a1f407ca0753e0ba78f505f0786a6e8ddc8face2fddbc0796570e26c856cf",
+        "hubspot-test-account-walkthrough": "d25462a463164ce46f166dba2fc48a9e6fc90f2bd1465a652ff8553f8e715f5e",
+        "hubspot-validation-change": "9e083cb9c6bdff146765a7f9a8720f7ec8a96c9241571992bcc42e28501845f5",
         "screen-hubspot": "d1267f5fa1b5c905bbc44a43846820eebd1ec400b2c83735835a9a4d75bf1ce1"
       }
     },
@@ -595,25 +670,28 @@
           "kind": "recovery",
           "source_ids": [
             "codat-troubleshooting",
-            "codat-freshness"
+            "codat-freshness",
+            "codat-data-troubleshooting"
           ],
           "inspection": "partial",
-          "note": "Data state and error causes are inspected; the catalog does not supply every corrective procedure."
+          "note": "Validation-log applicability and freshness prerequisites inspected; the additional page covers one warning, not all stale/failed dataset recovery."
         },
         {
           "kind": "change",
-          "source_ids": [],
-          "inspection": "untraced",
-          "note": "Release/migration guidance for this demonstration is not traced."
+          "source_ids": [
+            "codat-change-policy"
+          ],
+          "inspection": "partial",
+          "note": "Platform compatibility, notice and opt-in policy inspected; invoice-financing-specific change applicability/migration remains untraced."
         }
       ],
       "lesson": "Adjacent capabilities must keep their own prerequisites: the separately inspected reconciled-invoices feature requires banking plus accounting; this demo setup enables accounting and disables banking.",
       "remaining_gaps": [
-        "Codat AR reconciliation is a separate comparison, not a prerequisite silently added to the financing demo.",
-        "Dedicated operation schemas, full recovery and change guidance remain untraced.",
-        "No account setup, demo execution or lending decision occurred."
+        "No demo execution, production authorization setup or reader test.",
+        "Exact operation/event contracts and feature-specific migration remain partial.",
+        "Adjacent reconciled-invoice prerequisites cannot be assumed for this accounting-only demo."
       ],
-      "recorded_at": "2026-10-20T20:21:14.124208+00:00",
+      "recorded_at": "2026-10-20T20:41:40.087455+00:00",
       "status": "documentation-trace-with-explicit-gaps",
       "connections": [
         {
@@ -650,9 +728,25 @@
           "method": "research_jump",
           "matched_url": null,
           "note": "No matching link in the captured representation; route chosen through the broader research index or search. This does not prove the site lacks a path."
+        },
+        {
+          "from_source_id": "codat-freshness",
+          "to_source_id": "codat-change-policy",
+          "method": "visible_link",
+          "matched_url": "https://docs.codat.io/using-the-api/change-policy",
+          "note": "Link in captured representation; placement and usability untested."
+        },
+        {
+          "from_source_id": "codat-freshness",
+          "to_source_id": "codat-data-troubleshooting",
+          "method": "visible_link",
+          "matched_url": "https://docs.codat.io/using-the-api/get-data-troubleshooting",
+          "note": "Link in captured representation; placement and usability untested."
         }
       ],
       "capture_hashes": {
+        "codat-change-policy": "8ccfad564ac26fc4276060eb615fccabc0e90cbb7b2e3b6282ed18d2cfbd60bd",
+        "codat-data-troubleshooting": "cbcb65f35dd6ec6c3a2c3f2cdaa6b544019ada3caec669e9ee950a41b253f9de",
         "codat-freshness": "73e993d7813d7fd5e4ebc3f232c60daaf71045b81929bdb755a27eda36c96d12",
         "codat-invoice-decision": "7c0e755e063e9e5021f7a14e357e1b9f3f4700b807123ebaac1a03f629acc732",
         "codat-invoice-guide": "29087870f1a27935b010f58e09d981b46579b444a739f21edf37bdf59269a57f",

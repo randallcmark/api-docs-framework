@@ -98,6 +98,16 @@ Retrieval and inspection are separate. A captured HTTP response may be a shell. 
 | [hubspot-associations](https://developers.hubspot.com/docs/api-reference/latest/crm/associations/associate-records/guide) | HubSpot | api-guide | passages_inspected | captured at 2026-10-20T20:16:20.083068+00:00 |
 | [hubspot-auth](https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview) | HubSpot | authentication | passages_inspected | captured at 2026-10-20T20:16:21.213536+00:00 |
 | [stripe-cli-reference](https://docs.stripe.com/cli) | Stripe | cli | passages_inspected | captured at 2026-10-20T20:16:21.821762+00:00 |
+| [gusto-error-categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) | Gusto | error-recovery | passages_inspected | captured at 2026-10-20T20:39:17.665790+00:00 |
+| [wise-changelog](https://docs.wise.com/changelog) | Wise | change-index | passages_inspected | captured at 2026-10-20T20:39:18.856941+00:00 |
+| [personio-handling-v2](https://developer.personio.de/v2.0/docs/handling-logic) | Personio | versioned-recovery | passages_inspected | captured at 2026-10-20T20:39:20.419385+00:00 |
+| [hubspot-validation-change](https://developers.hubspot.com/changelog/crm-api-write-validation-enforcement) | HubSpot | change-guide | passages_inspected | captured at 2026-10-20T20:39:22.081528+00:00 |
+| [codat-change-policy](https://docs.codat.io/using-the-api/change-policy) | Codat | change-policy | passages_inspected | captured at 2026-10-20T20:39:22.907800+00:00 |
+| [codat-data-troubleshooting](https://docs.codat.io/using-the-api/get-data-troubleshooting) | Codat | recovery | passages_inspected | captured at 2026-10-20T20:39:24.374167+00:00 |
+| [wise-global-versioning](https://docs.wise.com/guides/developer/global-versioning) | Wise | migration | passages_inspected | captured at 2026-10-20T20:39:46.891099+00:00 |
+| [wise-oauth-setup](https://docs.wise.com/guides/developer/auth-and-security/oauth-2-setup) | Wise | authentication | passages_inspected | captured at 2026-10-20T20:39:47.763384+00:00 |
+| [hubspot-test-account-walkthrough](https://developers.hubspot.com/blog/how-to-safely-experiment-with-ai-in-hubspot-before-you-touch-real-data) | HubSpot | testing-walkthrough | passages_inspected | captured at 2026-10-20T20:39:48.658369+00:00 |
+| [wise-payout-failures](https://docs.wise.com/guides/product/send-money/tracking/payout-failures) | Wise | recovery | passages_inspected | captured at 2026-10-20T20:40:07.590334+00:00 |
 
 - **xero-account-mapping:** HTTP 200 but extracted text is only a JavaScript enablement message; no substantive page evidence.
 
@@ -106,3 +116,23 @@ Retrieval and inspection are separate. A captured HTTP response may be a shell. 
 - **screen-atlassian:** Only global navigation exposed; use the recorded REST-specific alternate for substantive observations.
 
 - **screen-sage-accounting:** Only title text exposed; this capture does not establish the accounting guidance.
+
+- **gusto-error-categories:** Not an exhaustive recovery playbook: no universal retry guarantee or company-approval simulation is established.
+
+- **wise-changelog:** Published change statements, not independently verified release behavior. The broader change index is not a completed migration.
+
+- **personio-handling-v2:** Equality is confined to these two captured bodies. In M02 the offboarding branch ends with an onboarding label; intended correction is not established. No webhook handler was run and these diagrams do not establish production deletion policy.
+
+- **hubspot-validation-change:** The published notice is inspected, not executed or independently deployment-verified. Full date-based migration guidance remains unread.
+
+- **codat-change-policy:** A platform policy does not establish whether a particular invoice-financing integration is affected or supply a feature-specific migration.
+
+- **codat-data-troubleshooting:** This sampled page covers one warning category. It does not supply universal stale-data recovery or safe-to-ignore rules for every lending workflow.
+
+- **wise-global-versioning:** Policy and examples are inspected only. A version selector cannot establish the separate event contract or complete an integration migration.
+
+- **wise-oauth-setup:** Provider-specific behavior; no token requests were made. mTLS/JOSE setup and each partner entitlement remain outside this trace.
+
+- **hubspot-test-account-walkthrough:** The article is an AI/workflow example, not a REST record-and-association test plan. Only setup and test-boundary passages support this observation; broad safety claims elsewhere are not adopted. No account was created.
+
+- **wise-payout-failures:** Simulation was not run. A provider-retry code is not authorization for caller retries; missing failure events do not establish success. Full financial reconciliation is still untraced.

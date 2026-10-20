@@ -61,7 +61,8 @@
         "E33",
         "E40",
         "E45",
-        "E54"
+        "E54",
+        "E60"
       ],
       "limits": "The sampled pages demonstrate parts of the model, not a complete universal structure. Data ownership questions also derive from this project's requirements.",
       "status": "observed",
@@ -100,7 +101,8 @@
         "E43",
         "E44",
         "E46",
-        "E54"
+        "E54",
+        "E67"
       ],
       "limits": "The observed workflows differ. A synchronous one-call task needs only a concise expected result, not a manufactured state diagram.",
       "status": "corroborated",
@@ -134,7 +136,10 @@
         "E28",
         "E32",
         "E41",
-        "E56"
+        "E56",
+        "E59",
+        "E61",
+        "E65"
       ],
       "limits": "Authentication patterns are product-specific. These observations do not establish another platform's permission model.",
       "status": "corroborated",
@@ -163,7 +168,9 @@
         "E12",
         "E24",
         "E26",
-        "E43"
+        "E43",
+        "E66",
+        "E67"
       ],
       "limits": "A checklist, a sandbox caveat and an integration test guide support different parts of the rule. Do not copy payment-specific cases into HR tasks.",
       "status": "observed",
@@ -197,7 +204,13 @@
         "E39",
         "E46",
         "E47",
-        "E55"
+        "E55",
+        "E58",
+        "E60",
+        "E61",
+        "E63",
+        "E65",
+        "E67"
       ],
       "limits": "Never transfer exact retry delays, limits, signature algorithms or idempotency lifetimes from a reference provider.",
       "status": "observed",
@@ -225,7 +238,12 @@
         "E35",
         "E50",
         "E53",
-        "E57"
+        "E57",
+        "E58",
+        "E59",
+        "E61",
+        "E62",
+        "E64"
       ],
       "limits": "Content functions can share a page or changelog. Provider naming does not determine structure. The impact-to-action rule is corroborated; exact release governance and review policy remain product-specific.",
       "status": "corroborated",
@@ -258,7 +276,7 @@
         "E51",
         "E52"
       ],
-      "limits": "The initial sample covers MCP content. SDK, CLI and skill-specific rules still need direct examples and testing.",
+      "limits": "CLI and skill examples are inspected alongside MCP; complete setup, revocation and troubleshooting still need execution and task-specific comparison. Static instructions do not establish data access or installed tools.",
       "status": "observed",
       "confidence_note": "Provisional, uncalibrated and not task-tested. Supporting practices cover different portions of the proposed rule."
     },
@@ -311,7 +329,8 @@
         "Which system owns each field and change?",
         "What establishes a complete initial sync, and what triggers later updates?",
         "Which datasets must be coherent for this outcome, and what lag is acceptable?",
-        "How are deletions, terminations, rehires and lost connections handled?"
+        "How are deletions, terminations, rehires and lost connections handled?",
+        "Do diagrams and machine-readable or versioned pages preserve the same decision-critical branches?"
       ],
       "evaluation": "Trace initial data and one relevant update or deletion through to the consumer. Check whether the reader can distinguish no data, inaccessible data, unsupported capability, in-progress sync and failed sync.",
       "rubric_ids": [
@@ -328,9 +347,11 @@
         "E34",
         "E45",
         "E46",
-        "E47"
+        "E47",
+        "E60",
+        "E63"
       ],
-      "limits": "Merge describes cadence, Personio describes employment synchronization, and Codat explains dataset coherence. They cover different parts of the rule; domain owners must supply lag and ownership requirements.",
+      "limits": "Merge describes cadence, Personio describes employment synchronization, and Codat explains dataset coherence. They cover different parts of the rule; domain owners must supply lag and ownership requirements. Personio diagram inspection establishes that branching is absent from surrounding prose, not that every renderer loses the images or that all versioned routes agree.",
       "status": "observed",
       "confidence_note": "Provisional and uncalibrated; observed examples support portions of the conditional rule, not measured reader outcomes."
     },
@@ -387,7 +408,8 @@
         "E27",
         "E42",
         "E43",
-        "E44"
+        "E44",
+        "E66"
       ],
       "limits": "Scope statements in public examples do not prove that readers notice or understand the boundaries; reader-task testing is still required.",
       "status": "observed",

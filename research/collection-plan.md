@@ -22,3 +22,7 @@ For each selected journey, identify the reader and integrated outcome, then insp
 ## Outputs
 
 Produce a complete screening ledger, a reasoned deeper-study shortlist, connected journey records, focused comparisons for weakly sampled pattern families, and updated evidence and patterns. Preserve the initial sample as a historical milestone. Submit changes in a research PR with an evidence-based summary and remaining limitations.
+
+## Focused follow-up
+
+After the first comparative pass, inspect at most 12 additional text pages and three diagrams to resolve testing, recovery, migration and representation gaps in the five recorded journeys. Reuse the recorded host access checks; inspect asset-host access instructions before collecting the linked diagrams. Select destinations from captured links, official indexes or official search results and retain the discovery route. Keep unclosed gaps explicit. This pass also creates fictional calibration cases; it does not perform independent evaluation or reader testing.

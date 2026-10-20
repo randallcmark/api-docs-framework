@@ -944,6 +944,116 @@
       "research_question": "Actual command reference and setup path beyond the entry page",
       "review_status": "passages_inspected",
       "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "gusto-error-categories",
+      "provider_id": "gusto",
+      "page_type": "error-recovery",
+      "canonical_url": "https://docs.gusto.com/embedded-payroll/docs/error-categories",
+      "fetch_url": "https://docs.gusto.com/embedded-payroll/docs/error-categories.md",
+      "research_question": "Category-specific recovery rather than error shapes alone",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:41:40.087455+00:00",
+      "review_note": "Not an exhaustive recovery playbook: no universal retry guarantee or company-approval simulation is established."
+    },
+    {
+      "id": "wise-changelog",
+      "provider_id": "wise",
+      "page_type": "change-index",
+      "canonical_url": "https://docs.wise.com/changelog",
+      "fetch_url": "https://docs.wise.com/changelog",
+      "research_question": "Find global versioning and integration-model changes",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:41:40.087455+00:00",
+      "review_note": "Published change statements, not independently verified release behavior. The broader change index is not a completed migration."
+    },
+    {
+      "id": "personio-handling-v2",
+      "provider_id": "personio",
+      "page_type": "versioned-recovery",
+      "canonical_url": "https://developer.personio.de/v2.0/docs/handling-logic",
+      "fetch_url": "https://developer.personio.de/v2.0/docs/handling-logic.md",
+      "research_question": "Compare the linked versioned guide with its unversioned representation",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:41:40.087455+00:00",
+      "review_note": "Equality is confined to these two captured bodies. In M02 the offboarding branch ends with an onboarding label; intended correction is not established. No webhook handler was run and these diagrams do not establish production deletion policy."
+    },
+    {
+      "id": "hubspot-validation-change",
+      "provider_id": "hubspot",
+      "page_type": "change-guide",
+      "canonical_url": "https://developers.hubspot.com/changelog/crm-api-write-validation-enforcement",
+      "fetch_url": "https://developers.hubspot.com/changelog/crm-api-write-validation-enforcement",
+      "research_question": "Connect workflow validation notice to applicability and migration action",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:41:40.087455+00:00",
+      "review_note": "The published notice is inspected, not executed or independently deployment-verified. Full date-based migration guidance remains unread."
+    },
+    {
+      "id": "codat-change-policy",
+      "provider_id": "codat",
+      "page_type": "change-policy",
+      "canonical_url": "https://docs.codat.io/using-the-api/change-policy",
+      "fetch_url": "https://docs.codat.io/using-the-api/change-policy",
+      "research_question": "Distinguish compatibility policy from feature-specific migration",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:41:40.087455+00:00",
+      "review_note": "A platform policy does not establish whether a particular invoice-financing integration is affected or supply a feature-specific migration."
+    },
+    {
+      "id": "codat-data-troubleshooting",
+      "provider_id": "codat",
+      "page_type": "recovery",
+      "canonical_url": "https://docs.codat.io/using-the-api/get-data-troubleshooting",
+      "fetch_url": "https://docs.codat.io/using-the-api/get-data-troubleshooting",
+      "research_question": "Actionable diagnosis of stale, incomplete or failed data",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:41:40.087455+00:00",
+      "review_note": "This sampled page covers one warning category. It does not supply universal stale-data recovery or safe-to-ignore rules for every lending workflow."
+    },
+    {
+      "id": "wise-global-versioning",
+      "provider_id": "wise",
+      "page_type": "migration",
+      "canonical_url": "https://docs.wise.com/guides/developer/global-versioning",
+      "fetch_url": "https://docs.wise.com/guides/developer/global-versioning",
+      "research_question": "Version boundary, migration steps and compatibility scope",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:41:40.087455+00:00",
+      "review_note": "Policy and examples are inspected only. A version selector cannot establish the separate event contract or complete an integration migration."
+    },
+    {
+      "id": "wise-oauth-setup",
+      "provider_id": "wise",
+      "page_type": "authentication",
+      "canonical_url": "https://docs.wise.com/guides/developer/auth-and-security/oauth-2-setup",
+      "fetch_url": "https://docs.wise.com/guides/developer/auth-and-security/oauth-2-setup",
+      "research_question": "Integration-model-specific token guidance",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:41:40.087455+00:00",
+      "review_note": "Provider-specific behavior; no token requests were made. mTLS/JOSE setup and each partner entitlement remain outside this trace."
+    },
+    {
+      "id": "hubspot-test-account-walkthrough",
+      "provider_id": "hubspot",
+      "page_type": "testing-walkthrough",
+      "canonical_url": "https://developers.hubspot.com/blog/how-to-safely-experiment-with-ai-in-hubspot-before-you-touch-real-data",
+      "fetch_url": "https://developers.hubspot.com/blog/how-to-safely-experiment-with-ai-in-hubspot-before-you-touch-real-data",
+      "research_question": "Test account setup and limits; check applicability beyond AI example",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:41:40.087455+00:00",
+      "review_note": "The article is an AI/workflow example, not a REST record-and-association test plan. Only setup and test-boundary passages support this observation; broad safety claims elsewhere are not adopted. No account was created."
+    },
+    {
+      "id": "wise-payout-failures",
+      "provider_id": "wise",
+      "page_type": "recovery",
+      "canonical_url": "https://docs.wise.com/guides/product/send-money/tracking/payout-failures",
+      "fetch_url": "https://docs.wise.com/guides/product/send-money/tracking/payout-failures",
+      "research_question": "Connect failure signal to transient, permanent and escalated recovery actions",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:41:40.087455+00:00",
+      "review_note": "Simulation was not run. A provider-retry code is not authorization for caller retries; missing failure events do not establish success. Full financial reconciliation is still untraced."
     }
   ]
 }

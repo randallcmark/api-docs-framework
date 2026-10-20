@@ -737,6 +737,142 @@
       "pattern_ids": [
         "P07"
       ]
+    },
+    {
+      "id": "E58",
+      "source_id": "gusto-error-categories",
+      "capture_raw_sha256": "052c1b480624c8a0f0c25e64edb01ac8374884170999a88db6fa4cd20ba3f3a7",
+      "reviewed_at": "2026-10-20T20:41:40.087455+00:00",
+      "locator": "migration\\_warning",
+      "observation": "Category examples distinguish invalid resource versions, missing scopes/permissions, transient service failure and warnings accompanying successful migration. Some messages give corrective actions; others only identify a symptom.",
+      "limitation": "Not an exhaustive recovery playbook: no universal retry guarantee or company-approval simulation is established.",
+      "pattern_ids": [
+        "P06",
+        "P07"
+      ]
+    },
+    {
+      "id": "E59",
+      "source_id": "wise-changelog",
+      "capture_raw_sha256": "813c7957e41abf8f5667b5e6fdea6369252b602ff4605546409fc4059d68f428",
+      "reviewed_at": "2026-10-20T20:41:40.087455+00:00",
+      "locator": "14 Aug 2026",
+      "observation": "The change index ties an embedded-model token guidance change and global-version adoption to named guides; version-specific changes include replacement operations.",
+      "limitation": "Published change statements, not independently verified release behavior. The broader change index is not a completed migration.",
+      "pattern_ids": [
+        "P04",
+        "P07"
+      ]
+    },
+    {
+      "id": "E60",
+      "source_id": "personio-handling-v2",
+      "capture_raw_sha256": "9b83059adcdb7f0bf53b7281b5e15cf180122b6e6698db643665da78d1d75368",
+      "reviewed_at": "2026-10-20T20:41:40.087455+00:00",
+      "locator": "Employee Update Logic:",
+      "observation": "The linked versioned Markdown body is byte-identical to the previously captured unversioned body at this retrieval. Its three diagrams carry actual branching and partner lifecycle actions that the surrounding text does not enumerate. Visual inspection confirms distinct update, onboarding/offboarding and creation/deletion paths.",
+      "limitation": "Equality is confined to these two captured bodies. In M02 the offboarding branch ends with an onboarding label; intended correction is not established. No webhook handler was run and these diagrams do not establish production deletion policy.",
+      "pattern_ids": [
+        "P02",
+        "P06",
+        "P10"
+      ],
+      "media_ids": [
+        "M01",
+        "M02",
+        "M03"
+      ]
+    },
+    {
+      "id": "E61",
+      "source_id": "hubspot-validation-change",
+      "capture_raw_sha256": "9e083cb9c6bdff146765a7f9a8720f7ec8a96c9241571992bcc42e28501845f5",
+      "reviewed_at": "2026-10-20T20:41:40.087455+00:00",
+      "locator": "How to prepare",
+      "observation": "A linked change explains affected API version and configured-account conditions, request-field and permission preparation, corrected-input retries and new response warnings. User-level association permissions and portal-level tokens have different applicability.",
+      "limitation": "The published notice is inspected, not executed or independently deployment-verified. Full date-based migration guidance remains unread.",
+      "pattern_ids": [
+        "P04",
+        "P06",
+        "P07"
+      ]
+    },
+    {
+      "id": "E62",
+      "source_id": "codat-change-policy",
+      "capture_raw_sha256": "8ccfad564ac26fc4276060eb615fccabc0e90cbb7b2e3b6282ed18d2cfbd60bd",
+      "reviewed_at": "2026-10-20T20:41:40.087455+00:00",
+      "locator": "Changes by third-parties",
+      "observation": "The policy separates additive and breaking changes, describes notification and early opt-in with roles, and qualifies what can be promised for upstream provider changes.",
+      "limitation": "A platform policy does not establish whether a particular invoice-financing integration is affected or supply a feature-specific migration.",
+      "pattern_ids": [
+        "P07"
+      ]
+    },
+    {
+      "id": "E63",
+      "source_id": "codat-data-troubleshooting",
+      "capture_raw_sha256": "cbcb65f35dd6ec6c3a2c3f2cdaa6b544019ada3caec669e9ee950a41b253f9de",
+      "reviewed_at": "2026-10-20T20:41:40.087455+00:00",
+      "locator": "warning.validation",
+      "observation": "Read troubleshooting links a validation warning to logs and a use-case applicability decision; it explicitly says warning coverage evolves rather than promising a complete fixed catalog.",
+      "limitation": "This sampled page covers one warning category. It does not supply universal stale-data recovery or safe-to-ignore rules for every lending workflow.",
+      "pattern_ids": [
+        "P06",
+        "P10"
+      ]
+    },
+    {
+      "id": "E64",
+      "source_id": "wise-global-versioning",
+      "capture_raw_sha256": "a329214331f03bc9e679487773c740caaaea75710e4d8f9cdbd71f6b424ddb3e",
+      "reviewed_at": "2026-10-20T20:41:40.087455+00:00",
+      "locator": "Versioning scope",
+      "observation": "The versioning guide defines URL-selected global versions, preview/active/legacy distinctions, additive change expectations and explicit exclusions for webhooks and sensitive-card-details endpoints.",
+      "limitation": "Policy and examples are inspected only. A version selector cannot establish the separate event contract or complete an integration migration.",
+      "pattern_ids": [
+        "P07"
+      ]
+    },
+    {
+      "id": "E65",
+      "source_id": "wise-oauth-setup",
+      "capture_raw_sha256": "d11794170a0d5ef695bfc5c517a32167b5162dc2bf2843e47bae0ea76eb650ac",
+      "reviewed_at": "2026-10-20T20:41:40.087455+00:00",
+      "locator": "Partners on the embedded model",
+      "observation": "Authentication guidance distinguishes embedded-model client-credential tokens from other partner profile-level token usage, then connects invalidation causes to recovery and support diagnostics. Concurrent refreshes can invalidate earlier user access tokens.",
+      "limitation": "Provider-specific behavior; no token requests were made. mTLS/JOSE setup and each partner entitlement remain outside this trace.",
+      "pattern_ids": [
+        "P04",
+        "P06"
+      ]
+    },
+    {
+      "id": "E66",
+      "source_id": "hubspot-test-account-walkthrough",
+      "capture_raw_sha256": "d25462a463164ce46f166dba2fc48a9e6fc90f2bd1465a652ff8553f8e715f5e",
+      "reviewed_at": "2026-10-20T20:41:40.087455+00:00",
+      "locator": "Step 2: Fill it with fake data",
+      "observation": "The official walkthrough separates developer test accounts from production-shaped standard sandboxes, gives setup and small fake datasets, then checks an observable single-record result before scaling.",
+      "limitation": "The article is an AI/workflow example, not a REST record-and-association test plan. Only setup and test-boundary passages support this observation; broad safety claims elsewhere are not adopted. No account was created.",
+      "pattern_ids": [
+        "P05",
+        "P12"
+      ]
+    },
+    {
+      "id": "E67",
+      "source_id": "wise-payout-failures",
+      "capture_raw_sha256": "9c68aa442488e38b7be000adcb683db041104db5b65e5e5ebd7a7499c81a6122",
+      "reviewed_at": "2026-10-20T20:41:40.087455+00:00",
+      "locator": "Notes about payout failures",
+      "observation": "Payout-failure guidance distinguishes state notifications from failure details, notes failures without state changes and multiple failure events, identifies when the provider retries, and connects sandbox simulation to a received webhook plus support correlation fields.",
+      "limitation": "Simulation was not run. A provider-retry code is not authorization for caller retries; missing failure events do not establish success. Full financial reconciliation is still untraced.",
+      "pattern_ids": [
+        "P03",
+        "P05",
+        "P06"
+      ]
     }
   ]
 }

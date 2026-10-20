@@ -15,7 +15,7 @@ These are inspected documentation routes with explicit gaps, not completed integ
 | workflow | [gusto-onboarding](https://docs.gusto.com/embedded-payroll/docs/onboard-a-company) | **inspected** — The guide supplies order, parallel work and completion conditions. |
 | reference and events | [gusto-status-reference](https://docs.gusto.com/embedded-payroll/reference/get-v1-company-onboarding-status), [gusto-company-events](https://docs.gusto.com/embedded-payroll/docs/company-events) | **inspected** — Readiness fields and approval/event meanings are inspected together with the guide. |
 | verification | [gusto-quickstart](https://docs.gusto.com/embedded-payroll/docs/quickstart) | **partial** — Environment and first-call setup is inspected; a full approval simulation procedure is not traced. |
-| recovery | [gusto-quickstart](https://docs.gusto.com/embedded-payroll/docs/quickstart), [gusto-errors](https://docs.gusto.com/embedded-payroll/docs/errors) | **partial** — Symptoms and error shapes are inspected; linked category-specific recovery remains untraced. |
+| recovery | [gusto-errors](https://docs.gusto.com/embedded-payroll/docs/errors), [gusto-error-categories](https://docs.gusto.com/embedded-payroll/docs/error-categories) | **partial** — Category-specific messages and selected actions are inspected; complete onboarding recovery, retry safety and blocker resolution remain partial. |
 | change | [gusto-upgrade](https://docs.gusto.com/embedded-payroll/docs/version-upgrade-guide), [gusto-changelog](https://docs.gusto.com/embedded-payroll/changelog/v2025-11-15) | **inspected** — Versioned impact and required migration actions are inspected, without independent release verification. |
 
 **Research jumps:** `gusto-onboarding` → `gusto-company-events`.
@@ -25,7 +25,7 @@ These are inspected documentation routes with explicit gaps, not completed integ
 **Remaining limits:**
 
 - No API calls, approval simulation or reader tests.
-- Full prerequisite tax/bank/form references and error-category recovery were not all followed.
+- Full prerequisite tax/bank/form references, blocker resolution and ambiguous-write recovery were not all followed.
 
 ## J02 Enterprise and embedded cross-border payouts
 
@@ -36,12 +36,12 @@ These are inspected documentation routes with explicit gaps, not completed integ
 | Stage | Inspected sources | Coverage and limit |
 | --- | --- | --- |
 | scope and concepts | [screen-wise](https://docs.wise.com/), [wise-send](https://docs.wise.com/guides/product/send-money) | **inspected** — Resources, partner models, corridors and changing requirements are explained. |
-| access | [wise-enterprise](https://docs.wise.com/guides/product/send-money/use-cases/enterprise-payouts), [wise-embedded](https://docs.wise.com/guides/product/send-money/use-cases/embedded-payouts) | **partial** — Ownership and profile contexts are inspected; complete OAuth/certificate setup is not. |
+| access | [wise-enterprise](https://docs.wise.com/guides/product/send-money/use-cases/enterprise-payouts), [wise-embedded](https://docs.wise.com/guides/product/send-money/use-cases/embedded-payouts), [wise-oauth-setup](https://docs.wise.com/guides/developer/auth-and-security/oauth-2-setup) | **partial** — Integration-model token choice, invalidation, rotation and support diagnostics are inspected; certificates and complete onboarding are not. |
 | workflow | [wise-enterprise](https://docs.wise.com/guides/product/send-money/use-cases/enterprise-payouts), [wise-embedded](https://docs.wise.com/guides/product/send-money/use-cases/embedded-payouts), [wise-send](https://docs.wise.com/guides/product/send-money) | **inspected** — Recipient-first and quote-first steps connect recipient, quote, transfer and funding. |
 | reference and events | [wise-transfer-reference](https://docs.wise.com/api-reference/standard-transfer/transfercreate), [wise-tracking](https://docs.wise.com/guides/product/send-money/tracking/track-transfers) | **inspected** — A concrete transfer operation, event subscriptions, correlation and failure handling are inspected. |
-| verification | [wise-statuses](https://docs.wise.com/guides/product/send-money/tracking/transfer-statuses), [wise-simulation](https://docs.wise.com/api-reference/simulation/simulationtransferstatechange) | **inspected** — Valid simulated transitions and prerequisites are inspected; no simulation was run. |
-| recovery | [wise-tracking](https://docs.wise.com/guides/product/send-money/tracking/track-transfers), [wise-statuses](https://docs.wise.com/guides/product/send-money/tracking/transfer-statuses) | **partial** — Ordering, payout failure/refund and exceptional state guidance is inspected; linked reconciliation procedures are not all followed. |
-| change | Not traced | **untraced** — A version picker is not a migration path; change guidance is not traced for this workflow. |
+| verification | [wise-statuses](https://docs.wise.com/guides/product/send-money/tracking/transfer-statuses), [wise-simulation](https://docs.wise.com/api-reference/simulation/simulationtransferstatechange), [wise-payout-failures](https://docs.wise.com/guides/product/send-money/tracking/payout-failures) | **inspected** — State and payout-failure simulation steps plus expected webhook are inspected, not executed. |
+| recovery | [wise-tracking](https://docs.wise.com/guides/product/send-money/tracking/track-transfers), [wise-statuses](https://docs.wise.com/guides/product/send-money/tracking/transfer-statuses), [wise-payout-failures](https://docs.wise.com/guides/product/send-money/tracking/payout-failures), [wise-oauth-setup](https://docs.wise.com/guides/developer/auth-and-security/oauth-2-setup) | **partial** — Failure-event semantics, provider-retry code, fallback and support diagnostics inspected; full reconciliation and all caller recovery paths remain untraced. |
+| change | [wise-changelog](https://docs.wise.com/changelog), [wise-global-versioning](https://docs.wise.com/guides/developer/global-versioning) | **partial** — Named replacement and token-model changes connect to policy; global versioning excludes webhooks. Full integration migration is not traced. |
 
 **Research jumps:** None among the recorded connections.
 
@@ -49,8 +49,8 @@ These are inspected documentation routes with explicit gaps, not completed integ
 
 **Remaining limits:**
 
-- Recipient/quote/funding endpoint details, complete access setup and change guidance remain untraced.
-- No bank, transfer, webhook or simulation action was performed.
+- No live/sandbox API calls, token flow or reader tests.
+- Full certificate setup, reconciliation and selected-version/event migration are not traced.
 
 ## J03 Shift planning synchronization with HR
 
@@ -65,7 +65,7 @@ These are inspected documentation routes with explicit gaps, not completed integ
 | workflow | [personio-initial-sync](https://developer.personio.de/docs/initial-core-data-sync), [personio-events](https://developer.personio.de/docs/event-driven-data-from-personio) | **inspected** — Initial population connects to event-driven updates and employment variants. |
 | reference and events | [personio-person-reference](https://developer.personio.de/v2.0/reference/get_v2-persons), [personio-events](https://developer.personio.de/docs/event-driven-data-from-personio) | **partial** — One versioned persons reference and linked event semantics are inspected; not all versioned event contracts are followed. |
 | verification | Not traced | **untraced** — A reproducible scenario/sandbox verification path is not inspected. |
-| recovery | [personio-events](https://developer.personio.de/docs/event-driven-data-from-personio), [personio-handling](https://developer.personio.de/docs/handling-logic) | **partial** — Lifecycle scenarios are named; detailed image flowcharts and delivery-recovery logic remain uninspected. |
+| recovery | [personio-events](https://developer.personio.de/docs/event-driven-data-from-personio), [personio-handling](https://developer.personio.de/docs/handling-logic), [personio-handling-v2](https://developer.personio.de/v2.0/docs/handling-logic) | **partial** — Three linked diagrams visually inspected (M01–M03); captured versioned and unversioned Markdown bodies are identical. Branch details and an offboarding end-label ambiguity remain; no complete handler/recovery validation. |
 | change | [personio-change](https://developer.personio.de/changelog/deprecation-of-attendances-and-projects-v1-endpoints) | **partial** — Attendance/project migration is inspected as an adjacent shift-planning concern; not a complete migration of this whole integration. |
 
 **Research jumps:** `personio-events` → `personio-handling`.
@@ -74,9 +74,9 @@ These are inspected documentation routes with explicit gaps, not completed integ
 
 **Remaining limits:**
 
-- Detailed diagrams were not visually inspected.
-- Some guide links target versioned routes; their equivalence to unversioned pages is not assumed.
-- No employee data, synchronization or authentication was exercised.
+- No event handler, sandbox workflow or reader test.
+- Authentication destination and all exact event contracts remain partially traced.
+- Diagram end-label ambiguity is recorded, not corrected by inference; equality of two handling-guide captures does not establish all versioned-route equivalence.
 
 ## J04 Create CRM records and connect relationships
 
@@ -90,19 +90,19 @@ These are inspected documentation routes with explicit gaps, not completed integ
 | access | [hubspot-auth](https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview) | **inspected** — Single-account static access and multi-account OAuth are distinguished. |
 | workflow | [hubspot-objects](https://developers.hubspot.com/docs/api-reference/latest/crm/using-object-apis) | **inspected** — Creation and retrieval connect required object properties and associations. |
 | reference and events | [hubspot-associations](https://developers.hubspot.com/docs/api-reference/latest/crm/associations/associate-records/guide) | **inspected** — Relationship direction, category/type discovery and request examples are inspected; events are outside the selected task. |
-| verification | Not traced | **untraced** — A dedicated developer-account/test scenario is not traced. |
+| verification | [hubspot-test-account-walkthrough](https://developers.hubspot.com/blog/how-to-safely-experiment-with-ai-in-hubspot-before-you-touch-real-data) | **partial** — Official walkthrough covers test-account setup, seeded data and single-record results, but is an AI/workflow example; a REST record/association test procedure remains untraced. |
 | recovery | [hubspot-errors](https://developers.hubspot.com/docs/api-reference/error-handling) | **inspected** — Access errors, transient errors and batch partial-success guidance are inspected, without execution. |
-| change | [hubspot-objects](https://developers.hubspot.com/docs/api-reference/latest/crm/using-object-apis) | **partial** — The guide identifies version-dependent validation and links an announcement; the announcement itself is not inspected. |
+| change | [hubspot-objects](https://developers.hubspot.com/docs/api-reference/latest/crm/using-object-apis), [hubspot-validation-change](https://developers.hubspot.com/changelog/crm-api-write-validation-enforcement) | **partial** — Linked validation notice names account conditions, affected version, input/permission actions and corrected retries. Full date-based version migration is not inspected. |
 
-**Research jumps:** `screen-hubspot` → `hubspot-crm-model`.
+**Research jumps:** `screen-hubspot` → `hubspot-crm-model`; `hubspot-auth` → `hubspot-test-account-walkthrough`.
 
 **Lesson:** Reference usability depends on semantic identifiers, relationship direction and distribution-aware access, not field descriptions alone.
 
 **Remaining limits:**
 
-- The general entry does not directly link the selected concept page in the captured representation; the initial route is a research jump.
-- A previous-version association link appears self-referential and needs investigation.
-- No CRM requests, test-account setup or migration execution.
+- No account setup, API calls or reader test.
+- REST record/association verification and complete date-based migration remain untraced.
+- Current association navigation behavior has not been interactively verified.
 
 ## J05 A bounded invoice-financing demonstration
 
@@ -117,8 +117,8 @@ These are inspected documentation routes with explicit gaps, not completed integ
 | workflow | [codat-invoice-setup](https://docs.codat.io/lending/guides/invoice-finance/setting-up/), [codat-invoice-decision](https://docs.codat.io/lending/guides/invoice-finance/process-invoice/) | **inspected** — The walkthrough connects company creation, accounting data and the demonstration decision. |
 | reference and events | [codat-invoice-decision](https://docs.codat.io/lending/guides/invoice-finance/process-invoice/) | **partial** — The guide distinguishes demo endpoints from platform operations; dedicated endpoint schemas were not inspected. |
 | verification | [codat-invoice-setup](https://docs.codat.io/lending/guides/invoice-finance/setting-up/), [codat-invoice-decision](https://docs.codat.io/lending/guides/invoice-finance/process-invoice/) | **inspected** — The documented sandbox walkthrough and expected result are inspected; the demo was not run. |
-| recovery | [codat-troubleshooting](https://docs.codat.io/lending/troubleshooting/), [codat-freshness](https://docs.codat.io/using-the-api/queueing-data-syncs/) | **partial** — Data state and error causes are inspected; the catalog does not supply every corrective procedure. |
-| change | Not traced | **untraced** — Release/migration guidance for this demonstration is not traced. |
+| recovery | [codat-troubleshooting](https://docs.codat.io/lending/troubleshooting/), [codat-freshness](https://docs.codat.io/using-the-api/queueing-data-syncs/), [codat-data-troubleshooting](https://docs.codat.io/using-the-api/get-data-troubleshooting) | **partial** — Validation-log applicability and freshness prerequisites inspected; the additional page covers one warning, not all stale/failed dataset recovery. |
+| change | [codat-change-policy](https://docs.codat.io/using-the-api/change-policy) | **partial** — Platform compatibility, notice and opt-in policy inspected; invoice-financing-specific change applicability/migration remains untraced. |
 
 **Research jumps:** `screen-codat` → `codat-invoice-guide`; `codat-invoice-decision` → `codat-freshness`.
 
@@ -126,6 +126,6 @@ These are inspected documentation routes with explicit gaps, not completed integ
 
 **Remaining limits:**
 
-- Codat AR reconciliation is a separate comparison, not a prerequisite silently added to the financing demo.
-- Dedicated operation schemas, full recovery and change guidance remain untraced.
-- No account setup, demo execution or lending decision occurred.
+- No demo execution, production authorization setup or reader test.
+- Exact operation/event contracts and feature-specific migration remain partial.
+- Adjacent reconciled-invoice prerequisites cannot be assumed for this accounting-only demo.
