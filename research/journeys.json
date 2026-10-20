@@ -1,0 +1,665 @@
+{
+  "schema_version": 1,
+  "journeys": [
+    {
+      "id": "J01",
+      "name": "Company onboarding through approval",
+      "provider_id": "gusto",
+      "reader": "Partner product planner and embedded-payroll engineer",
+      "outcome": "Plan company onboarding and connect its steps, access context and approval signals.",
+      "stages": [
+        {
+          "kind": "scope_and_concepts",
+          "source_ids": [
+            "gusto-onboarding"
+          ],
+          "inspection": "inspected",
+          "note": "Legal/company setup, dependencies and approval stages are connected in the guide."
+        },
+        {
+          "kind": "access",
+          "source_ids": [
+            "gusto-quickstart",
+            "gusto-auth"
+          ],
+          "inspection": "inspected",
+          "note": "Application and company token contexts are explicit."
+        },
+        {
+          "kind": "workflow",
+          "source_ids": [
+            "gusto-onboarding"
+          ],
+          "inspection": "inspected",
+          "note": "The guide supplies order, parallel work and completion conditions."
+        },
+        {
+          "kind": "reference_and_events",
+          "source_ids": [
+            "gusto-status-reference",
+            "gusto-company-events"
+          ],
+          "inspection": "inspected",
+          "note": "Readiness fields and approval/event meanings are inspected together with the guide."
+        },
+        {
+          "kind": "verification",
+          "source_ids": [
+            "gusto-quickstart"
+          ],
+          "inspection": "partial",
+          "note": "Environment and first-call setup is inspected; a full approval simulation procedure is not traced."
+        },
+        {
+          "kind": "recovery",
+          "source_ids": [
+            "gusto-quickstart",
+            "gusto-errors"
+          ],
+          "inspection": "partial",
+          "note": "Symptoms and error shapes are inspected; linked category-specific recovery remains untraced."
+        },
+        {
+          "kind": "change",
+          "source_ids": [
+            "gusto-upgrade",
+            "gusto-changelog"
+          ],
+          "inspection": "inspected",
+          "note": "Versioned impact and required migration actions are inspected, without independent release verification."
+        }
+      ],
+      "lesson": "A status reference needs its workflow context; accepted setup, completed steps and business approval must remain distinct.",
+      "remaining_gaps": [
+        "No API calls, approval simulation or reader tests.",
+        "Full prerequisite tax/bank/form references and error-category recovery were not all followed."
+      ],
+      "recorded_at": "2026-10-20T20:21:14.124208+00:00",
+      "status": "documentation-trace-with-explicit-gaps",
+      "connections": [
+        {
+          "from_source_id": "screen-gusto",
+          "to_source_id": "gusto-quickstart",
+          "method": "visible_link",
+          "matched_url": "https://docs.gusto.com/embedded-payroll/docs/quickstart",
+          "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        },
+        {
+          "from_source_id": "screen-gusto",
+          "to_source_id": "gusto-auth",
+          "method": "visible_link",
+          "matched_url": "https://docs.gusto.com/embedded-payroll/docs/authentication-and-authorization",
+          "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        },
+        {
+          "from_source_id": "screen-gusto",
+          "to_source_id": "gusto-onboarding",
+          "method": "visible_link",
+          "matched_url": "https://docs.gusto.com/embedded-payroll/docs/onboard-a-company",
+          "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        },
+        {
+          "from_source_id": "gusto-onboarding",
+          "to_source_id": "gusto-status-reference",
+          "method": "visible_link",
+          "matched_url": "https://docs.gusto.com/embedded-payroll/reference/get-v1-company-onboarding-status",
+          "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        },
+        {
+          "from_source_id": "gusto-onboarding",
+          "to_source_id": "gusto-company-events",
+          "method": "research_jump",
+          "matched_url": null,
+          "note": "No matching link in the captured representation; route chosen through the broader research index or search. This does not prove the site lacks a path."
+        },
+        {
+          "from_source_id": "screen-gusto",
+          "to_source_id": "gusto-company-events",
+          "method": "visible_link",
+          "matched_url": "https://docs.gusto.com/embedded-payroll/docs/company-events",
+          "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        },
+        {
+          "from_source_id": "screen-gusto",
+          "to_source_id": "gusto-errors",
+          "method": "visible_link",
+          "matched_url": "https://docs.gusto.com/embedded-payroll/docs/errors",
+          "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        },
+        {
+          "from_source_id": "screen-gusto",
+          "to_source_id": "gusto-upgrade",
+          "method": "visible_link",
+          "matched_url": "https://docs.gusto.com/embedded-payroll/docs/version-upgrade-guide",
+          "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        }
+      ],
+      "capture_hashes": {
+        "gusto-auth": "e4d795490c0381ac93d1e215b0473f633b919494ee36108dc6e9ec940babb625",
+        "gusto-changelog": "2fb48adc5ff4301b4c14007f404e80394400c53db7321a8437260b5aa4332698",
+        "gusto-company-events": "1e185f62e525bd0c822da8f804a138a1d73172c563c2bfd846c79e868269bd6a",
+        "gusto-errors": "08c3aeb326456d1decfb1b4f50d6f1be4eafcf7cc8f50a2e555fe2f25b300511",
+        "gusto-onboarding": "3b77013add5ab16e2b33b9309513228fbc05f595639e1cb574230d8b24cc2a6d",
+        "gusto-quickstart": "874aac8c9ff431d8829ddc3785c0145137f58c2d54a386bcecd8e4b6d4565f34",
+        "gusto-status-reference": "7ccd1eedcc5f8f835e74990be5b484fca9f85432cd5a7b63ca924d60159e477c",
+        "gusto-upgrade": "0788d5f17a017ae7be79f9cfab2edf374475eb844c00ee6cb22808bd6e1e7d78",
+        "screen-gusto": "3f9daf1cf26dabc7da352ca13f3b376459ecfdd657e0f625eeee96b87ca32e8e"
+      }
+    },
+    {
+      "id": "J02",
+      "name": "Enterprise and embedded cross-border payouts",
+      "provider_id": "wise",
+      "reader": "Product planner choosing an integration model and engineer building payouts",
+      "outcome": "Choose sender/account context, connect transfer resources, and understand tracking and testing boundaries.",
+      "stages": [
+        {
+          "kind": "scope_and_concepts",
+          "source_ids": [
+            "screen-wise",
+            "wise-send"
+          ],
+          "inspection": "inspected",
+          "note": "Resources, partner models, corridors and changing requirements are explained."
+        },
+        {
+          "kind": "access",
+          "source_ids": [
+            "wise-enterprise",
+            "wise-embedded"
+          ],
+          "inspection": "partial",
+          "note": "Ownership and profile contexts are inspected; complete OAuth/certificate setup is not."
+        },
+        {
+          "kind": "workflow",
+          "source_ids": [
+            "wise-enterprise",
+            "wise-embedded",
+            "wise-send"
+          ],
+          "inspection": "inspected",
+          "note": "Recipient-first and quote-first steps connect recipient, quote, transfer and funding."
+        },
+        {
+          "kind": "reference_and_events",
+          "source_ids": [
+            "wise-transfer-reference",
+            "wise-tracking"
+          ],
+          "inspection": "inspected",
+          "note": "A concrete transfer operation, event subscriptions, correlation and failure handling are inspected."
+        },
+        {
+          "kind": "verification",
+          "source_ids": [
+            "wise-statuses",
+            "wise-simulation"
+          ],
+          "inspection": "inspected",
+          "note": "Valid simulated transitions and prerequisites are inspected; no simulation was run."
+        },
+        {
+          "kind": "recovery",
+          "source_ids": [
+            "wise-tracking",
+            "wise-statuses"
+          ],
+          "inspection": "partial",
+          "note": "Ordering, payout failure/refund and exceptional state guidance is inspected; linked reconciliation procedures are not all followed."
+        },
+        {
+          "kind": "change",
+          "source_ids": [],
+          "inspection": "untraced",
+          "note": "A version picker is not a migration path; change guidance is not traced for this workflow."
+        }
+      ],
+      "lesson": "Common workflow structure can coexist with materially different sender, funding and customer-profile responsibilities.",
+      "remaining_gaps": [
+        "Recipient/quote/funding endpoint details, complete access setup and change guidance remain untraced.",
+        "No bank, transfer, webhook or simulation action was performed."
+      ],
+      "recorded_at": "2026-10-20T20:21:14.124208+00:00",
+      "status": "documentation-trace-with-explicit-gaps",
+      "connections": [
+        {
+          "from_source_id": "screen-wise",
+          "to_source_id": "wise-send",
+          "method": "visible_link",
+          "matched_url": "https://docs.wise.com/guides/product/send-money",
+          "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        },
+        {
+          "from_source_id": "screen-wise",
+          "to_source_id": "wise-enterprise",
+          "method": "visible_link",
+          "matched_url": "https://docs.wise.com/guides/product/send-money/use-cases/enterprise-payouts",
+          "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        },
+        {
+          "from_source_id": "wise-send",
+          "to_source_id": "wise-transfer-reference",
+          "method": "visible_link",
+          "matched_url": "https://docs.wise.com/api-reference/standard-transfer/transfercreate",
+          "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        },
+        {
+          "from_source_id": "wise-enterprise",
+          "to_source_id": "wise-tracking",
+          "method": "visible_link",
+          "matched_url": "https://docs.wise.com/guides/product/send-money/tracking/track-transfers",
+          "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        },
+        {
+          "from_source_id": "wise-embedded",
+          "to_source_id": "wise-tracking",
+          "method": "visible_link",
+          "matched_url": "https://docs.wise.com/guides/product/send-money/tracking/track-transfers",
+          "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        },
+        {
+          "from_source_id": "wise-tracking",
+          "to_source_id": "wise-statuses",
+          "method": "visible_link",
+          "matched_url": "https://docs.wise.com/guides/product/send-money/tracking/transfer-statuses",
+          "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        },
+        {
+          "from_source_id": "wise-statuses",
+          "to_source_id": "wise-simulation",
+          "method": "visible_link",
+          "matched_url": "https://docs.wise.com/api-reference/simulation/simulationtransferstatechange",
+          "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        }
+      ],
+      "capture_hashes": {
+        "screen-wise": "dec897545a34c3e5ef1103d2dfd8a53edc7fa521f1a72ea945decca98e2bb46b",
+        "wise-embedded": "3de6cb1fbe1e96352d05e0f495f25035c6b7156154621a5d55c96443f61d2f10",
+        "wise-enterprise": "5b9ce6049608ff43ebc9b6410751a0cbe5b188b7f3672cdb8e72f9bd5a8e3989",
+        "wise-send": "4fdb9aa64eae76f79384d9b830486a7dfc698325485be7326bf38e1cd2484560",
+        "wise-simulation": "c0c9532966f3896f1f608969f6dd3e986f1783473fe954346c13d4d2ab9e659f",
+        "wise-statuses": "8d3019f8e27a52894a156df518866c381975d248f1f6f470982af4f24764ec33",
+        "wise-tracking": "3ba972da3e20ab2ca2ae7a8165dd32def93f9e754e1d4c11918546417c15e816",
+        "wise-transfer-reference": "b9426ec9e7d0ca2afbb96b519947e945863d2858c748253ac66c6681520783e9"
+      }
+    },
+    {
+      "id": "J03",
+      "name": "Shift planning synchronization with HR",
+      "provider_id": "personio",
+      "reader": "Partner product owner and engineer integrating shift planning",
+      "outcome": "Understand role boundaries, initial employee data and later employment/absence changes.",
+      "stages": [
+        {
+          "kind": "scope_and_concepts",
+          "source_ids": [
+            "personio-prerequisites",
+            "personio-initial-sync"
+          ],
+          "inspection": "inspected",
+          "note": "Roles, app responsibilities and person/employment concepts are explicit."
+        },
+        {
+          "kind": "access",
+          "source_ids": [
+            "personio-prerequisites"
+          ],
+          "inspection": "partial",
+          "note": "Key/account prerequisites are inspected; linked token setup is not followed."
+        },
+        {
+          "kind": "workflow",
+          "source_ids": [
+            "personio-initial-sync",
+            "personio-events"
+          ],
+          "inspection": "inspected",
+          "note": "Initial population connects to event-driven updates and employment variants."
+        },
+        {
+          "kind": "reference_and_events",
+          "source_ids": [
+            "personio-person-reference",
+            "personio-events"
+          ],
+          "inspection": "partial",
+          "note": "One versioned persons reference and linked event semantics are inspected; not all versioned event contracts are followed."
+        },
+        {
+          "kind": "verification",
+          "source_ids": [],
+          "inspection": "untraced",
+          "note": "A reproducible scenario/sandbox verification path is not inspected."
+        },
+        {
+          "kind": "recovery",
+          "source_ids": [
+            "personio-events",
+            "personio-handling"
+          ],
+          "inspection": "partial",
+          "note": "Lifecycle scenarios are named; detailed image flowcharts and delivery-recovery logic remain uninspected."
+        },
+        {
+          "kind": "change",
+          "source_ids": [
+            "personio-change"
+          ],
+          "inspection": "partial",
+          "note": "Attendance/project migration is inspected as an adjacent shift-planning concern; not a complete migration of this whole integration."
+        }
+      ],
+      "lesson": "An integration guide can expose product decisions about roles, eligibility, custom fields and termination behavior that schemas leave unexplained.",
+      "remaining_gaps": [
+        "Detailed diagrams were not visually inspected.",
+        "Some guide links target versioned routes; their equivalence to unversioned pages is not assumed.",
+        "No employee data, synchronization or authentication was exercised."
+      ],
+      "recorded_at": "2026-10-20T20:21:14.124208+00:00",
+      "status": "documentation-trace-with-explicit-gaps",
+      "connections": [
+        {
+          "from_source_id": "screen-personio",
+          "to_source_id": "personio-prerequisites",
+          "method": "visible_link",
+          "matched_url": "https://developer.personio.de/docs/introduction-and-prerequisites",
+          "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        },
+        {
+          "from_source_id": "screen-personio",
+          "to_source_id": "personio-initial-sync",
+          "method": "visible_link",
+          "matched_url": "https://developer.personio.de/docs/initial-core-data-sync",
+          "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        },
+        {
+          "from_source_id": "screen-personio",
+          "to_source_id": "personio-events",
+          "method": "visible_link",
+          "matched_url": "https://developer.personio.de/docs/event-driven-data-from-personio",
+          "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        },
+        {
+          "from_source_id": "personio-initial-sync",
+          "to_source_id": "personio-person-reference",
+          "method": "visible_link",
+          "matched_url": "https://developer.personio.de/v2.0/reference/get_v2-persons",
+          "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        },
+        {
+          "from_source_id": "personio-events",
+          "to_source_id": "personio-handling",
+          "method": "research_jump",
+          "matched_url": null,
+          "note": "No matching link in the captured representation; route chosen through the broader research index or search. This does not prove the site lacks a path."
+        },
+        {
+          "from_source_id": "screen-personio",
+          "to_source_id": "personio-handling",
+          "method": "visible_link",
+          "matched_url": "https://developer.personio.de/docs/handling-logic",
+          "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        },
+        {
+          "from_source_id": "screen-personio",
+          "to_source_id": "personio-change",
+          "method": "visible_link",
+          "matched_url": "https://developer.personio.de/changelog/deprecation-of-attendances-and-projects-v1-endpoints",
+          "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        }
+      ],
+      "capture_hashes": {
+        "personio-change": "5596977c421bcf9ac47ae44dcc008d0f4c81a9f1b4d8e9509487a6311ed4471e",
+        "personio-events": "c33432581141c0e0dee28622dc0b8a085a3208e0ed13eb1bcab4f6aa2503e0a4",
+        "personio-handling": "9b83059adcdb7f0bf53b7281b5e15cf180122b6e6698db643665da78d1d75368",
+        "personio-initial-sync": "280a7f6c25b4aa2be3c5e1af25f4679b0d1ce794d7e110c017378aa265e281f8",
+        "personio-person-reference": "6c099224f502db88c0e83adf28b0c8a01dfcf96ade10aa2e9cbd86b68460bd74",
+        "personio-prerequisites": "a6c56643b3d5b0ce9b2c7b92c6cae7b808a77cbe00ad92460528dd94351e4c9e",
+        "screen-personio": "b8c54dbd7c5c4fe561a80672f04b7c4ba9e1a3d944eee3aaa0417e1795e8148d"
+      }
+    },
+    {
+      "id": "J04",
+      "name": "Create CRM records and connect relationships",
+      "provider_id": "hubspot",
+      "reader": "Client or multi-account partner planner and integration engineer",
+      "outcome": "Understand CRM entities, select an access model and implement record/relationship operations.",
+      "stages": [
+        {
+          "kind": "scope_and_concepts",
+          "source_ids": [
+            "hubspot-crm-model"
+          ],
+          "inspection": "inspected",
+          "note": "Objects, records, properties, relationships and identifier scope are explained."
+        },
+        {
+          "kind": "access",
+          "source_ids": [
+            "hubspot-auth"
+          ],
+          "inspection": "inspected",
+          "note": "Single-account static access and multi-account OAuth are distinguished."
+        },
+        {
+          "kind": "workflow",
+          "source_ids": [
+            "hubspot-objects"
+          ],
+          "inspection": "inspected",
+          "note": "Creation and retrieval connect required object properties and associations."
+        },
+        {
+          "kind": "reference_and_events",
+          "source_ids": [
+            "hubspot-associations"
+          ],
+          "inspection": "inspected",
+          "note": "Relationship direction, category/type discovery and request examples are inspected; events are outside the selected task."
+        },
+        {
+          "kind": "verification",
+          "source_ids": [],
+          "inspection": "untraced",
+          "note": "A dedicated developer-account/test scenario is not traced."
+        },
+        {
+          "kind": "recovery",
+          "source_ids": [
+            "hubspot-errors"
+          ],
+          "inspection": "inspected",
+          "note": "Access errors, transient errors and batch partial-success guidance are inspected, without execution."
+        },
+        {
+          "kind": "change",
+          "source_ids": [
+            "hubspot-objects"
+          ],
+          "inspection": "partial",
+          "note": "The guide identifies version-dependent validation and links an announcement; the announcement itself is not inspected."
+        }
+      ],
+      "lesson": "Reference usability depends on semantic identifiers, relationship direction and distribution-aware access, not field descriptions alone.",
+      "remaining_gaps": [
+        "The general entry does not directly link the selected concept page in the captured representation; the initial route is a research jump.",
+        "A previous-version association link appears self-referential and needs investigation.",
+        "No CRM requests, test-account setup or migration execution."
+      ],
+      "recorded_at": "2026-10-20T20:21:14.124208+00:00",
+      "status": "documentation-trace-with-explicit-gaps",
+      "connections": [
+        {
+          "from_source_id": "screen-hubspot",
+          "to_source_id": "hubspot-crm-model",
+          "method": "research_jump",
+          "matched_url": null,
+          "note": "No matching link in the captured representation; route chosen through the broader research index or search. This does not prove the site lacks a path."
+        },
+        {
+          "from_source_id": "hubspot-crm-model",
+          "to_source_id": "hubspot-objects",
+          "method": "visible_link",
+          "matched_url": "https://developers.hubspot.com/docs/api-reference/latest/crm/using-object-apis",
+          "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        },
+        {
+          "from_source_id": "hubspot-objects",
+          "to_source_id": "hubspot-associations",
+          "method": "visible_link",
+          "matched_url": "https://developers.hubspot.com/docs/api-reference/latest/crm/associations/associate-records/guide",
+          "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        },
+        {
+          "from_source_id": "hubspot-objects",
+          "to_source_id": "hubspot-auth",
+          "method": "visible_link",
+          "matched_url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+          "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        },
+        {
+          "from_source_id": "hubspot-objects",
+          "to_source_id": "hubspot-errors",
+          "method": "visible_link",
+          "matched_url": "https://developers.hubspot.com/docs/api-reference/error-handling",
+          "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        },
+        {
+          "from_source_id": "hubspot-associations",
+          "to_source_id": "hubspot-crm-model",
+          "method": "visible_link",
+          "matched_url": "https://developers.hubspot.com/docs/api-reference/latest/crm/understanding-the-crm",
+          "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        }
+      ],
+      "capture_hashes": {
+        "hubspot-associations": "de3a86f6f81126fc2ac538effbe0eaad03cdf74d49fbf1acf7011dcb415a604f",
+        "hubspot-auth": "25469d4d74b8ad79b3b80f9b9df360ba0c0373618333675f828b662956155c66",
+        "hubspot-crm-model": "0abc034d1c9d41729ce49bf9ad3fa005835dcf269a899a17383c567c32e2a98c",
+        "hubspot-errors": "afb9fa1518d6cc85a799e70bc0dc5ba071b74e5efec2f3bad43c51871b1a902c",
+        "hubspot-objects": "284a1f407ca0753e0ba78f505f0786a6e8ddc8face2fddbc0796570e26c856cf",
+        "screen-hubspot": "d1267f5fa1b5c905bbc44a43846820eebd1ec400b2c83735835a9a4d75bf1ce1"
+      }
+    },
+    {
+      "id": "J05",
+      "name": "A bounded invoice-financing demonstration",
+      "provider_id": "codat",
+      "reader": "Backend engineer exploring an accounting-backed lending use case with product planners",
+      "outcome": "Follow a demonstration from accounting connection to data-backed decision without mistaking it for a complete lending product.",
+      "stages": [
+        {
+          "kind": "scope_and_concepts",
+          "source_ids": [
+            "codat-invoice-guide"
+          ],
+          "inspection": "inspected",
+          "note": "Audience, sample outcome and exclusions are explicit."
+        },
+        {
+          "kind": "access",
+          "source_ids": [
+            "codat-invoice-setup"
+          ],
+          "inspection": "partial",
+          "note": "Testing account and auth-flow configuration are inspected; full production authorization is not."
+        },
+        {
+          "kind": "workflow",
+          "source_ids": [
+            "codat-invoice-setup",
+            "codat-invoice-decision"
+          ],
+          "inspection": "inspected",
+          "note": "The walkthrough connects company creation, accounting data and the demonstration decision."
+        },
+        {
+          "kind": "reference_and_events",
+          "source_ids": [
+            "codat-invoice-decision"
+          ],
+          "inspection": "partial",
+          "note": "The guide distinguishes demo endpoints from platform operations; dedicated endpoint schemas were not inspected."
+        },
+        {
+          "kind": "verification",
+          "source_ids": [
+            "codat-invoice-setup",
+            "codat-invoice-decision"
+          ],
+          "inspection": "inspected",
+          "note": "The documented sandbox walkthrough and expected result are inspected; the demo was not run."
+        },
+        {
+          "kind": "recovery",
+          "source_ids": [
+            "codat-troubleshooting",
+            "codat-freshness"
+          ],
+          "inspection": "partial",
+          "note": "Data state and error causes are inspected; the catalog does not supply every corrective procedure."
+        },
+        {
+          "kind": "change",
+          "source_ids": [],
+          "inspection": "untraced",
+          "note": "Release/migration guidance for this demonstration is not traced."
+        }
+      ],
+      "lesson": "Adjacent capabilities must keep their own prerequisites: the separately inspected reconciled-invoices feature requires banking plus accounting; this demo setup enables accounting and disables banking.",
+      "remaining_gaps": [
+        "Codat AR reconciliation is a separate comparison, not a prerequisite silently added to the financing demo.",
+        "Dedicated operation schemas, full recovery and change guidance remain untraced.",
+        "No account setup, demo execution or lending decision occurred."
+      ],
+      "recorded_at": "2026-10-20T20:21:14.124208+00:00",
+      "status": "documentation-trace-with-explicit-gaps",
+      "connections": [
+        {
+          "from_source_id": "screen-codat",
+          "to_source_id": "codat-invoice-guide",
+          "method": "research_jump",
+          "matched_url": null,
+          "note": "No matching link in the captured representation; route chosen through the broader research index or search. This does not prove the site lacks a path."
+        },
+        {
+          "from_source_id": "codat-invoice-guide",
+          "to_source_id": "codat-invoice-setup",
+          "method": "visible_link",
+          "matched_url": "https://docs.codat.io/lending/guides/invoice-finance/setting-up",
+          "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        },
+        {
+          "from_source_id": "codat-invoice-setup",
+          "to_source_id": "codat-invoice-decision",
+          "method": "visible_link",
+          "matched_url": "https://docs.codat.io/lending/guides/invoice-finance/process-invoice",
+          "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        },
+        {
+          "from_source_id": "codat-invoice-guide",
+          "to_source_id": "codat-troubleshooting",
+          "method": "visible_link",
+          "matched_url": "https://docs.codat.io/lending/troubleshooting",
+          "note": "Link exists in the captured page or navigation; placement/usability not tested."
+        },
+        {
+          "from_source_id": "codat-invoice-decision",
+          "to_source_id": "codat-freshness",
+          "method": "research_jump",
+          "matched_url": null,
+          "note": "No matching link in the captured representation; route chosen through the broader research index or search. This does not prove the site lacks a path."
+        }
+      ],
+      "capture_hashes": {
+        "codat-freshness": "73e993d7813d7fd5e4ebc3f232c60daaf71045b81929bdb755a27eda36c96d12",
+        "codat-invoice-decision": "7c0e755e063e9e5021f7a14e357e1b9f3f4700b807123ebaac1a03f629acc732",
+        "codat-invoice-guide": "29087870f1a27935b010f58e09d981b46579b444a739f21edf37bdf59269a57f",
+        "codat-invoice-setup": "7356d8b115b2c508ec3bad46876f5b6ccf5714bf228ac4b150b7b8784641bc97",
+        "codat-troubleshooting": "7ca4867b4911d3242ea6c3f96fcba3f31f9de4cec86d8fb0e3a8b661e9a3cf89",
+        "screen-codat": "07a1b9a3cdfc4739a87082ab8d29de7ff64eae7f9fe1eaaa1c88175314ff8cd6"
+      }
+    }
+  ]
+}

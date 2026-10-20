@@ -1,0 +1,757 @@
+{
+  "schema_version": 1,
+  "scope": "Entry and index screening, not provider scoring",
+  "selected_count": 15,
+  "records": [
+    {
+      "provider_id": "square",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "square-home"
+      ],
+      "capture_hashes": {
+        "square-home": "89fb91471b363cbbf8dda1db8a37d61a28244c5c12d2930df81f187e3314fa4e"
+      },
+      "screening_result": "entry_inspected",
+      "observation": "Business domains route to APIs, developer tools, release notes and support.",
+      "observed_routes": [
+        "domains",
+        "reference",
+        "tools",
+        "changes",
+        "support"
+      ],
+      "limitation": "Entry labels inspected; navigation effectiveness is untested.",
+      "study_decision": "selected",
+      "selection_reason": "Connect commerce orders with payment effects and compare reference/release structure."
+    },
+    {
+      "provider_id": "stripe",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-stripe"
+      ],
+      "capture_hashes": {
+        "screen-stripe": "3e493e1c3b2d2fa79be39353a0155d74d39574367b767cd74a1175992828704a"
+      },
+      "screening_result": "entry_inspected",
+      "observation": "Outcome-specific starts coexist with product groups and development/agent tooling.",
+      "observed_routes": [
+        "outcomes",
+        "domains",
+        "guides",
+        "tools"
+      ],
+      "limitation": "Entry routes do not establish downstream guide quality.",
+      "study_decision": "selected",
+      "selection_reason": "Compare outcome routing and the separation of CLI, skills and MCP."
+    },
+    {
+      "provider_id": "adyen",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-adyen"
+      ],
+      "capture_hashes": {
+        "screen-adyen": "3bd4f47b0fbaa6b32257b2a0b9e646f386171eb37abd12dcea91c903fd15b0f8"
+      },
+      "screening_result": "entry_inspected",
+      "observation": "Navigation covers integration, testing, go-live, modifications, compliance and upgrades.",
+      "observed_routes": [
+        "guides",
+        "reference",
+        "testing",
+        "operations",
+        "changes"
+      ],
+      "limitation": "Extraction is dominated by a large navigation tree; testing content was separately sampled.",
+      "study_decision": "supporting_comparison",
+      "selection_reason": "Retain as a comparison source; prioritize other providers for balanced deep coverage in this pass."
+    },
+    {
+      "provider_id": "sumup",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "sumup-home"
+      ],
+      "capture_hashes": {
+        "sumup-home": "0b75009a2d8c24b11b9ff5c673f8b24c40d66e50cf92da145383a25f4e497268"
+      },
+      "screening_result": "entry_inspected",
+      "observation": "Entry routes distinguish integration choice, first payment, testing, authorization and tools.",
+      "observed_routes": [
+        "outcomes",
+        "guides",
+        "reference",
+        "testing",
+        "tools"
+      ],
+      "limitation": "Only selected routes are traced in this pass.",
+      "study_decision": "selected",
+      "selection_reason": "Trace developer tool setup and link capabilities to payment integration choices."
+    },
+    {
+      "provider_id": "paypal",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-paypal"
+      ],
+      "capture_hashes": {
+        "screen-paypal": "c00ef5b41e0cf43bbe541e02d04627389c4004b54dc8e2875cb02cfc7e9419c2"
+      },
+      "screening_result": "entry_inspected",
+      "observation": "Entry distinguishes business, platforms and marketplaces, with REST and support routes.",
+      "observed_routes": [
+        "audiences",
+        "reference",
+        "guides",
+        "support"
+      ],
+      "limitation": "Only entry and visible route labels inspected.",
+      "study_decision": "supporting_comparison",
+      "selection_reason": "Retain as a comparison source; prioritize other providers for balanced deep coverage in this pass."
+    },
+    {
+      "provider_id": "checkout",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-checkout"
+      ],
+      "capture_hashes": {
+        "screen-checkout": "ac90c933e1adbdac6289d6c1d1dd2a7729a6113010d9937cc8b7bf00e6df0cf9"
+      },
+      "screening_result": "entry_inspected",
+      "observation": "Entry links solution comparisons, low-code payment setup, integration health and reference.",
+      "observed_routes": [
+        "outcomes",
+        "guides",
+        "reference",
+        "operations"
+      ],
+      "limitation": "Linked capability and health guidance remains untraced.",
+      "study_decision": "supporting_comparison",
+      "selection_reason": "Retain as a comparison source; prioritize other providers for balanced deep coverage in this pass."
+    },
+    {
+      "provider_id": "revolut",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-revolut"
+      ],
+      "capture_hashes": {
+        "screen-revolut": "f0e6f13ca75c765f86bd706f7df0444ba009c646463f0fece89677adc527bbb1"
+      },
+      "screening_result": "entry_inspected",
+      "observation": "Entry separates merchant, business and open-banking work and names integrated use cases.",
+      "observed_routes": [
+        "audiences",
+        "domains",
+        "outcomes",
+        "reference"
+      ],
+      "limitation": "Entry capability statements are not independently tested behavior.",
+      "study_decision": "selected",
+      "selection_reason": "Compare operational event contracts with merchant readiness scenarios."
+    },
+    {
+      "provider_id": "wise",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-wise"
+      ],
+      "capture_hashes": {
+        "screen-wise": "dec897545a34c3e5ef1103d2dfd8a53edc7fa521f1a72ea945decca98e2bb46b"
+      },
+      "screening_result": "entry_inspected",
+      "observation": "Entry routes by payment product and enterprise, correspondent or embedded integration model.",
+      "observed_routes": [
+        "audiences",
+        "domains",
+        "outcomes",
+        "reference",
+        "changes"
+      ],
+      "limitation": "Commercial performance claims are excluded from quality conclusions.",
+      "study_decision": "selected",
+      "selection_reason": "Trace enterprise versus embedded payouts through resources, tracking and simulation."
+    },
+    {
+      "provider_id": "plaid",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-plaid"
+      ],
+      "capture_hashes": {
+        "screen-plaid": "13ecd8e44a42df92a5b39617503d67b3dc455c126e253bf818abd9296b5a77a8"
+      },
+      "screening_result": "entry_inspected",
+      "observation": "Entry connects quickstart and reference with product groups framed by business outcomes.",
+      "observed_routes": [
+        "domains",
+        "outcomes",
+        "guides",
+        "reference"
+      ],
+      "limitation": "Only the existing sandbox sample is examined in depth here.",
+      "study_decision": "selected",
+      "selection_reason": "Compare sandbox-to-production boundaries and product-to-reference routing."
+    },
+    {
+      "provider_id": "truelayer",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-truelayer"
+      ],
+      "capture_hashes": {
+        "screen-truelayer": "1a0c8852556b495bfd7970b623ef819138edaacb171d88b760c23b37bc1b1c19"
+      },
+      "screening_result": "index_inspected",
+      "observation": "Returned documentation index names concepts, integration checklists, client libraries and versioning.",
+      "observed_routes": [
+        "concepts",
+        "guides",
+        "testing",
+        "tools",
+        "changes"
+      ],
+      "limitation": "An index establishes available routes, not destination quality.",
+      "study_decision": "supporting_comparison",
+      "selection_reason": "Retain as a comparison source; prioritize other providers for balanced deep coverage in this pass."
+    },
+    {
+      "provider_id": "tink",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-tink"
+      ],
+      "capture_hashes": {
+        "screen-tink": "976654eaf4a5602b61c20dc9564d841b291a59c7ce10da21cf5355d208de9cc3"
+      },
+      "screening_result": "retrieval_limited",
+      "observation": "Entry capture contains only a title; substantive documentation requires another supported representation.",
+      "observed_routes": [],
+      "limitation": "A retrieval limitation, not evidence that the provider lacks documentation.",
+      "study_decision": "deferred_access",
+      "selection_reason": "Deferred because this capture did not expose substantive content; retain for later supported access."
+    },
+    {
+      "provider_id": "modern-treasury",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-modern-treasury"
+      ],
+      "capture_hashes": {
+        "screen-modern-treasury": "fdfd78e50fc52809981f50d0f2ead062816dfb2a247f4ac0e5dd2d45eb29b99c"
+      },
+      "screening_result": "index_inspected",
+      "observation": "Returned Payments index names onboarding, sandbox failures, payment flows and operational resources.",
+      "observed_routes": [
+        "domains",
+        "guides",
+        "testing",
+        "operations"
+      ],
+      "limitation": "The representation is a product index; linked pages are not assessed.",
+      "study_decision": "supporting_comparison",
+      "selection_reason": "Retain as a comparison source; prioritize other providers for balanced deep coverage in this pass."
+    },
+    {
+      "provider_id": "gusto",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-gusto"
+      ],
+      "capture_hashes": {
+        "screen-gusto": "3f9daf1cf26dabc7da352ca13f3b376459ecfdd657e0f625eeee96b87ca32e8e"
+      },
+      "screening_result": "index_inspected",
+      "observation": "Returned index exposes payroll fundamentals, access, errors, events and versioned references.",
+      "observed_routes": [
+        "concepts",
+        "guides",
+        "reference",
+        "operations",
+        "changes"
+      ],
+      "limitation": "The index spans products; deep observations are scoped to embedded payroll.",
+      "study_decision": "selected",
+      "selection_reason": "Trace company onboarding through access, completion, events, errors and version migration."
+    },
+    {
+      "provider_id": "bamboohr",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-bamboohr"
+      ],
+      "capture_hashes": {
+        "screen-bamboohr": "aecd53fcee90e4c96096992fddcbf4d855801b28ab11594e1306ced9c6c8ea1b"
+      },
+      "screening_result": "index_inspected",
+      "observation": "Returned index separates getting started, field semantics, event models, SDKs and planned/historical changes.",
+      "observed_routes": [
+        "concepts",
+        "reference",
+        "tools",
+        "changes",
+        "support"
+      ],
+      "limitation": "Labels reveal useful comparison targets; those targets remain mostly uninspected.",
+      "study_decision": "supporting_comparison",
+      "selection_reason": "Retain as a comparison source; prioritize other providers for balanced deep coverage in this pass."
+    },
+    {
+      "provider_id": "hibob",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-hibob"
+      ],
+      "capture_hashes": {
+        "screen-hibob": "d18d8b5de3a852a67ba74bd78f08e3e3368650f503b9199743d5a8044474a43f"
+      },
+      "screening_result": "index_inspected",
+      "observation": "Returned index separates modules, partner concepts, access, tutorials and references.",
+      "observed_routes": [
+        "audiences",
+        "domains",
+        "concepts",
+        "guides",
+        "reference"
+      ],
+      "limitation": "Section indexes are discovery evidence, not complete guides.",
+      "study_decision": "selected",
+      "selection_reason": "Compare direct-client versus partner access and HR domain grouping."
+    },
+    {
+      "provider_id": "personio",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-personio"
+      ],
+      "capture_hashes": {
+        "screen-personio": "b8c54dbd7c5c4fe561a80672f04b7c4ba9e1a3d944eee3aaa0417e1795e8148d"
+      },
+      "screening_result": "index_inspected",
+      "observation": "Returned index contains a connected shift-planning sequence and versioned HR references.",
+      "observed_routes": [
+        "audiences",
+        "guides",
+        "reference",
+        "operations",
+        "changes"
+      ],
+      "limitation": "Index links and selected workflow pages are assessed; no customer account is used.",
+      "study_decision": "selected",
+      "selection_reason": "Trace shift planning across roles, initial data, events and lifecycle handling."
+    },
+    {
+      "provider_id": "rippling",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-rippling"
+      ],
+      "capture_hashes": {
+        "screen-rippling": "d0600632dfd78cd6fb9c6fe1dfff3dc7bcbf3d379c02fd9c2998dab45cac88bd"
+      },
+      "screening_result": "retrieval_limited",
+      "observation": "Entry body extraction is empty; no substantive documentation quality judgment is possible.",
+      "observed_routes": [],
+      "limitation": "A retrieval limitation, not evidence that the provider lacks documentation.",
+      "study_decision": "deferred_access",
+      "selection_reason": "Deferred because this capture did not expose substantive content; retain for later supported access."
+    },
+    {
+      "provider_id": "deel",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-deel"
+      ],
+      "capture_hashes": {
+        "screen-deel": "932ca91c649425d22205ad989e315e7698966c9bd4a9bdbcd84feec415942aea"
+      },
+      "screening_result": "entry_inspected",
+      "observation": "Entry presents workforce REST, webhooks, CLI and MCP with quickstart and domain routes.",
+      "observed_routes": [
+        "domains",
+        "guides",
+        "reference",
+        "tools"
+      ],
+      "limitation": "Example rendering in the extracted representation is not used to judge executable syntax.",
+      "study_decision": "supporting_comparison",
+      "selection_reason": "Retain as a comparison source; prioritize other providers for balanced deep coverage in this pass."
+    },
+    {
+      "provider_id": "xero",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-xero"
+      ],
+      "capture_hashes": {
+        "screen-xero": "f1dbe067af5bb1ed0d3008c5797e711f96c5a3bb0d46f865da0d00701faa38d8"
+      },
+      "screening_result": "entry_inspected",
+      "observation": "Entry links tooling, custom development, partner certification, support and documentation.",
+      "observed_routes": [
+        "audiences",
+        "guides",
+        "tools",
+        "support"
+      ],
+      "limitation": "The previously selected accounting guidance still exposes only a JavaScript shell.",
+      "study_decision": "supporting_comparison",
+      "selection_reason": "Retain as a comparison source; prioritize other providers for balanced deep coverage in this pass."
+    },
+    {
+      "provider_id": "quickbooks",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-quickbooks"
+      ],
+      "capture_hashes": {
+        "screen-quickbooks": "4eebb0539c4223e3f1a1d6de39f7e5b3f4551bc43dd00cdecc667582c2029f1d"
+      },
+      "screening_result": "retrieval_limited",
+      "observation": "Entry capture is an application-loading shell; no guide or reference content is assessed.",
+      "observed_routes": [],
+      "limitation": "A retrieval limitation, not evidence that the provider lacks documentation.",
+      "study_decision": "deferred_access",
+      "selection_reason": "Deferred because this capture did not expose substantive content; retain for later supported access."
+    },
+    {
+      "provider_id": "sage",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-sage",
+        "screen-sage-accounting"
+      ],
+      "capture_hashes": {
+        "screen-sage": "8c3d8b1fc4239fbdb35b10759bf3b5ae88a728cfb4f049f2111778e16e86418b",
+        "screen-sage-accounting": "36490d78095e72676abe0b275263c089040865488e24190043c4c9c239143200"
+      },
+      "screening_result": "retrieval_limited",
+      "observation": "Both suite entry and accounting-specific alternate expose titles only in this capture method.",
+      "observed_routes": [],
+      "limitation": "A retrieval limitation, not evidence that the provider lacks documentation.",
+      "study_decision": "deferred_access",
+      "selection_reason": "Deferred because this capture did not expose substantive content; retain for later supported access."
+    },
+    {
+      "provider_id": "zoho",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-zoho"
+      ],
+      "capture_hashes": {
+        "screen-zoho": "fdd42b743b2d12b0c665e32dca28113672cc81aa4463190b445052b2e7481f11"
+      },
+      "screening_result": "entry_inspected",
+      "observation": "Entry routes integration, extension, custom app and agent work into product-specific tools.",
+      "observed_routes": [
+        "outcomes",
+        "domains",
+        "tools"
+      ],
+      "limitation": "The suite entry is broad; product-specific REST documentation remains untraced.",
+      "study_decision": "supporting_comparison",
+      "selection_reason": "Retain as a comparison source; prioritize other providers for balanced deep coverage in this pass."
+    },
+    {
+      "provider_id": "salesforce",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-salesforce",
+        "screen-salesforce-rest"
+      ],
+      "capture_hashes": {
+        "screen-salesforce": "ac724df1243ec660282241646712fb7dba41fcfb35f076801c50cc95453e9db4",
+        "screen-salesforce-rest": "aa04713232436e8d555afd0781e576d9392dff5b341188f7c265e20e8d1c8b43"
+      },
+      "screening_result": "entry_inspected",
+      "observation": "REST alternate gives developer-account, authentication and record-update prerequisites.",
+      "observed_routes": [
+        "guides",
+        "authentication",
+        "testing"
+      ],
+      "limitation": "General entry is navigation-only; linked quickstart steps are not all followed.",
+      "study_decision": "selected",
+      "selection_reason": "Retain a mature business-platform comparison using an accessible REST-specific quickstart."
+    },
+    {
+      "provider_id": "hubspot",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-hubspot"
+      ],
+      "capture_hashes": {
+        "screen-hubspot": "d1267f5fa1b5c905bbc44a43846820eebd1ec400b2c83735835a9a4d75bf1ce1"
+      },
+      "screening_result": "entry_inspected",
+      "observation": "Entry links platform overview, API reference, quickstart and developer changes.",
+      "observed_routes": [
+        "guides",
+        "reference",
+        "tools",
+        "changes",
+        "support"
+      ],
+      "limitation": "CLI-first entry is not assumed mandatory for every REST integration.",
+      "study_decision": "selected",
+      "selection_reason": "Trace CRM concepts through record and association APIs, access and error handling."
+    },
+    {
+      "provider_id": "finch",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-finch"
+      ],
+      "capture_hashes": {
+        "screen-finch": "0d3e842a27b1e05ec9a598fcd492e678865b6faa019dc4f6b10fc8597a80a3a7"
+      },
+      "screening_result": "entry_inspected",
+      "observation": "Entry resolves to a sandbox quickstart that distinguishes manual demo authorization from production automation.",
+      "observed_routes": [
+        "guides",
+        "authentication",
+        "testing"
+      ],
+      "limitation": "The retrieved page is a quickstart, not a whole-site inventory.",
+      "study_decision": "supporting_comparison",
+      "selection_reason": "Retain as a comparison source; prioritize other providers for balanced deep coverage in this pass."
+    },
+    {
+      "provider_id": "merge",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-merge"
+      ],
+      "capture_hashes": {
+        "screen-merge": "dee03ff4a53ef5eab262ff189ae7d959bb1b72ca2c0729cf8bebb6eb359bfa55"
+      },
+      "screening_result": "entry_inspected",
+      "observation": "Entry distinguishes unified business-data integration from agent-action and other platform products.",
+      "observed_routes": [
+        "audiences",
+        "outcomes",
+        "domains",
+        "tools"
+      ],
+      "limitation": "Product positioning claims are not accepted as measured quality or stability.",
+      "study_decision": "selected",
+      "selection_reason": "Compare unified provider coverage, account context and synchronization freshness."
+    },
+    {
+      "provider_id": "codat",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-codat"
+      ],
+      "capture_hashes": {
+        "screen-codat": "07a1b9a3cdfc4739a87082ab8d29de7ff64eae7f9fe1eaaa1c88175314ff8cd6"
+      },
+      "screening_result": "entry_inspected",
+      "observation": "Entry separates business users and technology teams and links concepts, tutorials, auth and data APIs.",
+      "observed_routes": [
+        "audiences",
+        "concepts",
+        "guides",
+        "reference",
+        "support"
+      ],
+      "limitation": "Some content contains repeated inline glossary definitions after extraction.",
+      "study_decision": "selected",
+      "selection_reason": "Trace accounting/banking dependencies, invoice-financing boundaries and data freshness."
+    },
+    {
+      "provider_id": "apideck",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-apideck"
+      ],
+      "capture_hashes": {
+        "screen-apideck": "174ef409e18386f5b368882b79c900a6fa68ea5dc25368bedb12a307c432b73b"
+      },
+      "screening_result": "entry_inspected",
+      "observation": "Entry offers first read, use cases, connector coverage, API explorer and MCP routes.",
+      "observed_routes": [
+        "outcomes",
+        "guides",
+        "reference",
+        "tools"
+      ],
+      "limitation": "Only the compact entry is inspected; no end-to-end task is attempted.",
+      "study_decision": "supporting_comparison",
+      "selection_reason": "Retain as a comparison source; prioritize other providers for balanced deep coverage in this pass."
+    },
+    {
+      "provider_id": "workato",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-workato"
+      ],
+      "capture_hashes": {
+        "screen-workato": "95ecf71312258334f7ab69c87c680be0fd1a914efc49b7fcd18c63e5ad42f633"
+      },
+      "screening_result": "entry_inspected",
+      "observation": "Entry organizes orchestration, connectors, lifecycle operations and domain reference patterns.",
+      "observed_routes": [
+        "outcomes",
+        "domains",
+        "tools",
+        "operations"
+      ],
+      "limitation": "Broad orchestration content is adjacent to this project; REST-specific relevance needs narrower selection.",
+      "study_decision": "supporting_comparison",
+      "selection_reason": "Retain as a comparison source; prioritize other providers for balanced deep coverage in this pass."
+    },
+    {
+      "provider_id": "nango",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-nango"
+      ],
+      "capture_hashes": {
+        "screen-nango": "bebae4dc252a3aa0d5dee293212e79494e03e30a8a025f3004572133022e7320"
+      },
+      "screening_result": "entry_inspected",
+      "observation": "Introduction connects customer authorization, code-owned functions, synchronization and operations.",
+      "observed_routes": [
+        "concepts",
+        "authentication",
+        "guides",
+        "operations",
+        "tools"
+      ],
+      "limitation": "Introductory product claims are not runtime validation.",
+      "study_decision": "supporting_comparison",
+      "selection_reason": "Retain as a comparison source; prioritize other providers for balanced deep coverage in this pass."
+    },
+    {
+      "provider_id": "github",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-github"
+      ],
+      "capture_hashes": {
+        "screen-github": "ee3a430edf5e6e979fedac8217172cc4e80a99777a669b930a0c1740cbdbf298"
+      },
+      "screening_result": "entry_inspected",
+      "observation": "REST entry directly routes to authentication, limits, pagination, best practices and troubleshooting.",
+      "observed_routes": [
+        "authentication",
+        "reference",
+        "operations",
+        "support"
+      ],
+      "limitation": "Operational pages are sampled; complete app distribution is not traced.",
+      "study_decision": "selected",
+      "selection_reason": "Compare precise operational and symptom-based recovery guidance."
+    },
+    {
+      "provider_id": "twilio",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-twilio"
+      ],
+      "capture_hashes": {
+        "screen-twilio": "9e53c3e3138532b57ae49408a3158ff5e6fd4867ad74a643701627c811093c53"
+      },
+      "screening_result": "entry_inspected",
+      "observation": "Entry groups communication capabilities and points to API reference, quickstarts and SDK examples.",
+      "observed_routes": [
+        "domains",
+        "guides",
+        "reference",
+        "tools"
+      ],
+      "limitation": "Messaging and delivery lifecycle material is deferred to avoid expanding the deep sample.",
+      "study_decision": "supporting_comparison",
+      "selection_reason": "Retain as a comparison source; prioritize other providers for balanced deep coverage in this pass."
+    },
+    {
+      "provider_id": "slack",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-slack"
+      ],
+      "capture_hashes": {
+        "screen-slack": "582c194c97868af53c858c4ddf6ff5de7e390c48eff46d84db9da2262e066bc4"
+      },
+      "screening_result": "entry_inspected",
+      "observation": "Entry shows CLI installation, workspace connection, project creation, run and tool/sample routes.",
+      "observed_routes": [
+        "guides",
+        "authentication",
+        "tools"
+      ],
+      "limitation": "The app-runtime quickstart is not generalized to all Web API clients.",
+      "study_decision": "supporting_comparison",
+      "selection_reason": "Retain as a comparison source; prioritize other providers for balanced deep coverage in this pass."
+    },
+    {
+      "provider_id": "auth0",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-auth0"
+      ],
+      "capture_hashes": {
+        "screen-auth0": "23153a97d19ad72a5f2eb63c7780270a6c4277f2fcc4bf6a4d897ad5c296c2d7"
+      },
+      "screening_result": "entry_inspected",
+      "observation": "Entry routes by application stack and links concepts, API references, SDKs and support.",
+      "observed_routes": [
+        "audiences",
+        "guides",
+        "reference",
+        "tools",
+        "support"
+      ],
+      "limitation": "Identity is a supporting domain; detailed authentication comparisons are deferred.",
+      "study_decision": "supporting_comparison",
+      "selection_reason": "Retain as a comparison source; prioritize other providers for balanced deep coverage in this pass."
+    },
+    {
+      "provider_id": "cloudflare",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-cloudflare"
+      ],
+      "capture_hashes": {
+        "screen-cloudflare": "69981e1129a8a30ed44145ec3daf70be26d05681afb7f3357892677857e80fa5"
+      },
+      "screening_result": "entry_inspected",
+      "observation": "Entry combines platform primitives, CLI choices and product-specific guides.",
+      "observed_routes": [
+        "domains",
+        "guides",
+        "tools"
+      ],
+      "limitation": "Entry contains promotional material; research conclusions use specific API/change passages.",
+      "study_decision": "selected",
+      "selection_reason": "Compare platform-scale REST reference navigation and actionable breaking-change communication."
+    },
+    {
+      "provider_id": "atlassian",
+      "screened_at": "2026-10-20T20:17:11.712977+00:00",
+      "source_ids": [
+        "screen-atlassian",
+        "screen-atlassian-rest"
+      ],
+      "capture_hashes": {
+        "screen-atlassian": "b40cea0917bb2b59f8f523af0e9056f9a9856aa0e39f7a22499d5a3e194b7c7d",
+        "screen-atlassian-rest": "30e969055023de6a104509eeea7cdfdae1dd9595436c280f5f5d811a5e418dd5"
+      },
+      "screening_result": "entry_inspected",
+      "observation": "Jira REST alternate explains auth models, permissions, pagination, timestamps and async operations.",
+      "observed_routes": [
+        "authentication",
+        "reference",
+        "operations",
+        "changes"
+      ],
+      "limitation": "General entry is navigation-only; alternate is scoped to Jira Cloud REST v3.",
+      "study_decision": "supporting_comparison",
+      "selection_reason": "Retain as a comparison source; prioritize other providers for balanced deep coverage in this pass."
+    }
+  ]
+}

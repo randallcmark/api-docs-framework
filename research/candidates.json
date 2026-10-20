@@ -9,7 +9,7 @@
       "group": "payments",
       "entry_point": "https://developer.squareup.com/docs",
       "selection_reason": "Cross-domain payments, commerce and staff navigation",
-      "screening_status": "sample_inspected"
+      "screening_status": "entry_inspected"
     },
     {
       "id": "stripe",
@@ -17,7 +17,7 @@
       "group": "payments",
       "entry_point": "https://docs.stripe.com/",
       "selection_reason": "Integration choices, reference semantics and developer tools",
-      "screening_status": "sample_inspected"
+      "screening_status": "entry_inspected"
     },
     {
       "id": "adyen",
@@ -25,7 +25,7 @@
       "group": "payments",
       "entry_point": "https://docs.adyen.com/",
       "selection_reason": "Testing, payment lifecycles and operational resources",
-      "screening_status": "sample_inspected"
+      "screening_status": "entry_inspected"
     },
     {
       "id": "sumup",
@@ -33,7 +33,7 @@
       "group": "payments",
       "entry_point": "https://developer.sumup.com/",
       "selection_reason": "Integration paths and modern agent tooling",
-      "screening_status": "sample_inspected"
+      "screening_status": "entry_inspected"
     },
     {
       "id": "paypal",
@@ -41,7 +41,7 @@
       "group": "payments",
       "entry_point": "https://developer.paypal.com/",
       "selection_reason": "Multi-product commerce and partner journeys",
-      "screening_status": "pending"
+      "screening_status": "entry_inspected"
     },
     {
       "id": "checkout",
@@ -49,7 +49,7 @@
       "group": "payments",
       "entry_point": "https://www.checkout.com/docs",
       "selection_reason": "Payment workflows and production readiness",
-      "screening_status": "pending"
+      "screening_status": "entry_inspected"
     },
     {
       "id": "revolut",
@@ -57,7 +57,7 @@
       "group": "banking",
       "entry_point": "https://developer.revolut.com/",
       "selection_reason": "Business versus merchant journeys and release readiness",
-      "screening_status": "sample_inspected"
+      "screening_status": "entry_inspected"
     },
     {
       "id": "wise",
@@ -65,7 +65,7 @@
       "group": "banking",
       "entry_point": "https://docs.wise.com/",
       "selection_reason": "Transfer concepts, integration models and environments",
-      "screening_status": "pending"
+      "screening_status": "entry_inspected"
     },
     {
       "id": "plaid",
@@ -73,7 +73,7 @@
       "group": "banking",
       "entry_point": "https://plaid.com/docs/",
       "selection_reason": "Product discovery, test environments and institution differences",
-      "screening_status": "sample_inspected"
+      "screening_status": "entry_inspected"
     },
     {
       "id": "truelayer",
@@ -81,7 +81,7 @@
       "group": "banking",
       "entry_point": "https://docs.truelayer.com/",
       "selection_reason": "Consent and asynchronous banking workflows",
-      "screening_status": "pending"
+      "screening_status": "index_inspected"
     },
     {
       "id": "tink",
@@ -89,7 +89,7 @@
       "group": "banking",
       "entry_point": "https://docs.tink.com/",
       "selection_reason": "Access models, regional differences and account data",
-      "screening_status": "pending"
+      "screening_status": "retrieval_limited"
     },
     {
       "id": "modern-treasury",
@@ -97,7 +97,7 @@
       "group": "banking",
       "entry_point": "https://docs.moderntreasury.com/",
       "selection_reason": "Money movement, reconciliation and lifecycle explanations",
-      "screening_status": "pending"
+      "screening_status": "index_inspected"
     },
     {
       "id": "gusto",
@@ -105,7 +105,7 @@
       "group": "hr-payroll",
       "entry_point": "https://docs.gusto.com/",
       "selection_reason": "Payroll concepts, company onboarding and change management",
-      "screening_status": "sample_inspected"
+      "screening_status": "index_inspected"
     },
     {
       "id": "bamboohr",
@@ -113,7 +113,7 @@
       "group": "hr-payroll",
       "entry_point": "https://documentation.bamboohr.com/",
       "selection_reason": "Employee concepts, permissions and reference guidance",
-      "screening_status": "pending"
+      "screening_status": "index_inspected"
     },
     {
       "id": "hibob",
@@ -121,7 +121,7 @@
       "group": "hr-payroll",
       "entry_point": "https://apidocs.hibob.com/",
       "selection_reason": "Domain grouping and customer versus partner authorization",
-      "screening_status": "sample_inspected"
+      "screening_status": "index_inspected"
     },
     {
       "id": "personio",
@@ -129,7 +129,7 @@
       "group": "hr-payroll",
       "entry_point": "https://developer.personio.de/",
       "selection_reason": "HR resource models and integration onboarding",
-      "screening_status": "pending"
+      "screening_status": "index_inspected"
     },
     {
       "id": "rippling",
@@ -137,7 +137,7 @@
       "group": "hr-payroll",
       "entry_point": "https://developer.rippling.com/",
       "selection_reason": "Cross-domain employee workflows and partner development",
-      "screening_status": "pending"
+      "screening_status": "retrieval_limited"
     },
     {
       "id": "deel",
@@ -145,7 +145,7 @@
       "group": "hr-payroll",
       "entry_point": "https://developer.deel.com/",
       "selection_reason": "Employment, contractor and payroll capability distinctions",
-      "screening_status": "pending"
+      "screening_status": "entry_inspected"
     },
     {
       "id": "xero",
@@ -153,7 +153,7 @@
       "group": "business",
       "entry_point": "https://developer.xero.com/",
       "selection_reason": "Accounting models, integration mapping and certification",
-      "screening_status": "retrieval_limited"
+      "screening_status": "entry_inspected"
     },
     {
       "id": "quickbooks",
@@ -161,7 +161,7 @@
       "group": "business",
       "entry_point": "https://developer.intuit.com/app/developer/qbo/docs/get-started",
       "selection_reason": "Accounting integration journeys and sandbox support",
-      "screening_status": "pending"
+      "screening_status": "retrieval_limited"
     },
     {
       "id": "sage",
@@ -169,7 +169,7 @@
       "group": "business",
       "entry_point": "https://developer.sage.com/",
       "selection_reason": "Product selection across business APIs and accounting concepts",
-      "screening_status": "pending"
+      "screening_status": "retrieval_limited"
     },
     {
       "id": "zoho",
@@ -177,7 +177,7 @@
       "group": "business",
       "entry_point": "https://www.zoho.com/developer/",
       "selection_reason": "Business suite organization and domain-specific guides",
-      "screening_status": "pending"
+      "screening_status": "entry_inspected"
     },
     {
       "id": "salesforce",
@@ -185,7 +185,7 @@
       "group": "business",
       "entry_point": "https://developer.salesforce.com/docs",
       "selection_reason": "REST concepts, permissions, limits and extensibility",
-      "screening_status": "pending"
+      "screening_status": "entry_inspected"
     },
     {
       "id": "hubspot",
@@ -193,7 +193,7 @@
       "group": "business",
       "entry_point": "https://developers.hubspot.com/docs",
       "selection_reason": "CRM concepts, associations and app integration models",
-      "screening_status": "sample_inspected"
+      "screening_status": "entry_inspected"
     },
     {
       "id": "finch",
@@ -201,7 +201,7 @@
       "group": "integration-infrastructure",
       "entry_point": "https://developer.tryfinch.com/",
       "selection_reason": "Provider coverage, employment models and synchronization",
-      "screening_status": "pending"
+      "screening_status": "entry_inspected"
     },
     {
       "id": "merge",
@@ -209,7 +209,7 @@
       "group": "integration-infrastructure",
       "entry_point": "https://docs.merge.dev/",
       "selection_reason": "Unified models, field coverage, freshness and use cases",
-      "screening_status": "sample_inspected"
+      "screening_status": "entry_inspected"
     },
     {
       "id": "codat",
@@ -217,7 +217,7 @@
       "group": "integration-infrastructure",
       "entry_point": "https://docs.codat.io/",
       "selection_reason": "Business data models, connections and synchronization",
-      "screening_status": "pending"
+      "screening_status": "entry_inspected"
     },
     {
       "id": "apideck",
@@ -225,7 +225,7 @@
       "group": "integration-infrastructure",
       "entry_point": "https://developers.apideck.com/",
       "selection_reason": "Unified API conventions and provider differences",
-      "screening_status": "pending"
+      "screening_status": "entry_inspected"
     },
     {
       "id": "workato",
@@ -233,7 +233,7 @@
       "group": "integration-infrastructure",
       "entry_point": "https://docs.workato.com/",
       "selection_reason": "Workflow composition, connectors and operating guidance",
-      "screening_status": "pending"
+      "screening_status": "entry_inspected"
     },
     {
       "id": "nango",
@@ -241,7 +241,7 @@
       "group": "integration-infrastructure",
       "entry_point": "https://nango.dev/docs",
       "selection_reason": "Integration authentication and synchronization operations",
-      "screening_status": "pending"
+      "screening_status": "entry_inspected"
     },
     {
       "id": "github",
@@ -249,7 +249,7 @@
       "group": "developer-platforms",
       "entry_point": "https://docs.github.com/en/rest",
       "selection_reason": "REST best practices, limits, troubleshooting and app models",
-      "screening_status": "sample_inspected"
+      "screening_status": "entry_inspected"
     },
     {
       "id": "twilio",
@@ -257,7 +257,7 @@
       "group": "developer-platforms",
       "entry_point": "https://www.twilio.com/docs",
       "selection_reason": "Task-oriented onboarding and communication workflows",
-      "screening_status": "pending"
+      "screening_status": "entry_inspected"
     },
     {
       "id": "slack",
@@ -265,7 +265,7 @@
       "group": "developer-platforms",
       "entry_point": "https://docs.slack.dev/",
       "selection_reason": "App journeys, permissions, tooling and distribution",
-      "screening_status": "pending"
+      "screening_status": "entry_inspected"
     },
     {
       "id": "auth0",
@@ -273,7 +273,7 @@
       "group": "developer-platforms",
       "entry_point": "https://auth0.com/docs",
       "selection_reason": "Identity concepts, audience-specific paths and troubleshooting",
-      "screening_status": "pending"
+      "screening_status": "entry_inspected"
     },
     {
       "id": "cloudflare",
@@ -281,7 +281,7 @@
       "group": "developer-platforms",
       "entry_point": "https://developers.cloudflare.com/",
       "selection_reason": "Platform-scale organization, tooling and agent interfaces",
-      "screening_status": "pending"
+      "screening_status": "entry_inspected"
     },
     {
       "id": "atlassian",
@@ -289,7 +289,7 @@
       "group": "developer-platforms",
       "entry_point": "https://developer.atlassian.com/",
       "selection_reason": "Multi-product apps, authorization and change communication",
-      "screening_status": "pending"
+      "screening_status": "entry_inspected"
     }
   ]
 }

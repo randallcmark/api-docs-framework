@@ -1,10 +1,10 @@
 # Provisional pattern library
 
-All initial patterns are observed proposals. Their full prescriptions are not yet corroborated, calibrated or task-tested. Source examples and project requirements inform the rules; benefits remain hypotheses to evaluate.
+12 patterns: 4 corroborated, 8 observed. Corroboration means independent documentation examples support a practice; it does not establish calibration, task success or causal benefit. Source examples and project requirements inform these conditional rules.
 
 ## P01 Route from business outcomes into implementation
 
-Status: observed.
+Status: corroborated.
 
 **Reader problem:** Product readers and engineers cannot locate a capability through endpoint names alone.
 
@@ -21,9 +21,11 @@ Status: observed.
 
 Rubric criteria: R01, R08.
 
-Evidence: [E01](../research/evidence.md#e01-square-home), [E03](../research/evidence.md#e03-sumup-home), [E15](../research/evidence.md#e15-merge-accounting).
+Evidence: [E01](../research/evidence.md#e01-square-home), [E03](../research/evidence.md#e03-sumup-home), [E15](../research/evidence.md#e15-merge-accounting), [E18](../research/evidence.md#e18-screen-stripe), [E19](../research/evidence.md#e19-screen-revolut), [E20](../research/evidence.md#e20-wise-send), [E42](../research/evidence.md#e42-codat-invoice-guide), [E45](../research/evidence.md#e45-codat-ar), [E47](../research/evidence.md#e47-codat-troubleshooting).
 
 **Limits and comparisons still needed:** These examples use different routing levels. They do not establish the effectiveness of one universal navigation taxonomy. Full journeys and search need testing.
+
+**Corroboration basis:** Square and SumUp business/outcome entry routes, Stripe task-specific starts, and Revolut use-case routes all link a product question toward implementation. Labels and exact information architectures differ; navigation effectiveness remains untested.
 
 ## P02 Establish the domain model before the call sequence
 
@@ -45,13 +47,13 @@ Status: observed.
 
 Rubric criteria: R02, R03, R08.
 
-Evidence: [E07](../research/evidence.md#e07-gusto-onboarding), [E10](../research/evidence.md#e10-hibob-start), [E14](../research/evidence.md#e14-merge-hris), [E15](../research/evidence.md#e15-merge-accounting), [E17](../research/evidence.md#e17-hubspot-crm-model).
+Evidence: [E07](../research/evidence.md#e07-gusto-onboarding), [E10](../research/evidence.md#e10-hibob-start), [E14](../research/evidence.md#e14-merge-hris), [E15](../research/evidence.md#e15-merge-accounting), [E17](../research/evidence.md#e17-hubspot-crm-model), [E20](../research/evidence.md#e20-wise-send), [E22](../research/evidence.md#e22-wise-embedded), [E32](../research/evidence.md#e32-personio-prerequisites), [E33](../research/evidence.md#e33-personio-initial-sync), [E40](../research/evidence.md#e40-hubspot-associations), [E45](../research/evidence.md#e45-codat-ar), [E54](../research/evidence.md#e54-square-pay-orders).
 
 **Limits and comparisons still needed:** The sampled pages demonstrate parts of the model, not a complete universal structure. Data ownership questions also derive from this project's requirements.
 
 ## P03 Distinguish request success from workflow completion
 
-Status: observed.
+Status: corroborated.
 
 **Reader problem:** A successful API response can be mistaken for a completed business outcome.
 
@@ -69,13 +71,15 @@ Status: observed.
 
 Rubric criteria: R03, R04, R06.
 
-Evidence: [E02](../research/evidence.md#e02-square-create-order), [E05](../research/evidence.md#e05-revolut-checklist), [E07](../research/evidence.md#e07-gusto-onboarding).
+Evidence: [E02](../research/evidence.md#e02-square-create-order), [E05](../research/evidence.md#e05-revolut-checklist), [E07](../research/evidence.md#e07-gusto-onboarding), [E20](../research/evidence.md#e20-wise-send), [E21](../research/evidence.md#e21-wise-enterprise), [E22](../research/evidence.md#e22-wise-embedded), [E23](../research/evidence.md#e23-wise-tracking), [E24](../research/evidence.md#e24-wise-statuses), [E27](../research/evidence.md#e27-gusto-quickstart), [E30](../research/evidence.md#e30-gusto-company-events), [E31](../research/evidence.md#e31-gusto-status-reference), [E38](../research/evidence.md#e38-hubspot-objects), [E43](../research/evidence.md#e43-codat-invoice-setup), [E44](../research/evidence.md#e44-codat-invoice-decision), [E46](../research/evidence.md#e46-codat-freshness), [E54](../research/evidence.md#e54-square-pay-orders).
 
 **Limits and comparisons still needed:** The observed workflows differ. A synchronous one-call task needs only a concise expected result, not a manufactured state diagram.
 
+**Corroboration basis:** Square distinguishes order creation from payment/completion; Gusto distinguishes onboarding steps/submission from approval; Wise distinguishes transfer processing/sent funds from recipient receipt. These independently support separating operation success from the business completion condition.
+
 ## P04 Route authorization by actor and account context
 
-Status: observed.
+Status: corroborated.
 
 **Reader problem:** A generic token example can conceal differences between internal integrations and multi-customer partners.
 
@@ -93,9 +97,11 @@ Status: observed.
 
 Rubric criteria: R05, R11.
 
-Evidence: [E04](../research/evidence.md#e04-sumup-mcp), [E10](../research/evidence.md#e10-hibob-start), [E14](../research/evidence.md#e14-merge-hris), [E16](../research/evidence.md#e16-stripe-mcp).
+Evidence: [E04](../research/evidence.md#e04-sumup-mcp), [E10](../research/evidence.md#e10-hibob-start), [E14](../research/evidence.md#e14-merge-hris), [E16](../research/evidence.md#e16-stripe-mcp), [E21](../research/evidence.md#e21-wise-enterprise), [E22](../research/evidence.md#e22-wise-embedded), [E27](../research/evidence.md#e27-gusto-quickstart), [E28](../research/evidence.md#e28-gusto-auth), [E32](../research/evidence.md#e32-personio-prerequisites), [E41](../research/evidence.md#e41-hubspot-auth), [E56](../research/evidence.md#e56-cloudflare-api).
 
 **Limits and comparisons still needed:** Authentication patterns are product-specific. These observations do not establish another platform's permission model.
+
+**Corroboration basis:** HiBob routes internal clients versus partners; Gusto separates system versus company context; Wise separates organizational and end-customer payout context; HubSpot selects access by distribution model. Each makes the integration actor/account context relevant to access.
 
 ## P05 Test the reader task and explain simulation limits
 
@@ -117,7 +123,7 @@ Status: observed.
 
 Rubric criteria: R06, R07.
 
-Evidence: [E05](../research/evidence.md#e05-revolut-checklist), [E11](../research/evidence.md#e11-plaid-sandbox), [E12](../research/evidence.md#e12-adyen-testing).
+Evidence: [E05](../research/evidence.md#e05-revolut-checklist), [E11](../research/evidence.md#e11-plaid-sandbox), [E12](../research/evidence.md#e12-adyen-testing), [E24](../research/evidence.md#e24-wise-statuses), [E26](../research/evidence.md#e26-wise-simulation), [E43](../research/evidence.md#e43-codat-invoice-setup).
 
 **Limits and comparisons still needed:** A checklist, a sandbox caveat and an integration test guide support different parts of the rule. Do not copy payment-specific cases into HR tasks.
 
@@ -141,13 +147,13 @@ Status: observed.
 
 Rubric criteria: R04, R07.
 
-Evidence: [E02](../research/evidence.md#e02-square-create-order), [E06](../research/evidence.md#e06-revolut-webhooks), [E13](../research/evidence.md#e13-github-rest-practices).
+Evidence: [E02](../research/evidence.md#e02-square-create-order), [E06](../research/evidence.md#e06-revolut-webhooks), [E13](../research/evidence.md#e13-github-rest-practices), [E23](../research/evidence.md#e23-wise-tracking), [E25](../research/evidence.md#e25-wise-transfer-reference), [E27](../research/evidence.md#e27-gusto-quickstart), [E29](../research/evidence.md#e29-gusto-errors), [E34](../research/evidence.md#e34-personio-events), [E39](../research/evidence.md#e39-hubspot-errors), [E46](../research/evidence.md#e46-codat-freshness), [E47](../research/evidence.md#e47-codat-troubleshooting), [E55](../research/evidence.md#e55-github-troubleshooting).
 
 **Limits and comparisons still needed:** Never transfer exact retry delays, limits, signature algorithms or idempotency lifetimes from a reference provider.
 
 ## P07 Connect changes to applicability and reader action
 
-Status: observed.
+Status: corroborated.
 
 **Reader problem:** Readers know something changed but cannot determine impact or migrate safely.
 
@@ -165,9 +171,11 @@ Status: observed.
 
 Rubric criteria: R04, R10.
 
-Evidence: [E08](../research/evidence.md#e08-gusto-upgrade), [E09](../research/evidence.md#e09-gusto-changelog).
+Evidence: [E08](../research/evidence.md#e08-gusto-upgrade), [E09](../research/evidence.md#e09-gusto-changelog), [E35](../research/evidence.md#e35-personio-change), [E50](../research/evidence.md#e50-sumup-cli-release), [E53](../research/evidence.md#e53-square-release-notes), [E57](../research/evidence.md#e57-cloudflare-api-change).
 
-**Limits and comparisons still needed:** Only one provider and selected entries currently support this pattern. The release-note distinction is a proposed framework rule awaiting broader comparison.
+**Limits and comparisons still needed:** Content functions can share a page or changelog. Provider naming does not determine structure. The impact-to-action rule is corroborated; exact release governance and review policy remain product-specific.
+
+**Corroboration basis:** Gusto names affected endpoints and migration actions, Personio names affected API behaviors and required client adaptations, and Cloudflare identifies changed representation and a client alternative. This supports the impact-to-action rule; separate release-note/changelog filenames are not required.
 
 ## P08 Document the complete tooling setup path
 
@@ -189,7 +197,7 @@ Status: observed.
 
 Rubric criteria: R05, R06, R11.
 
-Evidence: [E04](../research/evidence.md#e04-sumup-mcp), [E16](../research/evidence.md#e16-stripe-mcp).
+Evidence: [E04](../research/evidence.md#e04-sumup-mcp), [E16](../research/evidence.md#e16-stripe-mcp), [E48](../research/evidence.md#e48-sumup-cli), [E49](../research/evidence.md#e49-sumup-skills), [E50](../research/evidence.md#e50-sumup-cli-release), [E51](../research/evidence.md#e51-stripe-skills), [E52](../research/evidence.md#e52-stripe-cli-reference).
 
 **Limits and comparisons still needed:** The initial sample covers MCP content. SDK, CLI and skill-specific rules still need direct examples and testing.
 
@@ -213,6 +221,80 @@ Status: observed.
 
 Rubric criteria: R02, R04, R08.
 
-Evidence: [E02](../research/evidence.md#e02-square-create-order), [E14](../research/evidence.md#e14-merge-hris), [E17](../research/evidence.md#e17-hubspot-crm-model).
+Evidence: [E02](../research/evidence.md#e02-square-create-order), [E14](../research/evidence.md#e14-merge-hris), [E17](../research/evidence.md#e17-hubspot-crm-model), [E20](../research/evidence.md#e20-wise-send), [E25](../research/evidence.md#e25-wise-transfer-reference), [E29](../research/evidence.md#e29-gusto-errors), [E31](../research/evidence.md#e31-gusto-status-reference), [E33](../research/evidence.md#e33-personio-initial-sync), [E35](../research/evidence.md#e35-personio-change), [E36](../research/evidence.md#e36-personio-person-reference), [E38](../research/evidence.md#e38-hubspot-objects), [E39](../research/evidence.md#e39-hubspot-errors), [E40](../research/evidence.md#e40-hubspot-associations), [E54](../research/evidence.md#e54-square-pay-orders), [E55](../research/evidence.md#e55-github-troubleshooting), [E56](../research/evidence.md#e56-cloudflare-api).
 
 **Limits and comparisons still needed:** Only one endpoint reference is inspected so far. Model guides and domain overviews supply related examples, not endpoint-level corroboration.
+
+## P10 Explain synchronization and data freshness
+
+Status: observed.
+
+**Reader problem:** An integration can return data successfully while using incomplete, stale or mutually inconsistent datasets.
+
+**Applies when:** A workflow reads replicated data, aggregates sources or synchronizes changes between systems.
+
+**Rule:** Explain initial and incremental synchronization, ownership, relevant freshness/completeness signals, deletion and reconnection behavior, and how the workflow detects or recovers from incomplete data. Do not invent an acceptable lag.
+
+**Discovery questions:**
+
+- Which system owns each field and change?
+- What establishes a complete initial sync, and what triggers later updates?
+- Which datasets must be coherent for this outcome, and what lag is acceptable?
+- How are deletions, terminations, rehires and lost connections handled?
+
+**Evaluation:** Trace initial data and one relevant update or deletion through to the consumer. Check whether the reader can distinguish no data, inaccessible data, unsupported capability, in-progress sync and failed sync.
+
+Rubric criteria: R01, R02, R03, R06, R07.
+
+Evidence: [E14](../research/evidence.md#e14-merge-hris), [E23](../research/evidence.md#e23-wise-tracking), [E33](../research/evidence.md#e33-personio-initial-sync), [E34](../research/evidence.md#e34-personio-events), [E45](../research/evidence.md#e45-codat-ar), [E46](../research/evidence.md#e46-codat-freshness), [E47](../research/evidence.md#e47-codat-troubleshooting).
+
+**Limits and comparisons still needed:** Merge describes cadence, Personio describes employment synchronization, and Codat explains dataset coherence. They cover different parts of the rule; domain owners must supply lag and ownership requirements.
+
+## P11 Make business time and state meaning explicit
+
+Status: observed.
+
+**Reader problem:** Readers confuse recorded changes, effective changes, delivered events and the eventual business outcome.
+
+**Applies when:** A task has effective dates, asynchronous states, scheduled changes, rollbacks or cross-day time periods.
+
+**Rule:** Define the relevant timestamps, business dates and state meanings, including what a signal does and does not establish. Explain applicable ordering, effective-date and exceptional-transition behavior.
+
+**Discovery questions:**
+
+- When does a change take effect versus become recorded or delivered?
+- Which timezone or business date governs the outcome?
+- Can a terminal-looking state reverse, or mean something less than end-user completion?
+- How should clients interpret overnight periods or scheduled transitions?
+
+**Evaluation:** Choose a relevant boundary case, such as future-effective suspension, overnight work or a payout that is sent but not received. Verify that the documented interpretation matches platform evidence.
+
+Rubric criteria: R02, R03, R04, R06, R07.
+
+Evidence: [E24](../research/evidence.md#e24-wise-statuses), [E30](../research/evidence.md#e30-gusto-company-events), [E34](../research/evidence.md#e34-personio-events), [E35](../research/evidence.md#e35-personio-change).
+
+**Limits and comparisons still needed:** The sampled sources illustrate distinct time/state boundaries. This is a proposed conditional rule, not a universal lifecycle or date-format prescription.
+
+## P12 State the boundary of a demonstration
+
+Status: observed.
+
+**Reader problem:** Readers or agents treat a quickstart or sandbox happy path as a complete production product or integration.
+
+**Applies when:** A guide uses a demo, simplified authorization, simulated data or a deliberately narrow example.
+
+**Rule:** State what the example establishes, its prerequisites and exclusions, which steps are simplified, and where the production workflow differs. Link the next relevant implementation or verification guidance.
+
+**Discovery questions:**
+
+- Which outcome is this example actually demonstrating?
+- What production responsibilities or decisions does it omit?
+- Which credentials, data, approval or failure paths are simplified?
+
+**Evaluation:** Ask what a reader could wrongly infer from completing the example. Confirm that consequential exclusions and production differences are explicit and linked to the right next task.
+
+Rubric criteria: R01, R03, R06, R09.
+
+Evidence: [E11](../research/evidence.md#e11-plaid-sandbox), [E27](../research/evidence.md#e27-gusto-quickstart), [E42](../research/evidence.md#e42-codat-invoice-guide), [E43](../research/evidence.md#e43-codat-invoice-setup), [E44](../research/evidence.md#e44-codat-invoice-decision).
+
+**Limits and comparisons still needed:** Scope statements in public examples do not prove that readers notice or understand the boundaries; reader-task testing is still required.

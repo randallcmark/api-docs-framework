@@ -9,7 +9,7 @@
       "fetch_url": "https://developer.squareup.com/docs",
       "research_question": "Business domain navigation and shared developer resources",
       "review_status": "passages_inspected",
-      "reviewed_at": "2026-10-20T19:55:07.856305+00:00"
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
     },
     {
       "id": "square-create-order",
@@ -29,7 +29,7 @@
       "fetch_url": "https://developer.sumup.com/",
       "research_question": "Outcome-based routes and developer resources",
       "review_status": "passages_inspected",
-      "reviewed_at": "2026-10-20T19:55:07.856305+00:00"
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
     },
     {
       "id": "sumup-mcp",
@@ -181,6 +181,769 @@
       "research_question": "Business concepts, record identifiers and relationships linked to operations",
       "review_status": "passages_inspected",
       "reviewed_at": "2026-10-20T19:55:07.856305+00:00"
+    },
+    {
+      "id": "screen-stripe",
+      "provider_id": "stripe",
+      "page_type": "screening-entry",
+      "canonical_url": "https://docs.stripe.com/",
+      "fetch_url": "https://docs.stripe.com/",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "screen-adyen",
+      "provider_id": "adyen",
+      "page_type": "screening-entry",
+      "canonical_url": "https://docs.adyen.com/",
+      "fetch_url": "https://docs.adyen.com/",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
+    },
+    {
+      "id": "screen-paypal",
+      "provider_id": "paypal",
+      "page_type": "screening-entry",
+      "canonical_url": "https://developer.paypal.com/",
+      "fetch_url": "https://developer.paypal.com/",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
+    },
+    {
+      "id": "screen-checkout",
+      "provider_id": "checkout",
+      "page_type": "screening-entry",
+      "canonical_url": "https://www.checkout.com/docs",
+      "fetch_url": "https://www.checkout.com/docs",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
+    },
+    {
+      "id": "screen-revolut",
+      "provider_id": "revolut",
+      "page_type": "screening-entry",
+      "canonical_url": "https://developer.revolut.com/",
+      "fetch_url": "https://developer.revolut.com/",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "screen-wise",
+      "provider_id": "wise",
+      "page_type": "screening-entry",
+      "canonical_url": "https://docs.wise.com/",
+      "fetch_url": "https://docs.wise.com/",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
+    },
+    {
+      "id": "screen-plaid",
+      "provider_id": "plaid",
+      "page_type": "screening-entry",
+      "canonical_url": "https://plaid.com/docs/",
+      "fetch_url": "https://plaid.com/docs/",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
+    },
+    {
+      "id": "screen-truelayer",
+      "provider_id": "truelayer",
+      "page_type": "screening-entry",
+      "canonical_url": "https://docs.truelayer.com/",
+      "fetch_url": "https://docs.truelayer.com/",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
+    },
+    {
+      "id": "screen-tink",
+      "provider_id": "tink",
+      "page_type": "screening-entry",
+      "canonical_url": "https://docs.tink.com/",
+      "fetch_url": "https://docs.tink.com/",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "unusable_shell",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
+    },
+    {
+      "id": "screen-modern-treasury",
+      "provider_id": "modern-treasury",
+      "page_type": "screening-entry",
+      "canonical_url": "https://docs.moderntreasury.com/",
+      "fetch_url": "https://docs.moderntreasury.com/",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
+    },
+    {
+      "id": "screen-gusto",
+      "provider_id": "gusto",
+      "page_type": "screening-entry",
+      "canonical_url": "https://docs.gusto.com/",
+      "fetch_url": "https://docs.gusto.com/",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
+    },
+    {
+      "id": "screen-bamboohr",
+      "provider_id": "bamboohr",
+      "page_type": "screening-entry",
+      "canonical_url": "https://documentation.bamboohr.com/",
+      "fetch_url": "https://documentation.bamboohr.com/",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
+    },
+    {
+      "id": "screen-hibob",
+      "provider_id": "hibob",
+      "page_type": "screening-entry",
+      "canonical_url": "https://apidocs.hibob.com/",
+      "fetch_url": "https://apidocs.hibob.com/",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
+    },
+    {
+      "id": "screen-personio",
+      "provider_id": "personio",
+      "page_type": "screening-entry",
+      "canonical_url": "https://developer.personio.de/",
+      "fetch_url": "https://developer.personio.de/",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
+    },
+    {
+      "id": "screen-rippling",
+      "provider_id": "rippling",
+      "page_type": "screening-entry",
+      "canonical_url": "https://developer.rippling.com/",
+      "fetch_url": "https://developer.rippling.com/",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "unusable_shell",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
+    },
+    {
+      "id": "screen-deel",
+      "provider_id": "deel",
+      "page_type": "screening-entry",
+      "canonical_url": "https://developer.deel.com/",
+      "fetch_url": "https://developer.deel.com/",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
+    },
+    {
+      "id": "screen-xero",
+      "provider_id": "xero",
+      "page_type": "screening-entry",
+      "canonical_url": "https://developer.xero.com/",
+      "fetch_url": "https://developer.xero.com/",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
+    },
+    {
+      "id": "screen-quickbooks",
+      "provider_id": "quickbooks",
+      "page_type": "screening-entry",
+      "canonical_url": "https://developer.intuit.com/app/developer/qbo/docs/get-started",
+      "fetch_url": "https://developer.intuit.com/app/developer/qbo/docs/get-started",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "unusable_shell",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
+    },
+    {
+      "id": "screen-sage",
+      "provider_id": "sage",
+      "page_type": "screening-entry",
+      "canonical_url": "https://developer.sage.com/",
+      "fetch_url": "https://developer.sage.com/",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "unusable_shell",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
+    },
+    {
+      "id": "screen-zoho",
+      "provider_id": "zoho",
+      "page_type": "screening-entry",
+      "canonical_url": "https://www.zoho.com/developer/",
+      "fetch_url": "https://www.zoho.com/developer/",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
+    },
+    {
+      "id": "screen-salesforce",
+      "provider_id": "salesforce",
+      "page_type": "screening-entry",
+      "canonical_url": "https://developer.salesforce.com/docs",
+      "fetch_url": "https://developer.salesforce.com/docs",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "navigation_only",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00",
+      "review_note": "Only global navigation exposed; use the recorded REST-specific alternate for substantive observations."
+    },
+    {
+      "id": "screen-hubspot",
+      "provider_id": "hubspot",
+      "page_type": "screening-entry",
+      "canonical_url": "https://developers.hubspot.com/docs",
+      "fetch_url": "https://developers.hubspot.com/docs",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
+    },
+    {
+      "id": "screen-finch",
+      "provider_id": "finch",
+      "page_type": "screening-entry",
+      "canonical_url": "https://developer.tryfinch.com/",
+      "fetch_url": "https://developer.tryfinch.com/",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
+    },
+    {
+      "id": "screen-merge",
+      "provider_id": "merge",
+      "page_type": "screening-entry",
+      "canonical_url": "https://docs.merge.dev/",
+      "fetch_url": "https://docs.merge.dev/",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
+    },
+    {
+      "id": "screen-codat",
+      "provider_id": "codat",
+      "page_type": "screening-entry",
+      "canonical_url": "https://docs.codat.io/",
+      "fetch_url": "https://docs.codat.io/",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
+    },
+    {
+      "id": "screen-apideck",
+      "provider_id": "apideck",
+      "page_type": "screening-entry",
+      "canonical_url": "https://developers.apideck.com/",
+      "fetch_url": "https://developers.apideck.com/",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
+    },
+    {
+      "id": "screen-workato",
+      "provider_id": "workato",
+      "page_type": "screening-entry",
+      "canonical_url": "https://docs.workato.com/",
+      "fetch_url": "https://docs.workato.com/",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
+    },
+    {
+      "id": "screen-nango",
+      "provider_id": "nango",
+      "page_type": "screening-entry",
+      "canonical_url": "https://nango.dev/docs",
+      "fetch_url": "https://nango.dev/docs",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
+    },
+    {
+      "id": "screen-github",
+      "provider_id": "github",
+      "page_type": "screening-entry",
+      "canonical_url": "https://docs.github.com/en/rest",
+      "fetch_url": "https://docs.github.com/en/rest",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
+    },
+    {
+      "id": "screen-twilio",
+      "provider_id": "twilio",
+      "page_type": "screening-entry",
+      "canonical_url": "https://www.twilio.com/docs",
+      "fetch_url": "https://www.twilio.com/docs",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
+    },
+    {
+      "id": "screen-slack",
+      "provider_id": "slack",
+      "page_type": "screening-entry",
+      "canonical_url": "https://docs.slack.dev/",
+      "fetch_url": "https://docs.slack.dev/",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
+    },
+    {
+      "id": "screen-auth0",
+      "provider_id": "auth0",
+      "page_type": "screening-entry",
+      "canonical_url": "https://auth0.com/docs",
+      "fetch_url": "https://auth0.com/docs",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
+    },
+    {
+      "id": "screen-cloudflare",
+      "provider_id": "cloudflare",
+      "page_type": "screening-entry",
+      "canonical_url": "https://developers.cloudflare.com/",
+      "fetch_url": "https://developers.cloudflare.com/",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00"
+    },
+    {
+      "id": "screen-atlassian",
+      "provider_id": "atlassian",
+      "page_type": "screening-entry",
+      "canonical_url": "https://developer.atlassian.com/",
+      "fetch_url": "https://developer.atlassian.com/",
+      "research_question": "Inspect audience routing and links to concepts, workflow, REST reference, testing, operation, changes and tooling.",
+      "review_status": "navigation_only",
+      "reviewed_at": "2026-10-20T20:17:11.712977+00:00",
+      "review_note": "Only global navigation exposed; use the recorded REST-specific alternate for substantive observations."
+    },
+    {
+      "id": "screen-sage-accounting",
+      "provider_id": "sage",
+      "page_type": "screening-alternate",
+      "canonical_url": "https://developer.sage.com/accounting/docs/v1.0.0/guides/learning/key-concepts/overview",
+      "fetch_url": "https://developer.sage.com/accounting/docs/v1.0.0/guides/learning/key-concepts/overview",
+      "research_question": "API product variants, account ownership, limits and compatibility",
+      "review_status": "unusable_shell",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "review_note": "Only title text exposed; this capture does not establish the accounting guidance."
+    },
+    {
+      "id": "screen-salesforce-rest",
+      "provider_id": "salesforce",
+      "page_type": "screening-alternate",
+      "canonical_url": "https://developer.salesforce.com/docs/platform/api-rest/guide/quickstart.html",
+      "fetch_url": "https://developer.salesforce.com/docs/platform/api-rest/guide/quickstart.html",
+      "research_question": "A REST-specific alternate to the navigation shell",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "screen-atlassian-rest",
+      "provider_id": "atlassian",
+      "page_type": "screening-alternate",
+      "canonical_url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/",
+      "fetch_url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/",
+      "research_question": "A REST-specific alternate to the platform navigation page",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "wise-send",
+      "provider_id": "wise",
+      "page_type": "workflow",
+      "canonical_url": "https://docs.wise.com/guides/product/send-money",
+      "fetch_url": "https://docs.wise.com/guides/product/send-money",
+      "research_question": "Cross-border payment resources and integration model choices",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "wise-enterprise",
+      "provider_id": "wise",
+      "page_type": "workflow",
+      "canonical_url": "https://docs.wise.com/guides/product/send-money/use-cases/enterprise-payouts",
+      "fetch_url": "https://docs.wise.com/guides/product/send-money/use-cases/enterprise-payouts",
+      "research_question": "Direct business payout sequence and ownership",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "wise-embedded",
+      "provider_id": "wise",
+      "page_type": "workflow",
+      "canonical_url": "https://docs.wise.com/guides/product/send-money/use-cases/embedded-payouts",
+      "fetch_url": "https://docs.wise.com/guides/product/send-money/use-cases/embedded-payouts",
+      "research_question": "Partner payout sequence and customer profile context",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "wise-tracking",
+      "provider_id": "wise",
+      "page_type": "operations",
+      "canonical_url": "https://docs.wise.com/guides/product/send-money/tracking/track-transfers",
+      "fetch_url": "https://docs.wise.com/guides/product/send-money/tracking/track-transfers",
+      "research_question": "Observable transfer states, event subscriptions and recovery",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "wise-statuses",
+      "provider_id": "wise",
+      "page_type": "concepts",
+      "canonical_url": "https://docs.wise.com/guides/product/send-money/tracking/transfer-statuses",
+      "fetch_url": "https://docs.wise.com/guides/product/send-money/tracking/transfer-statuses",
+      "research_question": "Lifecycle states, exceptional flows and sandbox simulation",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "gusto-quickstart",
+      "provider_id": "gusto",
+      "page_type": "workflow",
+      "canonical_url": "https://docs.gusto.com/embedded-payroll/docs/quickstart",
+      "fetch_url": "https://docs.gusto.com/embedded-payroll/docs/quickstart.md",
+      "research_question": "Initial access and sandbox prerequisites",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "gusto-auth",
+      "provider_id": "gusto",
+      "page_type": "authentication",
+      "canonical_url": "https://docs.gusto.com/embedded-payroll/docs/authentication-and-authorization",
+      "fetch_url": "https://docs.gusto.com/embedded-payroll/docs/authentication-and-authorization.md",
+      "research_question": "System versus company access and authorization context",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "gusto-errors",
+      "provider_id": "gusto",
+      "page_type": "troubleshooting",
+      "canonical_url": "https://docs.gusto.com/embedded-payroll/docs/errors",
+      "fetch_url": "https://docs.gusto.com/embedded-payroll/docs/errors.md",
+      "research_question": "Recoverable error meaning and diagnostic context",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "gusto-company-events",
+      "provider_id": "gusto",
+      "page_type": "events",
+      "canonical_url": "https://docs.gusto.com/embedded-payroll/docs/company-events",
+      "fetch_url": "https://docs.gusto.com/embedded-payroll/docs/company-events.md",
+      "research_question": "Business approval signals for company onboarding",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "personio-prerequisites",
+      "provider_id": "personio",
+      "page_type": "workflow",
+      "canonical_url": "https://developer.personio.de/docs/introduction-and-prerequisites",
+      "fetch_url": "https://developer.personio.de/docs/introduction-and-prerequisites.md",
+      "research_question": "Shift planning integration boundary and prerequisites",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "personio-initial-sync",
+      "provider_id": "personio",
+      "page_type": "workflow",
+      "canonical_url": "https://developer.personio.de/docs/initial-core-data-sync",
+      "fetch_url": "https://developer.personio.de/docs/initial-core-data-sync.md",
+      "research_question": "Initial employee data and identifier mapping",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "personio-events",
+      "provider_id": "personio",
+      "page_type": "events",
+      "canonical_url": "https://developer.personio.de/docs/event-driven-data-from-personio",
+      "fetch_url": "https://developer.personio.de/docs/event-driven-data-from-personio.md",
+      "research_question": "Event-driven incremental updates and reconciliation needs",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "personio-change",
+      "provider_id": "personio",
+      "page_type": "changelog",
+      "canonical_url": "https://developer.personio.de/changelog/deprecation-of-attendances-and-projects-v1-endpoints",
+      "fetch_url": "https://developer.personio.de/changelog/deprecation-of-attendances-and-projects-v1-endpoints.md",
+      "research_question": "Deprecation scope, dates and client migration action",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "hubspot-objects",
+      "provider_id": "hubspot",
+      "page_type": "api-guide",
+      "canonical_url": "https://developers.hubspot.com/docs/api-reference/latest/crm/using-object-apis",
+      "fetch_url": "https://developers.hubspot.com/docs/api-reference/latest/crm/using-object-apis.md",
+      "research_question": "Create and relate CRM records through conceptual identifiers",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "hubspot-errors",
+      "provider_id": "hubspot",
+      "page_type": "troubleshooting",
+      "canonical_url": "https://developers.hubspot.com/docs/api-reference/error-handling",
+      "fetch_url": "https://developers.hubspot.com/docs/api-reference/error-handling.md",
+      "research_question": "Error categories, diagnostic fields and conditional recovery",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "codat-invoice-guide",
+      "provider_id": "codat",
+      "page_type": "workflow",
+      "canonical_url": "https://docs.codat.io/lending/guides/invoice-finance/introduction/",
+      "fetch_url": "https://docs.codat.io/lending/guides/invoice-finance/introduction/",
+      "research_question": "Cross-domain invoice finance workflow and prerequisites",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "codat-ar",
+      "provider_id": "codat",
+      "page_type": "workflow",
+      "canonical_url": "https://docs.codat.io/lending/features/accounts-receivable-overview/",
+      "fetch_url": "https://docs.codat.io/lending/features/accounts-receivable-overview/",
+      "research_question": "Accounting and banking data requirements and reconciliation",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "codat-freshness",
+      "provider_id": "codat",
+      "page_type": "operations",
+      "canonical_url": "https://docs.codat.io/using-the-api/queueing-data-syncs/",
+      "fetch_url": "https://docs.codat.io/using-the-api/queueing-data-syncs/",
+      "research_question": "Coherence of datasets and freshness constraints",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "sumup-cli",
+      "provider_id": "sumup",
+      "page_type": "cli",
+      "canonical_url": "https://developer.sumup.com/tools/cli/",
+      "fetch_url": "https://developer.sumup.com/tools/cli/",
+      "research_question": "Installation, authentication, environments and usage",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "sumup-skills",
+      "provider_id": "sumup",
+      "page_type": "agent-skills",
+      "canonical_url": "https://developer.sumup.com/tools/llms/agent-skills/",
+      "fetch_url": "https://developer.sumup.com/tools/llms/agent-skills/",
+      "research_question": "Skill installation, purpose and relationship with tools",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "sumup-cli-release",
+      "provider_id": "sumup",
+      "page_type": "release-note",
+      "canonical_url": "https://developer.sumup.com/changelog/sumup-cli",
+      "fetch_url": "https://developer.sumup.com/changelog/sumup-cli",
+      "research_question": "Capability-oriented release communication and follow-through",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "stripe-skills",
+      "provider_id": "stripe",
+      "page_type": "agent-skills",
+      "canonical_url": "https://docs.stripe.com/skills",
+      "fetch_url": "https://docs.stripe.com/skills.md",
+      "research_question": "Skill installation, maintenance and expected use",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "stripe-cli",
+      "provider_id": "stripe",
+      "page_type": "cli",
+      "canonical_url": "https://docs.stripe.com/stripe-cli",
+      "fetch_url": "https://docs.stripe.com/stripe-cli.md",
+      "research_question": "CLI tasks, local webhook testing and environment setup",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "square-release-notes",
+      "provider_id": "square",
+      "page_type": "release-note",
+      "canonical_url": "https://developer.squareup.com/docs/release-notes",
+      "fetch_url": "https://developer.squareup.com/docs/release-notes",
+      "research_question": "Product/release communication structure and filtering",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "square-pay-orders",
+      "provider_id": "square",
+      "page_type": "workflow",
+      "canonical_url": "https://developer.squareup.com/docs/orders-api/pay-for-orders",
+      "fetch_url": "https://developer.squareup.com/docs/orders-api/pay-for-orders",
+      "research_question": "Cross-domain order and payment workflow and completion",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "github-troubleshooting",
+      "provider_id": "github",
+      "page_type": "troubleshooting",
+      "canonical_url": "https://docs.github.com/en/rest/using-the-rest-api/troubleshooting-the-rest-api",
+      "fetch_url": "https://docs.github.com/en/rest/using-the-rest-api/troubleshooting-the-rest-api",
+      "research_question": "Symptom-to-diagnosis-to-recovery instructions",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "cloudflare-api",
+      "provider_id": "cloudflare",
+      "page_type": "api-reference",
+      "canonical_url": "https://developers.cloudflare.com/api/",
+      "fetch_url": "https://developers.cloudflare.com/api/",
+      "research_question": "Reference structure, authentication and generated client context",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "cloudflare-api-change",
+      "provider_id": "cloudflare",
+      "page_type": "changelog",
+      "canonical_url": "https://developers.cloudflare.com/changelog/post/2026-07-28-improved-record-display-format/",
+      "fetch_url": "https://developers.cloudflare.com/changelog/post/2026-07-28-improved-record-display-format/",
+      "research_question": "Breaking API behavior, mixed rollout and alternative client action",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "wise-transfer-reference",
+      "provider_id": "wise",
+      "page_type": "api-reference",
+      "canonical_url": "https://docs.wise.com/api-reference/standard-transfer/transfercreate",
+      "fetch_url": "https://docs.wise.com/api-reference/standard-transfer/transfercreate",
+      "research_question": "Required transfer relationships and business operation effect",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "wise-simulation",
+      "provider_id": "wise",
+      "page_type": "testing",
+      "canonical_url": "https://docs.wise.com/api-reference/simulation/simulationtransferstatechange",
+      "fetch_url": "https://docs.wise.com/api-reference/simulation/simulationtransferstatechange",
+      "research_question": "Reproducible status simulation request and prerequisites",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "gusto-status-reference",
+      "provider_id": "gusto",
+      "page_type": "api-reference",
+      "canonical_url": "https://docs.gusto.com/embedded-payroll/reference/get-v1-company-onboarding-status",
+      "fetch_url": "https://docs.gusto.com/embedded-payroll/reference/get-v1-company-onboarding-status.md",
+      "research_question": "Readiness and completion fields used by the workflow",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "personio-person-reference",
+      "provider_id": "personio",
+      "page_type": "api-reference",
+      "canonical_url": "https://developer.personio.de/v2.0/reference/get_v2-persons",
+      "fetch_url": "https://developer.personio.de/v2.0/reference/get_v2-persons.md",
+      "research_question": "Identifier, filtering and person/employment model details",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "personio-handling",
+      "provider_id": "personio",
+      "page_type": "workflow",
+      "canonical_url": "https://developer.personio.de/docs/handling-logic",
+      "fetch_url": "https://developer.personio.de/docs/handling-logic.md",
+      "research_question": "Lifecycle handling logic for shift planning synchronization",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "codat-invoice-setup",
+      "provider_id": "codat",
+      "page_type": "workflow",
+      "canonical_url": "https://docs.codat.io/lending/guides/invoice-finance/setting-up/",
+      "fetch_url": "https://docs.codat.io/lending/guides/invoice-finance/setting-up/",
+      "research_question": "Demo prerequisites, accounting connection and local setup",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "codat-invoice-decision",
+      "provider_id": "codat",
+      "page_type": "workflow",
+      "canonical_url": "https://docs.codat.io/lending/guides/invoice-finance/process-invoice/",
+      "fetch_url": "https://docs.codat.io/lending/guides/invoice-finance/process-invoice/",
+      "research_question": "From data retrieval to the scoped demonstration decision",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "codat-troubleshooting",
+      "provider_id": "codat",
+      "page_type": "troubleshooting",
+      "canonical_url": "https://docs.codat.io/lending/troubleshooting/",
+      "fetch_url": "https://docs.codat.io/lending/troubleshooting/",
+      "research_question": "Failure diagnosis and support route for the workflow",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "hubspot-associations",
+      "provider_id": "hubspot",
+      "page_type": "api-guide",
+      "canonical_url": "https://developers.hubspot.com/docs/api-reference/latest/crm/associations/associate-records/guide",
+      "fetch_url": "https://developers.hubspot.com/docs/api-reference/latest/crm/associations/associate-records/guide.md",
+      "research_question": "Association direction and IDs that affect integration correctness",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "hubspot-auth",
+      "provider_id": "hubspot",
+      "page_type": "authentication",
+      "canonical_url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+      "fetch_url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview.md",
+      "research_question": "Private account access versus distributed OAuth app requirements",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
+    },
+    {
+      "id": "stripe-cli-reference",
+      "provider_id": "stripe",
+      "page_type": "cli",
+      "canonical_url": "https://docs.stripe.com/cli",
+      "fetch_url": "https://docs.stripe.com/cli.md",
+      "research_question": "Actual command reference and setup path beyond the entry page",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00"
     }
   ]
 }

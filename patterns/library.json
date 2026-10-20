@@ -19,11 +19,18 @@
       "evidence_ids": [
         "E01",
         "E03",
-        "E15"
+        "E15",
+        "E18",
+        "E19",
+        "E20",
+        "E42",
+        "E45",
+        "E47"
       ],
       "limits": "These examples use different routing levels. They do not establish the effectiveness of one universal navigation taxonomy. Full journeys and search need testing.",
-      "status": "observed",
-      "confidence_note": "Provisional, uncalibrated and not task-tested. Supporting practices cover different portions of the proposed rule."
+      "status": "corroborated",
+      "confidence_note": "Corroborated as a documented practice across independent providers; not calibrated or task-tested and no causal reader benefit is claimed.",
+      "corroboration_basis": "Square and SumUp business/outcome entry routes, Stripe task-specific starts, and Revolut use-case routes all link a product question toward implementation. Labels and exact information architectures differ; navigation effectiveness remains untested."
     },
     {
       "id": "P02",
@@ -47,7 +54,14 @@
         "E10",
         "E14",
         "E15",
-        "E17"
+        "E17",
+        "E20",
+        "E22",
+        "E32",
+        "E33",
+        "E40",
+        "E45",
+        "E54"
       ],
       "limits": "The sampled pages demonstrate parts of the model, not a complete universal structure. Data ownership questions also derive from this project's requirements.",
       "status": "observed",
@@ -73,11 +87,25 @@
       "evidence_ids": [
         "E02",
         "E05",
-        "E07"
+        "E07",
+        "E20",
+        "E21",
+        "E22",
+        "E23",
+        "E24",
+        "E27",
+        "E30",
+        "E31",
+        "E38",
+        "E43",
+        "E44",
+        "E46",
+        "E54"
       ],
       "limits": "The observed workflows differ. A synchronous one-call task needs only a concise expected result, not a manufactured state diagram.",
-      "status": "observed",
-      "confidence_note": "Provisional, uncalibrated and not task-tested. Supporting practices cover different portions of the proposed rule."
+      "status": "corroborated",
+      "confidence_note": "Corroborated as a documented practice across independent providers; not calibrated or task-tested and no causal reader benefit is claimed.",
+      "corroboration_basis": "Square distinguishes order creation from payment/completion; Gusto distinguishes onboarding steps/submission from approval; Wise distinguishes transfer processing/sent funds from recipient receipt. These independently support separating operation success from the business completion condition."
     },
     {
       "id": "P04",
@@ -99,11 +127,19 @@
         "E04",
         "E10",
         "E14",
-        "E16"
+        "E16",
+        "E21",
+        "E22",
+        "E27",
+        "E28",
+        "E32",
+        "E41",
+        "E56"
       ],
       "limits": "Authentication patterns are product-specific. These observations do not establish another platform's permission model.",
-      "status": "observed",
-      "confidence_note": "Provisional, uncalibrated and not task-tested. Supporting practices cover different portions of the proposed rule."
+      "status": "corroborated",
+      "confidence_note": "Corroborated as a documented practice across independent providers; not calibrated or task-tested and no causal reader benefit is claimed.",
+      "corroboration_basis": "HiBob routes internal clients versus partners; Gusto separates system versus company context; Wise separates organizational and end-customer payout context; HubSpot selects access by distribution model. Each makes the integration actor/account context relevant to access."
     },
     {
       "id": "P05",
@@ -124,7 +160,10 @@
       "evidence_ids": [
         "E05",
         "E11",
-        "E12"
+        "E12",
+        "E24",
+        "E26",
+        "E43"
       ],
       "limits": "A checklist, a sandbox caveat and an integration test guide support different parts of the rule. Do not copy payment-specific cases into HR tasks.",
       "status": "observed",
@@ -149,7 +188,16 @@
       "evidence_ids": [
         "E02",
         "E06",
-        "E13"
+        "E13",
+        "E23",
+        "E25",
+        "E27",
+        "E29",
+        "E34",
+        "E39",
+        "E46",
+        "E47",
+        "E55"
       ],
       "limits": "Never transfer exact retry delays, limits, signature algorithms or idempotency lifetimes from a reference provider.",
       "status": "observed",
@@ -173,11 +221,16 @@
       ],
       "evidence_ids": [
         "E08",
-        "E09"
+        "E09",
+        "E35",
+        "E50",
+        "E53",
+        "E57"
       ],
-      "limits": "Only one provider and selected entries currently support this pattern. The release-note distinction is a proposed framework rule awaiting broader comparison.",
-      "status": "observed",
-      "confidence_note": "Provisional, uncalibrated and not task-tested. Supporting practices cover different portions of the proposed rule."
+      "limits": "Content functions can share a page or changelog. Provider naming does not determine structure. The impact-to-action rule is corroborated; exact release governance and review policy remain product-specific.",
+      "status": "corroborated",
+      "confidence_note": "Corroborated as a documented practice across independent providers; not calibrated or task-tested and no causal reader benefit is claimed.",
+      "corroboration_basis": "Gusto names affected endpoints and migration actions, Personio names affected API behaviors and required client adaptations, and Cloudflare identifies changed representation and a client alternative. This supports the impact-to-action rule; separate release-note/changelog filenames are not required."
     },
     {
       "id": "P08",
@@ -198,7 +251,12 @@
       ],
       "evidence_ids": [
         "E04",
-        "E16"
+        "E16",
+        "E48",
+        "E49",
+        "E50",
+        "E51",
+        "E52"
       ],
       "limits": "The initial sample covers MCP content. SDK, CLI and skill-specific rules still need direct examples and testing.",
       "status": "observed",
@@ -224,11 +282,116 @@
       "evidence_ids": [
         "E02",
         "E14",
-        "E17"
+        "E17",
+        "E20",
+        "E25",
+        "E29",
+        "E31",
+        "E33",
+        "E35",
+        "E36",
+        "E38",
+        "E39",
+        "E40",
+        "E54",
+        "E55",
+        "E56"
       ],
       "limits": "Only one endpoint reference is inspected so far. Model guides and domain overviews supply related examples, not endpoint-level corroboration.",
       "status": "observed",
       "confidence_note": "Provisional, uncalibrated and not task-tested. Supporting practices cover different portions of the proposed rule."
+    },
+    {
+      "id": "P10",
+      "name": "Explain synchronization and data freshness",
+      "problem": "An integration can return data successfully while using incomplete, stale or mutually inconsistent datasets.",
+      "applies_when": "A workflow reads replicated data, aggregates sources or synchronizes changes between systems.",
+      "rule": "Explain initial and incremental synchronization, ownership, relevant freshness/completeness signals, deletion and reconnection behavior, and how the workflow detects or recovers from incomplete data. Do not invent an acceptable lag.",
+      "questions": [
+        "Which system owns each field and change?",
+        "What establishes a complete initial sync, and what triggers later updates?",
+        "Which datasets must be coherent for this outcome, and what lag is acceptable?",
+        "How are deletions, terminations, rehires and lost connections handled?"
+      ],
+      "evaluation": "Trace initial data and one relevant update or deletion through to the consumer. Check whether the reader can distinguish no data, inaccessible data, unsupported capability, in-progress sync and failed sync.",
+      "rubric_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R06",
+        "R07"
+      ],
+      "evidence_ids": [
+        "E14",
+        "E23",
+        "E33",
+        "E34",
+        "E45",
+        "E46",
+        "E47"
+      ],
+      "limits": "Merge describes cadence, Personio describes employment synchronization, and Codat explains dataset coherence. They cover different parts of the rule; domain owners must supply lag and ownership requirements.",
+      "status": "observed",
+      "confidence_note": "Provisional and uncalibrated; observed examples support portions of the conditional rule, not measured reader outcomes."
+    },
+    {
+      "id": "P11",
+      "name": "Make business time and state meaning explicit",
+      "problem": "Readers confuse recorded changes, effective changes, delivered events and the eventual business outcome.",
+      "applies_when": "A task has effective dates, asynchronous states, scheduled changes, rollbacks or cross-day time periods.",
+      "rule": "Define the relevant timestamps, business dates and state meanings, including what a signal does and does not establish. Explain applicable ordering, effective-date and exceptional-transition behavior.",
+      "questions": [
+        "When does a change take effect versus become recorded or delivered?",
+        "Which timezone or business date governs the outcome?",
+        "Can a terminal-looking state reverse, or mean something less than end-user completion?",
+        "How should clients interpret overnight periods or scheduled transitions?"
+      ],
+      "evaluation": "Choose a relevant boundary case, such as future-effective suspension, overnight work or a payout that is sent but not received. Verify that the documented interpretation matches platform evidence.",
+      "rubric_ids": [
+        "R02",
+        "R03",
+        "R04",
+        "R06",
+        "R07"
+      ],
+      "evidence_ids": [
+        "E24",
+        "E30",
+        "E34",
+        "E35"
+      ],
+      "limits": "The sampled sources illustrate distinct time/state boundaries. This is a proposed conditional rule, not a universal lifecycle or date-format prescription.",
+      "status": "observed",
+      "confidence_note": "Provisional and uncalibrated; observed examples support portions of the conditional rule, not measured reader outcomes."
+    },
+    {
+      "id": "P12",
+      "name": "State the boundary of a demonstration",
+      "problem": "Readers or agents treat a quickstart or sandbox happy path as a complete production product or integration.",
+      "applies_when": "A guide uses a demo, simplified authorization, simulated data or a deliberately narrow example.",
+      "rule": "State what the example establishes, its prerequisites and exclusions, which steps are simplified, and where the production workflow differs. Link the next relevant implementation or verification guidance.",
+      "questions": [
+        "Which outcome is this example actually demonstrating?",
+        "What production responsibilities or decisions does it omit?",
+        "Which credentials, data, approval or failure paths are simplified?"
+      ],
+      "evaluation": "Ask what a reader could wrongly infer from completing the example. Confirm that consequential exclusions and production differences are explicit and linked to the right next task.",
+      "rubric_ids": [
+        "R01",
+        "R03",
+        "R06",
+        "R09"
+      ],
+      "evidence_ids": [
+        "E11",
+        "E27",
+        "E42",
+        "E43",
+        "E44"
+      ],
+      "limits": "Scope statements in public examples do not prove that readers notice or understand the boundaries; reader-task testing is still required.",
+      "status": "observed",
+      "confidence_note": "Provisional and uncalibrated; observed examples support portions of the conditional rule, not measured reader outcomes."
     }
   ]
 }

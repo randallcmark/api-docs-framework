@@ -136,7 +136,8 @@
       "observation": "The sandbox guide describes configurable test scenarios and explicitly limits what sandbox data and institution behavior establish about production.",
       "limitation": "No sandbox or production behavior was exercised. Differences are product-specific.",
       "pattern_ids": [
-        "P05"
+        "P05",
+        "P12"
       ]
     },
     {
@@ -174,7 +175,8 @@
       "pattern_ids": [
         "P02",
         "P04",
-        "P09"
+        "P09",
+        "P10"
       ]
     },
     {
@@ -214,6 +216,526 @@
       "pattern_ids": [
         "P02",
         "P09"
+      ]
+    },
+    {
+      "id": "E18",
+      "source_id": "screen-stripe",
+      "capture_raw_sha256": "3e493e1c3b2d2fa79be39353a0155d74d39574367b767cd74a1175992828704a",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "## Browse by product",
+      "observation": "The entry combines outcome-specific starting points with business product groups and development/agent routes.",
+      "limitation": "Only entry routing is assessed, not conversion or complete task success.",
+      "pattern_ids": [
+        "P01"
+      ]
+    },
+    {
+      "id": "E19",
+      "source_id": "screen-revolut",
+      "capture_raw_sha256": "f0e6f13ca75c765f86bd706f7df0444ba009c646463f0fece89677adc527bbb1",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "Use cases",
+      "observation": "The entry routes merchant, business-account and open-banking use cases separately and names payment and reconciliation outcomes.",
+      "limitation": "Capability labels are documented positioning, not independently tested implementation.",
+      "pattern_ids": [
+        "P01"
+      ]
+    },
+    {
+      "id": "E20",
+      "source_id": "wise-send",
+      "capture_raw_sha256": "4fdb9aa64eae76f79384d9b830486a7dfc698325485be7326bf38e1cd2484560",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "Recipient and transfer requirements",
+      "observation": "The send guide explains recipients, quotes, transfers and funding, integration-model differences and dynamically retrieved corridor requirements.",
+      "limitation": "No transfer was created. Specific financial or regulatory requirements must come from the target platform.",
+      "pattern_ids": [
+        "P01",
+        "P02",
+        "P03",
+        "P09"
+      ]
+    },
+    {
+      "id": "E21",
+      "source_id": "wise-enterprise",
+      "capture_raw_sha256": "5b9ce6049608ff43ebc9b6410751a0cbe5b188b7f3672cdb8e72f9bd5a8e3989",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "Before you begin",
+      "observation": "Enterprise payout guidance identifies the organization as legal sender and funding owner, then connects alternate step sequences to tracking and pitfalls.",
+      "limitation": "The enterprise model is provider-specific and does not establish another platform's access or legal obligations.",
+      "pattern_ids": [
+        "P03",
+        "P04"
+      ]
+    },
+    {
+      "id": "E22",
+      "source_id": "wise-embedded",
+      "capture_raw_sha256": "3de6cb1fbe1e96352d05e0f495f25035c6b7156154621a5d55c96443f61d2f10",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "Before you begin",
+      "observation": "Embedded payout guidance identifies customer profile and verification prerequisites and ties recipients, transfers and funds to that customer context.",
+      "limitation": "No customer was onboarded; contractual integration scope remains a prerequisite in the source.",
+      "pattern_ids": [
+        "P02",
+        "P03",
+        "P04"
+      ]
+    },
+    {
+      "id": "E23",
+      "source_id": "wise-tracking",
+      "capture_raw_sha256": "3ba972da3e20ab2ca2ae7a8165dd32def93f9e754e1d4c11918546417c15e816",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "Webhook ordering is not guaranteed",
+      "observation": "Transfer tracking connects asynchronous processing with event subscriptions, correlation identifiers, ordering caveats and failure/refund handling.",
+      "limitation": "Payloads and delivery guidance were inspected but no webhook receiver was run.",
+      "pattern_ids": [
+        "P03",
+        "P06",
+        "P10"
+      ]
+    },
+    {
+      "id": "E24",
+      "source_id": "wise-statuses",
+      "capture_raw_sha256": "8d3019f8e27a52894a156df518866c381975d248f1f6f470982af4f24764ec33",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "Testing transfer statuses",
+      "observation": "Status definitions distinguish sent funds from recipient receipt and explain exceptional transitions and sandbox simulation conditions.",
+      "limitation": "No simulation or bank delivery was tested. A final documented state is scoped to the provider's own observable outcome.",
+      "pattern_ids": [
+        "P03",
+        "P05",
+        "P11"
+      ]
+    },
+    {
+      "id": "E25",
+      "source_id": "wise-transfer-reference",
+      "capture_raw_sha256": "b9426ec9e7d0ca2afbb96b519947e945863d2858c748253ac66c6681520783e9",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "Avoiding duplicate transfers",
+      "observation": "The transfer reference connects resource relationships, changing conditional requirements and duplicate prevention to concrete field semantics.",
+      "limitation": "No endpoint was called; the documented idempotency field does not establish policy for other APIs.",
+      "pattern_ids": [
+        "P06",
+        "P09"
+      ]
+    },
+    {
+      "id": "E26",
+      "source_id": "wise-simulation",
+      "capture_raw_sha256": "c0c9532966f3896f1f608969f6dd3e986f1783473fe954346c13d4d2ab9e659f",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "Fund the transfer first before calling any simulation",
+      "observation": "The simulation reference gives valid transition prerequisites, excludes unsupported cases and provides a concrete sandbox operation.",
+      "limitation": "An inspected simulation procedure is not an executed test or production equivalence.",
+      "pattern_ids": [
+        "P05"
+      ]
+    },
+    {
+      "id": "E27",
+      "source_id": "gusto-quickstart",
+      "capture_raw_sha256": "874aac8c9ff431d8829ddc3785c0145137f58c2d54a386bcecd8e4b6d4565f34",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "## Troubleshooting",
+      "observation": "The quickstart connects developer organization/application setup to a first company, company-specific tokens, a short symptom table and deeper guidance.",
+      "limitation": "No developer account was created and the five-minute label was not measured.",
+      "pattern_ids": [
+        "P03",
+        "P04",
+        "P06",
+        "P12"
+      ]
+    },
+    {
+      "id": "E28",
+      "source_id": "gusto-auth",
+      "capture_raw_sha256": "e4d795490c0381ac93d1e215b0473f633b919494ee36108dc6e9ec940babb625",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "## Company access tokens",
+      "observation": "Access guidance separates application-level and company-level actions, company boundaries, expiration and refresh.",
+      "limitation": "Public example credentials are illustrative; none were used. Current availability needs target-platform evidence.",
+      "pattern_ids": [
+        "P04"
+      ]
+    },
+    {
+      "id": "E29",
+      "source_id": "gusto-errors",
+      "capture_raw_sha256": "08c3aeb326456d1decfb1b4f50d6f1be4eafcf7cc8f50a2e555fe2f25b300511",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "### Nested Error Shape",
+      "observation": "Error guidance explains category, location and resource metadata, including bulk and nested error structures.",
+      "limitation": "These are contract shapes; complete symptom-to-recovery decisions require additional category guidance.",
+      "pattern_ids": [
+        "P06",
+        "P09"
+      ]
+    },
+    {
+      "id": "E30",
+      "source_id": "gusto-company-events",
+      "capture_raw_sha256": "1e185f62e525bd0c822da8f804a138a1d73172c563c2bfd846c79e868269bd6a",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "company.suspended",
+      "observation": "Company event descriptions distinguish a suspension being created from becoming effective, and separately name approval and onboarding events.",
+      "limitation": "No event was delivered. The distinction is documentation evidence about business timing, not another provider's state model.",
+      "pattern_ids": [
+        "P03",
+        "P11"
+      ]
+    },
+    {
+      "id": "E31",
+      "source_id": "gusto-status-reference",
+      "capture_raw_sha256": "7ccd1eedcc5f8f835e74990be5b484fca9f85432cd5a7b63ca924d60159e477c",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "onboarding_completed",
+      "observation": "The status reference describes overall completion and individual required steps, completion flags, timestamps and remaining requirements.",
+      "limitation": "The guide and reference must be read together; a single field does not independently explain review or payroll readiness.",
+      "pattern_ids": [
+        "P03",
+        "P09"
+      ]
+    },
+    {
+      "id": "E32",
+      "source_id": "personio-prerequisites",
+      "capture_raw_sha256": "a6c56643b3d5b0ce9b2c7b92c6cae7b808a77cbe00ad92460528dd94351e4c9e",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "## Introduction - Roles and scope of the integration",
+      "observation": "The shift-planning guide defines partner, customer and user roles and assigns different responsibilities to the HR product and partner app.",
+      "limitation": "Role preferences and access prerequisites are specific to this integration example.",
+      "pattern_ids": [
+        "P02",
+        "P04"
+      ]
+    },
+    {
+      "id": "E33",
+      "source_id": "personio-initial-sync",
+      "capture_raw_sha256": "280a7f6c25b4aa2be3c5e1af25f4679b0d1ce794d7e110c017378aa265e281f8",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "### Fetch Employees",
+      "observation": "Initial synchronization guidance distinguishes persons from employments, limits which employees to sync and explains custom-attribute and location-model constraints.",
+      "limitation": "No employee data was accessed. Initial population is one stage, not proof of ongoing consistency.",
+      "pattern_ids": [
+        "P02",
+        "P09",
+        "P10"
+      ]
+    },
+    {
+      "id": "E34",
+      "source_id": "personio-events",
+      "capture_raw_sha256": "c33432581141c0e0dee28622dc0b8a085a3208e0ed13eb1bcab4f6aa2503e0a4",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "### Employee terminations and deletions",
+      "observation": "Event guidance connects changed employee/employment data, leave and termination variants to synchronization and product decisions.",
+      "limitation": "Some event-trigger details are delegated to linked references; none were exercised.",
+      "pattern_ids": [
+        "P06",
+        "P10",
+        "P11"
+      ]
+    },
+    {
+      "id": "E35",
+      "source_id": "personio-change",
+      "capture_raw_sha256": "5596977c421bcf9ac47ae44dcc008d0f4c81a9f1b4d8e9509487a6311ed4471e",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "### Migration Guidance:",
+      "observation": "A deprecation announcement identifies the migration target, changed identifiers, approval defaults, overnight periods and required client adaptations.",
+      "limitation": "Only this published change entry was inspected; its deadlines and release claims were not independently verified.",
+      "pattern_ids": [
+        "P07",
+        "P09",
+        "P11"
+      ]
+    },
+    {
+      "id": "E36",
+      "source_id": "personio-person-reference",
+      "capture_raw_sha256": "6c099224f502db88c0e83adf28b0c8a01dfcf96ade10aa2e9cbd86b68460bd74",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "The endpoint supports pagination and filtering",
+      "observation": "The persons reference explains filter combination, required scope and cursor pagination alongside the schema.",
+      "limitation": "No request was executed and custom-attribute behavior still needs the surrounding guide.",
+      "pattern_ids": [
+        "P09"
+      ]
+    },
+    {
+      "id": "E37",
+      "source_id": "personio-handling",
+      "capture_raw_sha256": "9b83059adcdb7f0bf53b7281b5e15cf180122b6e6698db643665da78d1d75368",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "### Employee Onboarding & Offboarding Logic:",
+      "observation": "The handling page names update/onboarding/deletion scenarios and delegates detailed flowcharts to linked images.",
+      "limitation": "Diagram contents were not inspected in this text-only pass. Detailed branch logic is untraced, not proven absent from the site.",
+      "pattern_ids": []
+    },
+    {
+      "id": "E38",
+      "source_id": "hubspot-objects",
+      "capture_raw_sha256": "284a1f407ca0753e0ba78f505f0786a6e8ddc8face2fddbc0796570e26c856cf",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "## Create records",
+      "observation": "The object guide connects create/retrieve operations, record relationships, object-specific required properties and version-dependent validation.",
+      "limitation": "Only selected operations were inspected; no CRM write was performed.",
+      "pattern_ids": [
+        "P03",
+        "P09"
+      ]
+    },
+    {
+      "id": "E39",
+      "source_id": "hubspot-errors",
+      "capture_raw_sha256": "afb9fa1518d6cc85a799e70bc0dc5ba071b74e5efec2f3bad43c51871b1a902c",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "## Multi-status errors",
+      "observation": "Error guidance distinguishes access and transient errors, optional diagnostic fields and batch partial success with per-input correlation.",
+      "limitation": "Retry specifics vary by API; no error handling was executed.",
+      "pattern_ids": [
+        "P06",
+        "P09"
+      ]
+    },
+    {
+      "id": "E40",
+      "source_id": "hubspot-associations",
+      "capture_raw_sha256": "de3a86f6f81126fc2ac538effbe0eaad03cdf74d49fbf1acf7011dcb415a604f",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "correct direction",
+      "observation": "Association guidance explains type/category discovery, relationship direction and the operations used to create labeled relationships.",
+      "limitation": "A previous-version link appears to target the current guide; legacy navigation needs investigation rather than an assumption of distinct content.",
+      "pattern_ids": [
+        "P02",
+        "P09"
+      ]
+    },
+    {
+      "id": "E41",
+      "source_id": "hubspot-auth",
+      "capture_raw_sha256": "25469d4d74b8ad79b3b80f9b9df360ba0c0373618333675f828b662956155c66",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "## App authentication",
+      "observation": "Authentication is selected by distribution model: multi-account OAuth versus single-account static access, with local tooling treated separately.",
+      "limitation": "This page scopes a particular developer platform; legacy app models should not be silently treated as identical.",
+      "pattern_ids": [
+        "P04"
+      ]
+    },
+    {
+      "id": "E42",
+      "source_id": "codat-invoice-guide",
+      "capture_raw_sha256": "29087870f1a27935b010f58e09d981b46579b444a739f21edf37bdf59269a57f",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "This guide does not cover",
+      "observation": "The invoice-finance introduction states audience, demonstration outcome, prerequisites and explicit exclusions, including production product design and due diligence.",
+      "limitation": "The sample lending logic is not a production underwriting specification or financial recommendation.",
+      "pattern_ids": [
+        "P01",
+        "P12"
+      ]
+    },
+    {
+      "id": "E43",
+      "source_id": "codat-invoice-setup",
+      "capture_raw_sha256": "7356d8b115b2c508ec3bad46876f5b6ccf5714bf228ac4b150b7b8784641bc97",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "Update your auth flow settings",
+      "observation": "Demo setup connects testing-account access, accounting-source configuration, webhooks and local environment prerequisites.",
+      "limitation": "Setup was inspected but no account, webhook or demo application was run.",
+      "pattern_ids": [
+        "P03",
+        "P05",
+        "P12"
+      ]
+    },
+    {
+      "id": "E44",
+      "source_id": "codat-invoice-decision",
+      "capture_raw_sha256": "7c0e755e063e9e5021f7a14e357e1b9f3f4700b807123ebaac1a03f629acc732",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "Receive the decision on the loan",
+      "observation": "The demo walkthrough connects application creation, company/accounting connection, fetched data and a returned decision, while distinguishing app endpoints from Codat operations.",
+      "limitation": "The guide describes a constructed demo. Its happy path does not establish a complete lending product or all recovery behavior.",
+      "pattern_ids": [
+        "P03",
+        "P12"
+      ]
+    },
+    {
+      "id": "E45",
+      "source_id": "codat-ar",
+      "capture_raw_sha256": "1341d02ddb3d386b7149f8b9fc262bd57a52da546090552e5439df45c31d3a33",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "Feature components",
+      "observation": "The accounts-receivable overview explains invoice reconciliation and explicitly requires both accounting and banking sources for the reconciled-invoices feature.",
+      "limitation": "That requirement belongs to this feature; the invoice-financing demo uses accounting data and must not inherit it automatically.",
+      "pattern_ids": [
+        "P01",
+        "P02",
+        "P10"
+      ]
+    },
+    {
+      "id": "E46",
+      "source_id": "codat-freshness",
+      "capture_raw_sha256": "73e993d7813d7fd5e4ebc3f232c60daaf71045b81929bdb755a27eda36c96d12",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "Check data 'freshness'",
+      "observation": "Refresh guidance distinguishes queued work from completed sync, records per-dataset success information, explains deleted records and warns about comparing data synced at different times.",
+      "limitation": "No synchronization was executed; freshness thresholds remain use-case-specific.",
+      "pattern_ids": [
+        "P03",
+        "P06",
+        "P10"
+      ]
+    },
+    {
+      "id": "E47",
+      "source_id": "codat-troubleshooting",
+      "capture_raw_sha256": "7ca4867b4911d3242ea6c3f96fcba3f31f9de4cec86d8fb0e3a8b661e9a3cf89",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "Lending error codes",
+      "observation": "The error table distinguishes unsupported, unsynced, disabled or failed datasets from missing connections and missing product enablement.",
+      "limitation": "Some rows describe causes without a full recovery procedure; do not mistake an error catalog for complete troubleshooting.",
+      "pattern_ids": [
+        "P01",
+        "P06",
+        "P10"
+      ]
+    },
+    {
+      "id": "E48",
+      "source_id": "sumup-cli",
+      "capture_raw_sha256": "7f8d9220aac9dedf71c6c44ae296ad2d5570c51b36495d3c10c3bb8c798ac31c",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "Set Your Merchant Context",
+      "observation": "CLI guidance connects installation verification, authentication, merchant context, operation commands, structured output and help.",
+      "limitation": "No CLI was installed or account accessed; operation examples are documented demonstrations.",
+      "pattern_ids": [
+        "P08"
+      ]
+    },
+    {
+      "id": "E49",
+      "source_id": "sumup-skills",
+      "capture_raw_sha256": "fa9f31563c0cab240ff2e1b84a1dbab02db8b5afb6d7c78250ed1862bb56ac47",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "Install Standalone Skills",
+      "observation": "Skills guidance names task-specific instructions, installation/discovery paths and separates standalone guidance from MCP connection and credentials.",
+      "limitation": "No skill was installed. Update and execution claims require separate evidence.",
+      "pattern_ids": [
+        "P08"
+      ]
+    },
+    {
+      "id": "E50",
+      "source_id": "sumup-cli-release",
+      "capture_raw_sha256": "9e6091e10d784c392b8834daae99b859886b9a7313d73a3191c63e2fbef29fa5",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "We are happy to announce the release",
+      "observation": "A capability-oriented CLI release entry describes supported tasks and links installation/authentication guidance and a specific upstream release.",
+      "limitation": "A useful release entry can live inside a changelog; separate content functions do not require universally separate page names.",
+      "pattern_ids": [
+        "P07",
+        "P08"
+      ]
+    },
+    {
+      "id": "E51",
+      "source_id": "stripe-skills",
+      "capture_raw_sha256": "b859cafa1273570af0cde46849b68733a65c138bc1b470e76c08dd16dec402ab",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "## Manually install agent skills",
+      "observation": "Skill guidance distinguishes plugin-managed installation from manual installation and updating, and separates guidance from live account access through MCP.",
+      "limitation": "No installation or update was run; product instructions describe the supported path at capture time.",
+      "pattern_ids": [
+        "P08"
+      ]
+    },
+    {
+      "id": "E52",
+      "source_id": "stripe-cli-reference",
+      "capture_raw_sha256": "c5beadde93fb77f7e417fd537cb4947699b7333bbd8b3ec5419384fe47f09ded",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "## Install the Stripe CLI",
+      "observation": "The CLI reference explains setup, updating, credential removal and available tasks, linking command-level details rather than treating installation as the complete workflow.",
+      "limitation": "Only selected setup/lifecycle passages in a long command reference were inspected. Commands were not run.",
+      "pattern_ids": [
+        "P08"
+      ]
+    },
+    {
+      "id": "E53",
+      "source_id": "square-release-notes",
+      "capture_raw_sha256": "44c0170146792da5dc8cd239cb1ae566da5ea7f0ad25a623dc225657123689fa",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "Release note types",
+      "observation": "The release overview separates API/server SDK, mobile SDK, web SDK and marketplace requirement changes by technology surface.",
+      "limitation": "Only release organization is established; individual entries and subscription behavior were not assessed.",
+      "pattern_ids": [
+        "P07"
+      ]
+    },
+    {
+      "id": "E54",
+      "source_id": "square-pay-orders",
+      "capture_raw_sha256": "0612f4114730b355c185ce336a171d0ac434344c8fd992a009f6d1a496d5e80b",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "Using the Orders API",
+      "observation": "Payment guidance explains choosing order versus payment operations, multiple authorized payments and conditional order/fulfillment completion.",
+      "limitation": "No order was paid. Cross-domain effects and completion conditions are provider-specific.",
+      "pattern_ids": [
+        "P02",
+        "P03",
+        "P09"
+      ]
+    },
+    {
+      "id": "E55",
+      "source_id": "github-troubleshooting",
+      "capture_raw_sha256": "d5d729fbbab57c8927df6ba52620317a224f0f7269e8ad29c84cc2d83f0bed38",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "## Missing results",
+      "observation": "Troubleshooting connects symptoms to pagination or access boundaries and gives conditional responses to rate-limit failures.",
+      "limitation": "A symptom route is inspected, not a measured diagnostic success rate.",
+      "pattern_ids": [
+        "P06",
+        "P09"
+      ]
+    },
+    {
+      "id": "E56",
+      "source_id": "cloudflare-api",
+      "capture_raw_sha256": "779992ecc75f1ae63c449b88cc51556a8c72cbef8a569ebdc59eb3ebbf7e3ee6",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "Organizations authentication limitations",
+      "observation": "Reference organization links credential compatibility and accepted permissions to specific operations instead of treating one authentication statement as universal.",
+      "limitation": "Only the library overview and organization-access passage were inspected in the large reference index.",
+      "pattern_ids": [
+        "P04",
+        "P09"
+      ]
+    },
+    {
+      "id": "E57",
+      "source_id": "cloudflare-api-change",
+      "capture_raw_sha256": "59f2b1c91496a0e28473a067b4bcb940204dc232a47a1cb423afe2ae1e9078aa",
+      "reviewed_at": "2026-10-20T20:19:08.777386+00:00",
+      "locator": "These are breaking changes.",
+      "observation": "A change entry identifies an affected response field, mixed-format rollout, before/after examples and a stable-format alternative.",
+      "limitation": "This DNS JSON compatibility example informs change communication, not HR or payment contract rules.",
+      "pattern_ids": [
+        "P07"
       ]
     }
   ]

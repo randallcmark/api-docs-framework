@@ -5,11 +5,12 @@ import argparse
 from collections import Counter
 from datetime import datetime
 from hashlib import sha256
+import html
 import json
 from pathlib import Path
 import re
 import sys
-from urllib.parse import unquote, urlsplit
+from urllib.parse import unquote, urljoin, urlsplit, urlunsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -83,8 +84,9 @@ def render_indexes(candidates, sources, captures, evidence, patterns):
                                "Limit: " + item["limitation"], "",
                                "Pattern links: " + ", ".join(item["pattern_ids"]) + ".", ""])
 
+    pattern_counts = Counter(item["status"] for item in patterns.values())
     pattern_lines = ["# Provisional pattern library", "",
-                     "All initial patterns are observed proposals. Their full prescriptions are not yet corroborated, calibrated or task-tested. Source examples and project requirements inform the rules; benefits remain hypotheses to evaluate.", ""]
+                     f"{len(patterns)} patterns: " + ", ".join(f"{count} {status}" for status, count in sorted(pattern_counts.items())) + ". Corroboration means independent documentation examples support a practice; it does not establish calibration, task success or causal benefit. Source examples and project requirements inform these conditional rules.", ""]
     for item in patterns.values():
         pattern_lines.extend([f"## {item['id']} {item['name']}", "", f"Status: {item['status']}.", "",
                               "**Reader problem:** " + item["problem"], "",
@@ -95,6 +97,8 @@ def render_indexes(candidates, sources, captures, evidence, patterns):
                               "Rubric criteria: " + ", ".join(item["rubric_ids"]) + ".", "",
                               "Evidence: " + ", ".join(f"[{eid}](../research/evidence.md#{slug(eid + ' ' + evidence[eid]['source_id'])})" for eid in item["evidence_ids"]) + ".", "",
                               "**Limits and comparisons still needed:** " + item["limits"], ""])
+        if item.get("corroboration_basis"):
+            pattern_lines.extend(["**Corroboration basis:** " + item["corroboration_basis"], ""])
     return {
         ROOT / "research/candidates.md": "\n".join(lines),
         ROOT / "research/sources.md": "\n".join(source_lines),
@@ -105,6 +109,107 @@ def render_indexes(candidates, sources, captures, evidence, patterns):
 
 def slug(heading):
     return re.sub(r"[^\w\s-]", "", heading.strip().lower()).replace(" ", "-")
+
+
+def normalized_url(url):
+    parts = urlsplit(html.unescape(url).replace("\\_", "_"))
+    return urlunsplit((parts.scheme, parts.netloc, parts.path.removesuffix(".md").rstrip("/"), "", ""))
+
+
+def captured_links(capture):
+    path = ROOT / capture["raw_path"]
+    if not path.exists():
+        return None
+    text = path.read_text(errors="replace")
+    urls = set(re.findall(r"\]\(([^)\s]+)\)", text))
+    urls.update(re.findall(r"href=[\"']([^\"']+)[\"']", text))
+    return {normalized_url(urljoin(capture["final_url"], url)) for url in urls}
+
+
+def comparative_indexes(candidates, sources, captures, capture_map):
+    screening = load(ROOT / "research/screening.json")
+    journeys = load(ROOT / "research/journeys.json")["journeys"]
+    records = screening["records"]
+    if len(records) != len(candidates) or {item["provider_id"] for item in records} != set(candidates):
+        raise ValueError("screening must cover each candidate exactly once")
+    selected = [item for item in records if item["study_decision"] == "selected"]
+    if len(selected) != screening["selected_count"]:
+        raise ValueError("selected provider count is inconsistent")
+    for record in records:
+        if record["screening_result"] != candidates[record["provider_id"]]["screening_status"]:
+            raise ValueError("candidate and screening states disagree")
+        for sid in record["source_ids"]:
+            if sources[sid]["provider_id"] != record["provider_id"]:
+                raise ValueError("screening source belongs to another provider")
+            if (sid, record["capture_hashes"][sid]) not in capture_map:
+                raise ValueError("screening is not bound to a captured body")
+    lines = ["# Comparative screening and selection", "",
+             f"All {len(records)} candidates received entry/index screening; {len(selected)} are selected for focused deeper comparison. This is coverage allocation, not a quality ranking. Visible links establish routes to investigate, not destination quality.", "",
+             "Screening outcomes: " + "; ".join(f"{state}: {count}" for state, count in sorted(Counter(record["screening_result"] for record in records).items())) + ". Per-provider limitations and alternate sources are recorded below.", ""]
+    for group in dict.fromkeys(item["group"] for item in candidates.values()):
+        lines.extend(["## " + group.replace("hr-payroll", "HR and payroll").replace("-", " "), "",
+                      "| Provider and inspected source | Observed entry or index | Selection |", "| --- | --- | --- |"])
+        for item in records:
+            candidate = candidates[item["provider_id"]]
+            if candidate["group"] != group:
+                continue
+            sid = item["source_ids"][-1]
+            lines.append(f"| [{candidate['name']}]({sources[sid]['canonical_url']}) | {cell(item['observation'])} {cell(item['limitation'])} | **{item['study_decision']}** — {cell(item['selection_reason'])} |")
+        lines.append("")
+    lines.extend(["## Evidence scope", "", "Per-provider source IDs, body hashes, screening dates, route categories and decisions are in `screening.json`. Published access checks are in `access-checks.json`. Full site audits, reader tests, account setup and API execution were not performed.", ""])
+
+    journey_lines = ["# Connected documentation traces", "",
+                     "These are inspected documentation routes with explicit gaps, not completed integrations or tested user journeys. An inspected procedure was read, not executed. Visible links can occur in navigation; their placement and usability are untested. Research jumps are not evidence that the site has no path.", ""]
+    visible_count = 0
+    verified_visible_count = 0
+    for journey in journeys:
+        if journey["provider_id"] not in {record["provider_id"] for record in selected}:
+            raise ValueError("journey provider is outside the selected sample")
+        bound_captures = {
+            sid: capture_map[(sid, digest)]
+            for sid, digest in journey["capture_hashes"].items()
+        }
+        journey_lines.extend([f"## {journey['id']} {journey['name']}", "", "**Reader:** " + journey["reader"], "", "**Outcome:** " + journey["outcome"], "",
+                              "| Stage | Inspected sources | Coverage and limit |", "| --- | --- | --- |"])
+        for stage in journey["stages"]:
+            if stage["inspection"] not in {"inspected", "partial", "untraced"}:
+                raise ValueError("invalid journey inspection state")
+            if stage["inspection"] == "inspected" and not stage["source_ids"]:
+                raise ValueError("an inspected journey stage requires sources")
+            for sid in stage["source_ids"]:
+                if sid not in bound_captures:
+                    raise ValueError("journey stage is not bound to a captured body")
+                if sources[sid].get("review_status") != "passages_inspected":
+                    raise ValueError("journey uses an uninspected source")
+            refs = ", ".join(f"[{sid}]({sources[sid]['canonical_url']})" for sid in stage["source_ids"]) or "Not traced"
+            journey_lines.append(f"| {stage['kind'].replace('_', ' ')} | {refs} | **{stage['inspection']}** — {cell(stage['note'])} |")
+        jumps = []
+        for connection in journey["connections"]:
+            origin = connection["from_source_id"]
+            target = connection["to_source_id"]
+            source = sources[target]
+            if connection["method"] == "visible_link":
+                target_urls = {normalized_url(source["canonical_url"]), normalized_url(source["fetch_url"]), normalized_url(bound_captures[target]["final_url"])}
+                if connection["matched_url"] not in target_urls:
+                    raise ValueError("journey link does not match the destination source")
+                links = captured_links(bound_captures[origin])
+                if links is not None and connection["matched_url"] not in links:
+                    raise ValueError("claimed visible journey link is absent from the capture")
+                if links is not None:
+                    verified_visible_count += 1
+                visible_count += 1
+            elif connection["method"] == "research_jump":
+                if origin not in sources or target not in sources:
+                    raise ValueError("unknown source in research jump")
+                jumps.append(f"`{origin}` → `{target}`")
+            else:
+                raise ValueError("unknown journey connection method")
+        journey_lines.extend(["", "**Research jumps:** " + ("; ".join(jumps) if jumps else "None among the recorded connections") + ".", "",
+                              "**Lesson:** " + journey["lesson"], "", "**Remaining limits:**", ""])
+        journey_lines.extend("- " + gap for gap in journey["remaining_gaps"])
+        journey_lines.append("")
+    print(f"PASS: {len(records)} screening records, {len(selected)} selected providers, {len(journeys)} traces, {verified_visible_count}/{visible_count} visible source links reverified from local captures")
+    return {ROOT / "research/screening.md": "\n".join(lines), ROOT / "research/journeys.md": "\n".join(journey_lines)}
 
 
 def check_links():
@@ -204,7 +309,27 @@ def main():
                 if not item.get("validation_record") or not (ROOT / item["validation_record"]).is_file():
                     raise ValueError("calibration and task-testing require a validation record")
 
-        for path, expected in render_indexes(candidates, sources, captures, evidence, patterns).items():
+        comparative = comparative_indexes(candidates, sources, captures, capture_map)
+        access_checks = load(ROOT / "research/access-checks.json")["checks"]
+        if len(access_checks) != len(candidates) or {item["provider_id"] for item in access_checks} != set(candidates):
+            raise ValueError("access checks must cover each candidate exactly once")
+        for item in access_checks:
+            if not item.get("snapshot_path"):
+                continue
+            path = (ROOT / item["snapshot_path"]).resolve()
+            if not path.is_relative_to(ROOT / "research/snapshots"):
+                raise ValueError("access-check snapshot escapes the local cache")
+            if path.exists():
+                if sha256(path.read_bytes()).hexdigest() != item["sha256"]:
+                    raise ValueError("access-check snapshot hash mismatch")
+                snapshot_checks += 1
+            elif args.require_snapshots:
+                raise ValueError("access-check snapshot missing")
+            else:
+                snapshots_missing += 1
+        indexes = render_indexes(candidates, sources, captures, evidence, patterns)
+        indexes.update(comparative)
+        for path, expected in indexes.items():
             if args.write_indexes:
                 path.write_text(expected)
             elif not path.exists() or path.read_text() != expected:

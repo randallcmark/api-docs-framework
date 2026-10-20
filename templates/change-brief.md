@@ -10,4 +10,11 @@ One brief per coherent change. Reuse established platform and domain decisions b
 - **Acceptance and verification:** What must a product reader decide and an engineer do? Which checks establish this? What cannot be checked yet?
 - **Questions and owner:** For each unresolved item, give the focused question, existing evidence, impact, required answer owner and affected content. Ask the highest-impact questions first.
 
+Conditional discovery prompts:
+
+- **Synchronized data:** What establishes completeness and freshness? Who owns changes, and what happens on deletion or lost access?
+- **Business time:** When does a change take effect? Which business date/timezone applies, and can a state reverse?
+- **Demonstrations:** What production responsibilities does the sample omit? Which test result establishes only simulated behavior?
+- **Adjacent capabilities:** Are these prerequisites actually required for this use case, or copied from a related feature?
+
 Draft only supported portions when questions remain. Do not write around an unknown with confident prose. Split unrelated outcomes if reviewers would need to reconstruct several domains in one pass. A multi-page workflow can remain one change when its context and acceptance criteria are shared.

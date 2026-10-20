@@ -1,12 +1,12 @@
 # Initial research sample
 
-This sample tests the research method and produces provisional guidance. It does not rank providers, establish commercial success, measure developer outcomes, or complete the wider comparative study.
+This preserved first-milestone sample tested the research method and produced provisional guidance. Current results are in [Comparative findings](comparisons.md). It does not rank providers, establish commercial success, measure developer outcomes, or complete the wider comparative study.
 
 ## Coverage
 
-The [candidate index](candidates.md) contains 36 providers across six groups. The [selected source index](sources.md) records 18 captured pages from 12 providers. Relevant passages from 17 pages across 11 providers were inspected. Xero returned a JavaScript shell and contributes no substantive observation.
+At this milestone, the candidate universe contained 36 providers across six groups. There were 18 captured pages from 12 providers, with relevant passages inspected from 17 pages across 11 providers. The selected Xero accounting page returned a JavaScript shell and supplied no substantive observation. Current indexes have since expanded; Xero's platform entry is usable in the later pass.
 
-The [evidence index](evidence.md) binds observations to source URLs, section locators, capture hashes and limitations. The [pattern library](../patterns/library.md) contains nine provisional patterns. All remain observed proposals: no complete prescription is yet claimed corroborated, calibrated or task-tested.
+The evidence index binds observations to source URLs, section locators, capture hashes and limitations. This first milestone produced nine provisional patterns, all then observed proposals. Later additions and status changes appear in the current [pattern library](../patterns/library.md).
 
 | Area | Initial evidence | What remains |
 | --- | --- | --- |
