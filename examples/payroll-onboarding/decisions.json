@@ -1,0 +1,55 @@
+{
+  "fixture": true,
+  "revision": "fixture-v1",
+  "decisions": [
+    {
+      "id": "D01",
+      "owner": "Product owner (fictional)",
+      "question": "What is the company and what does this workflow support?",
+      "answer": "A company is one legal employer in a client tenant. This guide starts with an existing company whose required setup has been completed; it covers submission and status inspection, not the setup process.",
+      "status": "fictional-scenario-answer"
+    },
+    {
+      "id": "D02",
+      "owner": "Product owner (fictional)",
+      "question": "Does accepted submission or approval mean payroll can run?",
+      "answer": "Submission acceptance starts review. Approved means company onboarding is complete. Each payroll run still requires a separate payroll-validation workflow.",
+      "status": "fictional-scenario-answer"
+    },
+    {
+      "id": "D03",
+      "owner": "Engineering owner (fictional)",
+      "question": "What access path and boundaries apply to partner integrations?",
+      "answer": "Use an OAuth token authorized for the relevant client tenant. Submission requires companies:write; status reads require companies:read. The company must belong to that tenant.",
+      "status": "fictional-scenario-answer"
+    },
+    {
+      "id": "D04",
+      "owner": "Product owner (fictional)",
+      "question": "What approval time can documentation promise?",
+      "answer": "No fixed review completion time is offered. Do not promise immediate activation or approval in minutes.",
+      "status": "fictional-scenario-answer"
+    },
+    {
+      "id": "D05",
+      "owner": "Engineering owner (fictional)",
+      "question": "What if submission is rejected or its outcome is unknown?",
+      "answer": "A 422 returns incomplete setup requirements to resolve. After a timeout, inspect status. If status cannot establish acceptance, contact the assigned integration contact instead of automatically resubmitting. No general POST idempotency guarantee is supplied.",
+      "status": "fictional-scenario-answer"
+    },
+    {
+      "id": "D06",
+      "owner": "Engineering owner (fictional)",
+      "question": "Which status signals and transitions can this guide rely on?",
+      "answer": "Read the status operation. Draft requires completing setup and submitting. Pending_review means wait for review without another submission. Changes_required means resolve the returned requirements and resubmit. Approved completes company onboarding. No webhook is part of this documented workflow.",
+      "status": "fictional-scenario-answer"
+    },
+    {
+      "id": "D07",
+      "owner": "Engineering owner (fictional)",
+      "question": "What does sandbox approval establish?",
+      "answer": "Approval is simulated in sandbox and cannot establish that real production review would approve the company. Actual simulator instructions and execution evidence are not provided in this fixture.",
+      "status": "fictional-scenario-answer"
+    }
+  ]
+}

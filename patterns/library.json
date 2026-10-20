@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "patterns": [
+    {
+      "id": "P01",
+      "name": "Route from business outcomes into implementation",
+      "problem": "Product readers and engineers cannot locate a capability through endpoint names alone.",
+      "applies_when": "A platform exposes multiple domains or integration paths.",
+      "rule": "Provide meaningful domain or outcome entry points and connect them to concepts, workflow guides and references. Reuse shared platform essentials.",
+      "questions": [
+        "Which outcomes are supported now, and which are outside scope?",
+        "Which integration choices change prerequisites or implementation?"
+      ],
+      "evaluation": "Attempt to navigate from a stated business outcome to its conceptual explanation and implementation path. Record the route and missing links.",
+      "rubric_ids": [
+        "R01",
+        "R08"
+      ],
+      "evidence_ids": [
+        "E01",
+        "E03",
+        "E15"
+      ],
+      "limits": "These examples use different routing levels. They do not establish the effectiveness of one universal navigation taxonomy. Full journeys and search need testing.",
+      "status": "observed",
+      "confidence_note": "Provisional, uncalibrated and not task-tested. Supporting practices cover different portions of the proposed rule."
+    },
+    {
+      "id": "P02",
+      "name": "Establish the domain model before the call sequence",
+      "problem": "Readers can execute calls without understanding what entities represent or how a workflow fits the product.",
+      "applies_when": "The task depends on domain concepts, resource relationships or lifecycle interpretation.",
+      "rule": "Explain the task-relevant actors, entities, identifiers, relationships and states. Ask owners about source of truth and ownership where implementation evidence is insufficient.",
+      "questions": [
+        "What does each resource represent in business terms?",
+        "Which entity and account scope an identifier?",
+        "Who owns each change and what marks the business outcome complete?"
+      ],
+      "evaluation": "Have a reader explain the model and identify the correct entity and state for the task. Compare with technical evidence and approved product answers.",
+      "rubric_ids": [
+        "R02",
+        "R03",
+        "R08"
+      ],
+      "evidence_ids": [
+        "E07",
+        "E10",
+        "E14",
+        "E15",
+        "E17"
+      ],
+      "limits": "The sampled pages demonstrate parts of the model, not a complete universal structure. Data ownership questions also derive from this project's requirements.",
+      "status": "observed",
+      "confidence_note": "Provisional, uncalibrated and not task-tested. Supporting practices cover different portions of the proposed rule."
+    },
+    {
+      "id": "P03",
+      "name": "Distinguish request success from workflow completion",
+      "problem": "A successful API response can be mistaken for a completed business outcome.",
+      "applies_when": "An operation creates an intermediate resource or a workflow includes asynchronous or human steps.",
+      "rule": "State what each operation accomplishes, what remains, and how readers can observe completion. Connect prerequisites, branches, operations and events as needed.",
+      "questions": [
+        "What exactly does a successful response establish?",
+        "Which state, event or other signal demonstrates completion?",
+        "What must happen before the next step, and who performs it?"
+      ],
+      "evaluation": "Trace the workflow to a supported observable completion condition. Reject unsupported claims of immediacy or readiness.",
+      "rubric_ids": [
+        "R03",
+        "R04",
+        "R06"
+      ],
+      "evidence_ids": [
+        "E02",
+        "E05",
+        "E07"
+      ],
+      "limits": "The observed workflows differ. A synchronous one-call task needs only a concise expected result, not a manufactured state diagram.",
+      "status": "observed",
+      "confidence_note": "Provisional, uncalibrated and not task-tested. Supporting practices cover different portions of the proposed rule."
+    },
+    {
+      "id": "P04",
+      "name": "Route authorization by actor and account context",
+      "problem": "A generic token example can conceal differences between internal integrations and multi-customer partners.",
+      "applies_when": "Access methods, account scope, deployment environment or permissions differ by integration model.",
+      "rule": "Identify the integration actor and account context before choosing credentials, consent and permissions. Explain transitions and limits only where supported.",
+      "questions": [
+        "Is this accessing the client's own account or acting for multiple customers?",
+        "Which permissions and account context does each operation require?",
+        "What differs between sandbox and production or hosted and local tooling?"
+      ],
+      "evaluation": "Check that a reader can choose the correct supported access path and that request examples preserve the intended account and scope.",
+      "rubric_ids": [
+        "R05",
+        "R11"
+      ],
+      "evidence_ids": [
+        "E04",
+        "E10",
+        "E14",
+        "E16"
+      ],
+      "limits": "Authentication patterns are product-specific. These observations do not establish another platform's permission model.",
+      "status": "observed",
+      "confidence_note": "Provisional, uncalibrated and not task-tested. Supporting practices cover different portions of the proposed rule."
+    },
+    {
+      "id": "P05",
+      "name": "Test the reader task and explain simulation limits",
+      "problem": "A successful sample request does not establish that an integrated workflow works in production.",
+      "applies_when": "The task has test environments, simulated data, asynchronous signals or consequential failure scenarios.",
+      "rule": "Describe relevant test setup, expected business results and representative failure cases, and state which production behaviors the environment cannot establish.",
+      "questions": [
+        "How can a developer reproduce success and relevant failure?",
+        "What must the backend, event consumer or UI observe?",
+        "Which production constraints cannot be reproduced here?"
+      ],
+      "evaluation": "Check that the test plan exercises the stated workflow and observable results. Record unexecuted examples and test-environment limits explicitly.",
+      "rubric_ids": [
+        "R06",
+        "R07"
+      ],
+      "evidence_ids": [
+        "E05",
+        "E11",
+        "E12"
+      ],
+      "limits": "A checklist, a sandbox caveat and an integration test guide support different parts of the rule. Do not copy payment-specific cases into HR tasks.",
+      "status": "observed",
+      "confidence_note": "Provisional, uncalibrated and not task-tested. Supporting practices cover different portions of the proposed rule."
+    },
+    {
+      "id": "P06",
+      "name": "Describe recovery with actual guarantees and conditions",
+      "problem": "Generic advice to retry can create duplicate effects, loops or incorrect state assumptions.",
+      "applies_when": "The workflow encounters transient errors, ambiguous outcomes, events or synchronization.",
+      "rule": "Document applicable retry conditions, idempotency behavior, duplicate and ordering semantics, and diagnosis or reconciliation paths using platform evidence.",
+      "questions": [
+        "Which operations are safe to repeat, with what key and scope?",
+        "Can events repeat or arrive out of order?",
+        "How should a caller distinguish rejection, acceptance and an unknown outcome?"
+      ],
+      "evaluation": "Compare each operational claim with the contract, implementation and approved policy. Walk one relevant failure scenario to a concrete recovery or support action.",
+      "rubric_ids": [
+        "R04",
+        "R07"
+      ],
+      "evidence_ids": [
+        "E02",
+        "E06",
+        "E13"
+      ],
+      "limits": "Never transfer exact retry delays, limits, signature algorithms or idempotency lifetimes from a reference provider.",
+      "status": "observed",
+      "confidence_note": "Provisional, uncalibrated and not task-tested. Supporting practices cover different portions of the proposed rule."
+    },
+    {
+      "id": "P07",
+      "name": "Connect changes to applicability and reader action",
+      "problem": "Readers know something changed but cannot determine impact or migrate safely.",
+      "applies_when": "A capability, behavior, field, endpoint, availability or supported version changes.",
+      "rule": "Identify affected versions or audiences, changed behavior and required action; link factual change entries to migration instructions and relevant references.",
+      "questions": [
+        "Who is affected and from which confirmed release or version?",
+        "What breaks or changes behavior?",
+        "What action and verification are required, and by when if a deadline exists?"
+      ],
+      "evaluation": "Trace a change entry to its affected contract and concrete action. Separate a capability-oriented release explanation from a factual changelog and a migration procedure.",
+      "rubric_ids": [
+        "R04",
+        "R10"
+      ],
+      "evidence_ids": [
+        "E08",
+        "E09"
+      ],
+      "limits": "Only one provider and selected entries currently support this pattern. The release-note distinction is a proposed framework rule awaiting broader comparison.",
+      "status": "observed",
+      "confidence_note": "Provisional, uncalibrated and not task-tested. Supporting practices cover different portions of the proposed rule."
+    },
+    {
+      "id": "P08",
+      "name": "Document the complete tooling setup path",
+      "problem": "Installation snippets omit access choices, verification, supported contexts or recovery.",
+      "applies_when": "A supported SDK, CLI, skill, MCP server or other developer tool is relevant to the reader task.",
+      "rule": "Explain purpose, prerequisites, installation or connection, environment and access choice, verification, and common failures. Distinguish documentation access from tools that read or change platform data.",
+      "questions": [
+        "Which tool exists and which task does it support?",
+        "Which client/runtime versions, environment and credentials are supported?",
+        "How can the reader verify setup with a low-impact action and revoke access where applicable?"
+      ],
+      "evaluation": "Follow the relevant supported setup path using documented prerequisites when an environment is available. Otherwise assess content and label execution unverified.",
+      "rubric_ids": [
+        "R05",
+        "R06",
+        "R11"
+      ],
+      "evidence_ids": [
+        "E04",
+        "E16"
+      ],
+      "limits": "The initial sample covers MCP content. SDK, CLI and skill-specific rules still need direct examples and testing.",
+      "status": "observed",
+      "confidence_note": "Provisional, uncalibrated and not task-tested. Supporting practices cover different portions of the proposed rule."
+    },
+    {
+      "id": "P09",
+      "name": "Explain reference semantics beyond field types",
+      "problem": "Schema-shaped references omit why or how an operation or field participates in a business task.",
+      "applies_when": "Readers must choose operations, identifiers, fields or options to implement the task.",
+      "rule": "Explain business effect, consequential conditions and scope, applicable side effects and recovery semantics; connect reference entries to relevant concepts and workflows.",
+      "questions": [
+        "What does this operation achieve and what does it leave for later?",
+        "Which field conditions, identifier scopes, units or defaults affect the outcome?",
+        "Where can a reader see the surrounding workflow?"
+      ],
+      "evaluation": "Use the reference to answer a task-specific choice the schema alone cannot answer. Compare examples with the contract and implementation; investigate inconsistencies.",
+      "rubric_ids": [
+        "R02",
+        "R04",
+        "R08"
+      ],
+      "evidence_ids": [
+        "E02",
+        "E14",
+        "E17"
+      ],
+      "limits": "Only one endpoint reference is inspected so far. Model guides and domain overviews supply related examples, not endpoint-level corroboration.",
+      "status": "observed",
+      "confidence_note": "Provisional, uncalibrated and not task-tested. Supporting practices cover different portions of the proposed rule."
+    }
+  ]
+}

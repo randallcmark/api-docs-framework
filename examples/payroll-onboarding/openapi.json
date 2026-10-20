@@ -1,0 +1,173 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Fictional company onboarding API",
+    "version": "fixture-v1",
+    "description": "Constructed documentation fixture, not a deployed service."
+  },
+  "servers": [
+    {
+      "url": "https://api.example.test"
+    }
+  ],
+  "paths": {
+    "/v1/companies/{company_id}/onboarding-submissions": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/CompanyId"
+        }
+      ],
+      "post": {
+        "operationId": "submitOnboarding",
+        "description": "Submit an existing prepared company for review. Acceptance does not complete review or validate payroll.",
+        "security": [
+          {
+            "OAuth2": [
+              "companies:write"
+            ]
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Submission accepted for review.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcceptedSubmission"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Required setup incomplete. Resolve returned requirements.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OnboardingStatus"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/companies/{company_id}/onboarding-status": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/CompanyId"
+        }
+      ],
+      "get": {
+        "operationId": "getOnboardingStatus",
+        "description": "Read company onboarding state within the authorized client tenant.",
+        "security": [
+          {
+            "OAuth2": [
+              "companies:read"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Current onboarding state.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OnboardingStatus"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "CompanyId": {
+        "name": "company_id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    "securitySchemes": {
+      "OAuth2": {
+        "type": "oauth2",
+        "description": "Token bound to a single client tenant for this fictional partner flow.",
+        "flows": {
+          "authorizationCode": {
+            "authorizationUrl": "https://auth.example.test/authorize",
+            "tokenUrl": "https://auth.example.test/token",
+            "scopes": {
+              "companies:read": "Inspect company onboarding status",
+              "companies:write": "Submit company onboarding"
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "OnboardingStatus": {
+        "type": "object",
+        "required": [
+          "company_id",
+          "status",
+          "requirements"
+        ],
+        "properties": {
+          "company_id": {
+            "type": "string",
+            "description": "Legal employer identifier within the authorized client tenant."
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "draft",
+              "pending_review",
+              "changes_required",
+              "approved"
+            ]
+          },
+          "requirements": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Descriptions of setup or review work remaining. An empty list is not proof of approval."
+          }
+        }
+      },
+      "AcceptedSubmission": {
+        "type": "object",
+        "required": [
+          "company_id",
+          "status",
+          "requirements"
+        ],
+        "properties": {
+          "company_id": {
+            "type": "string",
+            "description": "Legal employer identifier within the authorized client tenant."
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending_review"
+            ]
+          },
+          "requirements": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Descriptions of setup or review work remaining. An empty list is not proof of approval."
+          }
+        }
+      }
+    }
+  },
+  "x-fixture": true
+}

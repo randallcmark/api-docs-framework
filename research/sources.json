@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "square-home",
+      "provider_id": "square",
+      "page_type": "platform-entry",
+      "canonical_url": "https://developer.squareup.com/docs",
+      "fetch_url": "https://developer.squareup.com/docs",
+      "research_question": "Business domain navigation and shared developer resources",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00"
+    },
+    {
+      "id": "square-create-order",
+      "provider_id": "square",
+      "page_type": "api-reference",
+      "canonical_url": "https://developer.squareup.com/reference/square/orders-api/create-order",
+      "fetch_url": "https://developer.squareup.com/reference/square/orders-api/create-order",
+      "research_question": "Business semantics, optionality and idempotency beyond the schema",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00"
+    },
+    {
+      "id": "sumup-home",
+      "provider_id": "sumup",
+      "page_type": "platform-entry",
+      "canonical_url": "https://developer.sumup.com/",
+      "fetch_url": "https://developer.sumup.com/",
+      "research_question": "Outcome-based routes and developer resources",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00"
+    },
+    {
+      "id": "sumup-mcp",
+      "provider_id": "sumup",
+      "page_type": "agent-tooling",
+      "canonical_url": "https://developer.sumup.com/tools/llms/mcp-server",
+      "fetch_url": "https://developer.sumup.com/tools/llms/mcp-server",
+      "research_question": "Authentication, configuration, verification and troubleshooting of tooling",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00"
+    },
+    {
+      "id": "revolut-checklist",
+      "provider_id": "revolut",
+      "page_type": "production-readiness",
+      "canonical_url": "https://developer.revolut.com/docs/guides/merchant/test-and-go-live/testing/implementation-checklists",
+      "fetch_url": "https://developer.revolut.com/docs/guides/merchant/test-and-go-live/testing/implementation-checklists",
+      "research_question": "A readiness checklist for an end-to-end integration",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00"
+    },
+    {
+      "id": "revolut-webhooks",
+      "provider_id": "revolut",
+      "page_type": "events",
+      "canonical_url": "https://developer.revolut.com/docs/guides/manage-accounts/webhooks/about-webhooks",
+      "fetch_url": "https://developer.revolut.com/docs/guides/manage-accounts/webhooks/about-webhooks",
+      "research_question": "Version applicability, event behavior and operational detail",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00"
+    },
+    {
+      "id": "gusto-onboarding",
+      "provider_id": "gusto",
+      "page_type": "workflow",
+      "canonical_url": "https://docs.gusto.com/embedded-payroll/docs/onboard-a-company",
+      "fetch_url": "https://docs.gusto.com/embedded-payroll/docs/onboard-a-company.md",
+      "research_question": "Prerequisites, cross-resource sequence and completion conditions",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00"
+    },
+    {
+      "id": "gusto-upgrade",
+      "provider_id": "gusto",
+      "page_type": "migration",
+      "canonical_url": "https://docs.gusto.com/embedded-payroll/docs/version-upgrade-guide",
+      "fetch_url": "https://docs.gusto.com/embedded-payroll/docs/version-upgrade-guide.md",
+      "research_question": "Affected endpoints and required migration actions",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00"
+    },
+    {
+      "id": "gusto-changelog",
+      "provider_id": "gusto",
+      "page_type": "changelog",
+      "canonical_url": "https://docs.gusto.com/embedded-payroll/changelog/v2025-11-15",
+      "fetch_url": "https://docs.gusto.com/embedded-payroll/changelog/v2025-11-15.md",
+      "research_question": "A concrete release entry connected to compatibility guidance",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00"
+    },
+    {
+      "id": "hibob-start",
+      "provider_id": "hibob",
+      "page_type": "audience-routing",
+      "canonical_url": "https://apidocs.hibob.com/reference/getting-started-with-bob-api",
+      "fetch_url": "https://apidocs.hibob.com/reference/getting-started-with-bob-api.md",
+      "research_question": "Direct-client versus partner authorization and domain organization",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00"
+    },
+    {
+      "id": "plaid-sandbox",
+      "provider_id": "plaid",
+      "page_type": "testing",
+      "canonical_url": "https://plaid.com/docs/sandbox/",
+      "fetch_url": "https://plaid.com/docs/sandbox/",
+      "research_question": "Simulation capabilities and limits of sandbox evidence",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00"
+    },
+    {
+      "id": "adyen-testing",
+      "provider_id": "adyen",
+      "page_type": "testing",
+      "canonical_url": "https://docs.adyen.com/development-resources/testing/",
+      "fetch_url": "https://docs.adyen.com/development-resources/testing/",
+      "research_question": "End-to-end testing and failure scenarios",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00"
+    },
+    {
+      "id": "github-rest-practices",
+      "provider_id": "github",
+      "page_type": "operations",
+      "canonical_url": "https://docs.github.com/en/rest/using-the-rest-api/best-practices-for-using-the-rest-api",
+      "fetch_url": "https://docs.github.com/en/rest/using-the-rest-api/best-practices-for-using-the-rest-api",
+      "research_question": "Concrete request, retry and rate-limit guidance",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00"
+    },
+    {
+      "id": "xero-account-mapping",
+      "provider_id": "xero",
+      "page_type": "concepts",
+      "canonical_url": "https://developer.xero.com/documentation/best-practices/categorising-transactions/account-mapping/",
+      "fetch_url": "https://developer.xero.com/documentation/best-practices/categorising-transactions/account-mapping/",
+      "research_question": "Business choices and user configuration needed by integration code",
+      "review_status": "unusable_shell",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00",
+      "review_note": "HTTP 200 but extracted text is only a JavaScript enablement message; no substantive page evidence."
+    },
+    {
+      "id": "merge-hris",
+      "provider_id": "merge",
+      "page_type": "domain-overview",
+      "canonical_url": "https://docs.merge.dev/merge-unified/hris/overview",
+      "fetch_url": "https://docs.merge.dev/merge-unified/hris/overview",
+      "research_question": "Model coverage, sync freshness and per-account limits",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00"
+    },
+    {
+      "id": "merge-accounting",
+      "provider_id": "merge",
+      "page_type": "domain-overview",
+      "canonical_url": "https://docs.merge.dev/merge-unified/accounting/overview",
+      "fetch_url": "https://docs.merge.dev/merge-unified/accounting/overview",
+      "research_question": "Business use cases connected to accounting models",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00"
+    },
+    {
+      "id": "stripe-mcp",
+      "provider_id": "stripe",
+      "page_type": "agent-tooling",
+      "canonical_url": "https://docs.stripe.com/mcp",
+      "fetch_url": "https://docs.stripe.com/mcp.md",
+      "research_question": "Agent installation paths, authentication and access lifecycle",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00"
+    },
+    {
+      "id": "hubspot-crm-model",
+      "provider_id": "hubspot",
+      "page_type": "concepts",
+      "canonical_url": "https://developers.hubspot.com/docs/api-reference/latest/crm/understanding-the-crm",
+      "fetch_url": "https://developers.hubspot.com/docs/api-reference/latest/crm/understanding-the-crm.md",
+      "research_question": "Business concepts, record identifiers and relationships linked to operations",
+      "review_status": "passages_inspected",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00"
+    }
+  ]
+}

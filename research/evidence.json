@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "evidence": [
+    {
+      "id": "E01",
+      "source_id": "square-home",
+      "capture_raw_sha256": "89fb91471b363cbbf8dda1db8a37d61a28244c5c12d2930df81f187e3314fa4e",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00",
+      "locator": "API groups",
+      "observation": "The entry page groups APIs by business area and offers shared developer tools and community resources.",
+      "limitation": "This demonstrates organization and routing on the entry page; linked journey usability has not been tested.",
+      "pattern_ids": [
+        "P01"
+      ]
+    },
+    {
+      "id": "E02",
+      "source_id": "square-create-order",
+      "capture_raw_sha256": "393b8ed4ebf8ea15889a14718d780294bdfc97abb02ae83376f87100f2e4d6f7",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00",
+      "locator": "idempotency_key",
+      "observation": "The order-creation reference distinguishes creating an order from paying for it, links the related guide, identifies permissions, and explains reusing an idempotency key after uncertainty.",
+      "limitation": "No request was executed. This does not establish retry behavior for other operations or platforms.",
+      "pattern_ids": [
+        "P03",
+        "P06",
+        "P09"
+      ]
+    },
+    {
+      "id": "E03",
+      "source_id": "sumup-home",
+      "capture_raw_sha256": "0b75009a2d8c24b11b9ff5c673f8b24c40d66e50cf92da145383a25f4e497268",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00",
+      "locator": "Accept Online Payments",
+      "observation": "The entry page routes readers through choosing an integration, making a first payment, testing, authorization, API reference and agent resources.",
+      "limitation": "Navigation labels were inspected, not complete downstream journeys or search effectiveness.",
+      "pattern_ids": [
+        "P01"
+      ]
+    },
+    {
+      "id": "E04",
+      "source_id": "sumup-mcp",
+      "capture_raw_sha256": "bb25d27eb6dd3ab9f4f13983be3c99dba9e404c0e5bd66d773a9cfdf974f41f6",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00",
+      "locator": "Verify the Connection",
+      "observation": "The MCP guide distinguishes hosted OAuth from local API-key setup, names client/runtime requirements, provides verification guidance and addresses connection failures.",
+      "limitation": "Tool installation and account access were not exercised. Documentation resources and tools that change account data are distinct capabilities.",
+      "pattern_ids": [
+        "P04",
+        "P08"
+      ]
+    },
+    {
+      "id": "E05",
+      "source_id": "revolut-checklist",
+      "capture_raw_sha256": "598d26add359a654381ce086808ac3f3b88827838fcb4ce2861a276a978cf5c0",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00",
+      "locator": "Order's state is completed.",
+      "observation": "The implementation checklist groups sandbox scenarios, identifies optional checks, and gives expected business results for order, refund and webhook flows.",
+      "limitation": "This is a merchant payment checklist; its specific states and scenarios are not a general payroll or banking contract.",
+      "pattern_ids": [
+        "P03",
+        "P05"
+      ]
+    },
+    {
+      "id": "E06",
+      "source_id": "revolut-webhooks",
+      "capture_raw_sha256": "d60328154ab6407aef565ab5ce21f528bff3934f71a689d65741bca49c0c7786",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00",
+      "locator": "Webhook notifications might occasionally be sent more than once.",
+      "observation": "The event guide identifies API-version applicability, duplicate and ordering caveats, retry behavior, failed-event retrieval, and signature validation.",
+      "limitation": "These are documented provider guarantees and caveats, not observed deliveries. Exact timings and algorithms cannot be transferred to another API.",
+      "pattern_ids": [
+        "P06"
+      ]
+    },
+    {
+      "id": "E07",
+      "source_id": "gusto-onboarding",
+      "capture_raw_sha256": "3b77013add5ab16e2b33b9309513228fbc05f595639e1cb574230d8b24cc2a6d",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00",
+      "locator": "### Step-by-step requirements",
+      "observation": "The company onboarding guide connects prerequisites, ordered and parallel steps, linked operations, unblock/completion conditions, and an approval stage after submission.",
+      "limitation": "No payroll onboarding was executed. Provider-specific tax, legal and timing rules do not transfer.",
+      "pattern_ids": [
+        "P02",
+        "P03"
+      ]
+    },
+    {
+      "id": "E08",
+      "source_id": "gusto-upgrade",
+      "capture_raw_sha256": "0788d5f17a017ae7be79f9cfab2edf374475eb844c00ee6cb22808bd6e1e7d78",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00",
+      "locator": "Implement pagination handling.",
+      "observation": "The upgrade guide associates versioned breaking changes with affected endpoints and concrete required client changes.",
+      "limitation": "Only selected migration entries were inspected. Published version dates are not independently verified release availability.",
+      "pattern_ids": [
+        "P07"
+      ]
+    },
+    {
+      "id": "E09",
+      "source_id": "gusto-changelog",
+      "capture_raw_sha256": "2fb48adc5ff4301b4c14007f404e80394400c53db7321a8437260b5aa4332698",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00",
+      "locator": "## Endpoint updates",
+      "observation": "A concrete version changelog identifies breaking changes, names affected endpoints, and links versioning and upgrade guidance.",
+      "limitation": "This is one historical release entry; release-note quality and completeness across the platform remain unassessed.",
+      "pattern_ids": [
+        "P07"
+      ]
+    },
+    {
+      "id": "E10",
+      "source_id": "hibob-start",
+      "capture_raw_sha256": "1e531094137c55b174c43bdd67801e743e34e68ec190ccb0c47e31836a306d44",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00",
+      "locator": "## Connect to Bob API",
+      "observation": "The start page distinguishes internal customer integrations from marketplace partners in its authorization routing, then organizes references by HR module.",
+      "limitation": "The linked authorization procedures were not executed or fully reviewed.",
+      "pattern_ids": [
+        "P02",
+        "P04"
+      ]
+    },
+    {
+      "id": "E11",
+      "source_id": "plaid-sandbox",
+      "capture_raw_sha256": "37738025adf8f1bd22230a8440ce29c2757adbf7306c694ad8200da9fb87646c",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00",
+      "locator": "#### Differences between Sandbox and Production",
+      "observation": "The sandbox guide describes configurable test scenarios and explicitly limits what sandbox data and institution behavior establish about production.",
+      "limitation": "No sandbox or production behavior was exercised. Differences are product-specific.",
+      "pattern_ids": [
+        "P05"
+      ]
+    },
+    {
+      "id": "E12",
+      "source_id": "adyen-testing",
+      "capture_raw_sha256": "b89002e54b40f0a447ebe61bb9d63c330f1412cf7aaeb28a312cdda56af6bf87",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00",
+      "locator": "Test your integration",
+      "observation": "The testing guide requires client/server integration and webhooks, connects payment tests to expected server behavior, and links result-code and scenario guidance.",
+      "limitation": "Linked scenario details were not all inspected. This does not establish a universal go-live checklist.",
+      "pattern_ids": [
+        "P05"
+      ]
+    },
+    {
+      "id": "E13",
+      "source_id": "github-rest-practices",
+      "capture_raw_sha256": "7628bd49657d1b1f9ac15496aefcdf9104e8054dbd20609ca0b21769554bb5c8",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00",
+      "locator": "## Handle rate limit errors appropriately",
+      "observation": "REST guidance distinguishes retry conditions using response headers and warns against repeatedly ignoring errors.",
+      "limitation": "The headers and retry policy are specific to GitHub; no rate-limit experiment was run.",
+      "pattern_ids": [
+        "P06"
+      ]
+    },
+    {
+      "id": "E14",
+      "source_id": "merge-hris",
+      "capture_raw_sha256": "1545b3659be4ca3a483cdd664d133f9fb5c4390fa61c20e179bde54ec9fb6db6",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00",
+      "locator": "## Sync frequency",
+      "observation": "The HRIS overview explains account-scoped authentication, synchronization cadence versus completion time, and links provider-field coverage and use cases.",
+      "limitation": "The stated base URL includes /v1 while the shown curl path omits that segment. This is an apparent inconsistency to investigate, not a confirmed endpoint failure. Linked coverage was not audited.",
+      "pattern_ids": [
+        "P02",
+        "P04",
+        "P09"
+      ]
+    },
+    {
+      "id": "E15",
+      "source_id": "merge-accounting",
+      "capture_raw_sha256": "6ccb83c01088d95d23ad320f28375c1899d51a8100dcad44ae6d1768c7b1375e",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00",
+      "locator": "**Related use cases:**",
+      "observation": "The accounting overview connects a domain API to invoice creation, financial analysis and vendor reconciliation use cases, alongside synchronization guidance.",
+      "limitation": "The linked workflows were not traced. Merge HRIS and accounting count as one provider for corroboration.",
+      "pattern_ids": [
+        "P01",
+        "P02"
+      ]
+    },
+    {
+      "id": "E16",
+      "source_id": "stripe-mcp",
+      "capture_raw_sha256": "c1d60c9ed20f5ef335221129c07b0518a0543ae859ba51f2a03845c3ebbab392",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00",
+      "locator": "## Manage MCP access and sessions",
+      "observation": "The MCP guide provides client setup paths and explains account/environment permissions, authentication choices, session revocation and available tools.",
+      "limitation": "No tools were installed or called. Setup and account-changing capabilities require separate evaluation.",
+      "pattern_ids": [
+        "P04",
+        "P08"
+      ]
+    },
+    {
+      "id": "E17",
+      "source_id": "hubspot-crm-model",
+      "capture_raw_sha256": "0abc034d1c9d41729ce49bf9ad3fa005835dcf269a899a17383c567c32e2a98c",
+      "reviewed_at": "2026-10-20T19:55:07.856305+00:00",
+      "locator": "### Unique identifiers and record IDs",
+      "observation": "The CRM guide defines objects, records, properties and associations before connecting these concepts to APIs and explaining identifier scope.",
+      "limitation": "No CRM calls were made. This conceptual page is not evidence that all guides or examples use identifiers consistently.",
+      "pattern_ids": [
+        "P02",
+        "P09"
+      ]
+    }
+  ]
+}

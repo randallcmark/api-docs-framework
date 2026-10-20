@@ -1,0 +1,27 @@
+---
+title: Company onboarding operations
+description: Fictional contract details for the onboarding workflow example.
+---
+
+# Company onboarding operations
+
+This reference describes the fictional contract in `openapi.json`. Both operations act on an existing company in the tenant bound to the OAuth token. It provides supporting detail for the [workflow guide](after.mdx).
+
+## Submit onboarding
+
+`POST /v1/companies/{company_id}/onboarding-submissions`
+
+Requires `companies:write`. No request body is required. The `company_id` identifies the legal employer; it is not an employee identifier.
+
+- `202`: submission accepted; returns `company_id`, `status: pending_review`, and `requirements`.
+- `422`: required setup is incomplete; returns the current status and `requirements` to resolve.
+
+This operation does not approve onboarding, start a payroll run or promise that repeating a request is safe.
+
+## Get onboarding status
+
+`GET /v1/companies/{company_id}/onboarding-status`
+
+Requires `companies:read`. A `200` response returns `company_id`, `status`, and `requirements`. Status is one of `draft`, `pending_review`, `changes_required`, or `approved`. Requirements are descriptions of setup or review work that remains; an empty list alone is not proof of approval.
+
+For the actions associated with each state, see [Determine completion](after.mdx#determine-completion). Authorization failures and the full platform error model are outside this minimal fictional contract.

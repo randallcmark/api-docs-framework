@@ -1,0 +1,50 @@
+---
+title: Submit company onboarding and check its status
+description: Submit a prepared company for review and determine when onboarding is complete.
+---
+
+# Submit company onboarding and check its status
+
+Use this workflow to submit an existing company for onboarding review. A company represents one legal employer within a client tenant. Approval completes company onboarding; a payroll run still requires its separate validation workflow.
+
+This guide covers partner integrations using OAuth authorization for each client tenant. Create the company and complete its required setup before submission. The access token needs `companies:write` to submit and `companies:read` to check status.
+
+## Submit the company
+
+Call [Submit onboarding](reference.mdx#submit-onboarding) with the company identifier and the token for its client tenant. These examples describe the fictional contract and use a non-resolving demonstration domain.
+
+```bash
+curl --request POST \
+  'https://api.example.test/v1/companies/cmp_demo/onboarding-submissions' \
+  --header "Authorization: Bearer ${DOCS_DEMO_ACCESS_TOKEN}"
+```
+
+A `202` response accepts the submission for review:
+
+```json
+{"company_id":"cmp_demo","status":"pending_review","requirements":[]}
+```
+
+Acceptance does not mean onboarding is complete. There is no fixed approval completion time.
+
+## Determine completion
+
+Use [Get onboarding status](reference.mdx#get-onboarding-status) to inspect the current state. This workflow uses status reads; it does not depend on a webhook.
+
+```bash
+curl 'https://api.example.test/v1/companies/cmp_demo/onboarding-status' \
+  --header "Authorization: Bearer ${DOCS_DEMO_ACCESS_TOKEN}"
+```
+
+| State | Meaning and next action |
+| --- | --- |
+| `draft` | Setup is incomplete or submission has not been accepted. Resolve the returned requirements before submitting. |
+| `pending_review` | The submission was accepted. Review remains in progress; do not submit again. |
+| `changes_required` | Review identified missing requirements. Complete the returned requirements, then resubmit. |
+| `approved` | Company onboarding is complete. Continue to the separate payroll validation workflow before attempting a payroll run. |
+
+## Handle failures and test limits
+
+A submission rejected with `422` returns incomplete setup requirements. Resolve those requirements before trying again. If the submission request times out, read status before taking another action. If status does not establish whether it was accepted, contact the assigned integration contact rather than automatically resubmitting.
+
+Sandbox approval is simulated and does not establish that a company would pass production review. This example has not been executed against an API.
