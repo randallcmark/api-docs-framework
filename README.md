@@ -6,22 +6,27 @@ The unit of work is an integrated use case or workflow. Readers need a connected
 
 ## Current status
 
-Initial research pack, not a production generator or a validated scoring system. The source index separates candidates from inspected examples. Patterns and rubric criteria remain provisional until calibration and reader-task testing.
+Comparative research is underway: all 36 candidates have entry/index screening, 15 are selected for focused deeper comparison, and five documentation traces record their inspected stages and gaps. The library contains 12 patterns, including four practices corroborated across independent providers. The rubric remains uncalibrated, and no reader-task benefit is claimed.
 
 Start here:
 
 1. [Project brief](docs/project-brief.md) — agreed objective, constraints, and scope.
 2. [Research protocol](research/protocol.md) — selection, collection, analysis, and evidence standards.
-3. [Candidate index](research/candidates.md) — breadth and reasons to investigate each provider.
-4. [Research sample](research/sample.md) — observations, limitations, and patterns worth testing.
-5. [Worked example](examples/payroll-onboarding/README.md) — evidence, discovery, drafting, and review on a fictional platform.
-6. [Next work](docs/roadmap.md) — remaining research and implementation milestones.
+3. [Comparative findings](research/comparisons.md) — current conclusions, scope traps and framework implications.
+4. [Screening and selection](research/screening.md) — all 36 candidates and the 15-provider focus sample.
+5. [Documentation traces](research/journeys.md) — connected routes with verification, recovery and migration gaps.
+6. [Initial research sample](research/sample.md) — the preserved first milestone.
+7. [Worked example](examples/payroll-onboarding/README.md) — evidence, discovery, drafting, and review on a fictional platform.
+8. [Next work](docs/roadmap.md) — remaining research and implementation milestones.
 
 ## Repository contents
 
 | Path | Purpose |
 | --- | --- |
 | `research/candidates.json` | Candidate universe; proposed documentation entry points are not assumed verified |
+| `research/screening.json` | Evidence-bound screening outcomes and deeper-study selection reasons |
+| `research/journeys.json` | Inspected stages, partial/untraced coverage, visible links and research jumps |
+| `research/access-checks.json` | Published access-instruction checks and their local snapshot hashes |
 | `research/sources.json` | Deliberately selected official pages and capture targets |
 | `research/captures.json` | Retrieval metadata and content hashes for local snapshots |
 | `research/evidence.json` | Reviewed observations with source locators and limitations |

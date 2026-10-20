@@ -2,15 +2,21 @@
 
 ## Milestone 1 — Initial research pack
 
+Status: complete. Preserve [the initial sample](../research/sample.md) as the record of that stage.
+
 Capture agreed scope and research method. Index 36 candidates and inspect a bounded sample spanning payments, banking, HR, business software, and developer infrastructure. Demonstrate the chain from evidence to a pattern, a product question, a draft, and a review finding.
 
 Acceptance: traceable sources; candidate, capture and review states remain distinct; actual local snapshots have hashes; provisional artifacts are labeled; repository checks pass.
 
 ## Milestone 2 — Comparative research
 
+Status: in progress. Entry/index screening covers all 36 candidates, with four retrieval-limited candidates and 15 selected for focused study. The [first comparative pass](../research/comparisons.md) includes five documentation traces with explicit gaps and 12 provisional patterns. Four practices meet the protocol's corroboration convention; none is calibrated or task-tested.
+
 Screen the remaining candidate universe. Select approximately 12–15 providers with recorded reasons and study connected workflows. Prioritize the first sample's gaps: endpoint and field explanations, event contracts, business management, unified integrations, troubleshooting and support, release notes versus changelog, navigation and search, CLI and skills.
 
 Acceptance: multiple independent examples per major pattern family; cross-domain and partner journeys; counterexamples; no platform endorsement inferred from visibility or brand.
+
+Remaining: close verification, recovery and migration gaps; inspect diagram-dependent logic and versioned-route consistency; broaden exact endpoint/event semantics and support/escalation examples. The first comparative pass does not complete all acceptance criteria.
 
 ## Milestone 3 — Calibrated guidance
 
