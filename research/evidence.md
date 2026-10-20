@@ -685,3 +685,123 @@ A change entry identifies an affected response field, mixed-format rollout, befo
 Limit: This DNS JSON compatibility example informs change communication, not HR or payment contract rules.
 
 Pattern links: P07.
+
+## E58 gusto-error-categories
+
+Source: [Gusto — error-recovery](https://docs.gusto.com/embedded-payroll/docs/error-categories). Inspected 2026-10-20T20:41:40.087455+00:00.
+
+Locator: `migration\_warning`.
+
+Category examples distinguish invalid resource versions, missing scopes/permissions, transient service failure and warnings accompanying successful migration. Some messages give corrective actions; others only identify a symptom.
+
+Limit: Not an exhaustive recovery playbook: no universal retry guarantee or company-approval simulation is established.
+
+Pattern links: P06, P07.
+
+## E59 wise-changelog
+
+Source: [Wise — change-index](https://docs.wise.com/changelog). Inspected 2026-10-20T20:41:40.087455+00:00.
+
+Locator: `14 Aug 2026`.
+
+The change index ties an embedded-model token guidance change and global-version adoption to named guides; version-specific changes include replacement operations.
+
+Limit: Published change statements, not independently verified release behavior. The broader change index is not a completed migration.
+
+Pattern links: P04, P07.
+
+## E60 personio-handling-v2
+
+Source: [Personio — versioned-recovery](https://developer.personio.de/v2.0/docs/handling-logic). Inspected 2026-10-20T20:41:40.087455+00:00.
+
+Locator: `Employee Update Logic:`.
+
+The linked versioned Markdown body is byte-identical to the previously captured unversioned body at this retrieval. Its three diagrams carry actual branching and partner lifecycle actions that the surrounding text does not enumerate. Visual inspection confirms distinct update, onboarding/offboarding and creation/deletion paths.
+
+Limit: Equality is confined to these two captured bodies. In M02 the offboarding branch ends with an onboarding label; intended correction is not established. No webhook handler was run and these diagrams do not establish production deletion policy.
+
+Pattern links: P02, P06, P10.
+
+## E61 hubspot-validation-change
+
+Source: [HubSpot — change-guide](https://developers.hubspot.com/changelog/crm-api-write-validation-enforcement). Inspected 2026-10-20T20:41:40.087455+00:00.
+
+Locator: `How to prepare`.
+
+A linked change explains affected API version and configured-account conditions, request-field and permission preparation, corrected-input retries and new response warnings. User-level association permissions and portal-level tokens have different applicability.
+
+Limit: The published notice is inspected, not executed or independently deployment-verified. Full date-based migration guidance remains unread.
+
+Pattern links: P04, P06, P07.
+
+## E62 codat-change-policy
+
+Source: [Codat — change-policy](https://docs.codat.io/using-the-api/change-policy). Inspected 2026-10-20T20:41:40.087455+00:00.
+
+Locator: `Changes by third-parties`.
+
+The policy separates additive and breaking changes, describes notification and early opt-in with roles, and qualifies what can be promised for upstream provider changes.
+
+Limit: A platform policy does not establish whether a particular invoice-financing integration is affected or supply a feature-specific migration.
+
+Pattern links: P07.
+
+## E63 codat-data-troubleshooting
+
+Source: [Codat — recovery](https://docs.codat.io/using-the-api/get-data-troubleshooting). Inspected 2026-10-20T20:41:40.087455+00:00.
+
+Locator: `warning.validation`.
+
+Read troubleshooting links a validation warning to logs and a use-case applicability decision; it explicitly says warning coverage evolves rather than promising a complete fixed catalog.
+
+Limit: This sampled page covers one warning category. It does not supply universal stale-data recovery or safe-to-ignore rules for every lending workflow.
+
+Pattern links: P06, P10.
+
+## E64 wise-global-versioning
+
+Source: [Wise — migration](https://docs.wise.com/guides/developer/global-versioning). Inspected 2026-10-20T20:41:40.087455+00:00.
+
+Locator: `Versioning scope`.
+
+The versioning guide defines URL-selected global versions, preview/active/legacy distinctions, additive change expectations and explicit exclusions for webhooks and sensitive-card-details endpoints.
+
+Limit: Policy and examples are inspected only. A version selector cannot establish the separate event contract or complete an integration migration.
+
+Pattern links: P07.
+
+## E65 wise-oauth-setup
+
+Source: [Wise — authentication](https://docs.wise.com/guides/developer/auth-and-security/oauth-2-setup). Inspected 2026-10-20T20:41:40.087455+00:00.
+
+Locator: `Partners on the embedded model`.
+
+Authentication guidance distinguishes embedded-model client-credential tokens from other partner profile-level token usage, then connects invalidation causes to recovery and support diagnostics. Concurrent refreshes can invalidate earlier user access tokens.
+
+Limit: Provider-specific behavior; no token requests were made. mTLS/JOSE setup and each partner entitlement remain outside this trace.
+
+Pattern links: P04, P06.
+
+## E66 hubspot-test-account-walkthrough
+
+Source: [HubSpot — testing-walkthrough](https://developers.hubspot.com/blog/how-to-safely-experiment-with-ai-in-hubspot-before-you-touch-real-data). Inspected 2026-10-20T20:41:40.087455+00:00.
+
+Locator: `Step 2: Fill it with fake data`.
+
+The official walkthrough separates developer test accounts from production-shaped standard sandboxes, gives setup and small fake datasets, then checks an observable single-record result before scaling.
+
+Limit: The article is an AI/workflow example, not a REST record-and-association test plan. Only setup and test-boundary passages support this observation; broad safety claims elsewhere are not adopted. No account was created.
+
+Pattern links: P05, P12.
+
+## E67 wise-payout-failures
+
+Source: [Wise — recovery](https://docs.wise.com/guides/product/send-money/tracking/payout-failures). Inspected 2026-10-20T20:41:40.087455+00:00.
+
+Locator: `Notes about payout failures`.
+
+Payout-failure guidance distinguishes state notifications from failure details, notes failures without state changes and multiple failure events, identifies when the provider retries, and connects sandbox simulation to a received webhook plus support correlation fields.
+
+Limit: Simulation was not run. A provider-retry code is not authorization for caller retries; missing failure events do not establish success. Full financial reconciliation is still untraced.
+
+Pattern links: P03, P05, P06.

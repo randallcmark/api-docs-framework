@@ -6,9 +6,9 @@ The unit of work is an integrated use case or workflow. Readers need a connected
 
 ## Current status
 
-Comparative research is underway: all 36 candidates have entry/index screening, 15 are selected for focused deeper comparison, and five documentation traces record their inspected stages and gaps. The library contains 12 patterns, including four practices corroborated across independent providers. The rubric remains uncalibrated, and no reader-task benefit is claimed.
+Comparative research is underway: all 36 candidates have entry/index screening, 15 are selected for focused deeper comparison, and five documentation traces record their inspected stages and gaps. The library contains 12 patterns, including four practices corroborated across independent providers. The focused follow-up adds recovery/change evidence and three visually inspected diagrams. Nine fictional practice cases are prepared for separate rubric evaluations. The rubric remains uncalibrated, and no reader-task benefit is claimed.
 
-Start here:
+Read the [latest follow-up](research/follow-up.md) and [calibration practice procedure](evaluation/calibration/README.md), or start with the project context:
 
 1. [Project brief](docs/project-brief.md) — agreed objective, constraints, and scope.
 2. [Research protocol](research/protocol.md) — selection, collection, analysis, and evidence standards.
@@ -28,10 +28,12 @@ Start here:
 | `research/journeys.json` | Inspected stages, partial/untraced coverage, visible links and research jumps |
 | `research/access-checks.json` | Published access-instruction checks and their local snapshot hashes |
 | `research/sources.json` | Deliberately selected official pages and capture targets |
+| `research/media.json` | Linked-diagram provenance, source binding and visual-inspection notes |
 | `research/captures.json` | Retrieval metadata and content hashes for local snapshots |
 | `research/evidence.json` | Reviewed observations with source locators and limitations |
 | `patterns/library.json` | Provisional rules, applicability, questions, and evaluation links |
 | `evaluation/rubric.md` | Anchored criteria, issue severity, and evidence requirements |
+| `evaluation/calibration/` | Fictional MDX practice cases, proposed anchors and separate-evaluation procedure |
 | `templates/change-brief.md` | Minimum context before drafting a coherent change |
 | `templates/review-packet.md` | Short PR context and decisions needed from reviewers |
 | `workflows/engineer-agent.md` | Discovery, authoring, evaluation, and review procedure |
@@ -43,6 +45,7 @@ Python 3.12 or later; no third-party packages or credentials required.
 
 ```bash
 python scripts/validate.py
+python scripts/prepare_evaluation.py --case C01 --output /tmp/c01-input.json
 python scripts/capture_sources.py --list
 python scripts/capture_sources.py --ids gusto-onboarding hibob-start
 ```

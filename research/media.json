@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "access_checks": [
+    {
+      "url": "https://files.readme.io/robots.txt",
+      "checked_at": "2026-10-20T20:40:13.370772+00:00",
+      "result": "not-published",
+      "http_status": 404
+    }
+  ],
+  "media": [
+    {
+      "id": "M01",
+      "source_id": "personio-handling-v2",
+      "capture_raw_sha256": "9b83059adcdb7f0bf53b7281b5e15cf180122b6e6698db643665da78d1d75368",
+      "url": "https://files.readme.io/b414e94e0e0ca02ba29606ac9f513e169fed345841ba3f6927ffc4195a752f8b-Screenshot_2024-08-30_at_13.59.58.png",
+      "final_url": "https://files.readme.io/b414e94e0e0ca02ba29606ac9f513e169fed345841ba3f6927ffc4195a752f8b-Screenshot_2024-08-30_at_13.59.58.png",
+      "retrieved_at": "2026-10-20T20:40:13.991091+00:00",
+      "content_type": "image/png",
+      "bytes": 172425,
+      "path": "research/snapshots/personio-handling-1-79fb3d5f1dc2.png",
+      "sha256": "79fb3d5f1dc242fb39ffb99a3f925a11d22064feda0a39d65d56636d513b2a8c",
+      "inspection": "visually_inspected",
+      "reviewed_at": "2026-10-20T20:41:40.087455+00:00",
+      "note": "Visual inspection: update handling branches on partner record existence, shift-planning eligibility and employee status. Surrounding prose does not enumerate these conditions. Some edge labels need clarification; no production guarantee inferred."
+    },
+    {
+      "id": "M02",
+      "source_id": "personio-handling-v2",
+      "capture_raw_sha256": "9b83059adcdb7f0bf53b7281b5e15cf180122b6e6698db643665da78d1d75368",
+      "url": "https://files.readme.io/b3d9009a5df06693100e8628c6674c18fe23a0083daf310c48abc919e293514f-Screenshot_2024-09-04_at_11.02.14.png",
+      "final_url": "https://files.readme.io/b3d9009a5df06693100e8628c6674c18fe23a0083daf310c48abc919e293514f-Screenshot_2024-09-04_at_11.02.14.png",
+      "retrieved_at": "2026-10-20T20:40:14.650950+00:00",
+      "content_type": "image/png",
+      "bytes": 75284,
+      "path": "research/snapshots/personio-handling-2-a6b387caea9d.png",
+      "sha256": "a6b387caea9d41923a8354d7ae41d1301a7237ac4999988ee7b43618d11046f0",
+      "inspection": "visually_inspected",
+      "reviewed_at": "2026-10-20T20:41:40.087455+00:00",
+      "note": "Visual inspection: onboarding creates a partner record and fetches relevant absence/policy data; offboarding depicts deletion of employee data from the partner. The offboarding endpoint is labeled End Onboarding; intended label and real retention obligations remain unverified."
+    },
+    {
+      "id": "M03",
+      "source_id": "personio-handling-v2",
+      "capture_raw_sha256": "9b83059adcdb7f0bf53b7281b5e15cf180122b6e6698db643665da78d1d75368",
+      "url": "https://files.readme.io/b6e57955d46405e3fc96bcdc8a1814b0fb719305d755971b61768027bfae1e43-Screenshot_2024-08-30_at_14.00.14.png",
+      "final_url": "https://files.readme.io/b6e57955d46405e3fc96bcdc8a1814b0fb719305d755971b61768027bfae1e43-Screenshot_2024-08-30_at_14.00.14.png",
+      "retrieved_at": "2026-10-20T20:40:15.355370+00:00",
+      "content_type": "image/png",
+      "bytes": 116392,
+      "path": "research/snapshots/personio-handling-3-a426c5824705.png",
+      "sha256": "a426c5824705ccb7c2874623499c8ca49442d2e3f066fc6607d2c8672ee35192",
+      "inspection": "visually_inspected",
+      "reviewed_at": "2026-10-20T20:41:40.087455+00:00",
+      "note": "Visual inspection: a created event fetches person data and uses shift-planning eligibility before onboarding; a deleted event routes to offboarding. This is provider example logic, not a universal lifecycle rule."
+    }
+  ]
+}

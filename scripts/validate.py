@@ -12,6 +12,8 @@ import re
 import sys
 from urllib.parse import unquote, urljoin, urlsplit, urlunsplit
 
+from check_calibration import check_calibration
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -124,6 +126,47 @@ def captured_links(capture):
     urls = set(re.findall(r"\]\(([^)\s]+)\)", text))
     urls.update(re.findall(r"href=[\"']([^\"']+)[\"']", text))
     return {normalized_url(urljoin(capture["final_url"], url)) for url in urls}
+
+
+def check_media(capture_map, evidence, require_snapshots):
+    manifest = load(ROOT / "research/media.json")
+    media = by_id(manifest["media"])
+    checked = missing = bindings = 0
+    for item in [*manifest["access_checks"], *media.values()]:
+        key = "path" if "id" in item else "snapshot_path"
+        if key not in item:
+            continue
+        path = (ROOT / item[key]).resolve()
+        if not path.is_relative_to(ROOT / "research/snapshots"):
+            raise ValueError("media/access snapshot escapes local cache")
+        if path.exists():
+            if sha256(path.read_bytes()).hexdigest() != item["sha256"]:
+                raise ValueError("media/access snapshot hash mismatch")
+            checked += 1
+        elif require_snapshots:
+            raise ValueError("media/access snapshot missing")
+        else:
+            missing += 1
+    for item in media.values():
+        capture = capture_map[(item["source_id"], item["capture_raw_sha256"])]
+        if datetime.fromisoformat(item["retrieved_at"]).utcoffset() is None:
+            raise ValueError("media retrieval time needs a timezone")
+        if urlsplit(item["url"]).scheme != "https" or item["content_type"] != "image/png":
+            raise ValueError("unsupported media URL or type")
+        parent = ROOT / capture["raw_path"]
+        if parent.exists():
+            urls = re.findall(r'src=["\']([^"\']+)["\']', parent.read_text())
+            if item["url"] not in urls:
+                raise ValueError("media URL absent from bound source capture")
+            bindings += 1
+    for observation in evidence.values():
+        for mid in observation.get("media_ids", []):
+            item = media[mid]
+            if item["inspection"] != "visually_inspected" or not item.get("note") or not item.get("reviewed_at"):
+                raise ValueError("media evidence lacks visual inspection record")
+            if (item["source_id"], item["capture_raw_sha256"]) != (observation["source_id"], observation["capture_raw_sha256"]):
+                raise ValueError("media evidence belongs to a different source capture")
+    return checked, missing, bindings
 
 
 def comparative_indexes(candidates, sources, captures, capture_map):
@@ -310,6 +353,10 @@ def main():
                     raise ValueError("calibration and task-testing require a validation record")
 
         comparative = comparative_indexes(candidates, sources, captures, capture_map)
+        media_checks, media_missing, media_bindings = check_media(capture_map, evidence, args.require_snapshots)
+        snapshot_checks += media_checks
+        snapshots_missing += media_missing
+        case_count, anchor_count = check_calibration(ROOT, load, criteria)
         access_checks = load(ROOT / "research/access-checks.json")["checks"]
         if len(access_checks) != len(candidates) or {item["provider_id"] for item in access_checks} != set(candidates):
             raise ValueError("access checks must cover each candidate exactly once")
@@ -354,6 +401,7 @@ def main():
         link_checks = check_links()
         print(f"PASS: {len(json_files)} JSON files, {len(candidates)} candidates, {len(sources)} sources, {len(evidence)} observations, {len(patterns)} patterns")
         print(f"PASS: {snapshot_checks} snapshot hashes, {locator_checks} evidence locators, {link_checks} local links, fixture local references")
+        print(f"PASS: {media_bindings}/{len(load(ROOT / 'research/media.json')['media'])} media/source links verified; {case_count} fictional cases, {anchor_count} proposed anchors structurally checked (no evaluation run)")
         if snapshots_missing:
             print(f"NOTE: {snapshots_missing} local snapshot files unavailable; their hashes/locators were not reverified. Recapture selected sources if needed.")
         print("Scope: repository integrity only; no MDX compilation, external link audit, API execution or semantic quality certification.")

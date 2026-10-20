@@ -16,9 +16,13 @@ Screen the remaining candidate universe. Select approximately 12–15 providers 
 
 Acceptance: multiple independent examples per major pattern family; cross-domain and partner journeys; counterexamples; no platform endorsement inferred from visibility or brand.
 
-Remaining: close verification, recovery and migration gaps; inspect diagram-dependent logic and versioned-route consistency; broaden exact endpoint/event semantics and support/escalation examples. The first comparative pass does not complete all acceptance criteria.
+The [focused follow-up](../research/follow-up.md) adds ten text sources, three visually inspected diagrams and selected-route equality checks. Recovery and migration gaps are narrowed, with incomplete journeys still explicit.
+
+Remaining: close task-specific verification, recovery and migration gaps; broaden exact endpoint/event semantics, representation consistency and support/escalation examples. The first comparative pass does not complete all acceptance criteria.
 
 ## Milestone 3 — Calibrated guidance
+
+Status: preparation underway. [Nine fictional cases](../evaluation/calibration/README.md) and proposed anchors are available, with a packet exporter that excludes the key. Separate evaluations, measured review effort and human adjudication have not occurred. The rubric is uncalibrated.
 
 Refine the pattern library, information architecture, page structures, product discovery prompts, and rubric. Produce scored practice examples at different quality levels. Resolve differences between evaluators and record examples and exceptions behind decisions.
 

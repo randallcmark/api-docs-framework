@@ -1,0 +1,7 @@
+# Invoice total field migration
+
+If your integration reads `total`, migrate before upgrading to version `2027-04`, which removes it. Integrations already reading `totalMinor` need no field change.
+
+On version `2026-10`, both fields contain the same integer amount in minor currency units. Change reads from `total` to `totalMinor` while on that version.
+
+In sandbox, compare the two fields on fixtures `inv-1` and `inv-2`: expect `1200` and `1200` for `inv-1`, and `0` and `0` for `inv-2`. Remove all remaining `total` reads before upgrading to `2027-04`. These checks are instructions; execution is not claimed here.

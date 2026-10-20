@@ -1,0 +1,314 @@
+{
+  "schema_version": 1,
+  "status": "authored-not-calibrated",
+  "rubric_path": "../rubric.md",
+  "rubric_sha256": "3c041db81e178c8c0dd4cb942882f6551a5b30c1f3e4d6dd163ccde7c46a18d2",
+  "cases": [
+    {
+      "id": "C01",
+      "name": "Accepted payout request",
+      "fictional": true,
+      "reader_task": "A direct merchant integration must decide when to mark an invoice paid after creating a payout. Review completion guidance, not the omitted request syntax.",
+      "review_scope": "Assess only this page for the stated task against the supplied fictional evidence. Do not require a full documentation site.",
+      "focus_criteria": [
+        "R03",
+        "R04",
+        "R06",
+        "R07"
+      ],
+      "document": "documents/c01.mdx",
+      "document_sha256": "2a768a4ef1e88de60a8c9e559edd1e1107f125ab238993e037298a6e2c4a6f5b",
+      "facts": [
+        {
+          "id": "C01-F1",
+          "kind": "contract",
+          "revision": "payout-api-4",
+          "statement": "POST /payouts returns 202 and a payout ID. It creates a queued request, not a settled payment."
+        },
+        {
+          "id": "C01-F2",
+          "kind": "implementation",
+          "revision": "payout-worker-12",
+          "statement": "A queued payout can later become settled or failed. GET /payouts/{id} and payout.updated expose that state."
+        },
+        {
+          "id": "C01-F3",
+          "kind": "product-decision",
+          "revision": "receivables-3",
+          "statement": "Mark the invoice paid only when its matching payout state is settled. Marking it paid on acceptance hides unpaid receivables from collection."
+        },
+        {
+          "id": "C01-F4",
+          "kind": "sandbox-procedure",
+          "revision": "sandbox-2",
+          "statement": "A new sandbox payout starts queued. A fixture can move it to settled or failed; observe the resulting state via GET or event. No simulation was run for this case."
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "name": "An empty synchronized dataset",
+      "fictional": true,
+      "reader_task": "A lending partner must decide whether no invoices means no receivables for a connected company. Review the meaning and verification of an empty response.",
+      "review_scope": "Assess only this page for the stated task against the supplied fictional evidence. Do not require a full documentation site.",
+      "focus_criteria": [
+        "R02",
+        "R04",
+        "R06",
+        "R07"
+      ],
+      "document": "documents/c02.mdx",
+      "document_sha256": "600f76fe59d03943fd7309b67a4d7b2eb1d6495a868b67a89220e7055042f01d",
+      "facts": [
+        {
+          "id": "C02-F1",
+          "kind": "contract",
+          "revision": "ledger-7",
+          "statement": "GET /companies/{id}/invoices returns the latest locally synchronized records; an empty list can occur before initial synchronization completes."
+        },
+        {
+          "id": "C02-F2",
+          "kind": "implementation",
+          "revision": "sync-9",
+          "statement": "GET /companies/{id}/sync exposes initialComplete and lastSuccessfulAt. Connection state exposes connected or disconnected."
+        },
+        {
+          "id": "C02-F3",
+          "kind": "product-decision",
+          "revision": "lending-2",
+          "statement": "Do not conclude no receivables until the initial sync is complete, the connection is connected and lastSuccessfulAt is within the agreed one-hour freshness window. Otherwise defer the decision and show the data state."
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "name": "Partner tenant routing",
+      "fictional": true,
+      "reader_task": "A multi-customer HR partner must fetch employees belonging to the tenant selected by its end user. Assess the access instructions.",
+      "review_scope": "Assess only this page for the stated task against the supplied fictional evidence. Do not require a full documentation site.",
+      "focus_criteria": [
+        "R04",
+        "R05"
+      ],
+      "document": "documents/c03.mdx",
+      "document_sha256": "f3b6b3b92c370f36d905b33ee9a56bc14e7fde9be0fefb1c30e78b08ec6f1019",
+      "facts": [
+        {
+          "id": "C03-F1",
+          "kind": "contract",
+          "revision": "hr-api-5",
+          "statement": "A partner token may access multiple consented tenants. tenantId selects a tenant and does not narrow the token to a single tenant."
+        },
+        {
+          "id": "C03-F2",
+          "kind": "implementation",
+          "revision": "partner-app-8",
+          "statement": "The partner backend receives the browser tenantId and forwards it using its partner token. It currently performs no separate session-to-tenant check."
+        },
+        {
+          "id": "C03-F3",
+          "kind": "engineering-decision",
+          "revision": "access-4",
+          "statement": "Before forwarding, the backend must check that the current session is authorized for tenantId. The partner token alone does not do this. Without this check, a user can substitute another consented tenant ID and retrieve that tenant employee data."
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "name": "Approved future capability",
+      "fictional": true,
+      "reader_task": "A product planner needs to determine whether cross-border payroll is available today. Assess the capability introduction.",
+      "review_scope": "Assess only this page for the stated task against the supplied fictional evidence. Do not require a full documentation site.",
+      "focus_criteria": [
+        "R01",
+        "R09"
+      ],
+      "document": "documents/c04.mdx",
+      "document_sha256": "824eb74d4511c21982f5d73d907b68c84fcf674fc6057c82fa18ac09207de456",
+      "facts": [
+        {
+          "id": "C04-F1",
+          "kind": "product-decision",
+          "revision": "roadmap-6",
+          "statement": "Cross-border payroll is approved for development. There is no committed release date or customer entitlement."
+        },
+        {
+          "id": "C04-F2",
+          "kind": "deployment-record",
+          "revision": "payroll-prod-17",
+          "statement": "The deployed API rejects crossBorder=true as unsupported. Domestic payroll remains available."
+        }
+      ]
+    },
+    {
+      "id": "C05",
+      "name": "Concise status reference",
+      "fictional": true,
+      "reader_task": "An authenticated direct-client engineer needs the meaning of the state field on a job they already own. Review this field reference; shared authentication and the workflow guide are supplied outside this change.",
+      "review_scope": "Assess only this page for the stated task against the supplied fictional evidence. Do not require a full documentation site.",
+      "focus_criteria": [
+        "R02",
+        "R04",
+        "R09",
+        "R10",
+        "R11"
+      ],
+      "document": "documents/c05.mdx",
+      "document_sha256": "7aeb6670a34fc919d4219f4001c7a1aee9cd72dff0e0a13e39c149fc4ca962db",
+      "facts": [
+        {
+          "id": "C05-F1",
+          "kind": "contract",
+          "revision": "jobs-3",
+          "statement": "GET /jobs/{id} returns the owned job state: queued, running, succeeded or failed."
+        },
+        {
+          "id": "C05-F2",
+          "kind": "implementation",
+          "revision": "jobs-worker-6",
+          "statement": "Only succeeded means results are ready. failed means no result is available; the response error.code identifies the failure."
+        },
+        {
+          "id": "C05-F3",
+          "kind": "change-brief",
+          "revision": "status-reference-1",
+          "statement": "This change is a field reference, not a workflow guide or release announcement. No SDK, CLI, skill or MCP is offered or required for this task."
+        }
+      ]
+    },
+    {
+      "id": "C06",
+      "name": "Ambiguous create timeout",
+      "fictional": true,
+      "reader_task": "An engineer must know what to do if an invoice-create call times out after submission. Review this timeout-recovery addition, not the full create guide.",
+      "review_scope": "Assess only this page for the stated task against the supplied fictional evidence. Do not require a full documentation site.",
+      "focus_criteria": [
+        "R07",
+        "R09"
+      ],
+      "document": "documents/c06.mdx",
+      "document_sha256": "27b5fed52b8ca864f21752431996e5403c7563d9f850897bc9edd8f1b5e178b9",
+      "facts": [
+        {
+          "id": "C06-F1",
+          "kind": "contract",
+          "revision": "invoice-create-9",
+          "statement": "A network timeout does not establish whether POST /invoices created an invoice. There is no idempotency key for this operation."
+        },
+        {
+          "id": "C06-F2",
+          "kind": "implementation",
+          "revision": "invoice-store-3",
+          "statement": "The supplied clientReference can be queried via GET /invoices?clientReference=... . If a result exists, use its ID. If no result exists, do not blindly create again: the query can lag a commit."
+        },
+        {
+          "id": "C06-F3",
+          "kind": "support-procedure",
+          "revision": "timeout-2",
+          "statement": "For an unresolved outcome, retain clientReference and request ID, query for the existing invoice, and contact support with those identifiers if still unresolved. No fixed wait or automatic retry guarantee is approved."
+        }
+      ]
+    },
+    {
+      "id": "C07",
+      "name": "Conflicting business dates",
+      "fictional": true,
+      "reader_task": "An HR integration engineer needs to translate a date-only employment endDate into a downstream scheduling cutoff. Review the proposed timezone statement.",
+      "review_scope": "Assess only this page for the stated task against the supplied fictional evidence. Do not require a full documentation site.",
+      "focus_criteria": [
+        "R04"
+      ],
+      "document": "documents/c07.mdx",
+      "document_sha256": "9cb2b1755964c1fbe78dccaa908397b736afa046c2e84235d27773c16c295f95",
+      "facts": [
+        {
+          "id": "C07-F1",
+          "kind": "product-answer",
+          "revision": "end-date-4",
+          "statement": "Product says endDate means the final local calendar day in the employing legal entity timezone, inclusive."
+        },
+        {
+          "id": "C07-F2",
+          "kind": "implementation-excerpt",
+          "revision": "end-date-parser-6",
+          "statement": "The supplied parser constructs midnight UTC from endDate. The deployment revision and downstream conversion are not supplied."
+        },
+        {
+          "id": "C07-F3",
+          "kind": "contract",
+          "revision": "hr-dates-2",
+          "statement": "endDate is a date string without timezone. The contract does not settle the cutoff. Engineering has not confirmed deployed behavior or reconciled the product/implementation discrepancy."
+        }
+      ]
+    },
+    {
+      "id": "C08",
+      "name": "Actionable migration note",
+      "fictional": true,
+      "reader_task": "An existing billing integration owner needs to migrate the renamed invoice total field before its confirmed removal. Assess this combined changelog and migration page; it is the linked destination from the invoice reference.",
+      "review_scope": "Assess only this page for the stated task against the supplied fictional evidence. Do not require a full documentation site.",
+      "focus_criteria": [
+        "R01",
+        "R08",
+        "R09",
+        "R10"
+      ],
+      "document": "documents/c08.mdx",
+      "document_sha256": "10f160d9b603afcda6d856310268f221bef769287af1345d9059bfb8aca8d9d6",
+      "facts": [
+        {
+          "id": "C08-F1",
+          "kind": "release-record",
+          "revision": "billing-2026-10",
+          "statement": "Version 2026-10 adds totalMinor in integer minor currency units alongside total. Version 2027-04 removes total. The values are identical during overlap."
+        },
+        {
+          "id": "C08-F2",
+          "kind": "engineering-procedure",
+          "revision": "billing-migrate-2",
+          "statement": "Read totalMinor on version 2026-10. In sandbox compare total and totalMinor on fixtures inv-1 and inv-2 with expected pairs (1200,1200) and (0,0), then remove total reads before upgrading to 2027-04."
+        },
+        {
+          "id": "C08-F3",
+          "kind": "change-brief",
+          "revision": "billing-change-3",
+          "statement": "Only integrations reading total are affected. The invoice reference links directly to this page. The examples have not been executed by this evaluator; no task benefit measurement exists."
+        }
+      ]
+    },
+    {
+      "id": "C09",
+      "name": "A skill is not a data connection",
+      "fictional": true,
+      "reader_task": "An engineer installs a supported agent skill to consult platform documentation. Assess the installation and claimed access behavior.",
+      "review_scope": "Assess only this page for the stated task against the supplied fictional evidence. Do not require a full documentation site.",
+      "focus_criteria": [
+        "R05",
+        "R06",
+        "R11"
+      ],
+      "document": "documents/c09.mdx",
+      "document_sha256": "23dafe12f434846c35b28ce9d08f56045c288c61f8972cec59002114bc96bffd",
+      "facts": [
+        {
+          "id": "C09-F1",
+          "kind": "tool-manifest",
+          "revision": "docs-skill-3",
+          "statement": "The docs skill contains static instructions and documentation URLs only. It has no API credentials, runtime server or tools that access accounts."
+        },
+        {
+          "id": "C09-F2",
+          "kind": "installer-contract",
+          "revision": "skill-installer-2",
+          "statement": "Install with docs-skill install --client supported-agent. Verify with docs-skill list: expected name platform-docs, version 3. The installer supports supported-agent 4 or later. Remove with docs-skill remove platform-docs."
+        },
+        {
+          "id": "C09-F3",
+          "kind": "tooling-decision",
+          "revision": "tooling-1",
+          "statement": "There is no MCP server for this platform. Reading documentation through this skill requires no account authorization. Calling the REST API is a separate integration task."
+        }
+      ]
+    }
+  ]
+}

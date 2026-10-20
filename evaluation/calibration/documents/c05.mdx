@@ -1,0 +1,10 @@
+# Job state
+
+`GET /jobs/{id}` returns `state` for the job you own:
+
+| Value | Meaning |
+| --- | --- |
+| `queued` | Waiting to start. |
+| `running` | Processing; results are not ready. |
+| `succeeded` | Complete; results are ready. |
+| `failed` | No result is available. Inspect `error.code` for the failure. |

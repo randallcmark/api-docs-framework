@@ -47,7 +47,7 @@ Status: observed.
 
 Rubric criteria: R02, R03, R08.
 
-Evidence: [E07](../research/evidence.md#e07-gusto-onboarding), [E10](../research/evidence.md#e10-hibob-start), [E14](../research/evidence.md#e14-merge-hris), [E15](../research/evidence.md#e15-merge-accounting), [E17](../research/evidence.md#e17-hubspot-crm-model), [E20](../research/evidence.md#e20-wise-send), [E22](../research/evidence.md#e22-wise-embedded), [E32](../research/evidence.md#e32-personio-prerequisites), [E33](../research/evidence.md#e33-personio-initial-sync), [E40](../research/evidence.md#e40-hubspot-associations), [E45](../research/evidence.md#e45-codat-ar), [E54](../research/evidence.md#e54-square-pay-orders).
+Evidence: [E07](../research/evidence.md#e07-gusto-onboarding), [E10](../research/evidence.md#e10-hibob-start), [E14](../research/evidence.md#e14-merge-hris), [E15](../research/evidence.md#e15-merge-accounting), [E17](../research/evidence.md#e17-hubspot-crm-model), [E20](../research/evidence.md#e20-wise-send), [E22](../research/evidence.md#e22-wise-embedded), [E32](../research/evidence.md#e32-personio-prerequisites), [E33](../research/evidence.md#e33-personio-initial-sync), [E40](../research/evidence.md#e40-hubspot-associations), [E45](../research/evidence.md#e45-codat-ar), [E54](../research/evidence.md#e54-square-pay-orders), [E60](../research/evidence.md#e60-personio-handling-v2).
 
 **Limits and comparisons still needed:** The sampled pages demonstrate parts of the model, not a complete universal structure. Data ownership questions also derive from this project's requirements.
 
@@ -71,7 +71,7 @@ Status: corroborated.
 
 Rubric criteria: R03, R04, R06.
 
-Evidence: [E02](../research/evidence.md#e02-square-create-order), [E05](../research/evidence.md#e05-revolut-checklist), [E07](../research/evidence.md#e07-gusto-onboarding), [E20](../research/evidence.md#e20-wise-send), [E21](../research/evidence.md#e21-wise-enterprise), [E22](../research/evidence.md#e22-wise-embedded), [E23](../research/evidence.md#e23-wise-tracking), [E24](../research/evidence.md#e24-wise-statuses), [E27](../research/evidence.md#e27-gusto-quickstart), [E30](../research/evidence.md#e30-gusto-company-events), [E31](../research/evidence.md#e31-gusto-status-reference), [E38](../research/evidence.md#e38-hubspot-objects), [E43](../research/evidence.md#e43-codat-invoice-setup), [E44](../research/evidence.md#e44-codat-invoice-decision), [E46](../research/evidence.md#e46-codat-freshness), [E54](../research/evidence.md#e54-square-pay-orders).
+Evidence: [E02](../research/evidence.md#e02-square-create-order), [E05](../research/evidence.md#e05-revolut-checklist), [E07](../research/evidence.md#e07-gusto-onboarding), [E20](../research/evidence.md#e20-wise-send), [E21](../research/evidence.md#e21-wise-enterprise), [E22](../research/evidence.md#e22-wise-embedded), [E23](../research/evidence.md#e23-wise-tracking), [E24](../research/evidence.md#e24-wise-statuses), [E27](../research/evidence.md#e27-gusto-quickstart), [E30](../research/evidence.md#e30-gusto-company-events), [E31](../research/evidence.md#e31-gusto-status-reference), [E38](../research/evidence.md#e38-hubspot-objects), [E43](../research/evidence.md#e43-codat-invoice-setup), [E44](../research/evidence.md#e44-codat-invoice-decision), [E46](../research/evidence.md#e46-codat-freshness), [E54](../research/evidence.md#e54-square-pay-orders), [E67](../research/evidence.md#e67-wise-payout-failures).
 
 **Limits and comparisons still needed:** The observed workflows differ. A synchronous one-call task needs only a concise expected result, not a manufactured state diagram.
 
@@ -97,7 +97,7 @@ Status: corroborated.
 
 Rubric criteria: R05, R11.
 
-Evidence: [E04](../research/evidence.md#e04-sumup-mcp), [E10](../research/evidence.md#e10-hibob-start), [E14](../research/evidence.md#e14-merge-hris), [E16](../research/evidence.md#e16-stripe-mcp), [E21](../research/evidence.md#e21-wise-enterprise), [E22](../research/evidence.md#e22-wise-embedded), [E27](../research/evidence.md#e27-gusto-quickstart), [E28](../research/evidence.md#e28-gusto-auth), [E32](../research/evidence.md#e32-personio-prerequisites), [E41](../research/evidence.md#e41-hubspot-auth), [E56](../research/evidence.md#e56-cloudflare-api).
+Evidence: [E04](../research/evidence.md#e04-sumup-mcp), [E10](../research/evidence.md#e10-hibob-start), [E14](../research/evidence.md#e14-merge-hris), [E16](../research/evidence.md#e16-stripe-mcp), [E21](../research/evidence.md#e21-wise-enterprise), [E22](../research/evidence.md#e22-wise-embedded), [E27](../research/evidence.md#e27-gusto-quickstart), [E28](../research/evidence.md#e28-gusto-auth), [E32](../research/evidence.md#e32-personio-prerequisites), [E41](../research/evidence.md#e41-hubspot-auth), [E56](../research/evidence.md#e56-cloudflare-api), [E59](../research/evidence.md#e59-wise-changelog), [E61](../research/evidence.md#e61-hubspot-validation-change), [E65](../research/evidence.md#e65-wise-oauth-setup).
 
 **Limits and comparisons still needed:** Authentication patterns are product-specific. These observations do not establish another platform's permission model.
 
@@ -123,7 +123,7 @@ Status: observed.
 
 Rubric criteria: R06, R07.
 
-Evidence: [E05](../research/evidence.md#e05-revolut-checklist), [E11](../research/evidence.md#e11-plaid-sandbox), [E12](../research/evidence.md#e12-adyen-testing), [E24](../research/evidence.md#e24-wise-statuses), [E26](../research/evidence.md#e26-wise-simulation), [E43](../research/evidence.md#e43-codat-invoice-setup).
+Evidence: [E05](../research/evidence.md#e05-revolut-checklist), [E11](../research/evidence.md#e11-plaid-sandbox), [E12](../research/evidence.md#e12-adyen-testing), [E24](../research/evidence.md#e24-wise-statuses), [E26](../research/evidence.md#e26-wise-simulation), [E43](../research/evidence.md#e43-codat-invoice-setup), [E66](../research/evidence.md#e66-hubspot-test-account-walkthrough), [E67](../research/evidence.md#e67-wise-payout-failures).
 
 **Limits and comparisons still needed:** A checklist, a sandbox caveat and an integration test guide support different parts of the rule. Do not copy payment-specific cases into HR tasks.
 
@@ -147,7 +147,7 @@ Status: observed.
 
 Rubric criteria: R04, R07.
 
-Evidence: [E02](../research/evidence.md#e02-square-create-order), [E06](../research/evidence.md#e06-revolut-webhooks), [E13](../research/evidence.md#e13-github-rest-practices), [E23](../research/evidence.md#e23-wise-tracking), [E25](../research/evidence.md#e25-wise-transfer-reference), [E27](../research/evidence.md#e27-gusto-quickstart), [E29](../research/evidence.md#e29-gusto-errors), [E34](../research/evidence.md#e34-personio-events), [E39](../research/evidence.md#e39-hubspot-errors), [E46](../research/evidence.md#e46-codat-freshness), [E47](../research/evidence.md#e47-codat-troubleshooting), [E55](../research/evidence.md#e55-github-troubleshooting).
+Evidence: [E02](../research/evidence.md#e02-square-create-order), [E06](../research/evidence.md#e06-revolut-webhooks), [E13](../research/evidence.md#e13-github-rest-practices), [E23](../research/evidence.md#e23-wise-tracking), [E25](../research/evidence.md#e25-wise-transfer-reference), [E27](../research/evidence.md#e27-gusto-quickstart), [E29](../research/evidence.md#e29-gusto-errors), [E34](../research/evidence.md#e34-personio-events), [E39](../research/evidence.md#e39-hubspot-errors), [E46](../research/evidence.md#e46-codat-freshness), [E47](../research/evidence.md#e47-codat-troubleshooting), [E55](../research/evidence.md#e55-github-troubleshooting), [E58](../research/evidence.md#e58-gusto-error-categories), [E60](../research/evidence.md#e60-personio-handling-v2), [E61](../research/evidence.md#e61-hubspot-validation-change), [E63](../research/evidence.md#e63-codat-data-troubleshooting), [E65](../research/evidence.md#e65-wise-oauth-setup), [E67](../research/evidence.md#e67-wise-payout-failures).
 
 **Limits and comparisons still needed:** Never transfer exact retry delays, limits, signature algorithms or idempotency lifetimes from a reference provider.
 
@@ -171,7 +171,7 @@ Status: corroborated.
 
 Rubric criteria: R04, R10.
 
-Evidence: [E08](../research/evidence.md#e08-gusto-upgrade), [E09](../research/evidence.md#e09-gusto-changelog), [E35](../research/evidence.md#e35-personio-change), [E50](../research/evidence.md#e50-sumup-cli-release), [E53](../research/evidence.md#e53-square-release-notes), [E57](../research/evidence.md#e57-cloudflare-api-change).
+Evidence: [E08](../research/evidence.md#e08-gusto-upgrade), [E09](../research/evidence.md#e09-gusto-changelog), [E35](../research/evidence.md#e35-personio-change), [E50](../research/evidence.md#e50-sumup-cli-release), [E53](../research/evidence.md#e53-square-release-notes), [E57](../research/evidence.md#e57-cloudflare-api-change), [E58](../research/evidence.md#e58-gusto-error-categories), [E59](../research/evidence.md#e59-wise-changelog), [E61](../research/evidence.md#e61-hubspot-validation-change), [E62](../research/evidence.md#e62-codat-change-policy), [E64](../research/evidence.md#e64-wise-global-versioning).
 
 **Limits and comparisons still needed:** Content functions can share a page or changelog. Provider naming does not determine structure. The impact-to-action rule is corroborated; exact release governance and review policy remain product-specific.
 
@@ -199,7 +199,7 @@ Rubric criteria: R05, R06, R11.
 
 Evidence: [E04](../research/evidence.md#e04-sumup-mcp), [E16](../research/evidence.md#e16-stripe-mcp), [E48](../research/evidence.md#e48-sumup-cli), [E49](../research/evidence.md#e49-sumup-skills), [E50](../research/evidence.md#e50-sumup-cli-release), [E51](../research/evidence.md#e51-stripe-skills), [E52](../research/evidence.md#e52-stripe-cli-reference).
 
-**Limits and comparisons still needed:** The initial sample covers MCP content. SDK, CLI and skill-specific rules still need direct examples and testing.
+**Limits and comparisons still needed:** CLI and skill examples are inspected alongside MCP; complete setup, revocation and troubleshooting still need execution and task-specific comparison. Static instructions do not establish data access or installed tools.
 
 ## P09 Explain reference semantics beyond field types
 
@@ -241,14 +241,15 @@ Status: observed.
 - What establishes a complete initial sync, and what triggers later updates?
 - Which datasets must be coherent for this outcome, and what lag is acceptable?
 - How are deletions, terminations, rehires and lost connections handled?
+- Do diagrams and machine-readable or versioned pages preserve the same decision-critical branches?
 
 **Evaluation:** Trace initial data and one relevant update or deletion through to the consumer. Check whether the reader can distinguish no data, inaccessible data, unsupported capability, in-progress sync and failed sync.
 
 Rubric criteria: R01, R02, R03, R06, R07.
 
-Evidence: [E14](../research/evidence.md#e14-merge-hris), [E23](../research/evidence.md#e23-wise-tracking), [E33](../research/evidence.md#e33-personio-initial-sync), [E34](../research/evidence.md#e34-personio-events), [E45](../research/evidence.md#e45-codat-ar), [E46](../research/evidence.md#e46-codat-freshness), [E47](../research/evidence.md#e47-codat-troubleshooting).
+Evidence: [E14](../research/evidence.md#e14-merge-hris), [E23](../research/evidence.md#e23-wise-tracking), [E33](../research/evidence.md#e33-personio-initial-sync), [E34](../research/evidence.md#e34-personio-events), [E45](../research/evidence.md#e45-codat-ar), [E46](../research/evidence.md#e46-codat-freshness), [E47](../research/evidence.md#e47-codat-troubleshooting), [E60](../research/evidence.md#e60-personio-handling-v2), [E63](../research/evidence.md#e63-codat-data-troubleshooting).
 
-**Limits and comparisons still needed:** Merge describes cadence, Personio describes employment synchronization, and Codat explains dataset coherence. They cover different parts of the rule; domain owners must supply lag and ownership requirements.
+**Limits and comparisons still needed:** Merge describes cadence, Personio describes employment synchronization, and Codat explains dataset coherence. They cover different parts of the rule; domain owners must supply lag and ownership requirements. Personio diagram inspection establishes that branching is absent from surrounding prose, not that every renderer loses the images or that all versioned routes agree.
 
 ## P11 Make business time and state meaning explicit
 
@@ -295,6 +296,6 @@ Status: observed.
 
 Rubric criteria: R01, R03, R06, R09.
 
-Evidence: [E11](../research/evidence.md#e11-plaid-sandbox), [E27](../research/evidence.md#e27-gusto-quickstart), [E42](../research/evidence.md#e42-codat-invoice-guide), [E43](../research/evidence.md#e43-codat-invoice-setup), [E44](../research/evidence.md#e44-codat-invoice-decision).
+Evidence: [E11](../research/evidence.md#e11-plaid-sandbox), [E27](../research/evidence.md#e27-gusto-quickstart), [E42](../research/evidence.md#e42-codat-invoice-guide), [E43](../research/evidence.md#e43-codat-invoice-setup), [E44](../research/evidence.md#e44-codat-invoice-decision), [E66](../research/evidence.md#e66-hubspot-test-account-walkthrough).
 
 **Limits and comparisons still needed:** Scope statements in public examples do not prove that readers notice or understand the boundaries; reader-task testing is still required.
