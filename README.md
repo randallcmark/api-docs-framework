@@ -44,4 +44,4 @@ python scripts/capture_sources.py --ids gusto-onboarding hibob-start
 
 Capture only fetches selected manifest URLs. It does not discover or recursively crawl links. HTTP failures remain recorded as failures; a fetched page is not automatically a reviewed example. Raw third-party material stays in the ignored local `research/snapshots/` directory. Tracked evidence uses short paraphrases and source links.
 
-This initial project is local. A GitHub remote can be attached when available. No publishing policy, automated publication, or numerical pass threshold has been agreed.
+The project is stored in the private [randallcmark/api-docs-framework](https://github.com/randallcmark/api-docs-framework) repository. Full third-party source snapshots remain in the ignored local cache. No publishing policy, automated publication, or numerical pass threshold has been agreed.
