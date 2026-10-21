@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "status": "targeted-follow-up-complete",
+  "human_decision": "../../adjudications/c02-severity.md",
+  "scope": "Manual inspection of frozen findings against the accepted severity boundary; not an automatic semantic grade or global calibration claim.",
+  "observations": [
+    {
+      "case_id": "C02",
+      "expected_severity": "material",
+      "evaluator_a_finding": "C02-A-F01",
+      "evaluator_a_severity": "material",
+      "evaluator_b_finding": "C02-B1",
+      "evaluator_b_severity": "material",
+      "conclusion": "Both identify the unreliable decision without inventing a serious downstream action."
+    },
+    {
+      "case_id": "C10",
+      "expected_severity": "critical",
+      "evaluator_a_finding": "C10-A-F01",
+      "evaluator_a_severity": "critical",
+      "evaluator_b_finding": "C10-B1",
+      "evaluator_b_severity": "critical",
+      "conclusion": "Both use the supplied incomplete-sync scenario and unguarded release behavior to establish an incorrect GBP 5,000 transfer."
+    },
+    {
+      "case_id": "C03",
+      "expected_severity": "critical",
+      "evaluator_a_finding": "C03-A-F01",
+      "evaluator_a_severity": "critical",
+      "evaluator_b_finding": "C03-B1",
+      "evaluator_b_severity": "critical",
+      "conclusion": "Supported tenant-exposure consequence remains critical."
+    },
+    {
+      "case_id": "C05",
+      "evaluator_a_finding_count": 0,
+      "evaluator_b_finding_count": 0,
+      "conclusion": "Both accept the concise field reference with R10/R11 inapplicable."
+    }
+  ],
+  "remaining_interpretations": "B adds R03 on C02/C10 while A does not. Earlier score/tag proposals remain provisional. No new publication threshold or confidence promotion is introduced.",
+  "questions": {
+    "evaluator-a": 0,
+    "evaluator-b": 0
+  },
+  "limits": [
+    "Same-model fresh contexts and short fictional evidence only.",
+    "The follow-up changes the rubric and adds a paired scenario; this is development, not an isolated causal experiment or untouched holdout.",
+    "No observed reader success, execution or active review-time measure."
+  ]
+}

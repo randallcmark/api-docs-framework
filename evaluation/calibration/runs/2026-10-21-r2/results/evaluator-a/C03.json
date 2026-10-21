@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "case_id": "C03",
+  "packet_sha256": "b01aa95dbe5df4c6419f7758bfbc0cb06794d63d32aebfe5c8ea9196b4c311e9",
+  "evaluator": {
+    "id": "evaluator-a",
+    "context": "fresh; packets only",
+    "model": "unknown"
+  },
+  "started_at": "2026-10-21T05:07:15Z",
+  "finished_at": "2026-10-21T05:07:32.715921Z",
+  "active_minutes": null,
+  "active_minutes_note": "Not instrumented; elapsed time is not active review time",
+  "criteria": [
+    {
+      "criterion_id": "R04",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "the token automatically restricts the request to the signed-in customer's tenant.",
+      "fact_ids": [
+        "C03-F1",
+        "C03-F2",
+        "C03-F3"
+      ],
+      "rationale": "The claimed automatic restriction contradicts the contract: the partner token can access multiple consented tenants, and tenantId only selects one. The backend currently forwards the browser value without the required session authorization check. Replace the claim with the required backend check."
+    },
+    {
+      "criterion_id": "R05",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "No session-to-tenant check is needed:",
+      "fact_ids": [
+        "C03-F1",
+        "C03-F2",
+        "C03-F3"
+      ],
+      "rationale": "The instructions explicitly remove the boundary that associates the current session with its authorized tenant. A substituted consented tenant ID can retrieve another tenant’s employee data. Require authorization of the current session for tenantId before forwarding the partner-token request."
+    }
+  ],
+  "findings": [
+    {
+      "id": "C03-A-F01",
+      "criterion_ids": [
+        "R04",
+        "R05"
+      ],
+      "state": "incorrect",
+      "severity": "critical",
+      "document_locator": "No session-to-tenant check is needed: the token automatically restricts the request to the signed-in customer's tenant.",
+      "fact_ids": [
+        "C03-F1",
+        "C03-F2",
+        "C03-F3"
+      ],
+      "consequence": "The document instructs the backend to trust the browser tenantId and omit session-to-tenant authorization. The token can access multiple consented tenants (F1), and the implementation forwards that value without a separate check (F2). F3 explicitly establishes that substituting another consented tenant ID retrieves that tenant’s employee data. Following the documented instruction therefore enables cross-tenant unauthorized data access.",
+      "fix": "Remove the automatic-restriction claim. Explain that tenantId selects among tenants accessible to the partner token. Require the backend to check that the current session is authorized for tenantId before forwarding the request, and refuse forwarding if that check fails."
+    }
+  ],
+  "questions": [],
+  "readiness": "needs_revision",
+  "limitations": [
+    "Fictional packet evidence only; no API calls or example execution performed, and no reader-task success inferred.",
+    "Review is bounded to the multi-customer partner access instructions on this page."
+  ]
+}

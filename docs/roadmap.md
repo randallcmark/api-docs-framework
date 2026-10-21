@@ -22,13 +22,15 @@ Remaining: close task-specific verification, recovery and migration gaps; broade
 
 ## Milestone 3 — Calibrated guidance
 
-Status: preparation underway. [Nine fictional cases](../evaluation/calibration/README.md) and proposed anchors are available, with a packet exporter that excludes the key. The [first separate-agent run](../evaluation/calibration/runs/2026-10-21-r1/README.md) preserves 18 original results and their comparison. Human adjudication remains pending; active review effort was not instrumented. The rubric is uncalibrated.
+Status: preparation underway. [Ten fictional cases](../evaluation/calibration/README.md) and proposed anchors are available, with a packet exporter that excludes the key. The [first separate-agent run](../evaluation/calibration/runs/2026-10-21-r1/README.md) preserves 18 original results and their comparison. [C02 severity is human-adjudicated](../evaluation/calibration/adjudications/c02-severity.md), and the [four-case follow-up](../evaluation/calibration/runs/2026-10-21-r2/README.md) distinguishes material classification error from an explicit critical disbursement path. Other anchor interpretations remain provisional; active review effort was not instrumented. The wider rubric is uncalibrated.
 
 Refine the pattern library, information architecture, page structures, product discovery prompts, and rubric. Produce scored practice examples at different quality levels. Resolve differences between evaluators and record examples and exceptions behind decisions.
 
 Acceptance: evidence for criteria, shared interpretations of anchors, consequential failures not obscured by averages, and question burden measured.
 
 ## Milestone 4 — Repository workflow integration
+
+Next practical increment: assemble the discovery, planning, drafting and independent-review prompts into one usable workflow, then try it on a coherent fictional MDX change. Carry the evidence brief, targeted owner questions and short review packet through that pilot before choosing agent/build-system integration or using the user's holdout.
 
 Adapt the process to the chosen agent and MDX build system. Add actual spec/reference validation, examples checks, terminology checks, and PR reporting as needed. Existing repository checks and ownership rules remain authoritative.
 

@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "case_id": "C10",
+  "packet_sha256": "8cd5f58369547dc2c467055917c1419cfdc0786810ab662440deec031df1f8c0",
+  "evaluator": {
+    "id": "evaluator-b",
+    "context": "fresh; packets only",
+    "model": "unknown"
+  },
+  "started_at": "2026-10-21T05:07:00Z",
+  "finished_at": "2026-10-21T05:07:27Z",
+  "active_minutes": null,
+  "active_minutes_note": "Not instrumented; elapsed time is not active review time",
+  "criteria": [
+    {
+      "criterion_id": "R02",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "An empty list means the company has no outstanding receivables.",
+      "fact_ids": [
+        "C10-F1",
+        "C10-F2",
+        "C10-F3"
+      ],
+      "rationale": "The guide equates locally synchronized records with the underlying receivables state, contradicting the incomplete-sync possibility and omitting the completeness, connection and freshness states required to interpret that list."
+    },
+    {
+      "criterion_id": "R04",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "An empty list means the company has no outstanding receivables.",
+      "fact_ids": [
+        "C10-F1",
+        "C10-F3",
+        "C10-F4"
+      ],
+      "rationale": "The empty-list claim is false for the documented operation. The subsequent release instruction follows that false claim, and the deployed operation transfers funds without independently guarding data readiness."
+    },
+    {
+      "criterion_id": "R06",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "To verify the branch, use any company that returns an empty list.",
+      "fact_ids": [
+        "C10-F1",
+        "C10-F2",
+        "C10-F3",
+        "C10-F4"
+      ],
+      "rationale": "An arbitrary empty local list cannot verify that no receivables exist. The proposed verification admits the supplied incomplete-sync scenario and therefore triggers the wrong financial branch; readiness and freshness expectations are absent."
+    },
+    {
+      "criterion_id": "R07",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "missing",
+      "document_locator": "Continue to the no-receivables lending decision",
+      "fact_ids": [
+        "C10-F2",
+        "C10-F3"
+      ],
+      "rationale": "No guidance tells the reader to defer and show data state when sync is incomplete, connection is disconnected, or the latest successful sync is outside the one-hour window."
+    },
+    {
+      "criterion_id": "R03",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "missing",
+      "document_locator": "Call `GET /companies/{id}/invoices`.",
+      "fact_ids": [
+        "C10-F2",
+        "C10-F3",
+        "C10-F4"
+      ],
+      "rationale": "The release sequence omits all established data prerequisites and the defer branch, so it cannot reliably support the lending decision."
+    }
+  ],
+  "findings": [
+    {
+      "id": "C10-B1",
+      "criterion_ids": [
+        "R02",
+        "R03",
+        "R04",
+        "R06",
+        "R07"
+      ],
+      "state": "incorrect",
+      "severity": "critical",
+      "document_locator": "An empty list means the company has no outstanding receivables.",
+      "fact_ids": [
+        "C10-F1",
+        "C10-F2",
+        "C10-F3",
+        "C10-F4"
+      ],
+      "consequence": "The guide directs an empty local list into POST /advance-releases with noReceivables=true. C10-F4 establishes that the supplied company has outstanding invoices and incomplete initial synchronization, and that this POST immediately transfers the requested GBP 5,000 without a readiness guard. Following the page therefore releases funds before the prerequisite decision is valid, contrary to the established defer rule. This consequence is supported by fixture evidence, not evaluator execution.",
+      "fix": "Explain that invoice results are locally synchronized. Before interpreting an empty list or releasing an advance, require initialComplete, a connected connection, and lastSuccessfulAt within the agreed one-hour window. Defer and show the data state otherwise. Replace the arbitrary-empty-company verification with checks for the prerequisite states and the incomplete, disconnected and stale branches; only use the no-receivables release branch once those prerequisites hold."
+    }
+  ],
+  "questions": [],
+  "readiness": "needs_revision",
+  "limitations": [
+    "Fictional packet evidence and static MDX review only; no API execution or reader-task success was observed.",
+    "The review is bounded to this page and the stated lending task; no linked or external project content was inspected."
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "scope": "Mechanical comparison only; no finding-validity or calibration claim",
+  "run_id": "2026-10-21-r2",
+  "case_count": 4,
+  "profile_agreement": {
+    "matching": 15,
+    "total": 15
+  },
+  "readiness_agreement": {
+    "matching": 4,
+    "total": 4
+  },
+  "question_counts": {
+    "evaluator-a": 0,
+    "evaluator-b": 0
+  },
+  "cases": [
+    {
+      "case_id": "C02",
+      "profile_differences": [],
+      "omitted_focus_criteria": {
+        "evaluator-a": [],
+        "evaluator-b": []
+      },
+      "additional_criteria": {
+        "evaluator-a": [],
+        "evaluator-b": [
+          "R03"
+        ]
+      },
+      "readiness": {
+        "evaluator-a": "needs_revision",
+        "evaluator-b": "needs_revision"
+      },
+      "finding_counts": {
+        "evaluator-a": 1,
+        "evaluator-b": 1
+      },
+      "finding_labels": {
+        "evaluator-a": [
+          {
+            "id": "C02-A-F01",
+            "criterion_ids": [
+              "R02",
+              "R04",
+              "R06",
+              "R07"
+            ],
+            "state": "incorrect",
+            "severity": "material"
+          }
+        ],
+        "evaluator-b": [
+          {
+            "id": "C02-B1",
+            "criterion_ids": [
+              "R02",
+              "R03",
+              "R04",
+              "R06",
+              "R07"
+            ],
+            "state": "incorrect",
+            "severity": "material"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "C03",
+      "profile_differences": [],
+      "omitted_focus_criteria": {
+        "evaluator-a": [],
+        "evaluator-b": []
+      },
+      "additional_criteria": {
+        "evaluator-a": [],
+        "evaluator-b": []
+      },
+      "readiness": {
+        "evaluator-a": "needs_revision",
+        "evaluator-b": "needs_revision"
+      },
+      "finding_counts": {
+        "evaluator-a": 1,
+        "evaluator-b": 1
+      },
+      "finding_labels": {
+        "evaluator-a": [
+          {
+            "id": "C03-A-F01",
+            "criterion_ids": [
+              "R04",
+              "R05"
+            ],
+            "state": "incorrect",
+            "severity": "critical"
+          }
+        ],
+        "evaluator-b": [
+          {
+            "id": "C03-B1",
+            "criterion_ids": [
+              "R04",
+              "R05"
+            ],
+            "state": "incorrect",
+            "severity": "critical"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "C05",
+      "profile_differences": [],
+      "omitted_focus_criteria": {
+        "evaluator-a": [],
+        "evaluator-b": []
+      },
+      "additional_criteria": {
+        "evaluator-a": [],
+        "evaluator-b": []
+      },
+      "readiness": {
+        "evaluator-a": "ready_for_human_review",
+        "evaluator-b": "ready_for_human_review"
+      },
+      "finding_counts": {
+        "evaluator-a": 0,
+        "evaluator-b": 0
+      },
+      "finding_labels": {
+        "evaluator-a": [],
+        "evaluator-b": []
+      }
+    },
+    {
+      "case_id": "C10",
+      "profile_differences": [],
+      "omitted_focus_criteria": {
+        "evaluator-a": [],
+        "evaluator-b": []
+      },
+      "additional_criteria": {
+        "evaluator-a": [],
+        "evaluator-b": [
+          "R03"
+        ]
+      },
+      "readiness": {
+        "evaluator-a": "needs_revision",
+        "evaluator-b": "needs_revision"
+      },
+      "finding_counts": {
+        "evaluator-a": 1,
+        "evaluator-b": 1
+      },
+      "finding_labels": {
+        "evaluator-a": [
+          {
+            "id": "C10-A-F01",
+            "criterion_ids": [
+              "R02",
+              "R04",
+              "R06",
+              "R07"
+            ],
+            "state": "incorrect",
+            "severity": "critical"
+          }
+        ],
+        "evaluator-b": [
+          {
+            "id": "C10-B1",
+            "criterion_ids": [
+              "R02",
+              "R03",
+              "R04",
+              "R06",
+              "R07"
+            ],
+            "state": "incorrect",
+            "severity": "critical"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -88,7 +88,13 @@
         "Do not claim missing banking data: this fictional task requires invoices only."
       ],
       "readiness": "needs_revision",
-      "not_applicable": {}
+      "not_applicable": {},
+      "severity_adjudication": {
+        "status": "human-adjudicated-for-this-case",
+        "decision": "material",
+        "record": "adjudications/c02-severity.md",
+        "scope": "Severity only; other score and issue-grouping anchors remain author proposals."
+      }
     },
     {
       "case_id": "C03",
@@ -304,6 +310,52 @@
         "Do not invent an MCP configuration or ask for account credentials to read static documentation.",
         "Do not label this a proven unauthorized-access vulnerability: no account connection exists.",
         "Do not mark correct installer instructions missing simply because the access claim is false."
+      ],
+      "readiness": "needs_revision",
+      "not_applicable": {}
+    },
+    {
+      "case_id": "C10",
+      "expected": [
+        {
+          "criteria": [
+            "R02",
+            "R04",
+            "R06"
+          ],
+          "state": "incorrect",
+          "rating": 0,
+          "severity": "critical",
+          "document_locator": "An empty list means the company has no outstanding receivables",
+          "fact_ids": [
+            "C10-F1",
+            "C10-F2",
+            "C10-F3",
+            "C10-F4"
+          ],
+          "consequence": "The wrong inference is fed into a deployed release path with no separate synchronization guard, immediately sending GBP 5,000 before the documented prerequisites are met.",
+          "fix": "Defer the decision and release while incomplete, disconnected or stale. Only make the no-receivables conclusion after the specified completeness, connection and freshness checks; test the qualification and defer paths."
+        },
+        {
+          "criteria": [
+            "R07"
+          ],
+          "state": "missing",
+          "rating": 0,
+          "severity": "material",
+          "document_locator": "Call `GET /companies/{id}/invoices`.",
+          "fact_ids": [
+            "C10-F2",
+            "C10-F3"
+          ],
+          "consequence": "Readers lack the supplied sync and connection qualification and the defer action for unsafe data states.",
+          "fix": "Explain initialComplete, lastSuccessfulAt and connection checks and show the defer path without invented retry or refresh guarantees."
+        }
+      ],
+      "do_not_flag": [
+        "Do not require observed loss: the supplied deployed release behavior establishes the serious consequence.",
+        "Do not treat every finance classification error as critical without this causal evidence.",
+        "Do not claim an API or sandbox was executed."
       ],
       "readiness": "needs_revision",
       "not_applicable": {}

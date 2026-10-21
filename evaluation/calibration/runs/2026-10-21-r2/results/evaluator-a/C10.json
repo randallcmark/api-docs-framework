@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "case_id": "C10",
+  "packet_sha256": "8cd5f58369547dc2c467055917c1419cfdc0786810ab662440deec031df1f8c0",
+  "evaluator": {
+    "id": "evaluator-a",
+    "context": "fresh; packets only",
+    "model": "unknown"
+  },
+  "started_at": "2026-10-21T05:07:32Z",
+  "finished_at": "2026-10-21T05:07:59.288073Z",
+  "active_minutes": null,
+  "active_minutes_note": "Not instrumented; elapsed time is not active review time",
+  "criteria": [
+    {
+      "criterion_id": "R02",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "An empty list means the company has no outstanding receivables.",
+      "fact_ids": [
+        "C10-F1",
+        "C10-F2",
+        "C10-F3"
+      ],
+      "rationale": "The guide treats a local synchronized snapshot as a complete representation of company receivables. Empty records before initial completion do not establish that state. Explain the synchronization, connection and freshness prerequisites before interpreting emptiness."
+    },
+    {
+      "criterion_id": "R04",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "Continue to the no-receivables lending decision, then call `POST /advance-releases` with `noReceivables=true`",
+      "fact_ids": [
+        "C10-F1",
+        "C10-F3",
+        "C10-F4"
+      ],
+      "rationale": "Although the release operation has the described transfer effect, the empty-response claim and resulting instruction contradict the data contract and required defer rule. F4 establishes that this instruction immediately releases funds in a scenario where the decision prerequisites fail. Gate the decision and release on the supplied data conditions."
+    },
+    {
+      "criterion_id": "R06",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "To verify the branch, use any company that returns an empty list.",
+      "fact_ids": [
+        "C10-F1",
+        "C10-F2",
+        "C10-F3",
+        "C10-F4"
+      ],
+      "rationale": "The proposed check accepts the precise incomplete-data scenario that releases funds improperly. Verify initialComplete, connected state and lastSuccessfulAt within one hour; include empty datasets failing each check and expect deferral without release. F4 is supplied fixture evidence, not an evaluator execution."
+    },
+    {
+      "criterion_id": "R07",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "missing",
+      "document_locator": "Continue to the no-receivables lending decision",
+      "fact_ids": [
+        "C10-F2",
+        "C10-F3",
+        "C10-F4"
+      ],
+      "rationale": "The guide omits how to identify in-progress, disconnected and stale data and the required response of deferring the decision and showing the data state. Because release has no independent completeness or freshness guard, this operational gap directly affects the advance workflow."
+    }
+  ],
+  "findings": [
+    {
+      "id": "C10-A-F01",
+      "criterion_ids": [
+        "R02",
+        "R04",
+        "R06",
+        "R07"
+      ],
+      "state": "incorrect",
+      "severity": "critical",
+      "document_locator": "An empty list means the company has no outstanding receivables. Continue to the no-receivables lending decision, then call `POST /advance-releases` with `noReceivables=true` to release the requested advance.",
+      "fact_ids": [
+        "C10-F1",
+        "C10-F2",
+        "C10-F3",
+        "C10-F4"
+      ],
+      "consequence": "The guide maps an empty local list to no receivables and instructs a release. F1 allows empty lists before initial synchronization. F4 supplies a deployed scenario with incomplete synchronization, an empty local list and actual outstanding invoices; POST /advance-releases with noReceivables=true immediately transfers GBP 5,000 with no independent guard. Following the guide therefore releases funds before the prerequisite decision can be made, contrary to F3. This is a concrete materially wrong financial action supported by fixture evidence, not an execution claimed by this review.",
+      "fix": "Explain the local-snapshot model. Before the no-receivables decision and release, check initialComplete and lastSuccessfulAt from GET /companies/{id}/sync, require lastSuccessfulAt within the agreed one-hour window, and verify connected state. When any condition fails, defer the decision, show the data state and do not proceed to release. Replace the verification instruction with expected outcomes for qualifying empty data and incomplete, disconnected or stale empty data."
+    }
+  ],
+  "questions": [],
+  "readiness": "needs_revision",
+  "limitations": [
+    "Fictional packet evidence only; no API calls or example execution performed, and no reader-task success inferred.",
+    "The deployed behavior and GBP 5,000 scenario are supplied fixture evidence, not independently executed or observed.",
+    "Review is bounded to the advance-release decision and data prerequisites on this page."
+  ]
+}

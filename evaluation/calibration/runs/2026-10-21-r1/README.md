@@ -9,7 +9,7 @@ The evaluators agreed on all **27 requested criterion profiles** (applicability,
 | Case | Shared outcome | Review implication |
 | --- | --- | --- |
 | C01 Accepted payout | Incorrect completion and verification; critical financial consequence. Missing state observation is also material. | The agents group the false claim and its reinforcing test together; tags must not multiply the defect count. |
-| C02 Empty invoice data | Incorrect business inference and verification; missing qualification/recovery. Both agents say critical; the key says material. | Human severity decision pending: is the specified wrong financial classification sufficient, or must a serious downstream effect be evidenced? |
+| C02 Empty invoice data | Incorrect business inference and verification; missing qualification/recovery. Both agents say critical; the key says material. | Initially disputed; [later human adjudication](../../adjudications/c02-severity.md) keeps this case material. |
 | C03 Partner tenant routing | Critical: concrete session-to-tenant bypass exposes another consented tenant's employee data. | The token's broad access is not the user's tenant authorization. |
 | C04 Planned capability | Material incorrect availability and unsupported enablement instruction. | Both use supplied deployment evidence without unnecessary owner questions. |
 | C05 Concise field reference | Ready for human review; no findings. R10 and R11 are inapplicable with reasons. | Concise content can earn 3 through relevant lifecycle boundaries. It needs no invented tooling or page expansion. |
@@ -22,9 +22,9 @@ The two sound cases received no findings in four evaluations. Each evaluator ask
 
 ## Adjudication and next changes
 
-[Analysis issues D01–D06](analysis.json) distinguish one human severity decision from grouping, score-anchor and criterion-overlap questions. No baseline rubric, current author key, case or pattern confidence has been changed in response to this run. The original key remains a proposal, not ground truth.
+[Analysis issues D01–D06](analysis.json) preserve the initial comparison. The [later human decision](../../adjudications/c02-severity.md) resolves D01 as material; the other score/tag proposals remain author analysis. The original outputs, archived key, input hashes and comparison are unchanged. The frozen manifest/analysis retain their initial pending status as historical records. The current rubric now clarifies the severity boundary; the wider key remains provisional.
 
-D01 concerns C02. The guide says an empty invoice list proves no receivables and directs the no-receivables lending decision. The evidence permits incomplete/stale/disconnected data and requires deferring in those states. It does not establish loan approval, disbursement or loss. Both evaluators call the wrong financial classification critical; the key calls it material. Human choice is pending, with both interpretations retained.
+D01 concerns C02. The guide says an empty invoice list proves no receivables and directs the no-receivables lending decision. The evidence permits incomplete/stale/disconnected data and requires deferring in those states. It does not establish loan approval, disbursement or loss. Both evaluators call the wrong financial classification critical; the key calls it material. The user later accepted material severity on the supplied evidence. Both original interpretations remain in the frozen outputs.
 
 The other proposed refinements preserve the important finding regardless of number or tag: distinguish false verification from missing verification, explain task-relevant boundaries behind a 3, avoid counting one root cause several times, and clarify whether a language score repeats a technical completeness problem. The mixed static-skill example needs an explicit 0-versus-1 rationale. Original outputs must remain unchanged after adjudication; record later revisions separately.
 
