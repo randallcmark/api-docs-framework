@@ -1,8 +1,8 @@
 # Practice cases for rubric calibration
 
-Nine short, original fictional MDX cases exercise the [provisional rubric](../rubric.md). They are authored examples with proposed anchors, **not a calibrated benchmark**. The [first separate-agent run](runs/2026-10-21-r1/README.md) contains 18 original evaluations and a comparison. Human adjudication is pending; no reader tests have been performed. The user's platform remains an untouched holdout.
+Ten short, original fictional MDX cases exercise the [provisional rubric](../rubric.md). They are authored examples with proposed anchors, **not a calibrated benchmark**. The [first separate-agent run](runs/2026-10-21-r1/README.md) contains 18 original evaluations and a comparison. C02 now has a [human severity decision](adjudications/c02-severity.md) and a [targeted fresh-context follow-up](runs/2026-10-21-r2/README.md); the wider rubric remains provisional and no reader tests have been performed. The user's platform remains an untouched holdout.
 
-The pack covers incorrect completion, incomplete data, tenant boundaries, planned versus deployed capability, a sound concise reference, missing timeout recovery, conflicting date semantics, a sound combined migration note, and static skills mistaken for account access. Two sound cases help expose unnecessary expansion demands; unavailable evidence and inapplicability have separate cases.
+The pack covers incorrect completion, incomplete data, tenant boundaries, planned versus deployed capability, a sound concise reference, missing timeout recovery, conflicting date semantics, a sound combined migration note, static skills mistaken for account access, and a paired invoice-data case with an explicit incorrect disbursement. Two sound cases help expose unnecessary expansion demands; unavailable evidence and inapplicability have separate cases.
 
 ## Run a practice evaluation
 
@@ -24,10 +24,10 @@ Each evaluator should assess the focus criteria and report other consequential d
 2. Preserve original results, evaluator identity/version, rubric and document hashes, actual active minutes, timestamps, missing inputs and questions. Do not infer review time from token count or task duration.
 3. Only after the results are frozen, compare them with each other and with `answer-key.json`. Its 12 anchors are author proposals. Grouped criteria can share one defect; do not multiply the issue count. The key is not an exhaustive list of every defensible finding.
 4. Adjudicate disagreements about finding validity, applicability, incorrect/missing/unverified state, rating, severity, evidence and readiness. Accept a well-supported additional finding, or correct the author key if wrong. A wording difference is not necessarily a disagreement. Avoid automated exact-text scoring.
-5. Record missed consequential defects, unsupported findings, question burden and unnecessary rewrite requests. For the sound cases, check whether evaluators demanded extra sections or invented tooling. For the conflicting-evidence case, check whether they asserted deployed facts without confirmation. Report counts with denominators and small-sample limitations; do not claim broad reliability from nine constructed cases.
+5. Record missed consequential defects, unsupported findings, question burden and unnecessary rewrite requests. For the sound cases, check whether evaluators demanded extra sections or invented tooling. For the conflicting-evidence case, check whether they asserted deployed facts without confirmation. Report counts with denominators and small-sample limitations; do not claim broad reliability from these constructed cases.
 6. Save adjudication, changed anchors and reasons under a versioned run directory. Revise and re-export deliberately if rubric or fixtures change; preserve old packets/results. Only documented comparison and adjudication can support a calibration claim. No numerical publication threshold follows automatically.
 
-First use a few cases to find confusing instructions, then assess all nine on frozen inputs. Reusing them after seeing the key is a training iteration, not a blind evaluation. A positive result on these cases does not establish reader task success or performance on the user's platform. Freeze a framework revision before the separate holdout exercise.
+First use a few cases to find confusing instructions, then assess the chosen scope on frozen inputs and report which cases were included. Reusing them after seeing the key is a training iteration, not a blind evaluation. A positive result on these cases does not establish reader task success or performance on the user's platform. Freeze a framework revision before the separate holdout exercise.
 
 ## What repository checks establish
 

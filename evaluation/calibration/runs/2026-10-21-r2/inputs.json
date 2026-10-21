@@ -1,0 +1,277 @@
+{
+  "schema_version": 1,
+  "packet_key_order": [
+    "schema_version",
+    "status",
+    "case",
+    "document",
+    "rubric",
+    "rubric_sha256",
+    "instructions",
+    "result_fields"
+  ],
+  "shared_rubric": "# Provisional documentation rubric\n\nUse this rubric to assess a coherent documentation change against its reader task and supporting evidence. It is a research draft, not a validated benchmark or an agreed publication gate. The comparative pass adds scope, freshness, time and demonstration-boundary questions; it does not validate the scores.\n\n## Evaluation record\n\nRecord the change and evidence revisions, reader task, relevant pages, evaluator and date. For each applicable criterion, include a rating, evidence locator, concrete finding, reader consequence and recommended fix. Inspect changed MDX and relevant linked pages; do not evaluate only the PR summary.\n\nRecord issue state independently: `incorrect`, `missing`, `unverified`, or `satisfied`. Mark a whole criterion `not_applicable` only with a reason. An unreachable page or unavailable evidence is `unverified`, not `not_applicable`.\n\n## Rating anchors\n\n| Rating | Meaning |\n| --- | --- |\n| 0 | Applicable information is absent or contradicted by available evidence; the reader cannot safely rely on it |\n| 1 | Some useful information exists, but a consequential ambiguity or gap remains for the stated task |\n| 2 | The reader can answer the criterion's question for the stated task, with appropriate supporting evidence and no known consequential gap |\n| 3 | Meets 2 and clearly handles the task's relevant variants or boundary conditions, supported by specific evidence or verification |\n| Unverified | Available evidence cannot establish the result; do not assign a numerical score |\n| Not applicable | The criterion does not apply to this task; record why |\n\nA 3 does not require longer prose or extra sections. A concise limitation can be sufficient. Score 0 findings must say whether the issue is missing or incorrect. Mixed evidence must remain explicit; use the consequential unresolved issue to constrain the criterion rating.\n\nDo not compute an overall pass from a mean. Report the criterion profile, consequential findings and unresolved questions. Numerical thresholds can be considered after calibration.\n\n## Criteria\n\n| ID | Reader question and minimum adequate evidence | Relevant variants for a stronger result |\n| --- | --- | --- |\n| R01 Capability fit | Can I tell whether this supports my intended outcome? Scope, supported scenario, important limitations and availability are explicit and grounded in product answers and technical evidence. | Direct-client versus partner constraints, regions or entitlements where relevant. Prerequisites belong to the selected feature, not a nearby capability. |\n| R02 Conceptual model | Can I explain the entities, actors, ownership, relationships and lifecycle states involved? Definitions agree with the domain brief and implementation evidence. | Cross-domain terminology, source-of-truth decisions and identifier relationships. |\n| R03 Workflow completeness | Can I plan the sequence and responsibilities? Prerequisites, steps, relevant operations/events and observable business completion are connected. | Parallel work, asynchronous states, branch conditions, initial/incremental synchronization and human steps. |\n| R04 Technical accuracy | Do operations, fields, examples and stated effects match the applicable API contract and implementation evidence? Required inputs, conditional fields, units and relevant defaults are explained. | Side effects, idempotency, effective dates, business dates/timezones and version-dependent behavior where applicable. |\n| R05 Access and boundaries | Can I choose the right authorization model, permissions and account/tenant context? Claims are supported by applicable authentication and authorization evidence. | Multi-customer partners, credential lifecycle and scope transitions. |\n| R06 Verification | Can I test the task and recognize success? Examples are internally consistent, expected results are given, and relevant sandbox limits are explicit. | Failure simulation, asynchronous completion and data completeness/freshness. Demonstrations identify production exclusions. Execution must be recorded to claim an example was run. |\n| R07 Recovery and operation | Can I diagnose and recover from consequential failures? Guidance explains relevant errors, retry conditions and status/log/support routes without inventing guarantees. | Duplicates, ordering, partial success, reconciliation and disconnects. Distinguish unsupported, inaccessible, in-progress, stale and failed data when those affect the task. |\n| R08 Findability and coherence | Can product and engineering readers reach the relevant explanation and move between capability, concept, guide and reference? Terminology and linked content agree. | Cross-domain journeys and integration-model routing; decision-critical diagram content and versioned/machine-readable representations when used by the audience. |\n| R09 Language and structure | Can readers identify decisions, actions, expected results and limitations without filler or unsupported promises? Structure fits the page's purpose; terminology is consistent. | Ambiguous language resolved with concrete conditions; concise reuse of shared guidance. |\n| R10 Change communication | For a platform change, can readers identify applicability, compatibility impact, required action and migration guidance? Links and dates agree with confirmed release information. | Capability-oriented explanation, factual changes and migration actions are content functions; separate page names are not mandatory. |\n| R11 Developer tooling | Where tooling is relevant and exists, can readers install/configure it, choose an environment and access scope, verify connection, and troubleshoot? Supported clients and versions are grounded in actual tooling evidence. | CLI, skills and MCP lifecycle differences; static guidance, documentation resources and account-changing tools have distinct setup and access needs. |\n\n## Consequence and readiness\n\n- **Critical:** evidence shows a claim would cause materially wrong financial behavior, unauthorized access, sensitive-data exposure, or a similarly serious outcome for the documented task. Explain the concrete path; do not escalate from a hypothetical possibility alone.\n- **Material:** the task cannot be reliably planned, completed, verified or recovered using the documentation, or a consequential product claim is unresolved.\n- **Editorial:** local language, formatting or minor consistency issue without a consequential effect on the task.\n\nFor critical severity, give the evidence chain: documented instruction \u2192 supported system behavior \u2192 serious reader consequence. A wrong business classification or unreliable planning decision is material when that serious downstream effect is not established. Finance, HR or security terminology alone does not make a finding critical. An observed loss or incident is not required: evidence that following the instruction would release funds incorrectly, expose another tenant's data or cause a similarly serious outcome is sufficient. Keep unsupported downstream possibilities explicit rather than using them to escalate severity.\n\nBoth material and critical defects require correction. Keep severity separate from the criterion rating and readiness; useful surrounding content does not remove the defect.\n\nRecommend `needs_answers` when consequential behavior cannot be established and `needs_revision` when established defects need correction. Recommend `ready_for_human_review` when no known critical/material defects remain and the evidence packet is complete for its scope. This is not a claim that the documentation is infallible or a publication approval. Enforcement remains an open project decision.\n\nRoute product-intent questions to product owners, implementation questions to engineering, and standard exceptions to the designated documentation owner. Fix objective editorial findings before handoff when practical. Ask reviewers for decisions with evidence and impact; do not hand them an undifferentiated backlog.\n\n## Calibration procedure\n\nChoose short practice cases covering a wrong claim, missing completion conditions, a sound concise guide and an intentionally inapplicable criterion. Have evaluators assess the same evidence and task separately. Compare criterion interpretation, severity, evidence selection, review time and false positives. Adjudicate disagreements, record anchors and revise the rubric before using scores for acceptance.\n\nThe worked payroll example is a constructed demonstration, not a second independent evaluation or a calibration result. Freeze rubric and pattern revisions before the user's holdout evaluation.\n\nThe [fictional practice pack](calibration/README.md) supplies short MDX cases, scoped evidence, an isolated input exporter and proposed author anchors. These are preparation, not completed calibration. Compare separate results and adjudicate before claiming shared interpretations.\n",
+  "packets": [
+    {
+      "schema_version": 1,
+      "status": "evaluator-input-not-a-result",
+      "case": {
+        "id": "C02",
+        "name": "An empty synchronized dataset",
+        "fictional": true,
+        "reader_task": "A lending partner must decide whether no invoices means no receivables for a connected company. Review the meaning and verification of an empty response.",
+        "review_scope": "Assess only this page for the stated task against the supplied fictional evidence. Do not require a full documentation site.",
+        "focus_criteria": [
+          "R02",
+          "R04",
+          "R06",
+          "R07"
+        ],
+        "document": "documents/c02.mdx",
+        "document_sha256": "600f76fe59d03943fd7309b67a4d7b2eb1d6495a868b67a89220e7055042f01d",
+        "facts": [
+          {
+            "id": "C02-F1",
+            "kind": "contract",
+            "revision": "ledger-7",
+            "statement": "GET /companies/{id}/invoices returns the latest locally synchronized records; an empty list can occur before initial synchronization completes."
+          },
+          {
+            "id": "C02-F2",
+            "kind": "implementation",
+            "revision": "sync-9",
+            "statement": "GET /companies/{id}/sync exposes initialComplete and lastSuccessfulAt. Connection state exposes connected or disconnected."
+          },
+          {
+            "id": "C02-F3",
+            "kind": "product-decision",
+            "revision": "lending-2",
+            "statement": "Do not conclude no receivables until the initial sync is complete, the connection is connected and lastSuccessfulAt is within the agreed one-hour freshness window. Otherwise defer the decision and show the data state."
+          }
+        ]
+      },
+      "document": "# Check company receivables\n\nCall `GET /companies/{id}/invoices`. An empty list means the company has no outstanding receivables. Continue to the no-receivables lending decision.\n\nTo verify the branch, use any company that returns an empty list.\n",
+      "rubric_sha256": "041ea59b897f77a1c1c8cab7ff768a9df0a7249f1338b70b3d5f9d118ac3307f",
+      "instructions": [
+        "All facts and examples are fictional. Do not call APIs or look up real provider behavior.",
+        "Evaluate the stated task and actual document using the supplied evidence and rubric.",
+        "Assess focus criteria. Report any other consequential defect with its criterion and evidence.",
+        "Do not use the author answer key, another evaluator's result or the worked payroll evaluation.",
+        "Record each criterion's rating and state separately, facts, document locator, consequence and fix.",
+        "Use unverified without a number for unresolved evidence. Explain not_applicable.",
+        "Return readiness and focused owner questions. Do not calculate a mean or publication approval.",
+        "Record evaluator identity/version, start/end time, actual active review minutes and uncertainties.",
+        "No API execution or reader-task success can be inferred from this content review."
+      ],
+      "result_fields": [
+        "packet_sha256",
+        "evaluator",
+        "started_at",
+        "finished_at",
+        "active_minutes",
+        "criteria",
+        "findings",
+        "questions",
+        "readiness",
+        "limitations"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "status": "evaluator-input-not-a-result",
+      "case": {
+        "id": "C03",
+        "name": "Partner tenant routing",
+        "fictional": true,
+        "reader_task": "A multi-customer HR partner must fetch employees belonging to the tenant selected by its end user. Assess the access instructions.",
+        "review_scope": "Assess only this page for the stated task against the supplied fictional evidence. Do not require a full documentation site.",
+        "focus_criteria": [
+          "R04",
+          "R05"
+        ],
+        "document": "documents/c03.mdx",
+        "document_sha256": "f3b6b3b92c370f36d905b33ee9a56bc14e7fde9be0fefb1c30e78b08ec6f1019",
+        "facts": [
+          {
+            "id": "C03-F1",
+            "kind": "contract",
+            "revision": "hr-api-5",
+            "statement": "A partner token may access multiple consented tenants. tenantId selects a tenant and does not narrow the token to a single tenant."
+          },
+          {
+            "id": "C03-F2",
+            "kind": "implementation",
+            "revision": "partner-app-8",
+            "statement": "The partner backend receives the browser tenantId and forwards it using its partner token. It currently performs no separate session-to-tenant check."
+          },
+          {
+            "id": "C03-F3",
+            "kind": "engineering-decision",
+            "revision": "access-4",
+            "statement": "Before forwarding, the backend must check that the current session is authorized for tenantId. The partner token alone does not do this. Without this check, a user can substitute another consented tenant ID and retrieve that tenant employee data."
+          }
+        ]
+      },
+      "document": "# Read employees for a customer\n\nSend the browser's `tenantId` to your backend, then call `GET /tenants/{tenantId}/employees` with your partner token. No session-to-tenant check is needed: the token automatically restricts the request to the signed-in customer's tenant.\n",
+      "rubric_sha256": "041ea59b897f77a1c1c8cab7ff768a9df0a7249f1338b70b3d5f9d118ac3307f",
+      "instructions": [
+        "All facts and examples are fictional. Do not call APIs or look up real provider behavior.",
+        "Evaluate the stated task and actual document using the supplied evidence and rubric.",
+        "Assess focus criteria. Report any other consequential defect with its criterion and evidence.",
+        "Do not use the author answer key, another evaluator's result or the worked payroll evaluation.",
+        "Record each criterion's rating and state separately, facts, document locator, consequence and fix.",
+        "Use unverified without a number for unresolved evidence. Explain not_applicable.",
+        "Return readiness and focused owner questions. Do not calculate a mean or publication approval.",
+        "Record evaluator identity/version, start/end time, actual active review minutes and uncertainties.",
+        "No API execution or reader-task success can be inferred from this content review."
+      ],
+      "result_fields": [
+        "packet_sha256",
+        "evaluator",
+        "started_at",
+        "finished_at",
+        "active_minutes",
+        "criteria",
+        "findings",
+        "questions",
+        "readiness",
+        "limitations"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "status": "evaluator-input-not-a-result",
+      "case": {
+        "id": "C05",
+        "name": "Concise status reference",
+        "fictional": true,
+        "reader_task": "An authenticated direct-client engineer needs the meaning of the state field on a job they already own. Review this field reference; shared authentication and the workflow guide are supplied outside this change.",
+        "review_scope": "Assess only this page for the stated task against the supplied fictional evidence. Do not require a full documentation site.",
+        "focus_criteria": [
+          "R02",
+          "R04",
+          "R09",
+          "R10",
+          "R11"
+        ],
+        "document": "documents/c05.mdx",
+        "document_sha256": "7aeb6670a34fc919d4219f4001c7a1aee9cd72dff0e0a13e39c149fc4ca962db",
+        "facts": [
+          {
+            "id": "C05-F1",
+            "kind": "contract",
+            "revision": "jobs-3",
+            "statement": "GET /jobs/{id} returns the owned job state: queued, running, succeeded or failed."
+          },
+          {
+            "id": "C05-F2",
+            "kind": "implementation",
+            "revision": "jobs-worker-6",
+            "statement": "Only succeeded means results are ready. failed means no result is available; the response error.code identifies the failure."
+          },
+          {
+            "id": "C05-F3",
+            "kind": "change-brief",
+            "revision": "status-reference-1",
+            "statement": "This change is a field reference, not a workflow guide or release announcement. No SDK, CLI, skill or MCP is offered or required for this task."
+          }
+        ]
+      },
+      "document": "# Job state\n\n`GET /jobs/{id}` returns `state` for the job you own:\n\n| Value | Meaning |\n| --- | --- |\n| `queued` | Waiting to start. |\n| `running` | Processing; results are not ready. |\n| `succeeded` | Complete; results are ready. |\n| `failed` | No result is available. Inspect `error.code` for the failure. |\n",
+      "rubric_sha256": "041ea59b897f77a1c1c8cab7ff768a9df0a7249f1338b70b3d5f9d118ac3307f",
+      "instructions": [
+        "All facts and examples are fictional. Do not call APIs or look up real provider behavior.",
+        "Evaluate the stated task and actual document using the supplied evidence and rubric.",
+        "Assess focus criteria. Report any other consequential defect with its criterion and evidence.",
+        "Do not use the author answer key, another evaluator's result or the worked payroll evaluation.",
+        "Record each criterion's rating and state separately, facts, document locator, consequence and fix.",
+        "Use unverified without a number for unresolved evidence. Explain not_applicable.",
+        "Return readiness and focused owner questions. Do not calculate a mean or publication approval.",
+        "Record evaluator identity/version, start/end time, actual active review minutes and uncertainties.",
+        "No API execution or reader-task success can be inferred from this content review."
+      ],
+      "result_fields": [
+        "packet_sha256",
+        "evaluator",
+        "started_at",
+        "finished_at",
+        "active_minutes",
+        "criteria",
+        "findings",
+        "questions",
+        "readiness",
+        "limitations"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "status": "evaluator-input-not-a-result",
+      "case": {
+        "id": "C10",
+        "name": "Invoice data and automated advances",
+        "fictional": true,
+        "reader_task": "A lending partner uses invoice data to decide whether to release a requested advance. Review the supplied guide against the deployed release workflow and data prerequisites.",
+        "review_scope": "Assess only this page for the stated task against the supplied fictional evidence. Do not require a full documentation site.",
+        "focus_criteria": [
+          "R02",
+          "R04",
+          "R06",
+          "R07"
+        ],
+        "document": "documents/c10.mdx",
+        "document_sha256": "7bedb70a856492de6bc72e031536f628e5d38804443d511f12734dece4f1ab1f",
+        "facts": [
+          {
+            "id": "C10-F1",
+            "kind": "contract",
+            "revision": "ledger-7",
+            "statement": "GET /companies/{id}/invoices returns the latest locally synchronized records; an empty list can occur before initial synchronization completes."
+          },
+          {
+            "id": "C10-F2",
+            "kind": "implementation",
+            "revision": "sync-9",
+            "statement": "GET /companies/{id}/sync exposes initialComplete and lastSuccessfulAt. Connection state exposes connected or disconnected."
+          },
+          {
+            "id": "C10-F3",
+            "kind": "product-decision",
+            "revision": "lending-2",
+            "statement": "Do not conclude no receivables until the initial sync is complete, the connection is connected and lastSuccessfulAt is within the agreed one-hour freshness window. Otherwise defer the decision and show the data state."
+          },
+          {
+            "id": "C10-F4",
+            "kind": "implementation-and-scenario",
+            "revision": "advance-release-4",
+            "statement": "In this fictional deployed integration, POST /advance-releases with noReceivables=true immediately transfers the requested GBP 5,000 advance. It performs no independent data-completeness or freshness guard. In the supplied scenario, initial synchronization is incomplete and the local invoice list is empty even though the company has outstanding invoices. Following the guide sends noReceivables=true and releases funds before the prerequisite decision can be made, contrary to the defer rule in C10-F3. This is fixture evidence, not an API execution performed by the evaluator."
+          }
+        ]
+      },
+      "document": "# Check company receivables\n\nCall `GET /companies/{id}/invoices`. An empty list means the company has no outstanding receivables. Continue to the no-receivables lending decision, then call `POST /advance-releases` with `noReceivables=true` to release the requested advance.\n\nTo verify the branch, use any company that returns an empty list.\n",
+      "rubric_sha256": "041ea59b897f77a1c1c8cab7ff768a9df0a7249f1338b70b3d5f9d118ac3307f",
+      "instructions": [
+        "All facts and examples are fictional. Do not call APIs or look up real provider behavior.",
+        "Evaluate the stated task and actual document using the supplied evidence and rubric.",
+        "Assess focus criteria. Report any other consequential defect with its criterion and evidence.",
+        "Do not use the author answer key, another evaluator's result or the worked payroll evaluation.",
+        "Record each criterion's rating and state separately, facts, document locator, consequence and fix.",
+        "Use unverified without a number for unresolved evidence. Explain not_applicable.",
+        "Return readiness and focused owner questions. Do not calculate a mean or publication approval.",
+        "Record evaluator identity/version, start/end time, actual active review minutes and uncertainties.",
+        "No API execution or reader-task success can be inferred from this content review."
+      ],
+      "result_fields": [
+        "packet_sha256",
+        "evaluator",
+        "started_at",
+        "finished_at",
+        "active_minutes",
+        "criteria",
+        "findings",
+        "questions",
+        "readiness",
+        "limitations"
+      ]
+    }
+  ]
+}

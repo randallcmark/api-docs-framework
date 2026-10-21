@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "case_id": "C05",
+  "packet_sha256": "afd77bebe212067595db3ecfa22898b3a00b1da551ccf5260da5b0c95d0bd8ca",
+  "evaluator": {
+    "id": "evaluator-a",
+    "context": "fresh; packets only",
+    "model": "unknown"
+  },
+  "started_at": "2026-10-21T05:07:59Z",
+  "finished_at": "2026-10-21T05:08:29.034442Z",
+  "active_minutes": null,
+  "active_minutes_note": "Not instrumented; elapsed time is not active review time",
+  "criteria": [
+    {
+      "criterion_id": "R02",
+      "applicability": "applicable",
+      "rating": 3,
+      "state": "satisfied",
+      "document_locator": "`GET /jobs/{id}` returns `state` for the job you own:",
+      "fact_ids": [
+        "C05-F1",
+        "C05-F2"
+      ],
+      "rationale": "The owned job and its four states are explicit, and the concise table covers the relevant lifecycle variants: waiting, processing, successful result readiness and failure with no result. This is sufficient for the stated field-meaning task without recreating the supplied workflow."
+    },
+    {
+      "criterion_id": "R04",
+      "applicability": "applicable",
+      "rating": 3,
+      "state": "satisfied",
+      "document_locator": "| `failed` | No result is available. Inspect `error.code` for the failure. |",
+      "fact_ids": [
+        "C05-F1",
+        "C05-F2"
+      ],
+      "rationale": "The operation, ownership, complete state enumeration, result-readiness distinction and failure field agree with the supplied contract and implementation. The table explicitly handles both success and failure boundaries, as well as the noncomplete states. No additional input or platform behavior is needed to interpret this field."
+    },
+    {
+      "criterion_id": "R09",
+      "applicability": "applicable",
+      "rating": 3,
+      "state": "satisfied",
+      "document_locator": "| `running` | Processing; results are not ready. |",
+      "fact_ids": [
+        "C05-F1",
+        "C05-F2",
+        "C05-F3"
+      ],
+      "rationale": "The table fits a narrow field reference, states each relevant result condition plainly and gives the supported error inspection action for failure. Its concise distinctions remove ambiguity about completion and readiness across all four state values without unsupported promises or workflow filler."
+    },
+    {
+      "criterion_id": "R10",
+      "applicability": "not_applicable",
+      "rating": "not_applicable",
+      "state": null,
+      "document_locator": "# Job state",
+      "fact_ids": [
+        "C05-F3"
+      ],
+      "rationale": "The change brief establishes a field reference rather than a platform change or release announcement. Compatibility, migration actions and release dates are not required for this scoped task."
+    },
+    {
+      "criterion_id": "R11",
+      "applicability": "not_applicable",
+      "rating": "not_applicable",
+      "state": null,
+      "document_locator": "`GET /jobs/{id}` returns `state` for the job you own:",
+      "fact_ids": [
+        "C05-F3"
+      ],
+      "rationale": "No SDK, CLI, skill or MCP is offered or required for this task. Tool installation and configuration guidance therefore does not apply."
+    }
+  ],
+  "findings": [],
+  "questions": [],
+  "readiness": "ready_for_human_review",
+  "limitations": [
+    "Fictional packet evidence only; no API calls or example execution performed, and no reader-task success inferred.",
+    "Review is limited to interpreting state on an already owned job. Shared authentication and workflow material are outside this change, as established by the task; they were not independently inspected.",
+    "Ready for human review is not publication approval."
+  ]
+}

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "status": "authored-not-calibrated",
   "rubric_path": "../rubric.md",
-  "rubric_sha256": "3c041db81e178c8c0dd4cb942882f6551a5b30c1f3e4d6dd163ccde7c46a18d2",
+  "rubric_sha256": "041ea59b897f77a1c1c8cab7ff768a9df0a7249f1338b70b3d5f9d118ac3307f",
   "cases": [
     {
       "id": "C01",
@@ -307,6 +307,47 @@
           "kind": "tooling-decision",
           "revision": "tooling-1",
           "statement": "There is no MCP server for this platform. Reading documentation through this skill requires no account authorization. Calling the REST API is a separate integration task."
+        }
+      ]
+    },
+    {
+      "id": "C10",
+      "name": "Invoice data and automated advances",
+      "fictional": true,
+      "reader_task": "A lending partner uses invoice data to decide whether to release a requested advance. Review the supplied guide against the deployed release workflow and data prerequisites.",
+      "review_scope": "Assess only this page for the stated task against the supplied fictional evidence. Do not require a full documentation site.",
+      "focus_criteria": [
+        "R02",
+        "R04",
+        "R06",
+        "R07"
+      ],
+      "document": "documents/c10.mdx",
+      "document_sha256": "7bedb70a856492de6bc72e031536f628e5d38804443d511f12734dece4f1ab1f",
+      "facts": [
+        {
+          "id": "C10-F1",
+          "kind": "contract",
+          "revision": "ledger-7",
+          "statement": "GET /companies/{id}/invoices returns the latest locally synchronized records; an empty list can occur before initial synchronization completes."
+        },
+        {
+          "id": "C10-F2",
+          "kind": "implementation",
+          "revision": "sync-9",
+          "statement": "GET /companies/{id}/sync exposes initialComplete and lastSuccessfulAt. Connection state exposes connected or disconnected."
+        },
+        {
+          "id": "C10-F3",
+          "kind": "product-decision",
+          "revision": "lending-2",
+          "statement": "Do not conclude no receivables until the initial sync is complete, the connection is connected and lastSuccessfulAt is within the agreed one-hour freshness window. Otherwise defer the decision and show the data state."
+        },
+        {
+          "id": "C10-F4",
+          "kind": "implementation-and-scenario",
+          "revision": "advance-release-4",
+          "statement": "In this fictional deployed integration, POST /advance-releases with noReceivables=true immediately transfers the requested GBP 5,000 advance. It performs no independent data-completeness or freshness guard. In the supplied scenario, initial synchronization is incomplete and the local invoice list is empty even though the company has outstanding invoices. Following the guide sends noReceivables=true and releases funds before the prerequisite decision can be made, contrary to the defer rule in C10-F3. This is fixture evidence, not an API execution performed by the evaluator."
         }
       ]
     }

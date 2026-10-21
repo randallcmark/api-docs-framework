@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "case_id": "C02",
+  "packet_sha256": "f38996defdd551bab9ae553b0728222d10b7588d8014390043f93ac1effed4a6",
+  "evaluator": {
+    "id": "evaluator-b",
+    "context": "fresh; packets only",
+    "model": "unknown"
+  },
+  "started_at": "2026-10-21T05:07:58Z",
+  "finished_at": "2026-10-21T05:08:20.942370+00:00",
+  "active_minutes": null,
+  "active_minutes_note": "Not instrumented; elapsed time is not active review time",
+  "criteria": [
+    {
+      "criterion_id": "R02",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "An empty list means the company has no outstanding receivables.",
+      "fact_ids": [
+        "C02-F1",
+        "C02-F2",
+        "C02-F3"
+      ],
+      "rationale": "The guide conflates an empty locally synchronized dataset with no underlying receivables and omits the data lifecycle states required to interpret the response."
+    },
+    {
+      "criterion_id": "R04",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "An empty list means the company has no outstanding receivables.",
+      "fact_ids": [
+        "C02-F1",
+        "C02-F3"
+      ],
+      "rationale": "The stated meaning is contradicted by the contract: an empty list can precede initial sync completion. A no-receivables decision also requires the established connection and freshness conditions."
+    },
+    {
+      "criterion_id": "R06",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "To verify the branch, use any company that returns an empty list.",
+      "fact_ids": [
+        "C02-F1",
+        "C02-F2",
+        "C02-F3"
+      ],
+      "rationale": "An arbitrary empty response does not establish that the prerequisite data is complete and fresh. This verification would accept an incomplete synchronized dataset as proof of no receivables."
+    },
+    {
+      "criterion_id": "R07",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "missing",
+      "document_locator": "Continue to the no-receivables lending decision.",
+      "fact_ids": [
+        "C02-F2",
+        "C02-F3"
+      ],
+      "rationale": "The page gives no way to distinguish incomplete, disconnected or stale data and no instruction to defer and show the data state when those conditions prevent a decision."
+    },
+    {
+      "criterion_id": "R03",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "missing",
+      "document_locator": "Call `GET /companies/{id}/invoices`.",
+      "fact_ids": [
+        "C02-F2",
+        "C02-F3"
+      ],
+      "rationale": "The sequence skips the required initialComplete, connected and one-hour lastSuccessfulAt checks and the defer branch before the lending classification."
+    }
+  ],
+  "findings": [
+    {
+      "id": "C02-B1",
+      "criterion_ids": [
+        "R02",
+        "R03",
+        "R04",
+        "R06",
+        "R07"
+      ],
+      "state": "incorrect",
+      "severity": "material",
+      "document_locator": "An empty list means the company has no outstanding receivables.",
+      "fact_ids": [
+        "C02-F1",
+        "C02-F2",
+        "C02-F3"
+      ],
+      "consequence": "The partner can classify an incompletely synchronized or stale local dataset as no receivables and continue a lending decision when the established rule requires deferral. The verification instruction repeats the same invalid inference. This packet establishes an unreliable business classification, but does not establish a concrete funds transfer or similarly serious downstream effect.",
+      "fix": "Describe invoice results as locally synchronized records. Require initialComplete, a connected connection, and lastSuccessfulAt within the agreed one-hour window before concluding no receivables. Use GET /companies/{id}/sync and the connection state to evaluate those conditions; otherwise defer and show the data state. Verify both a ready empty dataset and incomplete, disconnected and stale cases rather than accepting any empty response."
+    }
+  ],
+  "questions": [],
+  "readiness": "needs_revision",
+  "limitations": [
+    "Fictional packet evidence and static MDX review only; no API execution or reader-task success was observed.",
+    "No downstream release operation or concrete monetary effect is supplied in this case, so none is inferred.",
+    "Review is limited to this page and the meaning and verification of its empty-response branch."
+  ]
+}

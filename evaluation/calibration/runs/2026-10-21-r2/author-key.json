@@ -1,0 +1,364 @@
+{
+  "schema_version": 1,
+  "status": "author-proposed-anchors-not-adjudicated",
+  "cases": [
+    {
+      "case_id": "C01",
+      "expected": [
+        {
+          "criteria": [
+            "R03",
+            "R04"
+          ],
+          "state": "incorrect",
+          "rating": 0,
+          "severity": "critical",
+          "document_locator": "immediately mark the invoice paid",
+          "fact_ids": [
+            "C01-F1",
+            "C01-F2",
+            "C01-F3"
+          ],
+          "consequence": "Accepted requests may fail; following the instruction hides unpaid receivables.",
+          "fix": "Use settled as the completion condition and connect it to GET or event observation."
+        },
+        {
+          "criteria": [
+            "R06"
+          ],
+          "state": "incorrect",
+          "rating": 0,
+          "severity": "material",
+          "document_locator": "That proves the invoice has been paid",
+          "fact_ids": [
+            "C01-F1",
+            "C01-F4"
+          ],
+          "consequence": "The check cannot distinguish queued, settled and failed outcomes.",
+          "fix": "Describe the fixture transitions and expected observations; retain the unexecuted status."
+        }
+      ],
+      "do_not_flag": [
+        "Do not infer that all queued payouts will fail.",
+        "Do not demand production execution or claim the sandbox was run.",
+        "Treat the unsupported promise as part of the completion defect, not an extra high-severity finding."
+      ],
+      "readiness": "needs_revision",
+      "not_applicable": {}
+    },
+    {
+      "case_id": "C02",
+      "expected": [
+        {
+          "criteria": [
+            "R02",
+            "R04",
+            "R07"
+          ],
+          "state": "incorrect",
+          "rating": 0,
+          "severity": "material",
+          "document_locator": "An empty list means the company has no outstanding receivables",
+          "fact_ids": [
+            "C02-F1",
+            "C02-F2",
+            "C02-F3"
+          ],
+          "consequence": "Incomplete, stale or disconnected data can be mistaken for a business fact.",
+          "fix": "Check initial completion, connection and the agreed freshness window before deciding; describe the deferred path."
+        },
+        {
+          "criteria": [
+            "R06"
+          ],
+          "state": "missing",
+          "rating": 1,
+          "severity": "material",
+          "document_locator": "use any company that returns an empty list",
+          "fact_ids": [
+            "C02-F1",
+            "C02-F3"
+          ],
+          "consequence": "The test does not establish which empty-data condition was exercised.",
+          "fix": "Test a confirmed complete/fresh empty dataset and the defer conditions separately."
+        }
+      ],
+      "do_not_flag": [
+        "Do not borrow the one-hour window for any other case or platform.",
+        "Do not claim missing banking data: this fictional task requires invoices only."
+      ],
+      "readiness": "needs_revision",
+      "not_applicable": {},
+      "severity_adjudication": {
+        "status": "human-adjudicated-for-this-case",
+        "decision": "material",
+        "record": "adjudications/c02-severity.md",
+        "scope": "Severity only; other score and issue-grouping anchors remain author proposals."
+      }
+    },
+    {
+      "case_id": "C03",
+      "expected": [
+        {
+          "criteria": [
+            "R04",
+            "R05"
+          ],
+          "state": "incorrect",
+          "rating": 0,
+          "severity": "critical",
+          "document_locator": "No session-to-tenant check is needed",
+          "fact_ids": [
+            "C03-F1",
+            "C03-F2",
+            "C03-F3"
+          ],
+          "consequence": "The stated backend forwards a substituted tenant ID with a multi-tenant token, exposing another tenant employee data.",
+          "fix": "Require the session-to-tenant authorization check before forwarding and correct the token-boundary claim."
+        }
+      ],
+      "do_not_flag": [
+        "Do not claim that the provider ignores customer consent.",
+        "Do not prescribe a particular database, identity provider or undocumented token type."
+      ],
+      "readiness": "needs_revision",
+      "not_applicable": {}
+    },
+    {
+      "case_id": "C04",
+      "expected": [
+        {
+          "criteria": [
+            "R01"
+          ],
+          "state": "incorrect",
+          "rating": 0,
+          "severity": "material",
+          "document_locator": "available to all customers today",
+          "fact_ids": [
+            "C04-F1",
+            "C04-F2"
+          ],
+          "consequence": "A planner can commit an integration to an unavailable capability.",
+          "fix": "State current domestic-only availability; identify cross-border support as planned only if appropriate for this page. Do not invent a date."
+        }
+      ],
+      "do_not_flag": [
+        "Do not ask product whether the feature is available when the supplied evidence already answers that.",
+        "Do not mark critical without a demonstrated serious consequence.",
+        "Do not reward confident marketing language as clarity."
+      ],
+      "readiness": "needs_revision",
+      "not_applicable": {}
+    },
+    {
+      "case_id": "C05",
+      "expected": [
+        {
+          "criteria": [
+            "R02",
+            "R04",
+            "R09"
+          ],
+          "state": "satisfied",
+          "rating": 2,
+          "severity": null,
+          "document_locator": "# Job state",
+          "fact_ids": [
+            "C05-F1",
+            "C05-F2",
+            "C05-F3"
+          ],
+          "consequence": "The concise table answers the field-reference task. A rating of 3 with a concrete boundary explanation is also acceptable for R04/R09.",
+          "fix": "No required change."
+        }
+      ],
+      "do_not_flag": [
+        "Do not require introduction, concepts, FAQ, troubleshooting and a quickstart on this field page.",
+        "Do not penalize the absence of tooling that does not exist.",
+        "Do not demand API execution to assess these supplied field meanings; do not claim execution."
+      ],
+      "readiness": "ready_for_human_review",
+      "not_applicable": {
+        "R10": "No platform change or migration is in scope.",
+        "R11": "No tooling exists or is relevant to this task."
+      }
+    },
+    {
+      "case_id": "C06",
+      "expected": [
+        {
+          "criteria": [
+            "R07"
+          ],
+          "state": "missing",
+          "rating": 1,
+          "severity": "material",
+          "document_locator": "Save your request ID",
+          "fact_ids": [
+            "C06-F1",
+            "C06-F2",
+            "C06-F3"
+          ],
+          "consequence": "The engineer is left without the available lookup step and could duplicate a create while its outcome is unknown.",
+          "fix": "Add clientReference retention, lookup, use-existing behavior and unresolved escalation. State that a missing lookup result is not permission to repeat the create."
+        }
+      ],
+      "do_not_flag": [
+        "Do not describe the correct timeout statement as incorrect.",
+        "Do not invent an idempotency key, retry delay or a linearizable lookup.",
+        "Do not demand general error catalogs for this bounded addition."
+      ],
+      "readiness": "needs_revision",
+      "not_applicable": {}
+    },
+    {
+      "case_id": "C07",
+      "expected": [
+        {
+          "criteria": [
+            "R04"
+          ],
+          "state": "unverified",
+          "rating": "unverified",
+          "severity": "material",
+          "document_locator": "inclusive in the employing legal entity timezone",
+          "fact_ids": [
+            "C07-F1",
+            "C07-F2",
+            "C07-F3"
+          ],
+          "consequence": "Conflicting evidence prevents confirmation of the deployed cutoff; the integration may end scheduling on the wrong boundary.",
+          "fix": "Ask engineering to confirm the deployed revision/conversion and reconcile it with product intent. Record the decision before asserting the cutoff."
+        }
+      ],
+      "do_not_flag": [
+        "Do not silently choose product intent, prose or the parser as authoritative deployed behavior.",
+        "Do not turn unverified into numerical 0 or not_applicable.",
+        "Do not invent an exact offset, DST rule or confirmed one-day error."
+      ],
+      "readiness": "needs_answers",
+      "not_applicable": {}
+    },
+    {
+      "case_id": "C08",
+      "expected": [
+        {
+          "criteria": [
+            "R01",
+            "R08",
+            "R09"
+          ],
+          "state": "satisfied",
+          "rating": 2,
+          "severity": null,
+          "document_locator": "If your integration reads",
+          "fact_ids": [
+            "C08-F1",
+            "C08-F3"
+          ],
+          "consequence": "The affected reader reaches a scoped explanation and concrete action.",
+          "fix": "No required change."
+        },
+        {
+          "criteria": [
+            "R10"
+          ],
+          "state": "satisfied",
+          "rating": 3,
+          "severity": null,
+          "document_locator": "In sandbox, compare the two fields",
+          "fact_ids": [
+            "C08-F1",
+            "C08-F2",
+            "C08-F3"
+          ],
+          "consequence": "Applicability, version boundaries, overlap and relevant verification are explicit.",
+          "fix": "No required change."
+        }
+      ],
+      "do_not_flag": [
+        "Do not require separate release-note, changelog and migration filenames.",
+        "Do not turn a version removal into an invented calendar deadline.",
+        "Do not claim the sandbox checks were executed."
+      ],
+      "readiness": "ready_for_human_review",
+      "not_applicable": {}
+    },
+    {
+      "case_id": "C09",
+      "expected": [
+        {
+          "criteria": [
+            "R05",
+            "R11"
+          ],
+          "state": "incorrect",
+          "rating": 0,
+          "severity": "material",
+          "document_locator": "Installation automatically connects the agent",
+          "fact_ids": [
+            "C09-F1",
+            "C09-F2",
+            "C09-F3"
+          ],
+          "consequence": "A reader mistakes installed instructions for an authenticated account-changing capability.",
+          "fix": "Preserve the evidenced setup/verification/removal; replace the account-access promise with the static-documentation boundary."
+        }
+      ],
+      "do_not_flag": [
+        "Do not invent an MCP configuration or ask for account credentials to read static documentation.",
+        "Do not label this a proven unauthorized-access vulnerability: no account connection exists.",
+        "Do not mark correct installer instructions missing simply because the access claim is false."
+      ],
+      "readiness": "needs_revision",
+      "not_applicable": {}
+    },
+    {
+      "case_id": "C10",
+      "expected": [
+        {
+          "criteria": [
+            "R02",
+            "R04",
+            "R06"
+          ],
+          "state": "incorrect",
+          "rating": 0,
+          "severity": "critical",
+          "document_locator": "An empty list means the company has no outstanding receivables",
+          "fact_ids": [
+            "C10-F1",
+            "C10-F2",
+            "C10-F3",
+            "C10-F4"
+          ],
+          "consequence": "The wrong inference is fed into a deployed release path with no separate synchronization guard, immediately sending GBP 5,000 before the documented prerequisites are met.",
+          "fix": "Defer the decision and release while incomplete, disconnected or stale. Only make the no-receivables conclusion after the specified completeness, connection and freshness checks; test the qualification and defer paths."
+        },
+        {
+          "criteria": [
+            "R07"
+          ],
+          "state": "missing",
+          "rating": 0,
+          "severity": "material",
+          "document_locator": "Call `GET /companies/{id}/invoices`.",
+          "fact_ids": [
+            "C10-F2",
+            "C10-F3"
+          ],
+          "consequence": "Readers lack the supplied sync and connection qualification and the defer action for unsafe data states.",
+          "fix": "Explain initialComplete, lastSuccessfulAt and connection checks and show the defer path without invented retry or refresh guarantees."
+        }
+      ],
+      "do_not_flag": [
+        "Do not require observed loss: the supplied deployed release behavior establishes the serious consequence.",
+        "Do not treat every finance classification error as critical without this causal evidence.",
+        "Do not claim an API or sandbox was executed."
+      ],
+      "readiness": "needs_revision",
+      "not_applicable": {}
+    }
+  ]
+}

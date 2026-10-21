@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "case_id": "C02",
+  "packet_sha256": "f38996defdd551bab9ae553b0728222d10b7588d8014390043f93ac1effed4a6",
+  "evaluator": {
+    "id": "evaluator-a",
+    "context": "fresh; packets only",
+    "model": "unknown"
+  },
+  "started_at": "2026-10-21T05:06:48Z",
+  "finished_at": "2026-10-21T05:07:15.441802Z",
+  "active_minutes": null,
+  "active_minutes_note": "Not instrumented; elapsed time is not active review time",
+  "criteria": [
+    {
+      "criterion_id": "R02",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "An empty list means the company has no outstanding receivables.",
+      "fact_ids": [
+        "C02-F1",
+        "C02-F2",
+        "C02-F3"
+      ],
+      "rationale": "The page equates a locally synchronized snapshot with the company’s receivables state. Empty data can precede initial synchronization, so this model cannot support the stated lending decision. Explain synchronization, connection and freshness states before interpreting emptiness."
+    },
+    {
+      "criterion_id": "R04",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "An empty list means the company has no outstanding receivables.",
+      "fact_ids": [
+        "C02-F1",
+        "C02-F3"
+      ],
+      "rationale": "The stated meaning and instruction to continue contradict the contract and product decision. An empty result alone does not establish no receivables; document all three required checks."
+    },
+    {
+      "criterion_id": "R06",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "To verify the branch, use any company that returns an empty list.",
+      "fact_ids": [
+        "C02-F1",
+        "C02-F2",
+        "C02-F3"
+      ],
+      "rationale": "The verification accepts incomplete, disconnected or stale empty datasets. Require initialComplete, connected state and lastSuccessfulAt within one hour, and cover empty responses that fail these conditions with an expected deferred decision."
+    },
+    {
+      "criterion_id": "R07",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "missing",
+      "document_locator": "Continue to the no-receivables lending decision.",
+      "fact_ids": [
+        "C02-F2",
+        "C02-F3"
+      ],
+      "rationale": "No guidance distinguishes in-progress, disconnected or stale data or tells the reader to defer and display the data state. These are established decision-blocking states, so operational guidance is necessary for the task."
+    }
+  ],
+  "findings": [
+    {
+      "id": "C02-A-F01",
+      "criterion_ids": [
+        "R02",
+        "R04",
+        "R06",
+        "R07"
+      ],
+      "state": "incorrect",
+      "severity": "material",
+      "document_locator": "An empty list means the company has no outstanding receivables. Continue to the no-receivables lending decision.",
+      "fact_ids": [
+        "C02-F1",
+        "C02-F2",
+        "C02-F3"
+      ],
+      "consequence": "Following the instruction can classify an unsynchronized, disconnected or stale company as having no receivables. The verification repeats the same error. This establishes an unreliable lending classification; the packet does not establish a release of funds or another serious downstream effect warranting critical severity.",
+      "fix": "Explain that invoices are the latest locally synchronized records. Before concluding no receivables, check GET /companies/{id}/sync for initialComplete and lastSuccessfulAt within the agreed one-hour window, and verify that connection state is connected. Otherwise defer the decision and show the data state. Verify both qualifying empty data and empty data failing each prerequisite."
+    }
+  ],
+  "questions": [],
+  "readiness": "needs_revision",
+  "limitations": [
+    "Fictional packet evidence only; no API calls or example execution performed, and no reader-task success inferred.",
+    "Review is bounded to the empty-response lending decision on this page."
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "case_id": "C05",
+  "packet_sha256": "afd77bebe212067595db3ecfa22898b3a00b1da551ccf5260da5b0c95d0bd8ca",
+  "evaluator": {
+    "id": "evaluator-b",
+    "context": "fresh; packets only",
+    "model": "unknown"
+  },
+  "started_at": "2026-10-21T05:07:40Z",
+  "finished_at": "2026-10-21T05:07:58.535251+00:00",
+  "active_minutes": null,
+  "active_minutes_note": "Not instrumented; elapsed time is not active review time",
+  "criteria": [
+    {
+      "criterion_id": "R02",
+      "applicability": "applicable",
+      "rating": 3,
+      "state": "satisfied",
+      "document_locator": "`GET /jobs/{id}` returns `state` for the job you own:",
+      "fact_ids": [
+        "C05-F1",
+        "C05-F2"
+      ],
+      "rationale": "For an already authenticated owner asking about a single field, the table explains the full supplied lifecycle state set and the important result-ready versus failed boundary. No broader entity model is needed for this task."
+    },
+    {
+      "criterion_id": "R04",
+      "applicability": "applicable",
+      "rating": 3,
+      "state": "satisfied",
+      "document_locator": "| `failed` | No result is available. Inspect `error.code` for the failure. |",
+      "fact_ids": [
+        "C05-F1",
+        "C05-F2"
+      ],
+      "rationale": "The endpoint, owned-job context and all four state values match the supplied contract. Result availability and the failed-state diagnostic field agree with implementation evidence, covering the relevant terminal-state boundary."
+    },
+    {
+      "criterion_id": "R09",
+      "applicability": "applicable",
+      "rating": 3,
+      "state": "satisfied",
+      "document_locator": "| `succeeded` | Complete; results are ready. |",
+      "fact_ids": [
+        "C05-F1",
+        "C05-F2",
+        "C05-F3"
+      ],
+      "rationale": "A compact state table fits this field-reference task. It names the relevant outcomes concretely, distinguishes completion from failure, and gives a specific diagnostic action without unsupported promises or filler."
+    },
+    {
+      "criterion_id": "R10",
+      "applicability": "not_applicable",
+      "rating": "not_applicable",
+      "state": null,
+      "document_locator": "# Job state",
+      "fact_ids": [
+        "C05-F3"
+      ],
+      "rationale": "The supplied change brief explicitly identifies a field reference rather than a platform change or release announcement; migration and release communication are outside this task."
+    },
+    {
+      "criterion_id": "R11",
+      "applicability": "not_applicable",
+      "rating": "not_applicable",
+      "state": null,
+      "document_locator": "# Job state",
+      "fact_ids": [
+        "C05-F3"
+      ],
+      "rationale": "No SDK, CLI, skill or MCP exists or is required for this task according to the supplied brief, so installation and tooling lifecycle guidance do not apply."
+    }
+  ],
+  "findings": [],
+  "questions": [],
+  "readiness": "ready_for_human_review",
+  "limitations": [
+    "Static review of the fictional evidence and supplied field reference only; no API execution or reader-task success was observed.",
+    "Shared authentication and workflow guidance are outside this change and the stated reader task; they were not independently reviewed."
+  ]
+}

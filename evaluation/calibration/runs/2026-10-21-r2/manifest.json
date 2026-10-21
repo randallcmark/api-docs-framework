@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "run_id": "2026-10-21-r2",
+  "status": "follow-up-evaluations-complete",
+  "framework_base_commit": "9139b66b145524e9a7c14256464ccaa16f055a96",
+  "source_file_sha256": {
+    "evaluation/rubric.md": "041ea59b897f77a1c1c8cab7ff768a9df0a7249f1338b70b3d5f9d118ac3307f",
+    "evaluation/calibration/cases.json": "8819565270b779cd461a642d6b195ebf1d4ef013982d3f74a17d2e72efebf8f5",
+    "scripts/prepare_evaluation.py": "e0b7b0b1fa325fcc4c3e5676e0926efdd0b6fe252c02396b3c84221ecd076ffb",
+    "evaluation/calibration/documents/c02.mdx": "600f76fe59d03943fd7309b67a4d7b2eb1d6495a868b67a89220e7055042f01d",
+    "evaluation/calibration/documents/c03.mdx": "f3b6b3b92c370f36d905b33ee9a56bc14e7fde9be0fefb1c30e78b08ec6f1019",
+    "evaluation/calibration/documents/c05.mdx": "7aeb6670a34fc919d4219f4001c7a1aee9cd72dff0e0a13e39c149fc4ca962db",
+    "evaluation/calibration/documents/c10.mdx": "7bedb70a856492de6bc72e031536f628e5d38804443d511f12734dece4f1ab1f"
+  },
+  "inputs_frozen_at": "2026-10-21T05:06:25.883365+00:00",
+  "purpose": "Development follow-up after human C02 severity adjudication; check the revised boundary with a new serious-effect case and existing access/concise controls. Not an untouched holdout.",
+  "evaluator_separation": "Two new fresh contexts, packet-only instructions; no repository, key, adjudication record, prior results or each other results supplied. Operational separation, not access control.",
+  "model_relationship": "Same inherited model family; exact version unavailable unless exposed to the evaluator. No cross-model claim.",
+  "evaluators": [
+    "evaluator-a",
+    "evaluator-b"
+  ],
+  "case_order": {
+    "evaluator-a": [
+      "C02",
+      "C03",
+      "C10",
+      "C05"
+    ],
+    "evaluator-b": [
+      "C10",
+      "C05",
+      "C02",
+      "C03"
+    ]
+  },
+  "inputs": [
+    {
+      "case_id": "C02",
+      "packet_sha256": "f38996defdd551bab9ae553b0728222d10b7588d8014390043f93ac1effed4a6",
+      "document_sha256": "600f76fe59d03943fd7309b67a4d7b2eb1d6495a868b67a89220e7055042f01d",
+      "rubric_sha256": "041ea59b897f77a1c1c8cab7ff768a9df0a7249f1338b70b3d5f9d118ac3307f"
+    },
+    {
+      "case_id": "C03",
+      "packet_sha256": "b01aa95dbe5df4c6419f7758bfbc0cb06794d63d32aebfe5c8ea9196b4c311e9",
+      "document_sha256": "f3b6b3b92c370f36d905b33ee9a56bc14e7fde9be0fefb1c30e78b08ec6f1019",
+      "rubric_sha256": "041ea59b897f77a1c1c8cab7ff768a9df0a7249f1338b70b3d5f9d118ac3307f"
+    },
+    {
+      "case_id": "C05",
+      "packet_sha256": "afd77bebe212067595db3ecfa22898b3a00b1da551ccf5260da5b0c95d0bd8ca",
+      "document_sha256": "7aeb6670a34fc919d4219f4001c7a1aee9cd72dff0e0a13e39c149fc4ca962db",
+      "rubric_sha256": "041ea59b897f77a1c1c8cab7ff768a9df0a7249f1338b70b3d5f9d118ac3307f"
+    },
+    {
+      "case_id": "C10",
+      "packet_sha256": "8cd5f58369547dc2c467055917c1419cfdc0786810ab662440deec031df1f8c0",
+      "document_sha256": "7bedb70a856492de6bc72e031536f628e5d38804443d511f12734dece4f1ab1f",
+      "rubric_sha256": "041ea59b897f77a1c1c8cab7ff768a9df0a7249f1338b70b3d5f9d118ac3307f"
+    }
+  ],
+  "author_key_sha256": "7b74afbc1a1463774a5b78c8c51594c70c97e30117cdbf5885d584c2d7a940ca",
+  "active_review_minutes": "unknown; no active-time instrumentation",
+  "results": [
+    {
+      "evaluator_id": "evaluator-a",
+      "case_id": "C02",
+      "path": "results/evaluator-a/C02.json",
+      "sha256": "20f6f4e0b5e50b418ed5da08ff91b97b9600349004d07f1393f0e502e5f51221"
+    },
+    {
+      "evaluator_id": "evaluator-a",
+      "case_id": "C03",
+      "path": "results/evaluator-a/C03.json",
+      "sha256": "9c80700990651dade3e01a8374a22e619d6ff890802a214370f43420fe99eeb0"
+    },
+    {
+      "evaluator_id": "evaluator-a",
+      "case_id": "C10",
+      "path": "results/evaluator-a/C10.json",
+      "sha256": "f196a649261d4a25b5226e825aba01fca07645bf5bc33afaec68e654135ea9b7"
+    },
+    {
+      "evaluator_id": "evaluator-a",
+      "case_id": "C05",
+      "path": "results/evaluator-a/C05.json",
+      "sha256": "344d202f10624f327cf2740d510f2ba18f95abd8a260de9d73ac969b9d0295e2"
+    },
+    {
+      "evaluator_id": "evaluator-b",
+      "case_id": "C10",
+      "path": "results/evaluator-b/C10.json",
+      "sha256": "22975b599b09d1b10ea5f301f58d547bbef297ad9e9ff99e8e229b9e49415c07"
+    },
+    {
+      "evaluator_id": "evaluator-b",
+      "case_id": "C05",
+      "path": "results/evaluator-b/C05.json",
+      "sha256": "ff42a0348c5022349121a4fc48493bef9ab1e616ee35f6ebec406eec3f75db58"
+    },
+    {
+      "evaluator_id": "evaluator-b",
+      "case_id": "C02",
+      "path": "results/evaluator-b/C02.json",
+      "sha256": "cd00d8c74c9478f90c106cc763babb470eeed2ab0e3039177b76531558e4b0b2"
+    },
+    {
+      "evaluator_id": "evaluator-b",
+      "case_id": "C03",
+      "path": "results/evaluator-b/C03.json",
+      "sha256": "c9ed6bfe995131084c2faa4ddbdcd11f9195e08727cb3b30539fbc262f7cbc42"
+    }
+  ],
+  "agent_tasks": {
+    "evaluator-a": "/root/boundary_eval_a",
+    "evaluator-b": "/root/boundary_eval_b"
+  },
+  "method_notes": [
+    "Both evaluators report no blocking ambiguity and packet-only review.",
+    "Evaluator B reported correcting one mistyped finish timestamp to the real clock before finalization; assessment content was unchanged. Finalized originals were then frozen by the coordinator."
+  ],
+  "results_frozen_at": "2026-10-21T05:09:11.168982+00:00"
+}

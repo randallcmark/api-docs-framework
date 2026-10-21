@@ -45,6 +45,10 @@ Do not compute an overall pass from a mean. Report the criterion profile, conseq
 - **Material:** the task cannot be reliably planned, completed, verified or recovered using the documentation, or a consequential product claim is unresolved.
 - **Editorial:** local language, formatting or minor consistency issue without a consequential effect on the task.
 
+For critical severity, give the evidence chain: documented instruction → supported system behavior → serious reader consequence. A wrong business classification or unreliable planning decision is material when that serious downstream effect is not established. Finance, HR or security terminology alone does not make a finding critical. An observed loss or incident is not required: evidence that following the instruction would release funds incorrectly, expose another tenant's data or cause a similarly serious outcome is sufficient. Keep unsupported downstream possibilities explicit rather than using them to escalate severity.
+
+Both material and critical defects require correction. Keep severity separate from the criterion rating and readiness; useful surrounding content does not remove the defect.
+
 Recommend `needs_answers` when consequential behavior cannot be established and `needs_revision` when established defects need correction. Recommend `ready_for_human_review` when no known critical/material defects remain and the evidence packet is complete for its scope. This is not a claim that the documentation is infallible or a publication approval. Enforcement remains an open project decision.
 
 Route product-intent questions to product owners, implementation questions to engineering, and standard exceptions to the designated documentation owner. Fix objective editorial findings before handoff when practical. Ask reviewers for decisions with evidence and impact; do not hand them an undifferentiated backlog.
