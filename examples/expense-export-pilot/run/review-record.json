@@ -8,7 +8,7 @@
   "result_sha256": "a75d003592687a4031565f2d329d51ed7c21d558299fc3e529e0c014fc49e98c",
   "result_path": "independent-review.json",
   "frozen_at": "2026-10-21T05:31:39.131018+00:00",
-  "agent_task": "/root/authoring_pilot_review",
+  "agent_task": "independent-evaluator",
   "readiness": "ready_for_human_review",
   "finding_count": 0,
   "owner_question_count": 0

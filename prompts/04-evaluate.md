@@ -9,3 +9,5 @@ Use exact document locators and evidence artifact IDs/locators. Report a concret
 Ask a focused product/engineering question only where the supplied evidence cannot settle consequential behavior. Do not ask the owner to repeat supplied facts. Return needs_answers, needs_revision or ready_for_human_review with reasons; do not compute a mean or infer publication approval. Checks on packet hashes and syntax do not establish semantic correctness, example execution or reader success.
 
 Return a structured record: packet SHA256; evaluator identity/context and actual UTC timestamps; criterion profile with applicability, rating, issue state, evidence and rationale; distinct findings with severity/consequence/fix; owner questions; readiness; limitations. Active review time is unknown unless actually instrumented. In the fictional pilot, treat all scenario artifacts as fictional evidence and never call the example APIs.
+
+For manually assembled review inputs, record an unavailable packet hash as `not_recorded` and explain the lack of mechanical freeze verification. Keep the same evidence, separation and assessment requirements; never fabricate hashes or timestamps.

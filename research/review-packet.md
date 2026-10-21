@@ -16,7 +16,7 @@ Canonical JSON binds observations, screening decisions and trace nodes to captur
 
 The repository validator checks snapshot hashes, evidence locators, source/pattern/rubric references, screening completeness, trace capture bindings, visible source links and local document links. Isolated checks exercise broken references and missing-cache behavior. They do not certify documentation accuracy or reader outcomes.
 
-API execution, account setup, tool installation, MDX compilation, independent scoring and reader-task testing were not performed. The user's evaluation platform remains untouched.
+API execution, account setup, tool installation, MDX compilation, independent scoring and reader-task testing were not performed. The held-out target platform remains untouched.
 
 ## Decisions and remaining work
 

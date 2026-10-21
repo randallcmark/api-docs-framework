@@ -9,6 +9,6 @@ This repository develops a documentation research and improvement framework. Rea
 - Obtain consequential product intent through focused questions. Approved intent is not proof of deployed availability. Do not invent business rules or tooling.
 - Keep documentation changes tied to coherent reader outcomes and practical review effort. Reuse established decisions and prefer targeted revisions to bulk rewriting.
 - Numerical publication thresholds and enforced gates are undecided. Report readiness and evidence; existing repository owners control approval.
-- Keep the user's evaluation platform separate from initial research and tuning. Explicitly identify fictional examples.
+- Keep the held-out target platform separate from initial research and tuning. Explicitly identify fictional examples.
 - Canonical indexes are JSON. After modifying them, run `python scripts/validate.py --write-indexes`; then run `python scripts/validate.py`. Use `--require-snapshots` when validating a workspace with the local captures present.
 - Keep full third-party snapshots in the ignored local cache. Track concise observations and links rather than republishing source prose.

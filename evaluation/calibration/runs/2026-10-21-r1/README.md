@@ -28,7 +28,7 @@ D01 concerns C02. The guide says an empty invoice list proves no receivables and
 
 The other proposed refinements preserve the important finding regardless of number or tag: distinguish false verification from missing verification, explain task-relevant boundaries behind a 3, avoid counting one root cause several times, and clarify whether a language score repeats a technical completeness problem. The mixed static-skill example needs an explicit 0-versus-1 rationale. Original outputs must remain unchanged after adjudication; record later revisions separately.
 
-Human adjudication of consequential criteria and broader cases remain necessary before promoting guidance to calibrated. The user's platform remains untouched. No publication threshold, automatic gate or overall average is introduced.
+Human adjudication of consequential criteria and broader cases remain necessary before promoting guidance to calibrated. The held-out target platform remains untouched. No publication threshold, automatic gate or overall average is introduced.
 
 ## Reproducibility and scope
 

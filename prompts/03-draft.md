@@ -9,3 +9,5 @@ Explain test setup, expected observations and production exclusions using actual
 Write concise, concrete language. Do not add FAQs, sections, promises, tooling or prose solely to make the change look comprehensive. Keep research citations, internal evidence IDs and authoring mechanics in the sidecar claim map rather than product-site prose, unless the reader needs an attribution.
 
 Return: actual changed MDX, a compact claim-to-evidence map with source locators, and check results with honest limits. Preserve unknowns separately; do not hide them in confident prose. Produce a hash-bound review manifest covering every proposed page and the relevant shared context. Do not supply an author score to the separate evaluator.
+
+For a manual prompt-only pass without the packet builder, preserve fixed copies of the same complete review inputs as described in `prompts/README.md`. Record actual revisions/hashes where available and unavailable hashes as not recorded; do not claim the builder's mechanical verification.

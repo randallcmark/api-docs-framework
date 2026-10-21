@@ -113,8 +113,8 @@
     }
   ],
   "agent_tasks": {
-    "evaluator-a": "/root/boundary_eval_a",
-    "evaluator-b": "/root/boundary_eval_b"
+    "evaluator-a": "evaluator-a",
+    "evaluator-b": "evaluator-b"
   },
   "method_notes": [
     "Both evaluators report no blocking ambiguity and packet-only review.",

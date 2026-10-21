@@ -56,7 +56,7 @@ Seek counterexamples and cheaper alternatives. An FAQ may improve discovery for 
 
 ## Calibration and holdout
 
-Use public research examples for discovery. Use separately labeled practice cases to refine prompts and score anchors. Freeze pattern and rubric versions before examining the user's evaluation platform. If the holdout exposes weaknesses, record that first result before revising; further runs are iteration, not an untouched holdout.
+Use public research examples for discovery. Use separately labeled practice cases to refine prompts and score anchors. Freeze pattern and rubric versions before examining the held-out target platform. If the holdout exposes weaknesses, record that first result before revising; further runs are iteration, not an untouched holdout.
 
 Have a second evaluator assess actual changed content with source evidence and the reader brief, without seeing the author pass's self-score. Separate agent passes reduce shared context; they do not guarantee independent judgment. Human calibration remains necessary for consequential criteria.
 

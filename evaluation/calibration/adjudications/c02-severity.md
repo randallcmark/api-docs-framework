@@ -1,6 +1,6 @@
 # C02 severity decision
 
-Decision: **material**, on the evidence supplied in C02. The user accepted this resolution in the project conversation on 2026-10-21 after reviewing the first separate-agent run.
+Decision: **material**, on the evidence supplied in C02. The documentation owner accepted this resolution on 2026-10-21 after reviewing the first separate-agent run.
 
 The guide falsely treats an empty synchronized invoice list as proof of no receivables and directs the lending decision. C02 establishes an unreliable business conclusion and an inadequate verification procedure. It does not establish loan approval, disbursement, loss or another serious downstream effect. Those possibilities must not supply a critical rating without supporting evidence.
 
@@ -10,6 +10,6 @@ The [rubric](../../rubric.md#consequence-and-readiness) now requires an evidence
 
 ## Scope and provenance
 
-The proposal was to keep C02 material, clarify the boundary, preserve the original results and add a paired case with an explicit incorrect disbursement. The user's acceptance was: “Ok, sounds fair. Next?” This resolves the C02 severity question only. The first run's other score/tag proposals remain author analysis, and the wider rubric is not declared calibrated.
+The proposal was to keep C02 material, clarify the boundary, preserve the original results and add a paired case with an explicit incorrect disbursement. The documentation owner approved that proposal. This resolves the C02 severity question only. The first run's other score/tag proposals remain author analysis, and the wider rubric is not declared calibrated.
 
 The [first run's original outputs and key](../runs/2026-10-21-r1/README.md) retain their pre-adjudication values. Do not rewrite the two original critical findings or reclassify their observed agreement after this decision. The follow-up check uses fresh contexts and newly frozen inputs; it is a development iteration, not an untouched holdout or independent proof of reader benefit.

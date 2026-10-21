@@ -46,7 +46,7 @@ Pattern P03 asks authors to distinguish request success from workflow completion
 4. **Platform answer:** obtain this from that platform's owners and technical evidence; external examples do not answer it.
 5. **Evaluation:** compare the actual draft with those answers and the contract; flag unsupported immediacy, status or readiness claims.
 
-The [fictional payroll example](../examples/payroll-onboarding/README.md) demonstrates this chain, including a brief, source fixture, revised MDX, findings and a focused PR review packet. It is not a test on the user's evaluation platform.
+The [fictional payroll example](../examples/payroll-onboarding/README.md) demonstrates this chain, including a brief, source fixture, revised MDX, findings and a focused PR review packet. It is not a test on the held-out target platform.
 
 ## Next research priorities
 
