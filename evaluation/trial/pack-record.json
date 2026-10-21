@@ -1,16 +1,20 @@
 {
   "schema_version": 1,
   "status": "prepared-no-trial-performed",
-  "framework_commit": "d5c64a51c5d69962ca5f7084e58b0d26bcdc081e",
-  "artifact_name": "api-docs-first-trial.zip",
-  "artifact_sha256": "b1b33289588f83b6bf75736d7c7b0d99daa7585ba6b2e289fa17f14cdd62ccbb",
-  "bytes": 326137,
+  "framework_commit": "0b7821920890224ee128009d2abc1ce8d1bf07c8",
+  "artifact_name": "api-docs-shareable-trial.zip",
+  "artifact_sha256": "0ba5bc9839d77ee76d0a20b86bda2d9b666db5cfd0c38ccacb541d83f0af71f6",
+  "bytes": 341764,
   "checks": [
     "22 regression tests passed",
-    "Frozen critical Git file hashes checked during packaging",
-    "Extracted framework integrity passed without the ignored source cache",
-    "Extracted review builder reproduced the original pilot packet exactly",
-    "Preparation-file hashes checked"
+    "18 frozen critical Git file hashes checked during packaging",
+    "Tracked content and ZIP passed personal-name/account-identifier scan",
+    "ZIP excludes Git metadata, untracked files and ignored research snapshots",
+    "Rebuild from the same frozen source and preparation files is byte-identical",
+    "Preparation-file hashes checked",
+    "Extracted framework integrity passed with missing optional research cache reported",
+    "Extracted review builder reproduced the historical pilot selected artifacts and diff; original review inputs/results remain unchanged"
   ],
-  "scope": "Records a generated local ZIP, not target-platform evaluation or reader benefit. The ZIP is not committed; rebuild with prepare_trial_pack.py."
+  "supersedes": "The earlier api-docs-first-trial.zip preparation artifact is retired; use this owner-neutral pack.",
+  "scope": "Records a generated local ZIP, not target-platform evaluation or reader benefit. The ZIP is not committed; rebuild with prepare_trial_pack.py. Top-level pack metadata is authoritative; archived preparation records inside framework/ are historical source content."
 }

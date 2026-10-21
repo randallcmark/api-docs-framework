@@ -2,14 +2,14 @@
   "schema_version": 1,
   "id": "first-platform-trial",
   "status": "framework-frozen-trial-not-started",
-  "framework_commit": "d5c64a51c5d69962ca5f7084e58b0d26bcdc081e",
-  "framework_tree": "4d52ec6c005857b87d5da121df2793c0226e3455",
-  "scope": "Pinned framework before target-platform inspection; prompts, rubric and patterns remain provisional.",
+  "framework_commit": "0b7821920890224ee128009d2abc1ce8d1bf07c8",
+  "framework_tree": "96e54d5b3b8852c8325fe4c16aeb52929da7d292",
+  "scope": "Owner-neutral framework with guided onboarding, pinned before any target-platform inspection; prompts, rubric and patterns remain provisional.",
   "critical_files": {
-    "AGENTS.md": "4bde860a35e1cdfa36c9bfd88e2a262fab9a653438ec259e43d5c1fc65c406fe",
-    "docs/project-brief.md": "698a898ec9333ea444b6d05e4614ddd452ec00a40dcbfbcb2dcc99a2c4d8d7c6",
-    "research/protocol.md": "37b502452bd94964be193b7e20cd3364205f70019ff8ef48f75f02475956de75",
-    "evaluation/rubric.md": "041ea59b897f77a1c1c8cab7ff768a9df0a7249f1338b70b3d5f9d118ac3307f",
+    "AGENTS.md": "8d175c594a484295c058951f9bd81840351835e9f400557a6a3ac7e1d7f76690",
+    "docs/project-brief.md": "63f9980f50d8456fa0ae8ef470795480b09b54a8694fb71b35ff7b8f5ab5668c",
+    "research/protocol.md": "52504fa4c9a6cc1cb0105c754517912459a19c8545f1a6ed1299f4ce8e420d0e",
+    "evaluation/rubric.md": "0cdcf46533773eeb9793ad7ec14618bbe9385e3694bcd1491d92948e72183abb",
     "patterns/library.json": "eecfefc5c0915d2ea51d0e44ff3e9edb4c6dc301b5e27bbde2185b02efdc2a80",
     "workflows/engineer-agent.md": "3c972f8d21546357584ed321a841d983342c4b083b34dd2bf313d3d761f814a0",
     "templates/change-brief.md": "ba6d80578cf794fc7d88e8447876cc13df1c90736f5546e77db5b5d38e1abde0",
@@ -17,11 +17,15 @@
     "scripts/prepare_doc_review.py": "b6ee75f53553fdaf942f6da0f920fcbc3d38e0116e1a42f595a8965b065b830e",
     "prompts/01-discover.md": "6c5ece2df5b9c89a10f3914fdf02ad46c28a014c728a2611ae10f481d209e7fb",
     "prompts/02-plan.md": "bdc6b44fe90a02813d030b6688156ca11ea5a34dc0ad4e5d29937ef085032631",
-    "prompts/03-draft.md": "be3cbbb9acf10abf544f19678f07b5dc9d20185a308f61330dd810355b05a170",
-    "prompts/04-evaluate.md": "b444aaadcd6071f68c9bf0b822f9a6c75230720fa01af26ea1ae0b15adec9198",
+    "prompts/03-draft.md": "6449ae5c29f6f1e26aa0ef89796e3385dea42f49361c9064d3047796c1619997",
+    "prompts/04-evaluate.md": "96a5a0e4d69151a57177f1595c6f00593584e3773c629bb9f4d1afd455ad863a",
     "prompts/05-revise-and-handoff.md": "8ac56afe86bd33460c4c866e727c9ffd9aeeb5f0c69ef680d93adaaff60879db",
-    "prompts/README.md": "972062d5f431165fcddf72d5a0691e422c7c9082b876b1ac34fa24e0de403c3a"
+    "prompts/README.md": "5f01f2ee07d2c63bdc07cfc760e1955a385c245eb0e643aeccdb09f81b508c35",
+    "README.md": "28ab373dd127db00b5c42d59858fc32beb89ef96b4350742ab478bf68f226c8d",
+    "scripts/prepare_trial_pack.py": "ba884b721100ebd4058d4cd7de22a4eed925b6758b53ab2cb96656468f031607",
+    "evaluation/trial/pack-readme.md": "4f86d6d1fb16b34d2a3d972955d99d8124f57e01e09d6d4f857ae99c3f3dd0e6"
   },
   "target_platform_inspected": false,
-  "trial_results": "No trial performed or results claimed."
+  "trial_results": "No trial performed or results claimed.",
+  "preparation_note": "The pre-trial source pin was refreshed for content anonymization and prompt-only onboarding. Historical fictional review inputs and results were not rewritten."
 }
