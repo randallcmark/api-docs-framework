@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "case_id": "C06",
+  "packet_sha256": "71b5da2f0b67e82f3a5426a159bb3fa22537700ab4118a83dcc1b13f01a47fe7",
+  "evaluator": {
+    "id": "evaluator-a",
+    "context": "fresh; packets only",
+    "model": "unknown"
+  },
+  "started_at": "2026-10-21T04:49:47Z",
+  "finished_at": "2026-10-21T04:51:59Z",
+  "active_minutes": null,
+  "active_minutes_note": "Not instrumented; elapsed time is not active review time",
+  "criteria": [
+    {
+      "criterion_id": "R07",
+      "applicability": "applicable",
+      "rating": 1,
+      "state": "missing",
+      "document_locator": "Save your request ID so support can investigate.",
+      "fact_ids": [
+        "C06-F1",
+        "C06-F2",
+        "C06-F3"
+      ],
+      "rationale": "Retaining the request ID is useful, but the outcome can still be committed. The addition omits clientReference retention/query, use of an existing invoice ID, the lag caveat and the unresolved-outcome support path without a blind create retry."
+    },
+    {
+      "criterion_id": "R09",
+      "applicability": "applicable",
+      "rating": 1,
+      "state": "missing",
+      "document_locator": "A network timeout means you did not receive the create response.",
+      "fact_ids": [
+        "C06-F1",
+        "C06-F2",
+        "C06-F3"
+      ],
+      "rationale": "The prose is accurate and concise, but does not expose the decision-critical limitation that timeout is not proof of noncreation or tell the reader how to choose the next safe action. This is a missing-instruction issue rather than a false statement or filler."
+    }
+  ],
+  "findings": [
+    {
+      "id": "C06-A-01",
+      "criterion_ids": [
+        "R07",
+        "R09"
+      ],
+      "state": "missing",
+      "severity": "material",
+      "document_locator": "Save your request ID so support can investigate.",
+      "fact_ids": [
+        "C06-F1",
+        "C06-F2",
+        "C06-F3"
+      ],
+      "consequence": "The engineer cannot resolve whether the invoice exists or determine whether another create is safe. With no idempotency key and a potentially lagging lookup, absence of recovery guidance leaves a consequential duplicate-creation risk, although this page does not explicitly instruct a retry.",
+      "fix": "Explain that timeout leaves creation uncertain and this operation has no idempotency key. Retain clientReference and request ID; query GET /invoices?clientReference=... and use the existing ID when found. If no result is found, explain that the query can lag a commit, avoid blindly recreating, and contact support with both identifiers if unresolved. Do not add a fixed wait or guaranteed automatic retry."
+    }
+  ],
+  "questions": [],
+  "readiness": "needs_revision",
+  "limitations": [
+    "Static review of the frozen fictional packet only; no API execution, reader-task success, or measured task benefit is established.",
+    "Only the stated page and task were assessed; no full-site completeness requirements were imposed."
+  ]
+}

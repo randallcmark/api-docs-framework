@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "case_id": "C09",
+  "packet_sha256": "1887b36f21df4f4ba6f55d984feb67532cbb5577fd20fcaee43a460d45538ea0",
+  "evaluator": {
+    "id": "evaluator-a",
+    "context": "fresh; packets only",
+    "model": "unknown"
+  },
+  "started_at": "2026-10-21T04:49:47Z",
+  "finished_at": "2026-10-21T04:51:59Z",
+  "active_minutes": null,
+  "active_minutes_note": "Not instrumented; elapsed time is not active review time",
+  "criteria": [
+    {
+      "criterion_id": "R05",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "No additional authorization is required.",
+      "fact_ids": [
+        "C09-F1",
+        "C09-F3"
+      ],
+      "rationale": "No account authorization is required to read documentation, but the surrounding claim applies this to connecting all customer accounts and creating invoices. The skill has no credentials, account tools or runtime server; REST access is a separate integration task."
+    },
+    {
+      "criterion_id": "R06",
+      "applicability": "applicable",
+      "rating": 2,
+      "state": "satisfied",
+      "document_locator": "Check `docs-skill list` for `platform-docs`, version `3`.",
+      "fact_ids": [
+        "C09-F2"
+      ],
+      "rationale": "For installation, the page gives the correct verification command and expected name/version. This establishes a valid installation check, not account connectivity or example execution. The separate false access claim is recorded under R05 and R11."
+    },
+    {
+      "criterion_id": "R11",
+      "applicability": "applicable",
+      "rating": 1,
+      "state": "incorrect",
+      "document_locator": "Installation automatically connects the agent to every customer account and lets it create invoices.",
+      "fact_ids": [
+        "C09-F1",
+        "C09-F2",
+        "C09-F3"
+      ],
+      "rationale": "Client version, install/list/remove commands and expected version are correct. However, the stated lifecycle result invents account connectivity and invoice-creating tools for a static documentation skill, making the access behavior consequentially misleading."
+    }
+  ],
+  "findings": [
+    {
+      "id": "C09-A-01",
+      "criterion_ids": [
+        "R05",
+        "R11"
+      ],
+      "state": "incorrect",
+      "severity": "material",
+      "document_locator": "Installation automatically connects the agent to every customer account and lets it create invoices. No additional authorization is required.",
+      "fact_ids": [
+        "C09-F1",
+        "C09-F2",
+        "C09-F3"
+      ],
+      "consequence": "The engineer may treat successful installation as a live account integration and expect invoice creation without authorization. Those operations are impossible with this static skill; the packet establishes no actual unauthorized access or data exposure, so critical severity is unsupported.",
+      "fix": "Replace the account-connection claim with the documented boundary: the skill supplies static instructions and documentation URLs and needs no account authorization for that purpose. State that REST API integration and its account authorization are separate. Preserve the supported client, installation verification and removal instructions; do not invent an MCP setup."
+    }
+  ],
+  "questions": [],
+  "readiness": "needs_revision",
+  "limitations": [
+    "Static review of the frozen fictional packet only; no API execution, reader-task success, or measured task benefit is established.",
+    "Only the stated page and task were assessed; no full-site completeness requirements were imposed."
+  ]
+}

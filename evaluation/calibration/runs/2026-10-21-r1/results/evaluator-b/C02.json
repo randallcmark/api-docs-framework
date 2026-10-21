@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "case_id": "C02",
+  "packet_sha256": "61449727255cc22577cea086c50295f0587c285e011e72362e7cad0fe0a49399",
+  "evaluator": {
+    "id": "evaluator-b",
+    "context": "fresh; packets only",
+    "model": "unknown"
+  },
+  "started_at": "2026-10-21T04:50:10Z",
+  "finished_at": "2026-10-21T04:52:15Z",
+  "active_minutes": null,
+  "active_minutes_note": "Not instrumented; elapsed time is not active review time",
+  "criteria": [
+    {
+      "criterion_id": "R02",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "An empty list means the company has no outstanding receivables.",
+      "fact_ids": [
+        "C02-F1",
+        "C02-F2",
+        "C02-F3"
+      ],
+      "rationale": "The document treats the local synchronized snapshot as definitive business truth, ignoring initial completion, connection and freshness state."
+    },
+    {
+      "criterion_id": "R04",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "An empty list means the company has no outstanding receivables.",
+      "fact_ids": [
+        "C02-F1",
+        "C02-F3"
+      ],
+      "rationale": "The unconditional inference contradicts the contract: emptiness can precede initial synchronization, and product specifies additional evidence before the lending decision."
+    },
+    {
+      "criterion_id": "R06",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "use any company that returns an empty list.",
+      "fact_ids": [
+        "C02-F1",
+        "C02-F2",
+        "C02-F3"
+      ],
+      "rationale": "This test can select an incomplete, stale or disconnected snapshot, so it cannot establish the no-receivables branch."
+    },
+    {
+      "criterion_id": "R07",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "missing",
+      "document_locator": "# Check company receivables",
+      "fact_ids": [
+        "C02-F2",
+        "C02-F3"
+      ],
+      "rationale": "Guidance is absent for identifying incomplete, stale and disconnected states and deferring the decision while showing the data state."
+    }
+  ],
+  "findings": [
+    {
+      "id": "C02-B1",
+      "criterion_ids": [
+        "R02",
+        "R04",
+        "R06"
+      ],
+      "state": "incorrect",
+      "severity": "critical",
+      "document_locator": "Continue to the no-receivables lending decision.",
+      "fact_ids": [
+        "C02-F1",
+        "C02-F2",
+        "C02-F3"
+      ],
+      "consequence": "A lender can make the specified no-receivables financial decision from an empty local snapshot before data is complete or current. Testing with any empty list can reinforce that materially wrong decision.",
+      "fix": "State that emptiness alone is insufficient. Require initialComplete, connected state and lastSuccessfulAt within the agreed one-hour freshness window before the no-receivables conclusion; make the test establish those conditions."
+    },
+    {
+      "id": "C02-B2",
+      "criterion_ids": [
+        "R07"
+      ],
+      "state": "missing",
+      "severity": "material",
+      "document_locator": "# Check company receivables",
+      "fact_ids": [
+        "C02-F2",
+        "C02-F3"
+      ],
+      "consequence": "The page gives no way to diagnose why data is empty or what to do when its trust conditions fail, preventing reliable operation.",
+      "fix": "Add GET /companies/{id}/sync with initialComplete and lastSuccessfulAt, inspect connection state, and explain deferring the lending decision and showing the data state when incomplete, disconnected or older than one hour."
+    }
+  ],
+  "questions": [],
+  "readiness": "needs_revision",
+  "limitations": [
+    "Reviewed only this frozen fictional packet against its supplied rubric and evidence; no repository, linked-page retrieval, external platform lookup or API execution.",
+    "Content review does not establish example execution, observed reader-task success, measured benefit or publication approval."
+  ]
+}

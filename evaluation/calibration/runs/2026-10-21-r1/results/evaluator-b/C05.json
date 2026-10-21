@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "case_id": "C05",
+  "packet_sha256": "b5527552a5fb50a93329f5984eeb9d6264ef6f3e32372dac75e109413bccef50",
+  "evaluator": {
+    "id": "evaluator-b",
+    "context": "fresh; packets only",
+    "model": "unknown"
+  },
+  "started_at": "2026-10-21T04:49:57Z",
+  "finished_at": "2026-10-21T04:52:15Z",
+  "active_minutes": null,
+  "active_minutes_note": "Not instrumented; elapsed time is not active review time",
+  "criteria": [
+    {
+      "criterion_id": "R02",
+      "applicability": "applicable",
+      "rating": 3,
+      "state": "satisfied",
+      "document_locator": "| `failed` | No result is available. Inspect `error.code` for the failure. |",
+      "fact_ids": [
+        "C05-F1",
+        "C05-F2"
+      ],
+      "rationale": "The reference identifies the owned job and covers every supplied lifecycle state, including the consequential succeeded/failed result-availability boundary."
+    },
+    {
+      "criterion_id": "R04",
+      "applicability": "applicable",
+      "rating": 3,
+      "state": "satisfied",
+      "document_locator": "`GET /jobs/{id}` returns `state` for the job you own:",
+      "fact_ids": [
+        "C05-F1",
+        "C05-F2"
+      ],
+      "rationale": "The operation, ownership, complete enum and failure diagnostic field match the supplied contract and implementation, including unavailable-result boundaries."
+    },
+    {
+      "criterion_id": "R09",
+      "applicability": "applicable",
+      "rating": 3,
+      "state": "satisfied",
+      "document_locator": "| `running` | Processing; results are not ready. |",
+      "fact_ids": [
+        "C05-F1",
+        "C05-F2",
+        "C05-F3"
+      ],
+      "rationale": "The concise table gives concrete meanings and expected results, resolves ongoing versus successful versus failed processing, and supplies an actionable error pointer without expanding the field reference."
+    },
+    {
+      "criterion_id": "R10",
+      "applicability": "not_applicable",
+      "rating": "not_applicable",
+      "state": null,
+      "document_locator": "# Job state",
+      "fact_ids": [
+        "C05-F3"
+      ],
+      "rationale": "This is a field-reference change, not a platform release or migration; change-announcement and compatibility guidance do not apply to this bounded task."
+    },
+    {
+      "criterion_id": "R11",
+      "applicability": "not_applicable",
+      "rating": "not_applicable",
+      "state": null,
+      "document_locator": "# Job state",
+      "fact_ids": [
+        "C05-F3"
+      ],
+      "rationale": "No SDK, CLI, skill or MCP exists or is required for this task; tooling setup is outside the stated field-reference scope."
+    }
+  ],
+  "findings": [],
+  "questions": [],
+  "readiness": "ready_for_human_review",
+  "limitations": [
+    "Reviewed only this frozen fictional packet against its supplied rubric and evidence; no repository, linked-page retrieval, external platform lookup or API execution.",
+    "Content review does not establish example execution, observed reader-task success, measured benefit or publication approval."
+  ]
+}

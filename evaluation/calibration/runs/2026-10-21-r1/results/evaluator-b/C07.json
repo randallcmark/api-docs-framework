@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "case_id": "C07",
+  "packet_sha256": "3fe17af4fb2193df75ee4af9b9aed17746b2a638c1c77402b317b46ee42196a3",
+  "evaluator": {
+    "id": "evaluator-b",
+    "context": "fresh; packets only",
+    "model": "unknown"
+  },
+  "started_at": "2026-10-21T04:49:57Z",
+  "finished_at": "2026-10-21T04:52:15Z",
+  "active_minutes": null,
+  "active_minutes_note": "Not instrumented; elapsed time is not active review time",
+  "criteria": [
+    {
+      "criterion_id": "R04",
+      "applicability": "applicable",
+      "rating": "unverified",
+      "state": "unverified",
+      "document_locator": "Treat `endDate` as inclusive in the employing legal entity timezone.",
+      "fact_ids": [
+        "C07-F1",
+        "C07-F2",
+        "C07-F3"
+      ],
+      "rationale": "The text matches product intent, but the parser constructs UTC midnight and neither its deployed revision nor downstream conversion is supplied. The date-only contract does not reconcile these facts, so deployed cutoff correctness cannot be established or scored numerically."
+    }
+  ],
+  "findings": [
+    {
+      "id": "C07-B1",
+      "criterion_ids": [
+        "R04"
+      ],
+      "state": "unverified",
+      "severity": "material",
+      "document_locator": "Use that timezone to derive the scheduling cutoff.",
+      "fact_ids": [
+        "C07-F1",
+        "C07-F2",
+        "C07-F3"
+      ],
+      "consequence": "An engineer cannot safely derive a scheduling cutoff while product-local inclusive semantics and the supplied UTC parser remain unreconciled; neither source alone establishes deployed behavior.",
+      "fix": "Obtain engineering confirmation of the deployed parser and downstream date conversion, reconcile it with the confirmed inclusive legal-entity-local product rule, and document the verified cutoff behavior. Until resolved, identify this uncertainty rather than asserting a confirmed conversion."
+    }
+  ],
+  "questions": [
+    {
+      "owner": "engineering",
+      "question": "Which parser revision is deployed, and what downstream conversion makes its UTC-midnight representation implement the confirmed inclusive final day in the employing legal entity timezone, or what discrepancy must be corrected?",
+      "reason": "C07-F2 omits deployment and conversion evidence; C07-F3 explicitly leaves the conflict unresolved. Product intent is already supplied by C07-F1."
+    }
+  ],
+  "readiness": "needs_answers",
+  "limitations": [
+    "Reviewed only this frozen fictional packet against its supplied rubric and evidence; no repository, linked-page retrieval, external platform lookup or API execution.",
+    "Content review does not establish example execution, observed reader-task success, measured benefit or publication approval.",
+    "Deployment revision and downstream conversion are unavailable; intended local-date semantics do not settle deployed behavior."
+  ]
+}

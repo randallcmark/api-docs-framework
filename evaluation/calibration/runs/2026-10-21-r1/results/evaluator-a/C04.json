@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "case_id": "C04",
+  "packet_sha256": "5a0b696a7889956dcb1fe1bbdc45994ee3fa724addcc1ef90da48023fb141464",
+  "evaluator": {
+    "id": "evaluator-a",
+    "context": "fresh; packets only",
+    "model": "unknown"
+  },
+  "started_at": "2026-10-21T04:49:47Z",
+  "finished_at": "2026-10-21T04:51:59Z",
+  "active_minutes": null,
+  "active_minutes_note": "Not instrumented; elapsed time is not active review time",
+  "criteria": [
+    {
+      "criterion_id": "R01",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "Cross-border payroll is available to all customers today.",
+      "fact_ids": [
+        "C04-F1",
+        "C04-F2"
+      ],
+      "rationale": "Approval for development establishes neither current availability nor customer entitlement. The deployed API rejects the feature."
+    },
+    {
+      "criterion_id": "R09",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "Enable `crossBorder=true` to expand into new markets immediately.",
+      "fact_ids": [
+        "C04-F1",
+        "C04-F2"
+      ],
+      "rationale": "The only proposed action and its immediate benefit rely on a false present-tense capability promise. The unsupported parameter prevents the reader from acting on this introduction."
+    },
+    {
+      "criterion_id": "R04",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "Enable `crossBorder=true`",
+      "fact_ids": [
+        "C04-F2"
+      ],
+      "rationale": "The enabling instruction is an additional consequential technical defect: payroll-prod-17 rejects crossBorder=true as unsupported."
+    }
+  ],
+  "findings": [
+    {
+      "id": "C04-A-01",
+      "criterion_ids": [
+        "R01",
+        "R09",
+        "R04"
+      ],
+      "state": "incorrect",
+      "severity": "material",
+      "document_locator": "Cross-border payroll is available to all customers today. Enable `crossBorder=true` to expand into new markets immediately.",
+      "fact_ids": [
+        "C04-F1",
+        "C04-F2"
+      ],
+      "consequence": "A planner is told the capability is available today and an engineer is directed to an unsupported API setting. The resulting plan cannot be carried out on the deployed API.",
+      "fix": "State that cross-border payroll is approved for development and currently unsupported, with no committed release date or entitlement. Remove the enabling instruction; domestic payroll remains the available capability."
+    }
+  ],
+  "questions": [],
+  "readiness": "needs_revision",
+  "limitations": [
+    "Static review of the frozen fictional packet only; no API execution, reader-task success, or measured task benefit is established.",
+    "Only the stated page and task were assessed; no full-site completeness requirements were imposed."
+  ]
+}

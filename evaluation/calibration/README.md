@@ -1,6 +1,6 @@
 # Practice cases for rubric calibration
 
-Nine short, original fictional MDX cases exercise the [provisional rubric](../rubric.md). They are authored examples with proposed anchors, **not a calibrated benchmark**. No independent evaluations, agreement measurements or reader tests have been performed. The user's platform remains an untouched holdout.
+Nine short, original fictional MDX cases exercise the [provisional rubric](../rubric.md). They are authored examples with proposed anchors, **not a calibrated benchmark**. The [first separate-agent run](runs/2026-10-21-r1/README.md) contains 18 original evaluations and a comparison. Human adjudication is pending; no reader tests have been performed. The user's platform remains an untouched holdout.
 
 The pack covers incorrect completion, incomplete data, tenant boundaries, planned versus deployed capability, a sound concise reference, missing timeout recovery, conflicting date semantics, a sound combined migration note, and static skills mistaken for account access. Two sound cases help expose unnecessary expansion demands; unavailable evidence and inapplicability have separate cases.
 

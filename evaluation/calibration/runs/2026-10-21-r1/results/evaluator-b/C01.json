@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "case_id": "C01",
+  "packet_sha256": "516024fd078d67423d09630de314789ae04cc2f70b75945c78029e021a518698",
+  "evaluator": {
+    "id": "evaluator-b",
+    "context": "fresh; packets only",
+    "model": "unknown"
+  },
+  "started_at": "2026-10-21T04:49:57Z",
+  "finished_at": "2026-10-21T04:52:15Z",
+  "active_minutes": null,
+  "active_minutes_note": "Not instrumented; elapsed time is not active review time",
+  "criteria": [
+    {
+      "criterion_id": "R03",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "immediately mark the invoice paid",
+      "fact_ids": [
+        "C01-F1",
+        "C01-F2",
+        "C01-F3"
+      ],
+      "rationale": "The sequence uses acceptance as business completion, contradicting the settled-only rule; observation of subsequent states is also missing."
+    },
+    {
+      "criterion_id": "R04",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "A `202 Accepted` response confirms the payment has completed",
+      "fact_ids": [
+        "C01-F1",
+        "C01-F2"
+      ],
+      "rationale": "202 creates a queued payout. It does not establish settlement and can precede failure."
+    },
+    {
+      "criterion_id": "R06",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "That proves the invoice has been paid.",
+      "fact_ids": [
+        "C01-F1",
+        "C01-F3",
+        "C01-F4"
+      ],
+      "rationale": "Checking only 202 cannot verify invoice payment. Sandbox state transitions and their expected observations are missing; no run is established."
+    },
+    {
+      "criterion_id": "R07",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "missing",
+      "document_locator": "# Complete an invoice payout",
+      "fact_ids": [
+        "C01-F2",
+        "C01-F3"
+      ],
+      "rationale": "No guidance at this anchor explains how to observe queued, settled or failed outcomes or keep an unsettled invoice unpaid."
+    }
+  ],
+  "findings": [
+    {
+      "id": "C01-B1",
+      "criterion_ids": [
+        "R03",
+        "R04",
+        "R06"
+      ],
+      "state": "incorrect",
+      "severity": "critical",
+      "document_locator": "A `202 Accepted` response confirms the payment has completed",
+      "fact_ids": [
+        "C01-F1",
+        "C01-F2",
+        "C01-F3",
+        "C01-F4"
+      ],
+      "consequence": "A merchant following the stated rule marks a queued or ultimately failed payout paid, hiding unpaid receivables from collection. The proposed sandbox check endorses the same false financial completion.",
+      "fix": "Explain that 202 acknowledges a queued request; mark only the invoice matching a settled payout paid. Replace the claim that checking 202 proves payment."
+    },
+    {
+      "id": "C01-B2",
+      "criterion_ids": [
+        "R03",
+        "R06",
+        "R07"
+      ],
+      "state": "missing",
+      "severity": "material",
+      "document_locator": "## Check your integration",
+      "fact_ids": [
+        "C01-F2",
+        "C01-F3",
+        "C01-F4"
+      ],
+      "consequence": "Readers lack the observation and branch guidance needed to distinguish in-progress or failed payouts from settlement and to exercise those outcomes in sandbox.",
+      "fix": "Connect the returned payout ID to GET /payouts/{id} or payout.updated. Explain that queued is pending and failed is not paid; in sandbox use the fixture to drive settled and failed and observe each expected state. Do not claim the procedure was executed."
+    }
+  ],
+  "questions": [],
+  "readiness": "needs_revision",
+  "limitations": [
+    "Reviewed only this frozen fictional packet against its supplied rubric and evidence; no repository, linked-page retrieval, external platform lookup or API execution.",
+    "Content review does not establish example execution, observed reader-task success, measured benefit or publication approval."
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "case_id": "C02",
+  "packet_sha256": "61449727255cc22577cea086c50295f0587c285e011e72362e7cad0fe0a49399",
+  "evaluator": {
+    "id": "evaluator-a",
+    "context": "fresh; packets only",
+    "model": "unknown"
+  },
+  "started_at": "2026-10-21T04:49:47Z",
+  "finished_at": "2026-10-21T04:51:59Z",
+  "active_minutes": null,
+  "active_minutes_note": "Not instrumented; elapsed time is not active review time",
+  "criteria": [
+    {
+      "criterion_id": "R02",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "An empty list means the company has no outstanding receivables.",
+      "fact_ids": [
+        "C02-F1",
+        "C02-F2",
+        "C02-F3"
+      ],
+      "rationale": "The page equates the locally synchronized representation with complete current company receivables. Initial completion, connection and freshness determine whether that inference is valid."
+    },
+    {
+      "criterion_id": "R04",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "An empty list means the company has no outstanding receivables.",
+      "fact_ids": [
+        "C02-F1",
+        "C02-F3"
+      ],
+      "rationale": "ledger-7 permits an empty list before initial sync completes. The unqualified meaning contradicts that contract and the product decision."
+    },
+    {
+      "criterion_id": "R06",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "To verify the branch, use any company that returns an empty list.",
+      "fact_ids": [
+        "C02-F1",
+        "C02-F2",
+        "C02-F3"
+      ],
+      "rationale": "Any empty result may be incomplete, stale or disconnected. This test does not establish the required conditions for the no-receivables branch."
+    },
+    {
+      "criterion_id": "R07",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "missing",
+      "document_locator": "Call `GET /companies/{id}/invoices`.",
+      "fact_ids": [
+        "C02-F2",
+        "C02-F3"
+      ],
+      "rationale": "There is no route to inspect initialComplete, lastSuccessfulAt or connection state, and no instruction to defer and expose data state when the one-hour freshness/completion/connection conditions fail."
+    }
+  ],
+  "findings": [
+    {
+      "id": "C02-A-01",
+      "criterion_ids": [
+        "R02",
+        "R04",
+        "R06"
+      ],
+      "state": "incorrect",
+      "severity": "critical",
+      "document_locator": "An empty list means the company has no outstanding receivables. Continue to the no-receivables lending decision.",
+      "fact_ids": [
+        "C02-F1",
+        "C02-F2",
+        "C02-F3"
+      ],
+      "consequence": "Before initial sync completes, a company with receivables can return an empty local list. The documented inference sends that company into the no-receivables lending decision, a materially wrong financial classification expressly disallowed by the supplied product decision. The proposed verification can falsely validate that same branch.",
+      "fix": "Explain that the endpoint returns locally synchronized records. Permit the no-receivables decision only after initialComplete, connected state and a lastSuccessfulAt within the agreed one-hour window are established. Verify an empty result under those conditions and check that nonqualifying states defer the decision."
+    },
+    {
+      "id": "C02-A-02",
+      "criterion_ids": [
+        "R07"
+      ],
+      "state": "missing",
+      "severity": "material",
+      "document_locator": "Call `GET /companies/{id}/invoices`.",
+      "fact_ids": [
+        "C02-F2",
+        "C02-F3"
+      ],
+      "consequence": "The reader cannot diagnose an empty response or determine what to do when data is incomplete, disconnected or stale.",
+      "fix": "At this call, add GET /companies/{id}/sync for initialComplete and lastSuccessfulAt, checking the supplied connection state as well. Explain the one-hour freshness condition and defer the lending decision while showing data state if any condition fails. No connection endpoint beyond the evidence should be invented."
+    }
+  ],
+  "questions": [],
+  "readiness": "needs_revision",
+  "limitations": [
+    "Static review of the frozen fictional packet only; no API execution, reader-task success, or measured task benefit is established.",
+    "Only the stated page and task were assessed; no full-site completeness requirements were imposed."
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "case_id": "C01",
+  "packet_sha256": "516024fd078d67423d09630de314789ae04cc2f70b75945c78029e021a518698",
+  "evaluator": {
+    "id": "evaluator-a",
+    "context": "fresh; packets only",
+    "model": "unknown"
+  },
+  "started_at": "2026-10-21T04:49:41Z",
+  "finished_at": "2026-10-21T04:50:44Z",
+  "active_minutes": null,
+  "active_minutes_note": "Not instrumented; elapsed time is not active review time",
+  "criteria": [
+    {
+      "criterion_id": "R03",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "immediately mark the invoice paid.",
+      "fact_ids": [
+        "C01-F1",
+        "C01-F2",
+        "C01-F3"
+      ],
+      "rationale": "The page ends the business workflow at acceptance. Completion instead requires observing settled on the matching payout; queued and failed cannot complete the invoice."
+    },
+    {
+      "criterion_id": "R04",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "A `202 Accepted` response confirms the payment has completed",
+      "fact_ids": [
+        "C01-F1",
+        "C01-F2",
+        "C01-F3"
+      ],
+      "rationale": "The stated effect of 202 directly contradicts payout-api-4: it creates a queued request, not a settled payment."
+    },
+    {
+      "criterion_id": "R06",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "Create a sandbox payout and check for `202`. That proves the invoice has been paid.",
+      "fact_ids": [
+        "C01-F1",
+        "C01-F3",
+        "C01-F4"
+      ],
+      "rationale": "The expected test result proves only acceptance. The supplied sandbox starts queued and can simulate settled or failed; no execution was recorded."
+    },
+    {
+      "criterion_id": "R07",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "missing",
+      "document_locator": "## Check your integration",
+      "fact_ids": [
+        "C01-F2",
+        "C01-F3",
+        "C01-F4"
+      ],
+      "rationale": "No status route or failed-state handling is supplied, so a merchant cannot distinguish waiting from unsuccessful completion and keep the invoice unpaid accordingly."
+    }
+  ],
+  "findings": [
+    {
+      "id": "C01-A-01",
+      "criterion_ids": [
+        "R03",
+        "R04",
+        "R06"
+      ],
+      "state": "incorrect",
+      "severity": "critical",
+      "document_locator": "A `202 Accepted` response confirms the payment has completed, so immediately mark the invoice paid.",
+      "fact_ids": [
+        "C01-F1",
+        "C01-F2",
+        "C01-F3",
+        "C01-F4"
+      ],
+      "consequence": "A queued payout may subsequently fail. Following the instruction marks the invoice paid before settlement and hides an unpaid receivable from collection, the explicit financial consequence in the product decision. The proposed test reinforces the same error.",
+      "fix": "Describe 202 as acceptance of a queued request. Mark only the matching settled payout invoice paid. Change verification to simulate and observe settled and failed outcomes, and do not claim execution."
+    },
+    {
+      "id": "C01-A-02",
+      "criterion_ids": [
+        "R07"
+      ],
+      "state": "missing",
+      "severity": "material",
+      "document_locator": "## Check your integration",
+      "fact_ids": [
+        "C01-F2",
+        "C01-F3",
+        "C01-F4"
+      ],
+      "consequence": "Without GET or payout.updated guidance and the non-success states, an integrator cannot diagnose whether an accepted payout remains queued or has failed.",
+      "fix": "At this check section, explain observation through GET /payouts/{id} or payout.updated, keep the invoice unpaid while queued or failed, and describe the supplied sandbox transitions. Do not invent retry guarantees."
+    }
+  ],
+  "questions": [],
+  "readiness": "needs_revision",
+  "limitations": [
+    "Static review of the frozen fictional packet only; no API or sandbox execution, reader-task success, or measured task benefit is established.",
+    "Only the stated page and task were assessed; omitted request syntax and other site content were not required."
+  ]
+}

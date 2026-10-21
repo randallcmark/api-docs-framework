@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "case_id": "C05",
+  "packet_sha256": "b5527552a5fb50a93329f5984eeb9d6264ef6f3e32372dac75e109413bccef50",
+  "evaluator": {
+    "id": "evaluator-a",
+    "context": "fresh; packets only",
+    "model": "unknown"
+  },
+  "started_at": "2026-10-21T04:49:41Z",
+  "finished_at": "2026-10-21T04:50:44Z",
+  "active_minutes": null,
+  "active_minutes_note": "Not instrumented; elapsed time is not active review time",
+  "criteria": [
+    {
+      "criterion_id": "R02",
+      "applicability": "applicable",
+      "rating": 3,
+      "state": "satisfied",
+      "document_locator": "`GET /jobs/{id}` returns `state` for the job you own:",
+      "fact_ids": [
+        "C05-F1",
+        "C05-F2"
+      ],
+      "rationale": "The reference identifies the owned entity and all four states, including readiness boundaries and the failed-state error indicator needed for this bounded field-meaning task."
+    },
+    {
+      "criterion_id": "R04",
+      "applicability": "applicable",
+      "rating": 3,
+      "state": "satisfied",
+      "document_locator": "| `failed` | No result is available. Inspect `error.code` for the failure. |",
+      "fact_ids": [
+        "C05-F1",
+        "C05-F2"
+      ],
+      "rationale": "The operation, state values and effects match jobs-3 and jobs-worker-6. Success versus non-ready and failure variants are explicitly distinguished."
+    },
+    {
+      "criterion_id": "R09",
+      "applicability": "applicable",
+      "rating": 3,
+      "state": "satisfied",
+      "document_locator": "| Value | Meaning |",
+      "fact_ids": [
+        "C05-F1",
+        "C05-F2",
+        "C05-F3"
+      ],
+      "rationale": "The compact table makes state meanings, result readiness and the relevant failure action easy to identify. It fits a field reference without adding unrelated workflow requirements."
+    },
+    {
+      "criterion_id": "R10",
+      "applicability": "not_applicable",
+      "rating": "not_applicable",
+      "state": null,
+      "document_locator": "# Job state",
+      "fact_ids": [
+        "C05-F3"
+      ],
+      "rationale": "This is a field reference, not a platform change or release announcement; compatibility and migration communication do not apply."
+    },
+    {
+      "criterion_id": "R11",
+      "applicability": "not_applicable",
+      "rating": "not_applicable",
+      "state": null,
+      "document_locator": "# Job state",
+      "fact_ids": [
+        "C05-F3"
+      ],
+      "rationale": "No SDK, CLI, skill or MCP is offered or required for the task, so tooling installation and lifecycle guidance do not apply."
+    }
+  ],
+  "findings": [],
+  "questions": [],
+  "readiness": "ready_for_human_review",
+  "limitations": [
+    "Static review of the frozen fictional packet only; no API execution or reader-task success is established.",
+    "Assessment is limited to the state field reference. Shared authentication and the workflow guide are outside the change and were not independently inspected."
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "case_id": "C09",
+  "packet_sha256": "1887b36f21df4f4ba6f55d984feb67532cbb5577fd20fcaee43a460d45538ea0",
+  "evaluator": {
+    "id": "evaluator-b",
+    "context": "fresh; packets only",
+    "model": "unknown"
+  },
+  "started_at": "2026-10-21T04:50:10Z",
+  "finished_at": "2026-10-21T04:52:15Z",
+  "active_minutes": null,
+  "active_minutes_note": "Not instrumented; elapsed time is not active review time",
+  "criteria": [
+    {
+      "criterion_id": "R05",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "Installation automatically connects the agent to every customer account and lets it create invoices.",
+      "fact_ids": [
+        "C09-F1",
+        "C09-F3"
+      ],
+      "rationale": "The static skill has no account credentials or account-access tools; documentation consultation requires no authorization, while REST integration is separate. The claimed universal account boundary is false."
+    },
+    {
+      "criterion_id": "R06",
+      "applicability": "applicable",
+      "rating": 2,
+      "state": "satisfied",
+      "document_locator": "Check `docs-skill list` for `platform-docs`, version `3`.",
+      "fact_ids": [
+        "C09-F2"
+      ],
+      "rationale": "For the stated installation task, the command and expected installed name/version provide a supported check. This verifies skill installation only, not account access or API effects. No execution is claimed or established."
+    },
+    {
+      "criterion_id": "R11",
+      "applicability": "applicable",
+      "rating": 1,
+      "state": "incorrect",
+      "document_locator": "Installation automatically connects the agent to every customer account and lets it create invoices.",
+      "fact_ids": [
+        "C09-F1",
+        "C09-F2",
+        "C09-F3"
+      ],
+      "rationale": "Supported-agent version, install/list expectations and removal are correct useful lifecycle guidance. However, the account-changing runtime capability claim contradicts the static-skill manifest and prevents reliable understanding of what the installed tool provides."
+    }
+  ],
+  "findings": [
+    {
+      "id": "C09-B1",
+      "criterion_ids": [
+        "R05",
+        "R11"
+      ],
+      "state": "incorrect",
+      "severity": "material",
+      "document_locator": "Installation automatically connects the agent to every customer account and lets it create invoices.",
+      "fact_ids": [
+        "C09-F1",
+        "C09-F2",
+        "C09-F3"
+      ],
+      "consequence": "An engineer expects customer connectivity and invoice actions from a static documentation bundle that has no credentials, server or account tools. The packet establishes an impossible capability claim, not a working path to unauthorized account access.",
+      "fix": "Describe the installed skill as static instructions and documentation URLs. Say that reading documentation needs no account authorization; account access and invoice creation require a separate REST API integration. Preserve the supported installation, version check and removal commands; do not invent an MCP server."
+    }
+  ],
+  "questions": [],
+  "readiness": "needs_revision",
+  "limitations": [
+    "Reviewed only this frozen fictional packet against its supplied rubric and evidence; no repository, linked-page retrieval, external platform lookup or API execution.",
+    "Content review does not establish example execution, observed reader-task success, measured benefit or publication approval."
+  ]
+}

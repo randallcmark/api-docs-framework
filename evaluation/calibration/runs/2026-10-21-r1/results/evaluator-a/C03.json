@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "case_id": "C03",
+  "packet_sha256": "f9840cbfdfdab50ea75add493a436bf3da92f2110926cc8c317db95504c9ae93",
+  "evaluator": {
+    "id": "evaluator-a",
+    "context": "fresh; packets only",
+    "model": "unknown"
+  },
+  "started_at": "2026-10-21T04:49:47Z",
+  "finished_at": "2026-10-21T04:51:59Z",
+  "active_minutes": null,
+  "active_minutes_note": "Not instrumented; elapsed time is not active review time",
+  "criteria": [
+    {
+      "criterion_id": "R04",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "the token automatically restricts the request to the signed-in customer's tenant.",
+      "fact_ids": [
+        "C03-F1",
+        "C03-F2",
+        "C03-F3"
+      ],
+      "rationale": "The partner token spans multiple consented tenants; tenantId selects a tenant and does not bind the request to the signed-in user session."
+    },
+    {
+      "criterion_id": "R05",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "No session-to-tenant check is needed",
+      "fact_ids": [
+        "C03-F1",
+        "C03-F2",
+        "C03-F3"
+      ],
+      "rationale": "The page explicitly removes the required backend authorization boundary between the current session and the browser-supplied tenant selector."
+    }
+  ],
+  "findings": [
+    {
+      "id": "C03-A-01",
+      "criterion_ids": [
+        "R04",
+        "R05"
+      ],
+      "state": "incorrect",
+      "severity": "critical",
+      "document_locator": "No session-to-tenant check is needed: the token automatically restricts the request to the signed-in customer's tenant.",
+      "fact_ids": [
+        "C03-F1",
+        "C03-F2",
+        "C03-F3"
+      ],
+      "consequence": "The backend currently forwards the browser tenantId with a multi-tenant partner token. A user can substitute another consented tenant ID and retrieve that tenant employee data; the page instructs the integrator to omit the check that prevents this demonstrated unauthorized access path.",
+      "fix": "Require the backend to authorize the current session for tenantId before forwarding the request. Explain that the partner token grants access to multiple consented tenants and does not perform this session-specific check."
+    }
+  ],
+  "questions": [],
+  "readiness": "needs_revision",
+  "limitations": [
+    "Static review of the frozen fictional packet only; no API execution, reader-task success, or measured task benefit is established.",
+    "Only the stated page and task were assessed; no full-site completeness requirements were imposed."
+  ]
+}
