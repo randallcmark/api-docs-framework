@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "status": "separate-review-complete",
+  "packet_sha256": "73b868cfa55d74e07007615a763da9cc3bf2b74e0d22c5010fd447355a88009b",
+  "context_restriction": "Fresh evaluator receives this packet only; no author discovery, plan, claim map, self-score, expected findings or prior evaluations. Operational restriction, not access control.",
+  "active_review_minutes": null,
+  "fixture_limitations": "Primary agent authored both source/owner fixtures and the documentation. No real owner interview, API, provider or reader task.",
+  "result_sha256": "a75d003592687a4031565f2d329d51ed7c21d558299fc3e529e0c014fc49e98c",
+  "result_path": "independent-review.json",
+  "frozen_at": "2026-10-21T05:31:39.131018+00:00",
+  "agent_task": "/root/authoring_pilot_review",
+  "readiness": "ready_for_human_review",
+  "finding_count": 0,
+  "owner_question_count": 0
+}

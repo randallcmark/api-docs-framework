@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "fixture": true,
+  "captured_at": "2026-10-21T05:31:25.408593+00:00",
+  "author_context": "Primary framework author constructed fixture inputs/answers and performed manual agent discovery, plan and draft in the same context. No blind-authoring or independent-owner claim.",
+  "stages": [
+    {
+      "id": "discover",
+      "prompt": "prompts/01-discover.md",
+      "outputs": [
+        "run/discovery.md",
+        "run/evidence-index.json",
+        "run/questions.json"
+      ],
+      "state": "completed; answers are explicitly authored fixtures"
+    },
+    {
+      "id": "plan",
+      "prompt": "prompts/02-plan.md",
+      "outputs": [
+        "run/brief.md",
+        "run/plan.md"
+      ],
+      "state": "completed after incorporating fixture answers"
+    },
+    {
+      "id": "draft",
+      "prompt": "prompts/03-draft.md",
+      "outputs": [
+        "draft/docs/guides/expense-export.mdx",
+        "draft/docs/reference/expense-exports.mdx",
+        "run/claims.json",
+        "run/review-manifest.json"
+      ],
+      "state": "completed; proposed content is evidence-bound"
+    },
+    {
+      "id": "evaluate",
+      "prompt": "prompts/04-evaluate.md",
+      "outputs": [
+        "run/review-input.json",
+        "run/independent-review.json",
+        "run/review-record.json"
+      ],
+      "state": "completed in a fresh evaluator context"
+    },
+    {
+      "id": "handoff",
+      "prompt": "prompts/05-revise-and-handoff.md",
+      "outputs": [
+        "run/handoff.md",
+        "run/resolutions.json"
+      ],
+      "state": "completed; no content corrections needed under the supplied evidence"
+    }
+  ],
+  "measurements": {
+    "authored_owner_questions": 2,
+    "real_owner_interactions": 0,
+    "active_author_minutes": null,
+    "active_reviewer_minutes": null
+  },
+  "limitations": "Artifacts demonstrate the workflow; they do not measure improvement or imply code/API/MDX execution.",
+  "finalized_at": "2026-10-21T05:35:10.599744+00:00",
+  "outcome": "ready_for_human_review within fictional evidence; no publication approval or benefit claim"
+}

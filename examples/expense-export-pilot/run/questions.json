@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "fictional": true,
+  "questions": [
+    {
+      "id": "Q1",
+      "owner": "fictional product owner",
+      "question": "Should the requested reimbursement guide instead frame accounting-draft handoff, given that no payment or posting operation exists here?",
+      "evidence_ids": [
+        "REQUEST-1",
+        "API-3",
+        "IMPL-7"
+      ],
+      "impact": "Title, capability fit, completion boundary and excluded outcomes.",
+      "status": "answered-by-authored-fixture",
+      "answer_artifact": "ANSWERS-1",
+      "answer_locator": "P1 \u2014 Product response to Q1"
+    },
+    {
+      "id": "Q2",
+      "owner": "fictional integration engineer",
+      "question": "Which deployed key retention/scope, lost-response and failed-job recovery rules can safely be documented?",
+      "evidence_ids": [
+        "API-3",
+        "IMPL-7"
+      ],
+      "impact": "Replay deadline, new-key use, mapping correction, provider reconciliation and availability claims.",
+      "status": "answered-by-authored-fixture",
+      "answer_artifact": "ANSWERS-1",
+      "answer_locator": "E1 \u2014 Engineering response to Q2"
+    }
+  ],
+  "measures": {
+    "written_questions": 2,
+    "real_owner_interactions": 0,
+    "active_owner_minutes": null
+  },
+  "limitations": "Counts describe authored pilot artifacts, not measured question burden or improvement."
+}

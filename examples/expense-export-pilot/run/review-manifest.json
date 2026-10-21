@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "id": "expense-export-pilot-v1",
+  "workspace": "..",
+  "reader_task": "A multi-company partner product planner assesses accounting-draft export fit; an engineer exports one company approved expenses, identifies completion and recovers without duplicate work. All supplied artifacts are fictional. Assess the two-page guide/reference change with shared access/support; do not require a full site or claim real execution.",
+  "artifacts": [
+    {
+      "id": "REQUEST-1",
+      "path": "inputs/request.md",
+      "role": "evidence",
+      "revision": "request-1",
+      "sha256": "388878c24b4b5b748c6cb0a3ca6449339a3c8a3b88040835c83db5d03a422806"
+    },
+    {
+      "id": "API-3",
+      "path": "inputs/openapi.json",
+      "role": "evidence",
+      "revision": "expense-api-3",
+      "sha256": "e0cce73c1b0c244f02271d47b5ad05113ed1d59d164f75145502d90237c95db4"
+    },
+    {
+      "id": "IMPL-7",
+      "path": "inputs/implementation.py",
+      "role": "evidence",
+      "revision": "expense-export-7",
+      "sha256": "fdce250c9afb0b7b97355eb3fa6de9276fc9b5847ee4efe08200e95d487087fb"
+    },
+    {
+      "id": "AUTH-1",
+      "path": "baseline/docs/platform/authentication.mdx",
+      "role": "shared",
+      "revision": "shared-auth-1",
+      "sha256": "6736c77292a9e0a12e3dd036949ae790733a963401b82ec28fd5113e88564fa4"
+    },
+    {
+      "id": "SUPPORT-1",
+      "path": "baseline/docs/platform/support.mdx",
+      "role": "shared",
+      "revision": "support-1",
+      "sha256": "316a04ec09dd4380ae8647c3776291e5323b01df5d9a06dbe45166c180f25996"
+    },
+    {
+      "id": "BEFORE-1",
+      "path": "baseline/docs/guides/expense-export.mdx",
+      "role": "current",
+      "revision": "old-guide-1",
+      "sha256": "dd677916326dae3e76edc7c429656f2c4d27f44cc946ba0b2262b1752161aac3"
+    },
+    {
+      "id": "ANSWERS-1",
+      "path": "inputs/owner-answers.md",
+      "role": "evidence",
+      "revision": "expense-intent-2/expense-operations-4",
+      "sha256": "97aca660aace0828802222e1ae88cdf561ab2a281f040a39f52f4c5bdf9dc833"
+    },
+    {
+      "id": "BRIEF-1",
+      "path": "run/brief.md",
+      "role": "brief",
+      "revision": "pilot-draft-1",
+      "sha256": "e05b6a5684585d4d380199b990042677eb582ece96be94213d149eef064cff84"
+    },
+    {
+      "id": "GUIDE-1",
+      "path": "draft/docs/guides/expense-export.mdx",
+      "role": "proposed",
+      "revision": "pilot-draft-1",
+      "sha256": "d55ec0e0da394805c1b44ff5491bab282ce55aaff04fbf61f7ea1fe8d0452473"
+    },
+    {
+      "id": "REFERENCE-1",
+      "path": "draft/docs/reference/expense-exports.mdx",
+      "role": "proposed",
+      "revision": "pilot-draft-1",
+      "sha256": "00e4fbe84cc8026b93a91207d5d919da241a67ec81b50890904707381a99a464"
+    }
+  ],
+  "changes": [
+    {
+      "before": "BEFORE-1",
+      "after": "GUIDE-1"
+    },
+    {
+      "before": null,
+      "after": "REFERENCE-1"
+    }
+  ],
+  "pattern_ids": [
+    "P01",
+    "P03",
+    "P04",
+    "P05",
+    "P06",
+    "P09",
+    "P11"
+  ],
+  "checks": [
+    {
+      "name": "Manual contract/source/answer comparison",
+      "state": "performed",
+      "scope": "Operation paths, scopes, date boundaries, job states and operational claims compared with fictional API-3, IMPL-7 and ANSWERS-1; no runtime proof."
+    },
+    {
+      "name": "Repository local integrity and links",
+      "state": "passed",
+      "scope": "python scripts/validate.py --require-snapshots at authoring freeze: source/media/case integrity and 275 local links. Seventeen regression tests passed, including six packet-builder tests. These are not semantic certification or MDX execution."
+    },
+    {
+      "name": "MDX build, API/sandbox execution and reader task",
+      "state": "unrun",
+      "scope": "No renderer, callable service or real provider exists for this fixture."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+# Export approved expenses to accounting
+
+Create a draft expense batch for one customer company to review in its accounting provider. This export does not post the ledger or reimburse employees; those actions happen separately outside the platform.
+
+## Before you start
+
+Configure the company's accounting connection and [company access](../platform/authentication.mdx). Your backend must authorize the signed-in user for the selected company before sending that company ID with a partner token. Creation needs `expense_exports:write`; reading the job needs `expense_exports:read`.
+
+The export selects approved expenses that have not already been exported. Choose `startDate` inclusive and `endDate` exclusive, both as UTC calendar dates. For October 2026, use `2026-10-01` and `2026-11-01`.
+
+## Create and track the export
+
+1. Send `POST /companies/{companyId}/expense-exports` with the date range and an `Idempotency-Key`. Save the key, original body and request time so a lost response can be handled consistently.
+2. Save the `jobId` from `202 Accepted`. This means a job was accepted, not that a provider batch, ledger posting or payment has completed.
+3. Read `GET /companies/{companyId}/expense-exports/{jobId}` using the same company context. Interpret the result below.
+
+| State | Meaning and action |
+| --- | --- |
+| `queued` | Waiting to run. Keep the job ID; do not create another job just because it has not started. |
+| `running` | Export is in progress. Inspect this job for its result rather than creating another. |
+| `succeeded` | In production, `externalBatchId` identifies the draft batch created at the provider. The company's accounting staff review/post it in their provider; employee payment is separate. |
+| `failed` | Inspect `error.code` and follow the recovery guidance below. Failure does not always prove that no external batch exists. |
+
+No fixed completion time or webhook is supplied for this workflow. See the [operation reference](../reference/expense-exports.mdx) for fields and response shapes.
+
+## Verify the integration
+
+In sandbox, submit a valid range containing approved, unexported expenses. Check that the accepted job ID can be read under its company, then inspect the terminal result. A successful sandbox job has the simulated ID `sandbox-draft-001`; it does not create an external batch or prove production provider access.
+
+In an appropriate production validation process, creation is established by a `succeeded` job and its `externalBatchId`. Accounting staff can then locate that draft batch. Neither a sandbox success nor a production draft batch establishes ledger posting or employee payment.
+
+## Recover without duplicating work
+
+**Lost create response:** Within 24 hours of the first accepted request, replay the identical key and body for the same company to recover the original job ID. Reusing that active key with a different body returns `409`; do not treat it as a new export. This protects job creation, not every possible provider effect.
+
+If you have the job ID, inspect that job. If the create outcome is still unknown after the 24-hour window, [contact integration support](../platform/support.mdx) with the company ID, request ID and original request time, plus the job ID if available. Do not blindly switch to a new key and export again.
+
+**Failed job:**
+
+- `invalid_account_mapping`: no external batch was created. Ask the company accounting administrator to correct Settings → Expense mapping on its configured connection. After correction, create a new job with a new key.
+- `provider_unavailable`: the provider may already have created the draft before its response was lost. Ask integration support to reconcile the job and external batch before another export. Do not automatically retry with a new key.
+
+A `422` response to creation means the date range is invalid or the accounting connection is missing; no job was created. Correct that prerequisite before submitting a valid request.

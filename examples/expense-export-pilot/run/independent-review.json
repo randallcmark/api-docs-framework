@@ -1,0 +1,280 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "73b868cfa55d74e07007615a763da9cc3bf2b74e0d22c5010fd447355a88009b",
+  "evaluator": {
+    "id": "authoring-pilot-reviewer",
+    "context": "fresh; frozen packet only",
+    "model": "unknown"
+  },
+  "started_at": "2026-10-21 05:29:53 UTC",
+  "finished_at": "2026-10-21 05:31:15 UTC",
+  "active_minutes": null,
+  "active_minutes_note": "Not instrumented; elapsed time is not active review time",
+  "criteria": [
+    {
+      "criterion_id": "R01",
+      "applicability": "applicable",
+      "rating": 3,
+      "state": "satisfied",
+      "document_id": "GUIDE-1",
+      "document_locator": "Create a draft expense batch for one customer company",
+      "evidence": [
+        {
+          "artifact_id": "ANSWERS-1",
+          "locator": "Frame this as exporting approved employee expenses to an accounting draft batch for review."
+        },
+        {
+          "artifact_id": "IMPL-7",
+          "locator": "This creates a draft batch. It does not post a ledger or make a payment."
+        },
+        {
+          "artifact_id": "ANSWERS-1",
+          "locator": "expense-api-3 and expense-export-7 are the currently deployed versions in this scenario."
+        }
+      ],
+      "rationale": "The guide states the supported accounting handoff and separates employee payment and ledger posting. It identifies the customer-company context and configured connection prerequisite. Product intent, implementation and fictional availability are supplied; no real deployment is asserted by this assessment."
+    },
+    {
+      "criterion_id": "R02",
+      "applicability": "applicable",
+      "rating": 3,
+      "state": "satisfied",
+      "document_id": "GUIDE-1",
+      "document_locator": "| State | Meaning and action |",
+      "evidence": [
+        {
+          "artifact_id": "REFERENCE-1",
+          "locator": "Each job belongs to one company."
+        },
+        {
+          "artifact_id": "API-3",
+          "locator": "Job identifier within the selected company; acceptance does not establish completion."
+        },
+        {
+          "artifact_id": "ANSWERS-1",
+          "locator": "A production `succeeded` job with `externalBatchId` establishes creation of a draft batch, not ledger posting or employee payment."
+        }
+      ],
+      "rationale": "Company, eligible expenses, accepted export job, external draft batch and accounting staff are connected. The state table distinguishes acceptance, in-progress work, provider creation and ambiguous failure, with company-scoped identifiers retained through reads."
+    },
+    {
+      "criterion_id": "R03",
+      "applicability": "applicable",
+      "rating": 3,
+      "state": "satisfied",
+      "document_id": "GUIDE-1",
+      "document_locator": "## Create and track the export",
+      "evidence": [
+        {
+          "artifact_id": "API-3",
+          "locator": "/companies/{companyId}/expense-exports/{jobId}"
+        },
+        {
+          "artifact_id": "ANSWERS-1",
+          "locator": "Customer accounting staff review and post using their provider's own process; actual payment happens separately outside this platform."
+        },
+        {
+          "artifact_id": "ANSWERS-1",
+          "locator": "Read job status as needed; this workflow supplies no webhook, fixed completion-time promise or universal polling interval."
+        }
+      ],
+      "rationale": "Prerequisites, create, save identifiers, read the same-company job, interpret asynchronous states, verify draft creation and hand off to accounting staff form a connected sequence. Recovery branches are supplied without inventing timing, events or payment operations."
+    },
+    {
+      "criterion_id": "R04",
+      "applicability": "applicable",
+      "rating": 3,
+      "state": "satisfied",
+      "document_id": "REFERENCE-1",
+      "document_locator": "| `startDate` | Inclusive UTC calendar date; earlier than `endDate`. |",
+      "evidence": [
+        {
+          "artifact_id": "API-3",
+          "locator": "Inclusive UTC calendar date. Must be earlier than endDate."
+        },
+        {
+          "artifact_id": "API-3",
+          "locator": "Exclusive UTC calendar date."
+        },
+        {
+          "artifact_id": "IMPL-7",
+          "locator": "start_inclusive=True, end_exclusive=True"
+        },
+        {
+          "artifact_id": "ANSWERS-1",
+          "locator": "A key is scoped to company ID and retained for 24 hours from the first accepted request."
+        },
+        {
+          "artifact_id": "GUIDE-1",
+          "locator": "For October 2026, use `2026-10-01` and `2026-11-01`."
+        }
+      ],
+      "rationale": "Paths, required inputs, scopes, company ownership, date boundaries, state/result shapes and error meanings agree with the supplied contract and operational answers. October uses the correct exclusive November boundary. The 24-hour claim is supported by the engineering answer rather than inferred from the contract, which leaves retention unspecified. Examples are consistent on static inspection; they were not executed."
+    },
+    {
+      "criterion_id": "R05",
+      "applicability": "applicable",
+      "rating": 3,
+      "state": "satisfied",
+      "document_id": "GUIDE-1",
+      "document_locator": "Your backend must authorize the signed-in user for the selected company",
+      "evidence": [
+        {
+          "artifact_id": "AUTH-1",
+          "locator": "A partner token can cover several consenting companies; it does not decide which company the signed-in user of your app may access."
+        },
+        {
+          "artifact_id": "AUTH-1",
+          "locator": "Expense-export creation requires `expense_exports:write`; job reads require `expense_exports:read`."
+        },
+        {
+          "artifact_id": "REFERENCE-1",
+          "locator": "Requests require that company's consent plus the applicable scope;"
+        }
+      ],
+      "rationale": "The pages preserve the distinction between token company consent, operation scopes and partner backend authorization of its own user. Reads retain the owning company. The shared access page supplies the bounded access detail; a new credential lifecycle tutorial is unnecessary for readers who start with access configured."
+    },
+    {
+      "criterion_id": "R06",
+      "applicability": "applicable",
+      "rating": 2,
+      "state": "satisfied",
+      "document_id": "GUIDE-1",
+      "document_locator": "## Verify the integration",
+      "evidence": [
+        {
+          "artifact_id": "IMPL-7",
+          "locator": "No provider connection or real accounting batch is created in sandbox."
+        },
+        {
+          "artifact_id": "IMPL-7",
+          "locator": "sandbox-draft-001"
+        },
+        {
+          "artifact_id": "ANSWERS-1",
+          "locator": "Sandbox success produces only the simulated batch ID from SandboxAdapter; no external batch or production authorization is proved."
+        },
+        {
+          "artifact_id": "REFERENCE-1",
+          "locator": "{\"jobId\":\"exp-job-001\",\"state\":\"succeeded\",\"externalBatchId\":\"draft-batch-001\"}"
+        }
+      ],
+      "rationale": "The reader gets a sandbox input condition, accepted-job read check, simulated expected identifier and production completion condition. Production exclusions are explicit and the reference examples agree with the contract. This supports documentation adequacy, not execution or observed reader success. The stronger failure-simulation variant is not demonstrated; no fictional failure-injection tooling should be required."
+    },
+    {
+      "criterion_id": "R07",
+      "applicability": "applicable",
+      "rating": 3,
+      "state": "satisfied",
+      "document_id": "GUIDE-1",
+      "document_locator": "## Recover without duplicating work",
+      "evidence": [
+        {
+          "artifact_id": "ANSWERS-1",
+          "locator": "After an unknown create outcome, replay the same key/body within this window; never change the key merely because the response was lost."
+        },
+        {
+          "artifact_id": "ANSWERS-1",
+          "locator": "A failed `invalid_account_mapping` job has created no external batch."
+        },
+        {
+          "artifact_id": "ANSWERS-1",
+          "locator": "A failed `provider_unavailable` job can have an unknown external outcome:"
+        },
+        {
+          "artifact_id": "SUPPORT-1",
+          "locator": "Include the company ID, export job ID when available, request ID and the time of the request."
+        },
+        {
+          "artifact_id": "API-3",
+          "locator": "Invalid date range or missing accounting connection; no job created"
+        }
+      ],
+      "rationale": "Guidance handles lost create responses inside and beyond retention, differing-body conflicts, in-progress jobs, rejected creation and both supplied failed-job codes. Mapping correction permits a new key only after the prerequisite is fixed; ambiguous provider effects route to reconciliation. Support is actionable through the shared page and no unconditional retry guarantee is invented."
+    },
+    {
+      "criterion_id": "R08",
+      "applicability": "applicable",
+      "rating": 2,
+      "state": "satisfied",
+      "document_id": "GUIDE-1",
+      "document_locator": "See the [operation reference](../reference/expense-exports.mdx)",
+      "evidence": [
+        {
+          "artifact_id": "REFERENCE-1",
+          "locator": "[create and track an accounting draft batch](../guides/expense-export.mdx)"
+        },
+        {
+          "artifact_id": "REFERENCE-1",
+          "locator": "[recovery conditions](../guides/expense-export.mdx#recover-without-duplicating-work)"
+        },
+        {
+          "artifact_id": "REQUEST-1",
+          "locator": "They need a connected explanation and concise operation details."
+        },
+        {
+          "artifact_id": "AUTH-1",
+          "locator": "# Company access"
+        },
+        {
+          "artifact_id": "SUPPORT-1",
+          "locator": "# Integration support"
+        }
+      ],
+      "rationale": "The outcome-led guide links to the operation reference, company access and support; the reference links back to the workflow and directly to recovery. Target contents and the recovery heading exist in the packet and terminology agrees. This is a static two-page coherence assessment; full-site routing, rendered navigation and search effectiveness were not tested."
+    },
+    {
+      "criterion_id": "R09",
+      "applicability": "applicable",
+      "rating": 3,
+      "state": "satisfied",
+      "document_id": "GUIDE-1",
+      "document_locator": "## Recover without duplicating work",
+      "evidence": [
+        {
+          "artifact_id": "REFERENCE-1",
+          "locator": "## Create an export"
+        },
+        {
+          "artifact_id": "REQUEST-1",
+          "locator": "Keep useful material rather than rebuilding the whole site."
+        },
+        {
+          "artifact_id": "ANSWERS-1",
+          "locator": "No unconditional provider retry guarantee is offered."
+        }
+      ],
+      "rationale": "The guide separates prerequisites, actions, state interpretation, verification and recovery. A short reference supplies operation detail and both reuse shared access/support. Conditions are concrete, business terminology is consistent and unsupported baseline reimbursement/posting/retry promises are corrected without adding unrelated platform material."
+    },
+    {
+      "criterion_id": "R10",
+      "applicability": "not_applicable",
+      "rating": "not_applicable",
+      "state": null,
+      "document_id": null,
+      "document_locator": "",
+      "evidence": [],
+      "rationale": "This is a documentation correction and new companion reference for the supplied existing API, not a platform release, API behavior change or migration. No compatibility action, release date or migration is established or needed for the bounded task. Fictional deployed-version evidence is supplied in ANSWERS-1; inventing a change announcement would add unsupported scope."
+    },
+    {
+      "criterion_id": "R11",
+      "applicability": "not_applicable",
+      "rating": "not_applicable",
+      "state": null,
+      "document_id": null,
+      "document_locator": "",
+      "evidence": [],
+      "rationale": "No SDK, CLI, MCP, skill or other developer-tool installation/configuration is part of this task, and the supplied fixture contains no runnable service or tool lifecycle. Raw REST operation documentation with existing configured company access does not require invented tooling."
+    }
+  ],
+  "findings": [],
+  "questions": [],
+  "readiness": "ready_for_human_review",
+  "limitations": [
+    "Independent static review used only the frozen packet. No project history, author self-scores, answer keys or other reviews were consulted.",
+    "All API, implementation, owner-answer and deployment statements are fictional scenario evidence. No example API or fictional implementation was called or executed.",
+    "No MDX rendering/build, real provider validation, sandbox execution, reader task or full-site navigation/search test was performed. Documentation adequacy does not establish runtime behavior or reader success.",
+    "Exact model identity was not exposed; recorded as unknown. Active review time was not instrumented.",
+    "No known critical or material defect remains within the bounded two-page change and supplied shared content; ready_for_human_review is not publication approval."
+  ]
+}

@@ -8,6 +8,8 @@ The unit of work is an integrated use case or workflow. Readers need a connected
 
 Comparative research is underway: all 36 candidates have entry/index screening, 15 are selected for focused deeper comparison, and five documentation traces record their inspected stages and gaps. The library contains 12 patterns, including four practices corroborated across independent providers. The focused follow-up adds recovery/change evidence and three visually inspected diagrams. The practice pack contains ten fictional cases. The [first separate-agent evaluation](evaluation/calibration/runs/2026-10-21-r1/README.md) covers the original nine, and [C02 severity has been adjudicated](evaluation/calibration/adjudications/c02-severity.md), with a [targeted follow-up](evaluation/calibration/runs/2026-10-21-r2/README.md) distinguishing it from an explicit incorrect disbursement. The rubric remains uncalibrated, and no reader-task benefit is claimed.
 
+Use the [guided authoring prompts](prompts/README.md) and [completed fictional pilot](examples/expense-export-pilot/README.md) to try the first usable workflow: discovery, brief, MDX change, separate review and handoff. The packet builder makes no model calls.
+
 Read the [latest follow-up](research/follow-up.md) and [calibration practice procedure](evaluation/calibration/README.md), or start with the project context:
 
 1. [Project brief](docs/project-brief.md) — agreed objective, constraints, and scope.
@@ -36,6 +38,8 @@ Read the [latest follow-up](research/follow-up.md) and [calibration practice pro
 | `evaluation/calibration/` | Fictional MDX practice cases, proposed anchors and separate-evaluation procedure |
 | `templates/change-brief.md` | Minimum context before drafting a coherent change |
 | `templates/review-packet.md` | Short PR context and decisions needed from reviewers |
+| `prompts/` | Five copyable prompts and the explicit review-packet manifest format |
+| `examples/expense-export-pilot/` | Completed fictional authoring pass with frozen independent review |
 | `workflows/engineer-agent.md` | Discovery, authoring, evaluation, and review procedure |
 | `scripts/` | Bounded source capture and repository consistency checks |
 
@@ -45,6 +49,7 @@ Python 3.12 or later; no third-party packages or credentials required.
 
 ```bash
 python scripts/validate.py
+python scripts/prepare_doc_review.py --manifest examples/expense-export-pilot/run/review-manifest.json --output /tmp/expense-review.json
 python scripts/prepare_evaluation.py --case C01 --output /tmp/c01-input.json
 python scripts/capture_sources.py --list
 python scripts/capture_sources.py --ids gusto-onboarding hibob-start

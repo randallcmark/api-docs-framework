@@ -1,6 +1,6 @@
 # Engineer and agent documentation workflow
 
-Status: provisional manual workflow for repository-based MDX changes. Agent-specific installation and CI enforcement follow later, after research and calibration.
+Status: usable manual prompt workflow for repository-based MDX changes, with a provisional rubric. Start with the [copyable prompts](../prompts/README.md) and [completed fictional pilot](../examples/expense-export-pilot/README.md). Agent-specific installation, model calls and CI/publication enforcement remain undecided.
 
 ## 1. Establish the change and evidence
 

@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "fictional": true,
+  "claims": [
+    {
+      "id": "CL01",
+      "state": "supported-by-fictional-evidence",
+      "document": "draft/docs/guides/expense-export.mdx",
+      "document_locator": "This export does not post the ledger or reimburse employees",
+      "evidence": [
+        {
+          "artifact_id": "ANSWERS-1",
+          "locator": "P1 \u2014 Product response to Q1"
+        },
+        {
+          "artifact_id": "IMPL-7",
+          "locator": "does not post a ledger or make a payment"
+        }
+      ]
+    },
+    {
+      "id": "CL02",
+      "state": "supported-by-fictional-evidence",
+      "document": "draft/docs/guides/expense-export.mdx",
+      "document_locator": "approved expenses that have not already been exported",
+      "evidence": [
+        {
+          "artifact_id": "API-3",
+          "locator": "Queue export of approved, not-yet-exported expenses"
+        },
+        {
+          "artifact_id": "IMPL-7",
+          "locator": "approved_not_exported_expenses"
+        }
+      ]
+    },
+    {
+      "id": "CL03",
+      "state": "supported-by-fictional-evidence",
+      "document": "draft/docs/guides/expense-export.mdx",
+      "document_locator": "startDate` inclusive and `endDate` exclusive",
+      "evidence": [
+        {
+          "artifact_id": "API-3",
+          "locator": "Inclusive UTC calendar date"
+        },
+        {
+          "artifact_id": "IMPL-7",
+          "locator": "start_inclusive=True, end_exclusive=True"
+        }
+      ]
+    },
+    {
+      "id": "CL04",
+      "state": "supported-by-fictional-evidence",
+      "document": "draft/docs/guides/expense-export.mdx",
+      "document_locator": "authorize the signed-in user for the selected company",
+      "evidence": [
+        {
+          "artifact_id": "AUTH-1",
+          "locator": "your backend must authorize that user"
+        }
+      ]
+    },
+    {
+      "id": "CL05",
+      "state": "supported-by-fictional-evidence",
+      "document": "draft/docs/guides/expense-export.mdx",
+      "document_locator": "a job was accepted, not that a provider batch",
+      "evidence": [
+        {
+          "artifact_id": "API-3",
+          "locator": "acceptance does not establish completion"
+        },
+        {
+          "artifact_id": "IMPL-7",
+          "locator": "return accepted"
+        }
+      ]
+    },
+    {
+      "id": "CL06",
+      "state": "supported-by-fictional-evidence",
+      "document": "draft/docs/guides/expense-export.mdx",
+      "document_locator": "identifies the draft batch created at the provider",
+      "evidence": [
+        {
+          "artifact_id": "ANSWERS-1",
+          "locator": "production `succeeded` job"
+        },
+        {
+          "artifact_id": "IMPL-7",
+          "locator": "record_state(job.id, \"succeeded\""
+        }
+      ]
+    },
+    {
+      "id": "CL07",
+      "state": "supported-by-fictional-evidence",
+      "document": "draft/docs/guides/expense-export.mdx",
+      "document_locator": "Within 24 hours of the first accepted request",
+      "evidence": [
+        {
+          "artifact_id": "ANSWERS-1",
+          "locator": "retained for 24 hours from the first accepted request"
+        }
+      ]
+    },
+    {
+      "id": "CL08",
+      "state": "supported-by-fictional-evidence",
+      "document": "draft/docs/guides/expense-export.mdx",
+      "document_locator": "correct Settings \u2192 Expense mapping",
+      "evidence": [
+        {
+          "artifact_id": "ANSWERS-1",
+          "locator": "Settings \u2192 Expense mapping"
+        }
+      ]
+    },
+    {
+      "id": "CL09",
+      "state": "supported-by-fictional-evidence",
+      "document": "draft/docs/guides/expense-export.mdx",
+      "document_locator": "the provider may already have created the draft",
+      "evidence": [
+        {
+          "artifact_id": "ANSWERS-1",
+          "locator": "a provider may already have created the draft"
+        }
+      ]
+    },
+    {
+      "id": "CL10",
+      "state": "supported-by-fictional-evidence",
+      "document": "draft/docs/guides/expense-export.mdx",
+      "document_locator": "outcome is still unknown after the 24-hour window",
+      "evidence": [
+        {
+          "artifact_id": "ANSWERS-1",
+          "locator": "outcome remains unknown after the window"
+        }
+      ]
+    },
+    {
+      "id": "CL11",
+      "state": "supported-by-fictional-evidence",
+      "document": "draft/docs/guides/expense-export.mdx",
+      "document_locator": "simulated ID `sandbox-draft-001`",
+      "evidence": [
+        {
+          "artifact_id": "IMPL-7",
+          "locator": "batch_id=\"sandbox-draft-001\""
+        },
+        {
+          "artifact_id": "ANSWERS-1",
+          "locator": "Sandbox success produces only the simulated batch ID"
+        }
+      ]
+    },
+    {
+      "id": "CL12",
+      "state": "supported-by-fictional-evidence",
+      "document": "draft/docs/guides/expense-export.mdx",
+      "document_locator": "No fixed completion time or webhook",
+      "evidence": [
+        {
+          "artifact_id": "ANSWERS-1",
+          "locator": "no webhook, fixed completion-time promise"
+        }
+      ]
+    },
+    {
+      "id": "CL13",
+      "state": "supported-by-fictional-evidence",
+      "document": "draft/docs/reference/expense-exports.mdx",
+      "document_locator": "different body under that active key returns",
+      "evidence": [
+        {
+          "artifact_id": "API-3",
+          "locator": "Different body with the same active key returns 409"
+        },
+        {
+          "artifact_id": "ANSWERS-1",
+          "locator": "different body under that active key returns 409"
+        }
+      ]
+    },
+    {
+      "id": "CL14",
+      "state": "supported-by-fictional-evidence",
+      "document": "draft/docs/reference/expense-exports.mdx",
+      "document_locator": "no job is accessible for that company/job ID",
+      "evidence": [
+        {
+          "artifact_id": "API-3",
+          "locator": "No job accessible for this company and job ID"
+        }
+      ]
+    }
+  ],
+  "limitations": "Lexical traceability is not semantic correctness or execution. The independent reviewer receives actual evidence and MDX, not this author-selected map."
+}

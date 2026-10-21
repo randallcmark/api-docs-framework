@@ -1,0 +1,5 @@
+# Company access
+
+Use the fictional partner OAuth token for the customer company that consented to your integration. A partner token can cover several consenting companies; it does not decide which company the signed-in user of your app may access. Before forwarding a company ID, your backend must authorize that user for the selected company.
+
+Expense-export creation requires `expense_exports:write`; job reads require `expense_exports:read`. Each request is also checked against the token's company consent. A job belongs to one company; use that company's ID when reading it. Do not include tokens in support requests.

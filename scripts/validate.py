@@ -14,6 +14,7 @@ from urllib.parse import unquote, urljoin, urlsplit, urlunsplit
 
 from check_calibration import check_calibration
 from check_evaluation_runs import check_runs
+from check_authoring_pilot import check_authoring_pilot
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -359,6 +360,7 @@ def main():
         snapshots_missing += media_missing
         case_count, anchor_count = check_calibration(ROOT, load, criteria)
         run_count, result_count = check_runs(ROOT, load)
+        pilot_sources, pilot_claims, pilot_criteria = check_authoring_pilot(ROOT, load)
         access_checks = load(ROOT / "research/access-checks.json")["checks"]
         if len(access_checks) != len(candidates) or {item["provider_id"] for item in access_checks} != set(candidates):
             raise ValueError("access checks must cover each candidate exactly once")
@@ -405,6 +407,7 @@ def main():
         print(f"PASS: {snapshot_checks} snapshot hashes, {locator_checks} evidence locators, {link_checks} local links, fixture local references")
         print(f"PASS: {media_bindings}/{len(load(ROOT / 'research/media.json')['media'])} media/source links verified; {case_count} fictional cases, {anchor_count} proposed anchors structurally checked")
         print(f"PASS: {run_count} frozen evaluation runs, {result_count} original result hashes and input/evidence bindings checked; no semantic grading or human adjudication inferred")
+        print(f"PASS: guided authoring pilot: {pilot_sources} source hashes, {pilot_claims} claim locators, {pilot_criteria} independent-review criterion bindings and actual proposed-page coverage")
         if snapshots_missing:
             print(f"NOTE: {snapshots_missing} local snapshot files unavailable; their hashes/locators were not reverified. Recapture selected sources if needed.")
         print("Scope: repository integrity only; no MDX compilation, external link audit, API execution or semantic quality certification.")
