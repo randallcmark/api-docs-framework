@@ -1,10 +1,12 @@
 # First real-platform trial
 
-The first trial freezes the framework before inspecting the user's evaluation platform. It compares a bounded reader task against existing practice and preserves the first result before changing prompts, patterns or rubric. The framework remains provisional; this is a trial procedure, not a validated benchmark or publication gate.
+The first trial freezes the framework before inspecting the held-out target platform. It compares a bounded reader task against existing practice and preserves the first result before changing prompts, patterns or rubric. The framework remains provisional; this is a trial procedure, not a validated benchmark or publication gate.
 
 ## Prepare and choose the task
 
-Use [freeze.json](freeze.json) to identify the exact merged framework commit and critical file hashes. Build a portable pack from a checkout containing that commit:
+The trial owner runs the exercise in a private target-platform workspace. Start by copying the [plan template](plan-template.md) and [results template](results-template.md) there; leave the results blank until the work is observed. No model, framework API key or research crawl is required by this procedure. Use your chosen agent, the five Markdown prompts and the target site's own build tools. Python is needed only for the optional packet/check scripts; Git is additionally needed to build the portable ZIP.
+
+Use [freeze.json](freeze.json) to identify the exact pinned framework commit and critical file hashes. It was refreshed for content anonymization and onboarding before any target-platform inspection; earlier fictional evaluation records retain their original inputs and results. Build a portable pack from a checkout containing that commit:
 
 ```bash
 python scripts/prepare_trial_pack.py --output /tmp/api-docs-trial.zip
@@ -12,9 +14,11 @@ python scripts/prepare_trial_pack.py --output /tmp/api-docs-trial.zip
 
 Python 3.12 and Git are required; this command uses local Git objects and makes no model or network calls. It archives the frozen commit rather than the working directory, so later edits, untracked files and local source captures are excluded. If the commit object is unavailable in a shallow checkout, obtain that exact commit before building. Existing output files are preserved.
 
-If you already have the unpacked pack, skip the preparation command and start with `TRIAL_PLAN.md`. The pack builder belongs to the preparation checkout, not the older frozen framework.
+If you already have the unpacked pack, skip the preparation command and start with `TRIAL_PLAN.md`. No Git checkout, clone credentials or local research cache is needed to use that pack. Building another pack requires the preparation checkout with the pinned Git object.
 
 Unzip the pack. `framework/` contains the exact frozen repository; `TRIAL_PLAN.md` and `TRIAL_RESULTS.md` are blank trial records. `freeze.json` and `PACK_MANIFEST.json` identify framework and preparation-file hashes. Preparation instructions may evolve independently; the packet records which instructions were included. The frozen rubric and patterns retain their original provisional status.
+
+The top-level freeze/manifest identify this pack. Any older preparation records archived inside `framework/evaluation/trial/` are part of the source snapshot, not a second pack identity. Git history, GitHub ownership metadata, local untracked files and the ignored research cache are excluded. Named research providers and their official source URLs remain as provenance.
 
 Choose one coherent workflow with existing documentation and a clear product-reader/engineer outcome. Record the target OpenAPI, relevant source/deployment evidence, current MDX, shared pages and available product/engineering owners by path and revision in the plan. Record the agent/model, actual MDX build commands and what test environment/actions are available. Platform inputs and results belong in the platform's trial workspace; this pack does not collect or publish them.
 
@@ -28,7 +32,15 @@ Define the same reader task, applicability, success observations and evidence sc
 
 Use `framework/prompts/README.md` with the target input paths. Capture discovery, questions/answers, brief, page plan, changed MDX and checks. Record actual owner interactions rather than assuming every authored question consumed a person's time. Approved intent still needs availability evidence; conflicts remain questions.
 
-Prepare the independent review manifest with the full changed-page set and relevant shared content. From the unpacked framework, run `scripts/prepare_doc_review.py` against that manifest and give only the frozen packet to a fresh evaluator. Keep author scores, prior findings and the baseline score out of its first pass. Preserve the result and any subsequent corrections/rechecks separately. Existing repository owners control review and publication.
+Prepare the independent review manifest with the full changed-page set and relevant shared content. From the unpacked framework, optionally run:
+
+```bash
+python scripts/prepare_doc_review.py \
+  --manifest /path/to/private-trial/review-manifest.json \
+  --output /path/to/private-trial/review-input.json
+```
+
+Give only the frozen packet to a fresh evaluator using prompt 04, then return its original assessment to the author using prompt 05. The [prompt-library guide](../../prompts/README.md) also describes manual review-input assembly without Python; record the absence of mechanical freeze checks. Keep author scores, prior findings and the baseline score out of the evaluator's first pass. Preserve the result and any subsequent corrections/rechecks separately. Existing repository owners control review and publication.
 
 ## Compare observations and retain limits
 

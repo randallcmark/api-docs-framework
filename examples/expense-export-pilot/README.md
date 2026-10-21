@@ -18,7 +18,7 @@ The workflow carries an outcome mismatch and missing operational policy through 
 
 The [stage record](run/stages.json) and [archived prompts](run/prompts.json) preserve the procedure used. Two written questions and zero real owner interactions are counts of authored artifacts, not observed question burden. Active author/reviewer time is unknown. The fresh reviewer used operational packet-only restrictions, not enforced access control; its exact model version is unknown.
 
-There is no callable API, provider or target MDX renderer. No requests, implementation execution, sandbox tests, rendered navigation or reader tasks were run. Source/diff/locator checks do not certify factual accuracy or reader outcomes. The user's platform remains untouched. Agent-specific installation, model orchestration and publication gates remain outside this starter workflow.
+There is no callable API, provider or target MDX renderer. No requests, implementation execution, sandbox tests, rendered navigation or reader tasks were run. Source/diff/locator checks do not certify factual accuracy or reader outcomes. The held-out target platform remains untouched. Agent-specific installation, model orchestration and publication gates remain outside this starter workflow.
 
 ## Try the packet builder
 

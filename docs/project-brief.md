@@ -61,4 +61,4 @@ No improvement percentages or passing score are assumed. Public examples demonst
 
 These do not block initial research. Default to reporting readiness and asking for consequential answers, with no automatic publication or bypass of the repository's existing approval process.
 
-The user's evaluation platform is reserved for a later holdout exercise. Do not use it to tune the initial pattern library or rubric.
+The held-out target platform is reserved for a later holdout exercise. Do not use it to tune the initial pattern library or rubric.

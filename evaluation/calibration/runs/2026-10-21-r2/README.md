@@ -1,6 +1,6 @@
 # Severity-boundary follow-up
 
-The user accepted [C02 as material](../../adjudications/c02-severity.md). The rubric now requires a supported chain from the documented instruction through system behavior to a serious consequence before assigning critical severity. An actual incident is unnecessary. C10 adds an explicit, fictional £5,000 disbursement caused by the same empty-data inference.
+The documentation owner accepted [C02 as material](../../adjudications/c02-severity.md). The rubric now requires a supported chain from the documented instruction through system behavior to a serious consequence before assigning critical severity. An actual incident is unnecessary. C10 adds an explicit, fictional £5,000 disbursement caused by the same empty-data inference.
 
 Two new fresh contexts evaluated four frozen packets each without seeing the decision record, expected labels, prior results or each other's output. They received the revised rubric. Case order differed between evaluators. This is a targeted development iteration on an adjudicated rule, not an untouched holdout or a broad benchmark.
 
@@ -21,6 +21,6 @@ This check supports the specific clarification: C02 remains an error requiring c
 
 The source snapshot is identified by the merged base commit plus exact hashes of changed input files; it is not represented as if the old base commit already contained the revised rubric. The archive reconstructs the exact packet bytes independently of later file edits. The first run's archived inputs, key, manifest, analysis, comparison and all 18 original results are unchanged.
 
-Both evaluators used the same inherited model family in fresh contexts; exact versions are unknown. Packet-only restrictions are operational, not enforced access control. Evaluator B reported correcting a mistyped finish timestamp to the real clock before finalization, with no assessment-content change. Active review minutes remain uninstrumented/null. No API execution, MDX build, reader task, real-platform evaluation or benefit measurement occurred. The user's platform remains untouched.
+Both evaluators used the same inherited model family in fresh contexts; exact versions are unknown. Packet-only restrictions are operational, not enforced access control. Evaluator B reported correcting a mistyped finish timestamp to the real clock before finalization, with no assessment-content change. Active review minutes remain uninstrumented/null. No API execution, MDX build, reader task, real-platform evaluation or benefit measurement occurred. The held-out target platform remains untouched.
 
 C02's severity question is closed. The next practical work is the guided authoring pilot described in the [roadmap](../../../../docs/roadmap.md#milestone-4--repository-workflow-integration): turn the discovery, plan, draft and independent-evaluation steps into one usable workflow before selecting product packaging or using the holdout.

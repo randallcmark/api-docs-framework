@@ -67,8 +67,8 @@
     "evaluator-b"
   ],
   "agent_tasks": {
-    "evaluator-a": "/root/evaluator_a",
-    "evaluator-b": "/root/evaluator_b"
+    "evaluator-a": "evaluator-a",
+    "evaluator-b": "evaluator-b"
   },
   "pilot_case_order": [
     "C01",

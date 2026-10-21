@@ -12,7 +12,7 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 PREPARATION = {
-    "TRIAL_README.md": "evaluation/trial/README.md",
+    "TRIAL_README.md": "evaluation/trial/pack-readme.md",
     "TRIAL_PLAN.md": "evaluation/trial/plan-template.md",
     "TRIAL_RESULTS.md": "evaluation/trial/results-template.md",
 }

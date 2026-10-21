@@ -177,7 +177,7 @@
     "per_evaluator": 1,
     "case_id": "C07",
     "owner": "engineering",
-    "purpose": "Confirm deployed parser and downstream conversion against supplied product intent. This is a fictional case question, not a request for the user platform."
+    "purpose": "Confirm deployed parser and downstream conversion against supplied product intent. This is a fictional case question, not a request for a target platform."
   },
   "limitations": [
     "Same inherited model and same role instructions, separate fresh contexts; this is not cross-model or human agreement.",

@@ -40,8 +40,8 @@ Acceptance: a coherent documentation change can move through discovery, bounded 
 
 ## Milestone 5 — Evaluation and revision
 
-Status: [trial procedure and portable pack](../evaluation/trial/README.md) prepared. Framework commit `d5c64a51c5d69962ca5f7084e58b0d26bcdc081e` is frozen; critical source hashes and the generated pack checks are recorded. No real-platform inputs have been inspected, baseline assessed, reader tasks attempted or trial results claimed. The user can run the pack privately or supply one bounded workflow and its source links for a collaborative trial.
+Status: [trial procedure and portable pack](../evaluation/trial/README.md) prepared. The [freeze record](../evaluation/trial/freeze.json) identifies the pinned framework; critical source hashes and the generated pack checks are recorded. No real-platform inputs have been inspected, baseline assessed, reader tasks attempted or trial results claimed. A trial owner can run the pack privately or supply one bounded workflow and its source links for a collaborative trial.
 
-Freeze a framework version, then evaluate the user's platform on existing-doc improvement and a new workflow or domain. Compare reader outcomes, accuracy, reviewer effort and author effort with a baseline. Preserve the initial holdout result and track later revisions separately.
+Freeze a framework version, then evaluate the held-out target platform on existing-doc improvement and a new workflow or domain. Compare reader outcomes, accuracy, reviewer effort and author effort with a baseline. Preserve the initial holdout result and track later revisions separately.
 
 Acceptance: observed results and remaining limitations, plus a prioritized implementation backlog. Reconsider tooling and product packaging based on measured needs.
