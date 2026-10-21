@@ -10,6 +10,8 @@ Comparative research is underway: all 36 candidates have entry/index screening, 
 
 Use the [guided authoring prompts](prompts/README.md) and [completed fictional pilot](examples/expense-export-pilot/README.md) to try the first usable workflow: discovery, brief, MDX change, separate review and handoff. The packet builder makes no model calls.
 
+The [first real-platform trial procedure](evaluation/trial/README.md) freezes the merged workflow before the holdout is supplied. A portable pack contains that exact framework plus blank plan/result templates; no real-platform trial has started.
+
 Read the [latest follow-up](research/follow-up.md) and [calibration practice procedure](evaluation/calibration/README.md), or start with the project context:
 
 1. [Project brief](docs/project-brief.md) — agreed objective, constraints, and scope.
@@ -35,6 +37,7 @@ Read the [latest follow-up](research/follow-up.md) and [calibration practice pro
 | `research/evidence.json` | Reviewed observations with source locators and limitations |
 | `patterns/library.json` | Provisional rules, applicability, questions, and evaluation links |
 | `evaluation/rubric.md` | Anchored criteria, issue severity, and evidence requirements |
+| `evaluation/trial/` | Frozen first-trial identity, portable-pack record and baseline/result templates |
 | `evaluation/calibration/` | Fictional MDX practice cases, proposed anchors and separate-evaluation procedure |
 | `templates/change-brief.md` | Minimum context before drafting a coherent change |
 | `templates/review-packet.md` | Short PR context and decisions needed from reviewers |
@@ -49,6 +52,7 @@ Python 3.12 or later; no third-party packages or credentials required.
 
 ```bash
 python scripts/validate.py
+python scripts/prepare_trial_pack.py --output /tmp/api-docs-trial.zip
 python scripts/prepare_doc_review.py --manifest examples/expense-export-pilot/run/review-manifest.json --output /tmp/expense-review.json
 python scripts/prepare_evaluation.py --case C01 --output /tmp/c01-input.json
 python scripts/capture_sources.py --list

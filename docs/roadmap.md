@@ -32,13 +32,15 @@ Acceptance: evidence for criteria, shared interpretations of anchors, consequent
 
 Status: the [manual prompt workflow](../prompts/README.md), offline review-packet builder and [fictional expense-export pilot](../examples/expense-export-pilot/README.md) are implemented. The author carried two fixture questions through the brief, two MDX pages and an actual fresh-context review. No content corrections were requested in that bounded review. Sources and owner answers were constructed by the framework author; no real-team benefit or reader task success is established.
 
-Remaining: choose actual agent/build-system integration and a representative real input package; establish a baseline and freeze the framework before examining the user's holdout. No automated model orchestration or publication policy is selected.
+The [first-trial freeze](../evaluation/trial/freeze.json) now pins the merged workflow before target-platform input. Remaining: choose actual agent/build-system integration and a representative real input package, then preserve and assess the baseline. No automated model orchestration or publication policy is selected.
 
 Adapt the process to the chosen agent and MDX build system. Add actual spec/reference validation, examples checks, terminology checks, and PR reporting as needed. Existing repository checks and ownership rules remain authoritative.
 
 Acceptance: a coherent documentation change can move through discovery, bounded drafting, independent evaluation, and a short review packet. Checks report their actual scope and do not imply semantic correctness from lint success.
 
 ## Milestone 5 — Evaluation and revision
+
+Status: [trial procedure and portable pack](../evaluation/trial/README.md) prepared. Framework commit `d5c64a51c5d69962ca5f7084e58b0d26bcdc081e` is frozen; critical source hashes and the generated pack checks are recorded. No real-platform inputs have been inspected, baseline assessed, reader tasks attempted or trial results claimed. The user can run the pack privately or supply one bounded workflow and its source links for a collaborative trial.
 
 Freeze a framework version, then evaluate the user's platform on existing-doc improvement and a new workflow or domain. Compare reader outcomes, accuracy, reviewer effort and author effort with a baseline. Preserve the initial holdout result and track later revisions separately.
 
