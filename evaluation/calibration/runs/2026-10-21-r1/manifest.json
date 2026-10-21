@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "run_id": "2026-10-21-r1",
+  "status": "separate-evaluations-complete-human-adjudication-pending",
+  "framework_commit": "41c77c0b464eec07fba46397e763bfde80e6b61a",
+  "evaluator_separation": "Two fresh agent contexts; packets only, no repository or answer-key reads. Shared model family; operational separation, not access control.",
+  "active_review_minutes": "unknown; no active-time instrumentation",
+  "inputs": [
+    {
+      "case_id": "C01",
+      "packet_sha256": "516024fd078d67423d09630de314789ae04cc2f70b75945c78029e021a518698",
+      "document_sha256": "2a768a4ef1e88de60a8c9e559edd1e1107f125ab238993e037298a6e2c4a6f5b",
+      "rubric_sha256": "3c041db81e178c8c0dd4cb942882f6551a5b30c1f3e4d6dd163ccde7c46a18d2"
+    },
+    {
+      "case_id": "C02",
+      "packet_sha256": "61449727255cc22577cea086c50295f0587c285e011e72362e7cad0fe0a49399",
+      "document_sha256": "600f76fe59d03943fd7309b67a4d7b2eb1d6495a868b67a89220e7055042f01d",
+      "rubric_sha256": "3c041db81e178c8c0dd4cb942882f6551a5b30c1f3e4d6dd163ccde7c46a18d2"
+    },
+    {
+      "case_id": "C03",
+      "packet_sha256": "f9840cbfdfdab50ea75add493a436bf3da92f2110926cc8c317db95504c9ae93",
+      "document_sha256": "f3b6b3b92c370f36d905b33ee9a56bc14e7fde9be0fefb1c30e78b08ec6f1019",
+      "rubric_sha256": "3c041db81e178c8c0dd4cb942882f6551a5b30c1f3e4d6dd163ccde7c46a18d2"
+    },
+    {
+      "case_id": "C04",
+      "packet_sha256": "5a0b696a7889956dcb1fe1bbdc45994ee3fa724addcc1ef90da48023fb141464",
+      "document_sha256": "824eb74d4511c21982f5d73d907b68c84fcf674fc6057c82fa18ac09207de456",
+      "rubric_sha256": "3c041db81e178c8c0dd4cb942882f6551a5b30c1f3e4d6dd163ccde7c46a18d2"
+    },
+    {
+      "case_id": "C05",
+      "packet_sha256": "b5527552a5fb50a93329f5984eeb9d6264ef6f3e32372dac75e109413bccef50",
+      "document_sha256": "7aeb6670a34fc919d4219f4001c7a1aee9cd72dff0e0a13e39c149fc4ca962db",
+      "rubric_sha256": "3c041db81e178c8c0dd4cb942882f6551a5b30c1f3e4d6dd163ccde7c46a18d2"
+    },
+    {
+      "case_id": "C06",
+      "packet_sha256": "71b5da2f0b67e82f3a5426a159bb3fa22537700ab4118a83dcc1b13f01a47fe7",
+      "document_sha256": "27b5fed52b8ca864f21752431996e5403c7563d9f850897bc9edd8f1b5e178b9",
+      "rubric_sha256": "3c041db81e178c8c0dd4cb942882f6551a5b30c1f3e4d6dd163ccde7c46a18d2"
+    },
+    {
+      "case_id": "C07",
+      "packet_sha256": "3fe17af4fb2193df75ee4af9b9aed17746b2a638c1c77402b317b46ee42196a3",
+      "document_sha256": "9cb2b1755964c1fbe78dccaa908397b736afa046c2e84235d27773c16c295f95",
+      "rubric_sha256": "3c041db81e178c8c0dd4cb942882f6551a5b30c1f3e4d6dd163ccde7c46a18d2"
+    },
+    {
+      "case_id": "C08",
+      "packet_sha256": "865f899b1624da6a8f22bdfd1a6cee53975f85b0fa7cefc786cb347f804c5233",
+      "document_sha256": "10f160d9b603afcda6d856310268f221bef769287af1345d9059bfb8aca8d9d6",
+      "rubric_sha256": "3c041db81e178c8c0dd4cb942882f6551a5b30c1f3e4d6dd163ccde7c46a18d2"
+    },
+    {
+      "case_id": "C09",
+      "packet_sha256": "1887b36f21df4f4ba6f55d984feb67532cbb5577fd20fcaee43a460d45538ea0",
+      "document_sha256": "23dafe12f434846c35b28ce9d08f56045c288c61f8972cec59002114bc96bffd",
+      "rubric_sha256": "3c041db81e178c8c0dd4cb942882f6551a5b30c1f3e4d6dd163ccde7c46a18d2"
+    }
+  ],
+  "author_key_sha256": "17644846a6338579791a40f62123ef6b99f7b43ad7d98ddee94229d59a618827",
+  "evaluators": [
+    "evaluator-a",
+    "evaluator-b"
+  ],
+  "agent_tasks": {
+    "evaluator-a": "/root/evaluator_a",
+    "evaluator-b": "/root/evaluator_b"
+  },
+  "pilot_case_order": [
+    "C01",
+    "C05",
+    "C07"
+  ],
+  "remaining_case_order": [
+    "C02",
+    "C03",
+    "C04",
+    "C06",
+    "C08",
+    "C09"
+  ],
+  "model_relationship": "Same inherited model and role prompt, separate fresh contexts. Exact model version reported only if available; no cross-model claim.",
+  "results": [
+    {
+      "evaluator_id": "evaluator-a",
+      "case_id": "C01",
+      "path": "results/evaluator-a/C01.json",
+      "sha256": "d72cc6e684e01a1c1b0cc9f19179046986f55fce5d884a78a68779a57f09afcc"
+    },
+    {
+      "evaluator_id": "evaluator-a",
+      "case_id": "C02",
+      "path": "results/evaluator-a/C02.json",
+      "sha256": "e73a1fca652917e152142002c8a14f3d3b54557c21c8fa32b2a682bdc12b2ba8"
+    },
+    {
+      "evaluator_id": "evaluator-a",
+      "case_id": "C03",
+      "path": "results/evaluator-a/C03.json",
+      "sha256": "90a5c37d99e1fe88f03fc12b53031f1331c10fd6f7c3edc566f95bea0b0996ee"
+    },
+    {
+      "evaluator_id": "evaluator-a",
+      "case_id": "C04",
+      "path": "results/evaluator-a/C04.json",
+      "sha256": "3d5a8bd5d936aa5d11af06aafa3dd7e196edf0c853b9d70314cca96ea1105598"
+    },
+    {
+      "evaluator_id": "evaluator-a",
+      "case_id": "C05",
+      "path": "results/evaluator-a/C05.json",
+      "sha256": "04672b8049d23a7526212f42e66fdedca1c38091c7543ec38b5d3ea4a0fb5ec9"
+    },
+    {
+      "evaluator_id": "evaluator-a",
+      "case_id": "C06",
+      "path": "results/evaluator-a/C06.json",
+      "sha256": "3f8c17ed676b94cda9cea82da2880e16fc7a7339328b872ace97be7e8b45b843"
+    },
+    {
+      "evaluator_id": "evaluator-a",
+      "case_id": "C07",
+      "path": "results/evaluator-a/C07.json",
+      "sha256": "286b13596e588a548c69ef38240bfadb6667b7e308652b9daa2fb814d173cad6"
+    },
+    {
+      "evaluator_id": "evaluator-a",
+      "case_id": "C08",
+      "path": "results/evaluator-a/C08.json",
+      "sha256": "49005591fd99f99ee00382b08d74cbfcb70ae4c153bd11b46f8a930f11e29896"
+    },
+    {
+      "evaluator_id": "evaluator-a",
+      "case_id": "C09",
+      "path": "results/evaluator-a/C09.json",
+      "sha256": "50529b4df5010f939b089781fba9c8ceb19c65ea7d0fc5e4b51c02b96a7cc497"
+    },
+    {
+      "evaluator_id": "evaluator-b",
+      "case_id": "C01",
+      "path": "results/evaluator-b/C01.json",
+      "sha256": "01642aa74a21889cd0aabced242d7528170335fa5f9c28aeace539e8e6737ab2"
+    },
+    {
+      "evaluator_id": "evaluator-b",
+      "case_id": "C02",
+      "path": "results/evaluator-b/C02.json",
+      "sha256": "ba2b0b56568dc319738e221b70706caba4a97037a1797d277f8e1aa64fc6cc68"
+    },
+    {
+      "evaluator_id": "evaluator-b",
+      "case_id": "C03",
+      "path": "results/evaluator-b/C03.json",
+      "sha256": "3c3aa9201dfc3f697a7b7c89e17c76d93f36173317731d298bf1249b87cb7770"
+    },
+    {
+      "evaluator_id": "evaluator-b",
+      "case_id": "C04",
+      "path": "results/evaluator-b/C04.json",
+      "sha256": "33d6a59cbb06767ee00e93e97d94f44d2833cb4ab24ea450f3466ca031006db6"
+    },
+    {
+      "evaluator_id": "evaluator-b",
+      "case_id": "C05",
+      "path": "results/evaluator-b/C05.json",
+      "sha256": "18b6b6633659f06e0088110d491f76a02d654b6975d5b8c56f78cf16ed31a01d"
+    },
+    {
+      "evaluator_id": "evaluator-b",
+      "case_id": "C06",
+      "path": "results/evaluator-b/C06.json",
+      "sha256": "c6b991f3ffa724dc87d3a5bbe0243bb73e4dc64585de65e8bec6a511f9ea2684"
+    },
+    {
+      "evaluator_id": "evaluator-b",
+      "case_id": "C07",
+      "path": "results/evaluator-b/C07.json",
+      "sha256": "3e3cce5eab0e78d603e6d8a2031a4f1e21abba88a9364684957b942cfb0956a4"
+    },
+    {
+      "evaluator_id": "evaluator-b",
+      "case_id": "C08",
+      "path": "results/evaluator-b/C08.json",
+      "sha256": "b962a25e6b339715d2af7ae0885ba97d9a19325f892a8c2e824e061f224a8267"
+    },
+    {
+      "evaluator_id": "evaluator-b",
+      "case_id": "C09",
+      "path": "results/evaluator-b/C09.json",
+      "sha256": "8252e738ae64479bbdd8d49ffd7c512f4d6daeafeceb2748c98f28bf213afd63"
+    }
+  ],
+  "results_frozen_at": "2026-10-21T04:52:34.855397+00:00",
+  "pilot_outcome": "Both evaluators reported no blocking instruction ambiguity and proceeded without changes to the inputs."
+}

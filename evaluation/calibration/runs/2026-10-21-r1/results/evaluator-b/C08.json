@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "case_id": "C08",
+  "packet_sha256": "865f899b1624da6a8f22bdfd1a6cee53975f85b0fa7cefc786cb347f804c5233",
+  "evaluator": {
+    "id": "evaluator-b",
+    "context": "fresh; packets only",
+    "model": "unknown"
+  },
+  "started_at": "2026-10-21T04:50:10Z",
+  "finished_at": "2026-10-21T04:52:15Z",
+  "active_minutes": null,
+  "active_minutes_note": "Not instrumented; elapsed time is not active review time",
+  "criteria": [
+    {
+      "criterion_id": "R01",
+      "applicability": "applicable",
+      "rating": 3,
+      "state": "satisfied",
+      "document_locator": "Integrations already reading `totalMinor` need no field change.",
+      "fact_ids": [
+        "C08-F1",
+        "C08-F3"
+      ],
+      "rationale": "Applicability covers both affected total readers and unaffected totalMinor readers, and the removal version clearly bounds the task."
+    },
+    {
+      "criterion_id": "R08",
+      "applicability": "applicable",
+      "rating": 2,
+      "state": "satisfied",
+      "document_locator": "# Invoice total field migration",
+      "fact_ids": [
+        "C08-F1",
+        "C08-F3"
+      ],
+      "rationale": "The supplied change brief establishes a direct inbound link from the invoice reference. This combined destination is coherent with the field and version evidence; separate pages or a full-site journey are unnecessary for the scoped review."
+    },
+    {
+      "criterion_id": "R09",
+      "applicability": "applicable",
+      "rating": 3,
+      "state": "satisfied",
+      "document_locator": "These checks are instructions; execution is not claimed here.",
+      "fact_ids": [
+        "C08-F1",
+        "C08-F2",
+        "C08-F3"
+      ],
+      "rationale": "The page makes affected-reader decisions, ordered actions, units, expected fixture results and the execution boundary explicit, including the zero-value case."
+    },
+    {
+      "criterion_id": "R10",
+      "applicability": "applicable",
+      "rating": 3,
+      "state": "satisfied",
+      "document_locator": "Remove all remaining `total` reads before upgrading to `2027-04`.",
+      "fact_ids": [
+        "C08-F1",
+        "C08-F2",
+        "C08-F3"
+      ],
+      "rationale": "Confirmed versions, overlap equivalence, affected integrations, replacement action and nonzero/zero validation cases form an actionable migration path with no unsupported execution claim."
+    }
+  ],
+  "findings": [],
+  "questions": [],
+  "readiness": "ready_for_human_review",
+  "limitations": [
+    "Reviewed only this frozen fictional packet against its supplied rubric and evidence; no repository, linked-page retrieval, external platform lookup or API execution.",
+    "Content review does not establish example execution, observed reader-task success, measured benefit or publication approval."
+  ]
+}

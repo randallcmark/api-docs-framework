@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "case_id": "C08",
+  "packet_sha256": "865f899b1624da6a8f22bdfd1a6cee53975f85b0fa7cefc786cb347f804c5233",
+  "evaluator": {
+    "id": "evaluator-a",
+    "context": "fresh; packets only",
+    "model": "unknown"
+  },
+  "started_at": "2026-10-21T04:49:47Z",
+  "finished_at": "2026-10-21T04:51:59Z",
+  "active_minutes": null,
+  "active_minutes_note": "Not instrumented; elapsed time is not active review time",
+  "criteria": [
+    {
+      "criterion_id": "R01",
+      "applicability": "applicable",
+      "rating": 3,
+      "state": "satisfied",
+      "document_locator": "Integrations already reading `totalMinor` need no field change.",
+      "fact_ids": [
+        "C08-F1",
+        "C08-F2",
+        "C08-F3"
+      ],
+      "rationale": "The page identifies affected total readers, the unaffected totalMinor variant, the overlap version and the removal version, allowing a reader to determine applicability and the supported migration path."
+    },
+    {
+      "criterion_id": "R08",
+      "applicability": "applicable",
+      "rating": 2,
+      "state": "satisfied",
+      "document_locator": "# Invoice total field migration",
+      "fact_ids": [
+        "C08-F3"
+      ],
+      "rationale": "The supplied change brief establishes that the invoice reference links directly to this combined page. Its title, terminology and content coherently serve the migration task; no separate release page or larger site is needed. This packet supports the bounded route rather than additional cross-site navigation variants."
+    },
+    {
+      "criterion_id": "R09",
+      "applicability": "applicable",
+      "rating": 3,
+      "state": "satisfied",
+      "document_locator": "These checks are instructions; execution is not claimed here.",
+      "fact_ids": [
+        "C08-F1",
+        "C08-F2",
+        "C08-F3"
+      ],
+      "rationale": "The page expresses applicability, ordered actions, version conditions, units and expected fixture results concretely, including the unaffected reader variant and an explicit demonstration/execution boundary."
+    },
+    {
+      "criterion_id": "R10",
+      "applicability": "applicable",
+      "rating": 3,
+      "state": "satisfied",
+      "document_locator": "Change reads from `total` to `totalMinor` while on that version.",
+      "fact_ids": [
+        "C08-F1",
+        "C08-F2",
+        "C08-F3"
+      ],
+      "rationale": "The combined page accurately states the confirmed removal version, compatibility overlap, affected integrations and migration action. Both nonzero and zero fixtures have explicit expected pairs and remaining total reads must be removed before upgrade."
+    }
+  ],
+  "findings": [],
+  "questions": [],
+  "readiness": "ready_for_human_review",
+  "limitations": [
+    "Static review of the frozen fictional packet only; the migration checks were not executed and no task benefit measurement is supplied.",
+    "The invoice-reference inbound link is supported by the supplied change brief, not by independent site navigation. The bounded combined page is the complete requested review scope."
+  ]
+}

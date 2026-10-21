@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "case_id": "C04",
+  "packet_sha256": "5a0b696a7889956dcb1fe1bbdc45994ee3fa724addcc1ef90da48023fb141464",
+  "evaluator": {
+    "id": "evaluator-b",
+    "context": "fresh; packets only",
+    "model": "unknown"
+  },
+  "started_at": "2026-10-21T04:50:10Z",
+  "finished_at": "2026-10-21T04:52:15Z",
+  "active_minutes": null,
+  "active_minutes_note": "Not instrumented; elapsed time is not active review time",
+  "criteria": [
+    {
+      "criterion_id": "R01",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "Cross-border payroll is available to all customers today.",
+      "fact_ids": [
+        "C04-F1",
+        "C04-F2"
+      ],
+      "rationale": "Development approval provides neither present availability nor entitlement, and the deployed API rejects the feature."
+    },
+    {
+      "criterion_id": "R09",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "expand into new markets immediately.",
+      "fact_ids": [
+        "C04-F1",
+        "C04-F2"
+      ],
+      "rationale": "The imperative and immediate-outcome promise present an unsupported capability as actionable today; this is consequential misinformation, not merely promotional tone."
+    },
+    {
+      "criterion_id": "R04",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "Enable `crossBorder=true`",
+      "fact_ids": [
+        "C04-F2"
+      ],
+      "rationale": "Additional consequential defect: this operational instruction contradicts deployed rejection of crossBorder=true."
+    }
+  ],
+  "findings": [
+    {
+      "id": "C04-B1",
+      "criterion_ids": [
+        "R01",
+        "R09",
+        "R04"
+      ],
+      "state": "incorrect",
+      "severity": "material",
+      "document_locator": "Cross-border payroll is available to all customers today.",
+      "fact_ids": [
+        "C04-F1",
+        "C04-F2"
+      ],
+      "consequence": "A planner may commit to a capability that cannot be used, and engineers following the enablement instruction receive an unsupported-feature rejection.",
+      "fix": "State that cross-border payroll is approved for development but unavailable today, with no committed release date or customer entitlement. Remove the enablement instruction and immediate promise; distinguish currently available domestic payroll if useful for planning."
+    }
+  ],
+  "questions": [],
+  "readiness": "needs_revision",
+  "limitations": [
+    "Reviewed only this frozen fictional packet against its supplied rubric and evidence; no repository, linked-page retrieval, external platform lookup or API execution.",
+    "Content review does not establish example execution, observed reader-task success, measured benefit or publication approval."
+  ]
+}

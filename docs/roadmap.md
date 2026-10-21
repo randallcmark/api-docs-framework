@@ -22,7 +22,7 @@ Remaining: close task-specific verification, recovery and migration gaps; broade
 
 ## Milestone 3 — Calibrated guidance
 
-Status: preparation underway. [Nine fictional cases](../evaluation/calibration/README.md) and proposed anchors are available, with a packet exporter that excludes the key. Separate evaluations, measured review effort and human adjudication have not occurred. The rubric is uncalibrated.
+Status: preparation underway. [Nine fictional cases](../evaluation/calibration/README.md) and proposed anchors are available, with a packet exporter that excludes the key. The [first separate-agent run](../evaluation/calibration/runs/2026-10-21-r1/README.md) preserves 18 original results and their comparison. Human adjudication remains pending; active review effort was not instrumented. The rubric is uncalibrated.
 
 Refine the pattern library, information architecture, page structures, product discovery prompts, and rubric. Produce scored practice examples at different quality levels. Resolve differences between evaluators and record examples and exceptions behind decisions.
 

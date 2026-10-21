@@ -6,7 +6,7 @@ The unit of work is an integrated use case or workflow. Readers need a connected
 
 ## Current status
 
-Comparative research is underway: all 36 candidates have entry/index screening, 15 are selected for focused deeper comparison, and five documentation traces record their inspected stages and gaps. The library contains 12 patterns, including four practices corroborated across independent providers. The focused follow-up adds recovery/change evidence and three visually inspected diagrams. Nine fictional practice cases are prepared for separate rubric evaluations. The rubric remains uncalibrated, and no reader-task benefit is claimed.
+Comparative research is underway: all 36 candidates have entry/index screening, 15 are selected for focused deeper comparison, and five documentation traces record their inspected stages and gaps. The library contains 12 patterns, including four practices corroborated across independent providers. The focused follow-up adds recovery/change evidence and three visually inspected diagrams. Nine fictional practice cases have received a [first separate-agent evaluation](evaluation/calibration/runs/2026-10-21-r1/README.md); human adjudication is pending. The rubric remains uncalibrated, and no reader-task benefit is claimed.
 
 Read the [latest follow-up](research/follow-up.md) and [calibration practice procedure](evaluation/calibration/README.md), or start with the project context:
 

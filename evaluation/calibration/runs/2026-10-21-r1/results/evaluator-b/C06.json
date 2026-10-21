@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "case_id": "C06",
+  "packet_sha256": "71b5da2f0b67e82f3a5426a159bb3fa22537700ab4118a83dcc1b13f01a47fe7",
+  "evaluator": {
+    "id": "evaluator-b",
+    "context": "fresh; packets only",
+    "model": "unknown"
+  },
+  "started_at": "2026-10-21T04:50:10Z",
+  "finished_at": "2026-10-21T04:52:15Z",
+  "active_minutes": null,
+  "active_minutes_note": "Not instrumented; elapsed time is not active review time",
+  "criteria": [
+    {
+      "criterion_id": "R07",
+      "applicability": "applicable",
+      "rating": 1,
+      "state": "missing",
+      "document_locator": "Save your request ID so support can investigate.",
+      "fact_ids": [
+        "C06-F1",
+        "C06-F2",
+        "C06-F3"
+      ],
+      "rationale": "Preserving the request ID is useful, but the addition omits uncertain creation outcome, lack of idempotency, clientReference reconciliation, lag on a negative query and the no-blind-retry boundary."
+    },
+    {
+      "criterion_id": "R09",
+      "applicability": "applicable",
+      "rating": 1,
+      "state": "missing",
+      "document_locator": "A network timeout means you did not receive the create response.",
+      "fact_ids": [
+        "C06-F1",
+        "C06-F2",
+        "C06-F3"
+      ],
+      "rationale": "The existing sentences are clear and accurate, but do not identify the consequential decision boundary or sufficient next actions and expected results for timeout recovery."
+    }
+  ],
+  "findings": [
+    {
+      "id": "C06-B1",
+      "criterion_ids": [
+        "R07",
+        "R09"
+      ],
+      "state": "missing",
+      "severity": "material",
+      "document_locator": "Save your request ID so support can investigate.",
+      "fact_ids": [
+        "C06-F1",
+        "C06-F2",
+        "C06-F3"
+      ],
+      "consequence": "The engineer has no reliable next-step sequence to distinguish an existing invoice from an unresolved result. A blind repeat can create another invoice because timeout does not establish failure and there is no idempotency key. The page itself does not explicitly direct such a repeat.",
+      "fix": "Explain that creation may already have succeeded. Retain clientReference and request ID; query GET /invoices?clientReference=... and use the returned ID if found. A missing result may lag a commit, so do not blindly create again; contact support with both identifiers if still unresolved. Do not invent fixed waits or automatic retry guarantees."
+    }
+  ],
+  "questions": [],
+  "readiness": "needs_revision",
+  "limitations": [
+    "Reviewed only this frozen fictional packet against its supplied rubric and evidence; no repository, linked-page retrieval, external platform lookup or API execution.",
+    "Content review does not establish example execution, observed reader-task success, measured benefit or publication approval."
+  ]
+}

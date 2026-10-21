@@ -1,0 +1,418 @@
+{
+  "schema_version": 1,
+  "scope": "Mechanical comparison only; no finding-validity or calibration claim",
+  "run_id": "2026-10-21-r1",
+  "case_count": 9,
+  "profile_agreement": {
+    "matching": 27,
+    "total": 27
+  },
+  "readiness_agreement": {
+    "matching": 9,
+    "total": 9
+  },
+  "question_counts": {
+    "evaluator-a": 1,
+    "evaluator-b": 1
+  },
+  "cases": [
+    {
+      "case_id": "C01",
+      "profile_differences": [],
+      "omitted_focus_criteria": {
+        "evaluator-a": [],
+        "evaluator-b": []
+      },
+      "additional_criteria": {
+        "evaluator-a": [],
+        "evaluator-b": []
+      },
+      "readiness": {
+        "evaluator-a": "needs_revision",
+        "evaluator-b": "needs_revision"
+      },
+      "finding_counts": {
+        "evaluator-a": 2,
+        "evaluator-b": 2
+      },
+      "finding_labels": {
+        "evaluator-a": [
+          {
+            "id": "C01-A-01",
+            "criterion_ids": [
+              "R03",
+              "R04",
+              "R06"
+            ],
+            "state": "incorrect",
+            "severity": "critical"
+          },
+          {
+            "id": "C01-A-02",
+            "criterion_ids": [
+              "R07"
+            ],
+            "state": "missing",
+            "severity": "material"
+          }
+        ],
+        "evaluator-b": [
+          {
+            "id": "C01-B1",
+            "criterion_ids": [
+              "R03",
+              "R04",
+              "R06"
+            ],
+            "state": "incorrect",
+            "severity": "critical"
+          },
+          {
+            "id": "C01-B2",
+            "criterion_ids": [
+              "R03",
+              "R06",
+              "R07"
+            ],
+            "state": "missing",
+            "severity": "material"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "C02",
+      "profile_differences": [],
+      "omitted_focus_criteria": {
+        "evaluator-a": [],
+        "evaluator-b": []
+      },
+      "additional_criteria": {
+        "evaluator-a": [],
+        "evaluator-b": []
+      },
+      "readiness": {
+        "evaluator-a": "needs_revision",
+        "evaluator-b": "needs_revision"
+      },
+      "finding_counts": {
+        "evaluator-a": 2,
+        "evaluator-b": 2
+      },
+      "finding_labels": {
+        "evaluator-a": [
+          {
+            "id": "C02-A-01",
+            "criterion_ids": [
+              "R02",
+              "R04",
+              "R06"
+            ],
+            "state": "incorrect",
+            "severity": "critical"
+          },
+          {
+            "id": "C02-A-02",
+            "criterion_ids": [
+              "R07"
+            ],
+            "state": "missing",
+            "severity": "material"
+          }
+        ],
+        "evaluator-b": [
+          {
+            "id": "C02-B1",
+            "criterion_ids": [
+              "R02",
+              "R04",
+              "R06"
+            ],
+            "state": "incorrect",
+            "severity": "critical"
+          },
+          {
+            "id": "C02-B2",
+            "criterion_ids": [
+              "R07"
+            ],
+            "state": "missing",
+            "severity": "material"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "C03",
+      "profile_differences": [],
+      "omitted_focus_criteria": {
+        "evaluator-a": [],
+        "evaluator-b": []
+      },
+      "additional_criteria": {
+        "evaluator-a": [],
+        "evaluator-b": []
+      },
+      "readiness": {
+        "evaluator-a": "needs_revision",
+        "evaluator-b": "needs_revision"
+      },
+      "finding_counts": {
+        "evaluator-a": 1,
+        "evaluator-b": 1
+      },
+      "finding_labels": {
+        "evaluator-a": [
+          {
+            "id": "C03-A-01",
+            "criterion_ids": [
+              "R04",
+              "R05"
+            ],
+            "state": "incorrect",
+            "severity": "critical"
+          }
+        ],
+        "evaluator-b": [
+          {
+            "id": "C03-B1",
+            "criterion_ids": [
+              "R04",
+              "R05"
+            ],
+            "state": "incorrect",
+            "severity": "critical"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "C04",
+      "profile_differences": [],
+      "omitted_focus_criteria": {
+        "evaluator-a": [],
+        "evaluator-b": []
+      },
+      "additional_criteria": {
+        "evaluator-a": [
+          "R04"
+        ],
+        "evaluator-b": [
+          "R04"
+        ]
+      },
+      "readiness": {
+        "evaluator-a": "needs_revision",
+        "evaluator-b": "needs_revision"
+      },
+      "finding_counts": {
+        "evaluator-a": 1,
+        "evaluator-b": 1
+      },
+      "finding_labels": {
+        "evaluator-a": [
+          {
+            "id": "C04-A-01",
+            "criterion_ids": [
+              "R01",
+              "R09",
+              "R04"
+            ],
+            "state": "incorrect",
+            "severity": "material"
+          }
+        ],
+        "evaluator-b": [
+          {
+            "id": "C04-B1",
+            "criterion_ids": [
+              "R01",
+              "R09",
+              "R04"
+            ],
+            "state": "incorrect",
+            "severity": "material"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "C05",
+      "profile_differences": [],
+      "omitted_focus_criteria": {
+        "evaluator-a": [],
+        "evaluator-b": []
+      },
+      "additional_criteria": {
+        "evaluator-a": [],
+        "evaluator-b": []
+      },
+      "readiness": {
+        "evaluator-a": "ready_for_human_review",
+        "evaluator-b": "ready_for_human_review"
+      },
+      "finding_counts": {
+        "evaluator-a": 0,
+        "evaluator-b": 0
+      },
+      "finding_labels": {
+        "evaluator-a": [],
+        "evaluator-b": []
+      }
+    },
+    {
+      "case_id": "C06",
+      "profile_differences": [],
+      "omitted_focus_criteria": {
+        "evaluator-a": [],
+        "evaluator-b": []
+      },
+      "additional_criteria": {
+        "evaluator-a": [],
+        "evaluator-b": []
+      },
+      "readiness": {
+        "evaluator-a": "needs_revision",
+        "evaluator-b": "needs_revision"
+      },
+      "finding_counts": {
+        "evaluator-a": 1,
+        "evaluator-b": 1
+      },
+      "finding_labels": {
+        "evaluator-a": [
+          {
+            "id": "C06-A-01",
+            "criterion_ids": [
+              "R07",
+              "R09"
+            ],
+            "state": "missing",
+            "severity": "material"
+          }
+        ],
+        "evaluator-b": [
+          {
+            "id": "C06-B1",
+            "criterion_ids": [
+              "R07",
+              "R09"
+            ],
+            "state": "missing",
+            "severity": "material"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "C07",
+      "profile_differences": [],
+      "omitted_focus_criteria": {
+        "evaluator-a": [],
+        "evaluator-b": []
+      },
+      "additional_criteria": {
+        "evaluator-a": [],
+        "evaluator-b": []
+      },
+      "readiness": {
+        "evaluator-a": "needs_answers",
+        "evaluator-b": "needs_answers"
+      },
+      "finding_counts": {
+        "evaluator-a": 1,
+        "evaluator-b": 1
+      },
+      "finding_labels": {
+        "evaluator-a": [
+          {
+            "id": "C07-A-01",
+            "criterion_ids": [
+              "R04"
+            ],
+            "state": "unverified",
+            "severity": "material"
+          }
+        ],
+        "evaluator-b": [
+          {
+            "id": "C07-B1",
+            "criterion_ids": [
+              "R04"
+            ],
+            "state": "unverified",
+            "severity": "material"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "C08",
+      "profile_differences": [],
+      "omitted_focus_criteria": {
+        "evaluator-a": [],
+        "evaluator-b": []
+      },
+      "additional_criteria": {
+        "evaluator-a": [],
+        "evaluator-b": []
+      },
+      "readiness": {
+        "evaluator-a": "ready_for_human_review",
+        "evaluator-b": "ready_for_human_review"
+      },
+      "finding_counts": {
+        "evaluator-a": 0,
+        "evaluator-b": 0
+      },
+      "finding_labels": {
+        "evaluator-a": [],
+        "evaluator-b": []
+      }
+    },
+    {
+      "case_id": "C09",
+      "profile_differences": [],
+      "omitted_focus_criteria": {
+        "evaluator-a": [],
+        "evaluator-b": []
+      },
+      "additional_criteria": {
+        "evaluator-a": [],
+        "evaluator-b": []
+      },
+      "readiness": {
+        "evaluator-a": "needs_revision",
+        "evaluator-b": "needs_revision"
+      },
+      "finding_counts": {
+        "evaluator-a": 1,
+        "evaluator-b": 1
+      },
+      "finding_labels": {
+        "evaluator-a": [
+          {
+            "id": "C09-A-01",
+            "criterion_ids": [
+              "R05",
+              "R11"
+            ],
+            "state": "incorrect",
+            "severity": "material"
+          }
+        ],
+        "evaluator-b": [
+          {
+            "id": "C09-B1",
+            "criterion_ids": [
+              "R05",
+              "R11"
+            ],
+            "state": "incorrect",
+            "severity": "material"
+          }
+        ]
+      }
+    }
+  ]
+}

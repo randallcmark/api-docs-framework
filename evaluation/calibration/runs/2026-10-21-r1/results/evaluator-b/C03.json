@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "case_id": "C03",
+  "packet_sha256": "f9840cbfdfdab50ea75add493a436bf3da92f2110926cc8c317db95504c9ae93",
+  "evaluator": {
+    "id": "evaluator-b",
+    "context": "fresh; packets only",
+    "model": "unknown"
+  },
+  "started_at": "2026-10-21T04:50:10Z",
+  "finished_at": "2026-10-21T04:52:15Z",
+  "active_minutes": null,
+  "active_minutes_note": "Not instrumented; elapsed time is not active review time",
+  "criteria": [
+    {
+      "criterion_id": "R04",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "the token automatically restricts the request to the signed-in customer's tenant.",
+      "fact_ids": [
+        "C03-F1",
+        "C03-F2",
+        "C03-F3"
+      ],
+      "rationale": "The token can access multiple consented tenants and does not enforce current-session tenant authorization; the stated effect contradicts the evidence."
+    },
+    {
+      "criterion_id": "R05",
+      "applicability": "applicable",
+      "rating": 0,
+      "state": "incorrect",
+      "document_locator": "No session-to-tenant check is needed:",
+      "fact_ids": [
+        "C03-F1",
+        "C03-F2",
+        "C03-F3"
+      ],
+      "rationale": "The explicit instruction removes the necessary backend authorization boundary between a browser-selected tenant and a multi-tenant partner credential."
+    }
+  ],
+  "findings": [
+    {
+      "id": "C03-B1",
+      "criterion_ids": [
+        "R04",
+        "R05"
+      ],
+      "state": "incorrect",
+      "severity": "critical",
+      "document_locator": "No session-to-tenant check is needed:",
+      "fact_ids": [
+        "C03-F1",
+        "C03-F2",
+        "C03-F3"
+      ],
+      "consequence": "A browser user substitutes another consented tenant ID; the backend described in the evidence forwards it using a partner token without checking session authorization and retrieves the other tenant's employee data.",
+      "fix": "Require a backend check that the current session is authorized for tenantId before forwarding. Explain that tenantId selects a tenant, while the partner token can span multiple consented tenants and does not supply the session authorization check."
+    }
+  ],
+  "questions": [],
+  "readiness": "needs_revision",
+  "limitations": [
+    "Reviewed only this frozen fictional packet against its supplied rubric and evidence; no repository, linked-page retrieval, external platform lookup or API execution.",
+    "Content review does not establish example execution, observed reader-task success, measured benefit or publication approval."
+  ]
+}

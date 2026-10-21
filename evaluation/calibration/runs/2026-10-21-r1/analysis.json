@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "status": "author-comparison-human-adjudication-pending",
+  "comparison_basis": "Original outputs were frozen before comparison with the preserved author key. Finding matches are manual author interpretations, not an automated correctness grade.",
+  "issues": [
+    {
+      "id": "D01",
+      "case_ids": [
+        "C02"
+      ],
+      "kind": "severity",
+      "status": "human_decision_pending",
+      "observation": "Both evaluators call the incorrect no-receivables lending conclusion critical. The original key calls it material. The fixture establishes an incorrect financial classification but no approval, disbursement or loss.",
+      "proposed_resolution": "Ask the user whether this classification alone meets critical severity or whether a serious downstream effect must be evidenced."
+    },
+    {
+      "id": "D02",
+      "case_ids": [
+        "C01"
+      ],
+      "kind": "finding_grouping",
+      "status": "author_analysis_not_human_adjudicated",
+      "observation": "Both combine the false business-completion claim and its reinforcing sandbox check into one critical finding, and add a separate missing state-observation finding. The key separates completion and verification into critical and material anchors.",
+      "proposed_resolution": "Treat shared-cause grouping as legitimate. Preserve the verification failure and missing observation route in evidence; do not infer extra independent defects from the number of criterion tags."
+    },
+    {
+      "id": "D03",
+      "case_ids": [
+        "C02"
+      ],
+      "kind": "state_and_rating",
+      "status": "author_analysis_not_human_adjudicated",
+      "observation": "R07 is missing/0 in both results versus incorrect/0 in the grouped key. R06 is incorrect/0 in both results versus missing/1 in the key. Both recognize the need for complete/fresh/connected data and a defer path.",
+      "proposed_resolution": "Split the wrong data inference from absent operational qualification in future anchors. Explicitly distinguish an asserted inadequate verification method from a merely missing test. Keep the original key and results unchanged in this run."
+    },
+    {
+      "id": "D04",
+      "case_ids": [
+        "C05",
+        "C08"
+      ],
+      "kind": "adequate_versus_stronger",
+      "status": "author_analysis_not_human_adjudicated",
+      "observation": "Both score the concise C05 reference as 3 for R02/R04/R09; the key proposes 2 with limited allowance for 3. Both score C08 as R01=3, R08=2, R09=3, R10=3; the key groups R01/R08/R09 at 2.",
+      "proposed_resolution": "Do not count an evidence-backed 3 as a defect or reward length. Record which relevant boundary supports it. The cases remain accepted in all four evaluations; expand future anchor explanations rather than force one exact score."
+    },
+    {
+      "id": "D05",
+      "case_ids": [
+        "C04",
+        "C06"
+      ],
+      "kind": "criterion_overlap",
+      "status": "author_analysis_not_human_adjudicated",
+      "observation": "Both also tag C04 with technical accuracy and mark its unsupported promise under language. Both tag C06 missing recovery actions under R09 as well as R07. The key does not anchor all these secondary criteria.",
+      "proposed_resolution": "Additional tags do not constitute additional defects. Clarify whether a language score reflects an obscured action/claim or repeats a technical completeness finding; no mean is used, and no readiness changes result."
+    },
+    {
+      "id": "D06",
+      "case_ids": [
+        "C09"
+      ],
+      "kind": "mixed_correct_and_incorrect_content",
+      "status": "author_analysis_not_human_adjudicated",
+      "observation": "Both score R05=0 and R11=1, while the key assigns both 0. The setup, version check and removal are correct, but claimed account access is impossible. Both retain a material incorrect finding and needs_revision.",
+      "proposed_resolution": "Use this as a proposed 0-versus-1 anchor clarification. Correct setup must not erase the false capability claim; a lower or higher local score must leave that finding visible. Do not silently change the original answer key."
+    }
+  ],
+  "seeded_problem_coverage": [
+    {
+      "case_id": "C01",
+      "author_anchors": [
+        "completion falsehood",
+        "sandbox acceptance mistaken for completion"
+      ],
+      "evaluator_a_findings": [
+        "C01-A-01"
+      ],
+      "evaluator_b_findings": [
+        "C01-B1"
+      ],
+      "note": "Both author problems are present in one shared-cause finding; both also raise missing observation guidance."
+    },
+    {
+      "case_id": "C02",
+      "author_anchors": [
+        "empty data mistaken for no receivables",
+        "unqualified empty-list verification"
+      ],
+      "evaluator_a_findings": [
+        "C02-A-01",
+        "C02-A-02"
+      ],
+      "evaluator_b_findings": [
+        "C02-B1",
+        "C02-B2"
+      ],
+      "note": "Shared reader problem recognized; severity, state and score interpretations differ from the author key."
+    },
+    {
+      "case_id": "C03",
+      "author_anchors": [
+        "missing session-to-tenant boundary and false token claim"
+      ],
+      "evaluator_a_findings": [
+        "C03-A-01"
+      ],
+      "evaluator_b_findings": [
+        "C03-B1"
+      ],
+      "note": "Concrete cross-tenant access path identified."
+    },
+    {
+      "case_id": "C04",
+      "author_anchors": [
+        "planned capability stated as deployed"
+      ],
+      "evaluator_a_findings": [
+        "C04-A-01"
+      ],
+      "evaluator_b_findings": [
+        "C04-B1"
+      ],
+      "note": "Neither asks for availability evidence already supplied."
+    },
+    {
+      "case_id": "C06",
+      "author_anchors": [
+        "missing timeout lookup and unresolved-outcome handling"
+      ],
+      "evaluator_a_findings": [
+        "C06-A-01"
+      ],
+      "evaluator_b_findings": [
+        "C06-B1"
+      ],
+      "note": "Neither invents idempotency, fixed waits or guaranteed retries."
+    },
+    {
+      "case_id": "C07",
+      "author_anchors": [
+        "unreconciled business-date semantics"
+      ],
+      "evaluator_a_findings": [
+        "C07-A-01"
+      ],
+      "evaluator_b_findings": [
+        "C07-B1"
+      ],
+      "note": "Both retain unverified without a numerical score and ask one engineering question."
+    },
+    {
+      "case_id": "C09",
+      "author_anchors": [
+        "static instructions mistaken for account-changing access"
+      ],
+      "evaluator_a_findings": [
+        "C09-A-01"
+      ],
+      "evaluator_b_findings": [
+        "C09-B1"
+      ],
+      "note": "Both preserve useful setup and avoid claiming a working unauthorized-access path."
+    }
+  ],
+  "negative_controls": {
+    "case_ids": [
+      "C05",
+      "C08"
+    ],
+    "evaluations": 4,
+    "findings_raised": 0,
+    "readiness": "ready_for_human_review in all four",
+    "scope": "No unnecessary sections, separate migration filenames or nonexistent tools requested in these controls. This does not establish a general false-positive rate."
+  },
+  "owner_questions": {
+    "per_evaluator": 1,
+    "case_id": "C07",
+    "owner": "engineering",
+    "purpose": "Confirm deployed parser and downstream conversion against supplied product intent. This is a fictional case question, not a request for the user platform."
+  },
+  "limitations": [
+    "Same inherited model and same role instructions, separate fresh contexts; this is not cross-model or human agreement.",
+    "Short authored cases with clear evidence; perfect focus-profile agreement does not establish performance on lengthy real MDX PRs.",
+    "No reader tasks, API execution, author/reviewer effort comparison or active review-time measurement.",
+    "Input/output isolation is operational and recorded by evaluator reports, not enforced access control.",
+    "Author comparison is not independent human adjudication. No pattern is promoted to calibrated or task-tested."
+  ]
+}
