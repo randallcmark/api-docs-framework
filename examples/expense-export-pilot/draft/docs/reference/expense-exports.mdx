@@ -1,0 +1,42 @@
+# Expense export operations
+
+Use these operations to [create and track an accounting draft batch](../guides/expense-export.mdx). Each job belongs to one company. Requests require that company's consent plus the applicable scope; partner applications must also enforce their own signed-in user's [company access](../platform/authentication.mdx).
+
+## Create an export
+
+`POST /companies/{companyId}/expense-exports` requires `expense_exports:write`. It selects approved, not-yet-exported expenses in the requested UTC range and queues a job.
+
+| Input | Required meaning |
+| --- | --- |
+| `companyId` | Company whose expenses are exported and whose consent is checked. |
+| `Idempotency-Key` header | Scoped to this company, retained for 24 hours from first acceptance. The same key/body returns the original job ID while active. A different body under that active key returns `409 idempotency_conflict`. |
+| `startDate` | Inclusive UTC calendar date; earlier than `endDate`. |
+| `endDate` | Exclusive UTC calendar date. |
+
+Example body for October 2026:
+
+```json
+{"startDate":"2026-10-01","endDate":"2026-11-01"}
+```
+
+`202 Accepted` returns a new or previously accepted job ID:
+
+```json
+{"jobId":"exp-job-001"}
+```
+
+Acceptance does not establish an external batch or payment. `422` rejects an invalid range or missing accounting connection without creating a job. See the guide's [recovery conditions](../guides/expense-export.mdx#recover-without-duplicating-work) before replaying an unknown create or a failed job.
+
+## Read a job
+
+`GET /companies/{companyId}/expense-exports/{jobId}` requires `expense_exports:read` and the job's owning company context. `404` means no job is accessible for that company/job ID.
+
+The response contains `jobId` and `state`: `queued`, `running`, `succeeded` or `failed`. A succeeded job includes `externalBatchId`; a failed job exposes `error.code` as `invalid_account_mapping` or `provider_unavailable`.
+
+Example production result shape:
+
+```json
+{"jobId":"exp-job-001","state":"succeeded","externalBatchId":"draft-batch-001"}
+```
+
+In production that identifier refers to a created draft batch, not a ledger posting or employee payment. Sandbox uses a simulated batch ID and does not contact the provider. Follow the guide for state-specific actions and verification boundaries.

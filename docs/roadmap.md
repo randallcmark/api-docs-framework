@@ -30,7 +30,9 @@ Acceptance: evidence for criteria, shared interpretations of anchors, consequent
 
 ## Milestone 4 — Repository workflow integration
 
-Next practical increment: assemble the discovery, planning, drafting and independent-review prompts into one usable workflow, then try it on a coherent fictional MDX change. Carry the evidence brief, targeted owner questions and short review packet through that pilot before choosing agent/build-system integration or using the user's holdout.
+Status: the [manual prompt workflow](../prompts/README.md), offline review-packet builder and [fictional expense-export pilot](../examples/expense-export-pilot/README.md) are implemented. The author carried two fixture questions through the brief, two MDX pages and an actual fresh-context review. No content corrections were requested in that bounded review. Sources and owner answers were constructed by the framework author; no real-team benefit or reader task success is established.
+
+Remaining: choose actual agent/build-system integration and a representative real input package; establish a baseline and freeze the framework before examining the user's holdout. No automated model orchestration or publication policy is selected.
 
 Adapt the process to the chosen agent and MDX build system. Add actual spec/reference validation, examples checks, terminology checks, and PR reporting as needed. Existing repository checks and ownership rules remain authoritative.
 

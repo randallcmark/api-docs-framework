@@ -1,0 +1,9 @@
+# Reimburse employee expenses
+
+Use an accounting connection to reimburse approved expenses for a customer company. See [company access](../platform/authentication.mdx) before starting.
+
+Send `POST /companies/{companyId}/expense-exports` with `startDate`, `endDate` and an `Idempotency-Key`. Both dates are inclusive. A `202` response means the expenses have been reimbursed.
+
+If the request times out, use a new key and send it again. If the job fails, retry until it succeeds.
+
+Use the returned job ID to fetch `GET /companies/{companyId}/expense-exports/{jobId}`. Sandbox success proves your accounting batch was created at the provider. Successful jobs are automatically posted to the ledger.

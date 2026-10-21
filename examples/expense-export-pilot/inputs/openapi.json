@@ -1,0 +1,212 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Fictional Expense Export API",
+    "version": "expense-api-3",
+    "description": "Original pilot fixture; no deployed or callable service exists."
+  },
+  "servers": [
+    {
+      "url": "https://api.expense-fixture.test"
+    }
+  ],
+  "paths": {
+    "/companies/{companyId}/expense-exports": {
+      "post": {
+        "operationId": "createExpenseExport",
+        "summary": "Queue export of approved, not-yet-exported expenses to an accounting draft batch",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Reusing an active company-scoped key with the same body returns the original jobId. Different body with the same active key returns 409. Retention is not specified by this contract."
+          }
+        ],
+        "security": [
+          {
+            "partnerOAuth": [
+              "expense_exports:write"
+            ]
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExportRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Queued or existing accepted job; not proof of external creation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Accepted"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "idempotency_conflict: active key reused with a different body"
+          },
+          "422": {
+            "description": "Invalid date range or missing accounting connection; no job created"
+          }
+        }
+      }
+    },
+    "/companies/{companyId}/expense-exports/{jobId}": {
+      "get": {
+        "operationId": "getExpenseExport",
+        "summary": "Read one company-owned export job",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "jobId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "security": [
+          {
+            "partnerOAuth": [
+              "expense_exports:read"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Current export job",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExportJob"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No job accessible for this company and job ID"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "partnerOAuth": {
+        "type": "oauth2",
+        "flows": {
+          "authorizationCode": {
+            "authorizationUrl": "https://auth.expense-fixture.test/authorize",
+            "tokenUrl": "https://auth.expense-fixture.test/token",
+            "scopes": {
+              "expense_exports:write": "Create exports for a consenting company",
+              "expense_exports:read": "Read export jobs for a consenting company"
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "ExportRequest": {
+        "type": "object",
+        "required": [
+          "startDate",
+          "endDate"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "startDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Inclusive UTC calendar date. Must be earlier than endDate."
+          },
+          "endDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Exclusive UTC calendar date."
+          }
+        }
+      },
+      "Accepted": {
+        "type": "object",
+        "required": [
+          "jobId"
+        ],
+        "properties": {
+          "jobId": {
+            "type": "string",
+            "description": "Job identifier within the selected company; acceptance does not establish completion."
+          }
+        }
+      },
+      "ExportJob": {
+        "type": "object",
+        "required": [
+          "jobId",
+          "state"
+        ],
+        "properties": {
+          "jobId": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "queued",
+              "running",
+              "succeeded",
+              "failed"
+            ]
+          },
+          "externalBatchId": {
+            "type": "string",
+            "description": "Present on succeeded jobs; identifies the draft batch. Sandbox identifiers are simulated."
+          },
+          "error": {
+            "type": "object",
+            "required": [
+              "code"
+            ],
+            "properties": {
+              "code": {
+                "type": "string",
+                "enum": [
+                  "invalid_account_mapping",
+                  "provider_unavailable"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

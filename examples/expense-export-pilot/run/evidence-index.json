@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "fictional": true,
+  "captured_at": "2026-10-21T05:27:48.162624+00:00",
+  "limitations": "All inputs, including owner answers, were constructed by the framework author. This is not a blind authoring experiment or real owner interview.",
+  "artifacts": [
+    {
+      "id": "REQUEST-1",
+      "path": "inputs/request.md",
+      "revision": "request-1",
+      "kind": "reader-request",
+      "phase": "initial",
+      "sha256": "388878c24b4b5b748c6cb0a3ca6449339a3c8a3b88040835c83db5d03a422806"
+    },
+    {
+      "id": "API-3",
+      "path": "inputs/openapi.json",
+      "revision": "expense-api-3",
+      "kind": "contract",
+      "phase": "initial",
+      "sha256": "e0cce73c1b0c244f02271d47b5ad05113ed1d59d164f75145502d90237c95db4"
+    },
+    {
+      "id": "IMPL-7",
+      "path": "inputs/implementation.py",
+      "revision": "expense-export-7",
+      "kind": "implementation-excerpt",
+      "phase": "initial",
+      "sha256": "fdce250c9afb0b7b97355eb3fa6de9276fc9b5847ee4efe08200e95d487087fb"
+    },
+    {
+      "id": "AUTH-1",
+      "path": "baseline/docs/platform/authentication.mdx",
+      "revision": "shared-auth-1",
+      "kind": "existing-shared-content",
+      "phase": "initial",
+      "sha256": "6736c77292a9e0a12e3dd036949ae790733a963401b82ec28fd5113e88564fa4"
+    },
+    {
+      "id": "SUPPORT-1",
+      "path": "baseline/docs/platform/support.mdx",
+      "revision": "support-1",
+      "kind": "existing-shared-content",
+      "phase": "initial",
+      "sha256": "316a04ec09dd4380ae8647c3776291e5323b01df5d9a06dbe45166c180f25996"
+    },
+    {
+      "id": "BEFORE-1",
+      "path": "baseline/docs/guides/expense-export.mdx",
+      "revision": "old-guide-1",
+      "kind": "existing-draft",
+      "phase": "initial",
+      "sha256": "dd677916326dae3e76edc7c429656f2c4d27f44cc946ba0b2262b1752161aac3"
+    },
+    {
+      "id": "ANSWERS-1",
+      "path": "inputs/owner-answers.md",
+      "revision": "expense-intent-2/expense-operations-4",
+      "kind": "authored-owner-answer-fixture",
+      "phase": "after-discovery",
+      "sha256": "97aca660aace0828802222e1ae88cdf561ab2a281f040a39f52f4c5bdf9dc833"
+    }
+  ]
+}
